@@ -1,37 +1,51 @@
 # Trace-Driven Agent Improver
 
-A hackathon MVP for observing a task agent, classifying failures, applying bounded improvements, and promoting a candidate only when benchmark evidence supports it.
+A hackathon MVP that observes a task agent, classifies failures, applies bounded improvements, and promotes a candidate only when benchmark evidence supports it.
 
 ## Current scope
-- Synthetic support-ticket routing task
-- Two seeded failure classes: wrong tool/action and missing verification
-- Development and held-out benchmark splits
-- Structured traces, deterministic evaluation, bounded improvement proposals
-- Promotion/rejection gate and FastAPI endpoints
 
-This first version uses a deterministic adapter to validate the improvement loop reproducibly. It is not evidence of LLM performance. The student-agent interface is isolated so an LLM-backed adapter can be added next.
+- Synthetic support-ticket routing task.
+- Two real baseline failure classes: wrong action selection and missing verification.
+- Separate development and held-out benchmark splits.
+- Local structured trace events plus optional Neatlogs spans.
+- Bounded improvement proposals and a promotion/rejection gate.
+- CLI and FastAPI endpoints.
 
-## Run
+The current student agent is deterministic. Neatlogs integration makes its workflow and evaluation outcomes observable; it does not imply that this version uses an LLM or proves general self-improvement.
+
+## Setup
+
 Requires Python 3.11+.
 
-```bash
+\`\`\`bash
 python -m venv .venv
-# Windows PowerShell: .venv\Scripts\Activate.ps1
+# Windows PowerShell: .venv\\Scripts\\Activate.ps1
 # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
-pytest -q
+\`\`\`
+
+Copy .env.example to .env and set NEATLOGS_API_KEY to the project key from your Neatlogs dashboard. Do not commit .env. If the key is absent, the app and tests run locally without exporting traces.
+
+## Run
+
+\`\`\`bash
+python -m pytest -q
 python -m app.cli
 uvicorn app.main:app --reload
-```
+\`\`\`
 
-Open http://127.0.0.1:8000/docs.
+Open http://127.0.0.1:8000/docs. Call POST /improve to run a complete benchmark and improvement cycle. With a valid NEATLOGS_API_KEY, each benchmark case is exported as a workflow trace with nested action-selection, tool-execution, and verification spans. Check the Neatlogs dashboard for the trace-driven-agent-improver workflow.
 
-## Loop
+## Improvement loop
+
 Benchmark → Student agent → trace/evaluate → classify failures → propose bounded change → candidate benchmark → promotion gate.
 
+The held-out set is used only as a final regression guardrail. It must not be used to generate proposals or tune the candidate.
+
 ## Guardrails
-1. Never modify baseline in place.
-2. Do not use held-out results to choose the change.
-3. Promote only when the candidate improves the target metric without held-out regression.
-4. Report only measured results.
+
+1. Never modify the baseline in place.
+2. Generate proposals from development-set failures only.
+3. Promote only when development performance improves and held-out performance does not regress.
+4. Report only measured results, including raw counts alongside percentages.
 5. Use synthetic data; no production actions or customer data.
