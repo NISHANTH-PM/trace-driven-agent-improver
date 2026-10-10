@@ -2,6 +2,7 @@ import uuid
 from dataclasses import dataclass, replace
 
 from app.models import AgentOutput, TicketCase, TraceEvent
+from app.observability import trace_span
 
 
 @dataclass
@@ -61,16 +62,34 @@ def run_student(case: TicketCase, config: StudentConfig):
         )
 
     event("task_received", "Synthetic support ticket received", ticket_length=len(case.ticket))
-    action = infer_action(case.ticket, use_keyword_fallback=config.use_keyword_fallback)
-    event("tool_selected", f"Selected action: {action}", selected_action=action)
-    event("tool_execution", f"Action tool {action} completed", "ok")
 
-    # Verification is a real workflow configuration, not a benchmark-case switch.
-    verified = config.require_verification
-    if verified:
-        event("verification", "Action checked against required output and ticket cues", "ok")
-    else:
-        event("verification", "Verification gate is not enabled", "warning")
+    with trace_span(
+        "action_selection",
+        kind="CHAIN",
+        attributes={"agent.version": config.version},
+    ) as span:
+        action = infer_action(case.ticket, use_keyword_fallback=config.use_keyword_fallback)
+        span.set_attribute("agent.selected_action", action)
+        event("tool_selected", f"Selected action: {action}", selected_action=action)
+
+    with trace_span(
+        f"execute_{action}",
+        kind="TOOL",
+        attributes={"agent.selected_action": action},
+    ):
+        event("tool_execution", f"Action tool {action} completed", "ok")
+
+    with trace_span(
+        "verification_gate",
+        kind="GUARDRAIL",
+        attributes={"guardrail.enabled": config.require_verification},
+    ) as span:
+        verified = config.require_verification
+        span.set_attribute("guardrail.passed", verified)
+        if verified:
+            event("verification", "Action checked against required output and ticket cues", "ok")
+        else:
+            event("verification", "Verification gate is not enabled", "warning")
 
     event(
         "finalize",
