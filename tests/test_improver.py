@@ -37,6 +37,11 @@ def test_candidate_improves_and_is_promoted():
         baseline_dev, candidate_dev, baseline_held, candidate_held
     )
 
+    # Pin the benchmark counts so the demo cannot silently drift.
+    assert (baseline_dev.successes, baseline_dev.total) == (6, 10)
+    assert (candidate_dev.successes, candidate_dev.total) == (10, 10)
+    assert (baseline_held.successes, baseline_held.total) == (4, 6)
+    assert (candidate_held.successes, candidate_held.total) == (6, 6)
     assert candidate_dev.success_rate > baseline_dev.success_rate
     assert candidate_held.success_rate >= baseline_held.success_rate
     assert promoted
