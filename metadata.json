@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K6S2WAAAVQZN6GGDMCQWP0",
+  "strategy": "manual-commit",
+  "branch": "fix/promotion-gate-and-tests",
+  "checkpoints_count": 9,
+  "files_touched": [
+    "app/improver.py",
+    "tests/test_improver.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 1232038,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2263680,
+    "output_tokens": 17098,
+    "api_call_count": 72
+  }
+}

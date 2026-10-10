@@ -1,0 +1,119 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K6S2WAAAVQZN6GGDMCQWP0",
+  "session_id": "ses_ed9fb6c65ffeHpBEJYomkC3GDV",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T15:27:34.2316673Z",
+  "branch": "fix/promotion-gate-and-tests",
+  "checkpoints_count": 9,
+  "save_step_count": 7,
+  "files_touched": [
+    "app/improver.py",
+    "tests/test_improver.py"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "97e2750bdc78",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1232038,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2263680,
+    "output_tokens": 17098,
+    "api_call_count": 72
+  },
+  "session_metrics": {
+    "turn_count": 9
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T15:27:34.2017466Z",
+    "agent_lines": 52,
+    "agent_removed": 7,
+    "human_added": 0,
+    "human_modified": 272,
+    "human_removed": 0,
+    "total_committed": 324,
+    "total_lines_changed": 331,
+    "agent_percentage": 17.82477341389728,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 221,
+      "agent_lines_removed": 156,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 221,
+      "agent_lines_removed": 156,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 292,
+      "agent_lines_removed": 156,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 256,
+      "agent_lines_removed": 95,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 6,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 324,
+      "agent_lines_removed": 95,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 7,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 324,
+      "agent_lines_removed": 95,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    }
+  ]
+}
