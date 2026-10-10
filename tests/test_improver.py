@@ -1,19 +1,26 @@
+from types import SimpleNamespace
+
 from app.benchmark import cases_for_split
 from app.evaluator import run_benchmark
 from app.improver import apply_proposals, propose_improvements, should_promote
 from app.student import StudentConfig
 
 
-def test_baseline_has_seeded_failures():
+def test_baseline_exposes_action_and_verification_failures():
     summary = run_benchmark(cases_for_split("development"), StudentConfig(version="baseline"))
+
     assert summary.success_rate < 1.0
-    assert summary.failure_counts
+    assert summary.failure_counts.get("wrong_tool", 0) > 0
+    assert summary.failure_counts.get("missing_verification", 0) > 0
 
 
-def test_improver_proposes_bounded_changes():
+def test_improver_proposes_bounded_changes_for_observed_failures():
     baseline = run_benchmark(cases_for_split("development"), StudentConfig(version="baseline"))
-    keys = {proposal.config_key for proposal in propose_improvements(baseline)}
+    proposals = propose_improvements(baseline)
+    keys = {proposal.config_key for proposal in proposals}
+
     assert {"use_keyword_fallback", "require_verification"} <= keys
+    assert all(proposal.target_failure in baseline.failure_counts for proposal in proposals)
 
 
 def test_candidate_improves_and_is_promoted():
@@ -37,10 +44,10 @@ def test_candidate_improves_and_is_promoted():
 
 
 def test_equal_heldout_performance_does_not_block_promotion():
-    baseline_dev = type("Summary", (), {"success_rate": 0.6})()
-    candidate_dev = type("Summary", (), {"success_rate": 0.8})()
-    baseline_held = type("Summary", (), {"success_rate": 0.75})()
-    candidate_held = type("Summary", (), {"success_rate": 0.75})()
+    baseline_dev = SimpleNamespace(success_rate=0.6)
+    candidate_dev = SimpleNamespace(success_rate=0.8)
+    baseline_held = SimpleNamespace(success_rate=0.75)
+    candidate_held = SimpleNamespace(success_rate=0.75)
 
     promoted, reasons = should_promote(
         baseline_dev, candidate_dev, baseline_held, candidate_held
@@ -54,10 +61,10 @@ def test_equal_heldout_performance_does_not_block_promotion():
 
 
 def test_candidate_is_rejected_if_heldout_regresses():
-    baseline_dev = type("Summary", (), {"success_rate": 0.6})()
-    candidate_dev = type("Summary", (), {"success_rate": 0.8})()
-    baseline_held = type("Summary", (), {"success_rate": 0.75})()
-    candidate_held = type("Summary", (), {"success_rate": 0.5})()
+    baseline_dev = SimpleNamespace(success_rate=0.6)
+    candidate_dev = SimpleNamespace(success_rate=0.8)
+    baseline_held = SimpleNamespace(success_rate=0.75)
+    candidate_held = SimpleNamespace(success_rate=0.5)
 
     promoted, reasons = should_promote(
         baseline_dev, candidate_dev, baseline_held, candidate_held
@@ -68,10 +75,10 @@ def test_candidate_is_rejected_if_heldout_regresses():
 
 
 def test_candidate_is_rejected_if_development_does_not_improve():
-    baseline_dev = type("Summary", (), {"success_rate": 0.8})()
-    candidate_dev = type("Summary", (), {"success_rate": 0.8})()
-    baseline_held = type("Summary", (), {"success_rate": 0.75})()
-    candidate_held = type("Summary", (), {"success_rate": 0.75})()
+    baseline_dev = SimpleNamespace(success_rate=0.8)
+    candidate_dev = SimpleNamespace(success_rate=0.8)
+    baseline_held = SimpleNamespace(success_rate=0.75)
+    candidate_held = SimpleNamespace(success_rate=0.75)
 
     promoted, reasons = should_promote(
         baseline_dev, candidate_dev, baseline_held, candidate_held
