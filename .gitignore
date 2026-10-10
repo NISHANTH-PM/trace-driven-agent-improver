@@ -1,1 +1,17 @@
-__pycache__/\n*.py[cod]\n.venv/\n.env\n.pytest_cache/\ndata/runs/\n
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+.venv312/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Project-generated data
+data/runs/
