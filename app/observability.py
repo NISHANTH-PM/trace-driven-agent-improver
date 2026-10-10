@@ -1,11 +1,11 @@
-"""Optional Neatlogs integration with a safe local-only fallback."""
+"""Neatlogs observability integration, with a local-only fallback."""
 
 from contextlib import contextmanager
 import os
 
 try:
     import neatlogs
-except ImportError:  # Local tests can still run before optional dependencies are installed.
+except ImportError:  # Keep local tests usable if the optional SDK isn't installed.
     neatlogs = None
 
 _initialized = False
@@ -19,7 +19,7 @@ class _NullSpan:
 
 
 def initialize_neatlogs() -> bool:
-    """Initialize Neatlogs once when a project API key is configured."""
+    """Initialize Neatlogs if a project API key is configured."""
     global _initialized
 
     if _initialized:
@@ -29,7 +29,6 @@ def initialize_neatlogs() -> bool:
 
     try:
         from dotenv import load_dotenv
-
         load_dotenv()
     except ImportError:
         pass
@@ -40,6 +39,7 @@ def initialize_neatlogs() -> bool:
 
     neatlogs.init(
         api_key=api_key,
+        endpoint=os.getenv("NEATLOGS_ENDPOINT", "https://ingest.neatlogs.com"),
         workflow_name="trace-driven-agent-improver",
         tags=["neathack", "trace-driven-agent-improver"],
     )
@@ -48,7 +48,7 @@ def initialize_neatlogs() -> bool:
 
 
 def shutdown_neatlogs() -> None:
-    """Flush pending traces and stop the SDK in short-lived processes."""
+    """Flush and stop Neatlogs after a short-lived process or at server shutdown."""
     global _initialized
 
     if not _initialized or neatlogs is None:
@@ -63,7 +63,7 @@ def shutdown_neatlogs() -> None:
 
 @contextmanager
 def trace_span(name: str, kind: str = "CHAIN", attributes: dict | None = None):
-    """Create a Neatlogs span when configured; otherwise behave as a no-op."""
+    """Open a Neatlogs span when initialized, otherwise no-op."""
     if not _initialized or neatlogs is None:
         yield _NullSpan()
         return
