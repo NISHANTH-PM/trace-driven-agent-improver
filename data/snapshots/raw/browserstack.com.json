@@ -1,0 +1,29 @@
+[
+  {
+    "matched_on": "domain",
+    "match_type": "exact",
+    "matches": [
+      {
+        "confidence_score": 0.98,
+        "company_data": {
+          "basic_info": {
+            "name": "BrowserStack",
+            "company_type": "Software Testing",
+            "description": "Cloud-based testing platform for websites and mobile applications across browsers and devices.",
+            "year_founded": 2011
+          },
+          "headcount": {
+            "total": 600
+          },
+          "funding": {
+            "total_investment_usd": 250000000,
+            "last_round_type": "Series B"
+          },
+          "locations": {
+            "headquarters": "Mumbai, Maharashtra, India"
+          }
+        }
+      }
+    ]
+  }
+]

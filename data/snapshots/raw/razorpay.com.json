@@ -1,0 +1,29 @@
+[
+  {
+    "matched_on": "domain",
+    "match_type": "exact",
+    "matches": [
+      {
+        "confidence_score": 0.99,
+        "company_data": {
+          "basic_info": {
+            "name": "Razorpay",
+            "company_type": "Financial Technology",
+            "description": "Full-stack financial solutions company providing payment gateway, payment links, and banking services.",
+            "year_founded": 2014
+          },
+          "headcount": {
+            "total": 1500
+          },
+          "funding": {
+            "total_investment_usd": 750000000,
+            "last_round_type": "Series E"
+          },
+          "locations": {
+            "headquarters": "Bengaluru, Karnataka, India"
+          }
+        }
+      }
+    ]
+  }
+]

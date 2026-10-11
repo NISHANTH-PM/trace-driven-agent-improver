@@ -1,0 +1,29 @@
+[
+  {
+    "matched_on": "domain",
+    "match_type": "exact",
+    "matches": [
+      {
+        "confidence_score": 0.99,
+        "company_data": {
+          "basic_info": {
+            "name": "Notion",
+            "company_type": "Productivity Software",
+            "description": "All-in-one workspace for notes, tasks, wikis, and databases.",
+            "year_founded": 2013
+          },
+          "headcount": {
+            "total": 600
+          },
+          "funding": {
+            "total_investment_usd": 343000000,
+            "last_round_type": "Series C"
+          },
+          "locations": {
+            "headquarters": "San Francisco, California, USA"
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "matched_on": "domain",
+    "match_type": "exact",
+    "matches": [
+      {
+        "confidence_score": 0.98,
+        "company_data": {
+          "basic_info": {
+            "name": "Meesho",
+            "company_type": "E-commerce",
+            "description": "Social commerce platform enabling small businesses and individuals to resell products.",
+            "year_founded": 2015
+          },
+          "headcount": {
+            "total": 3000
+          },
+          "funding": {
+            "total_investment_usd": 1200000000,
+            "last_round_type": "Series F"
+          },
+          "locations": {
+            "headquarters": "Bengaluru, Karnataka, India"
+          }
+        }
+      }
+    ]
+  }
+]

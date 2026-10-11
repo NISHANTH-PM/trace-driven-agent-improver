@@ -1,6 +1,9 @@
 """Pack benchmark case loading."""
 
+import os
+
 from app.pack.models import CompanyCase
+from app.pack.tools import truth_source
 
 
 def load_pack_cases() -> list[CompanyCase]:
@@ -19,9 +22,36 @@ def load_pack_cases() -> list[CompanyCase]:
     ]
 
 
+def load_pack_cases_from_snapshot() -> list[CompanyCase]:
+    """Load pack benchmark cases from Crustdata snapshot."""
+    source = truth_source()
+    if not hasattr(source, "get_dev_domains"):
+        raise ValueError("truth_source does not support snapshot mode")
+    
+    dev_domains = source.get_dev_domains()
+    held_domains = source.get_held_domains()
+    
+    cases = []
+    for i, domain in enumerate(dev_domains, 1):
+        company = source.get_company(domain)
+        cases.append(CompanyCase(case_id=f"D{i:02d}", company_name=company.name, domain=domain, split="development"))
+    
+    for i, domain in enumerate(held_domains, 1):
+        company = source.get_company(domain)
+        cases.append(CompanyCase(case_id=f"H{i:02d}", company_name=company.name, domain=domain, split="held_out"))
+    
+    return cases
+
+
 def pack_cases_for_split(split: str) -> list[CompanyCase]:
     """Return cases filtered by split."""
-    cases = load_pack_cases()
+    pack_source = os.getenv("PACK_SOURCE", "fixtures").lower()
+    
+    if pack_source == "snapshot":
+        cases = load_pack_cases_from_snapshot()
+    else:
+        cases = load_pack_cases()
+    
     if split not in ("development", "held_out"):
         raise ValueError(f"Invalid split: {split}. Must be 'development' or 'held_out'.")
     return [c for c in cases if c.split == split]

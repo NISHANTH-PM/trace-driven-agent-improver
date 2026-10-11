@@ -4,7 +4,8 @@ from dataclasses import dataclass
 from app.models import FailureClass, ImprovementProposal, TraceEvent
 from app.observability import trace_span
 from app.pack.models import CompanyCase, PackOutput, REQUIRED_SECTIONS
-from app.pack.tools import FixtureSource, default_source
+from app.pack.tools import FixtureSource, default_source, truth_source
+from app.pack.tools import SnapshotSource
 from app.pack.checks import fact_mismatches, missing_sections
 from app.pack.student import run_pack_student, PackConfig
 from app.llm import FakeLLMClient, LLMClient, get_llm
@@ -41,7 +42,7 @@ def evaluate_pack_case(
     case: CompanyCase,
     output: PackOutput,
     trace: list[TraceEvent],
-    truth_source: FixtureSource,
+    truth: FixtureSource | SnapshotSource,
 ) -> PackCaseResult:
     """Evaluate a single pack case output against ground truth."""
     # Tool failures take precedence
@@ -72,8 +73,8 @@ def evaluate_pack_case(
                 issues = missing
             else:
                 # Check fact mismatches
-                truth = truth_source.get_company(case.domain)
-                fact_issues = fact_mismatches(truth, output.sections)
+                truth_company = truth.get_company(case.domain)
+                fact_issues = fact_mismatches(truth_company, output.sections)
                 if fact_issues:
                     failure_class = "wrong_fact"
                     issues = fact_issues
@@ -98,13 +99,13 @@ def evaluate_pack_case(
 def run_pack_benchmark(
     cases: list[CompanyCase],
     config: PackConfig,
-    source: FixtureSource | None = None,
+    source: FixtureSource | SnapshotSource | None = None,
     llm: FakeLLMClient | LLMClient | None = None,
 ) -> PackSummary:
     """Run pack benchmark over a list of cases."""
     source = source or default_source()
-    # Use a plain FixtureSource for ground truth (never flaky)
-    truth_source = FixtureSource()
+    # Use a plain source for ground truth (never flaky)
+    truth = truth_source()
     llm = llm or get_llm()
 
     # Capture initial token counts
@@ -124,7 +125,7 @@ def run_pack_benchmark(
             },
         ) as span:
             output, trace = run_pack_student(case, config, source=source, llm=llm)
-            result = evaluate_pack_case(case, output, trace, truth_source)
+            result = evaluate_pack_case(case, output, trace, truth)
             span.set_attribute("evaluation.success", result.success)
             span.set_attribute("evaluation.failure_class", result.failure_class)
             results.append(result)

@@ -1,0 +1,129 @@
+{
+  "_note": "Real company snapshots from Crustdata API (mocked for testing - CRUSTDATA_API_KEY not available)",
+  "companies": [
+    {
+      "name": "Razorpay",
+      "domain": "razorpay.com",
+      "industry": "Financial Technology",
+      "description": "Full-stack financial solutions company providing payment gateway, payment links, and banking services.",
+      "employee_count": 1500,
+      "founded_year": 2014,
+      "hq_city": "Bengaluru",
+      "total_funding_usd": 750000000,
+      "last_round": "Series E"
+    },
+    {
+      "name": "Postman",
+      "domain": "postman.com",
+      "industry": "Software Development",
+      "description": "API platform for building and using APIs. Simplifies each step of the API lifecycle.",
+      "employee_count": 800,
+      "founded_year": 2014,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 433000000,
+      "last_round": "Series D"
+    },
+    {
+      "name": "BrowserStack",
+      "domain": "browserstack.com",
+      "industry": "Software Testing",
+      "description": "Cloud-based testing platform for websites and mobile applications across browsers and devices.",
+      "employee_count": 600,
+      "founded_year": 2011,
+      "hq_city": "Mumbai",
+      "total_funding_usd": 250000000,
+      "last_round": "Series B"
+    },
+    {
+      "name": "Freshworks",
+      "domain": "freshworks.com",
+      "industry": "Software as a Service",
+      "description": "Customer engagement software including helpdesk, CRM, and IT service management.",
+      "employee_count": 4500,
+      "founded_year": 2010,
+      "hq_city": "San Mateo",
+      "total_funding_usd": 400000000,
+      "last_round": "IPO"
+    },
+    {
+      "name": "Swiggy",
+      "domain": "swiggy.com",
+      "industry": "Food Delivery",
+      "description": "Online food ordering and delivery platform connecting customers with restaurants.",
+      "employee_count": 5000,
+      "founded_year": 2014,
+      "hq_city": "Bengaluru",
+      "total_funding_usd": 3500000000,
+      "last_round": "Series K"
+    },
+    {
+      "name": "Meesho",
+      "domain": "meesho.com",
+      "industry": "E-commerce",
+      "description": "Social commerce platform enabling small businesses and individuals to resell products.",
+      "employee_count": 3000,
+      "founded_year": 2015,
+      "hq_city": "Bengaluru",
+      "total_funding_usd": 1200000000,
+      "last_round": "Series F"
+    },
+    {
+      "name": "Notion",
+      "domain": "notion.so",
+      "industry": "Productivity Software",
+      "description": "All-in-one workspace for notes, tasks, wikis, and databases.",
+      "employee_count": 600,
+      "founded_year": 2013,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 343000000,
+      "last_round": "Series C"
+    },
+    {
+      "name": "Figma",
+      "domain": "figma.com",
+      "industry": "Design Software",
+      "description": "Collaborative interface design tool for teams.",
+      "employee_count": 1000,
+      "founded_year": 2012,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 330000000,
+      "last_round": "Series E"
+    },
+    {
+      "name": "Linear",
+      "domain": "linear.app",
+      "industry": "Project Management",
+      "description": "Issue tracking and project management tool for software teams.",
+      "employee_count": 150,
+      "founded_year": 2019,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 52000000,
+      "last_round": "Series C"
+    },
+    {
+      "name": "Canva",
+      "domain": "canva.com",
+      "industry": "Design Software",
+      "description": "Graphic design platform for creating social media graphics, presentations, and documents.",
+      "employee_count": 4000,
+      "founded_year": 2012,
+      "hq_city": "Sydney",
+      "total_funding_usd": 570000000,
+      "last_round": "Series F"
+    }
+  ],
+  "dev_domains": [
+    "razorpay.com",
+    "postman.com",
+    "browserstack.com",
+    "freshworks.com",
+    "swiggy.com",
+    "meesho.com"
+  ],
+  "held_out_domains": [
+    "notion.so",
+    "figma.com",
+    "linear.app",
+    "canva.com"
+  ]
+}

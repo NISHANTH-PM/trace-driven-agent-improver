@@ -1,0 +1,29 @@
+[
+  {
+    "matched_on": "domain",
+    "match_type": "exact",
+    "matches": [
+      {
+        "confidence_score": 0.99,
+        "company_data": {
+          "basic_info": {
+            "name": "Postman",
+            "company_type": "Software Development",
+            "description": "API platform for building and using APIs. Simplifies each step of the API lifecycle.",
+            "year_founded": 2014
+          },
+          "headcount": {
+            "total": 800
+          },
+          "funding": {
+            "total_investment_usd": 433000000,
+            "last_round_type": "Series D"
+          },
+          "locations": {
+            "headquarters": "San Francisco, California, USA"
+          }
+        }
+      }
+    ]
+  }
+]

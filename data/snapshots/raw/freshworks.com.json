@@ -1,0 +1,29 @@
+[
+  {
+    "matched_on": "domain",
+    "match_type": "exact",
+    "matches": [
+      {
+        "confidence_score": 0.99,
+        "company_data": {
+          "basic_info": {
+            "name": "Freshworks",
+            "company_type": "Software as a Service",
+            "description": "Customer engagement software including helpdesk, CRM, and IT service management.",
+            "year_founded": 2010
+          },
+          "headcount": {
+            "total": 4500
+          },
+          "funding": {
+            "total_investment_usd": 400000000,
+            "last_round_type": "IPO"
+          },
+          "locations": {
+            "headquarters": "San Mateo, California, USA"
+          }
+        }
+      }
+    ]
+  }
+]
