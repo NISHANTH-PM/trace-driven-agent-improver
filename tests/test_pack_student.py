@@ -145,6 +145,66 @@ class TestChecks:
         assert len(funding_issues) == 1
         assert "total_funding_usd=0 not stated" in funding_issues[0]
 
+    def test_fact_mismatches_last_round_underscore_vs_space(self):
+        """last_round with underscores should match space-separated in text."""
+        company = CompanyData(
+            name="Test", domain="test.com", industry="Tech", description="Test",
+            employee_count=100, founded_year=2015, hq_city="SF",
+            total_funding_usd=1000000, last_round="secondary_market"
+        )
+        sections = {s: "content" for s in REQUIRED_SECTIONS}
+        sections["Funding"] = "Last round was secondary market"
+        issues = fact_mismatches(company, sections)
+        assert "last_round=secondary_market not stated" not in issues
+
+    def test_fact_mismatches_last_round_underscore_vs_hyphen(self):
+        """last_round with underscores should match hyphenated in text."""
+        company = CompanyData(
+            name="Test", domain="test.com", industry="Tech", description="Test",
+            employee_count=100, founded_year=2015, hq_city="SF",
+            total_funding_usd=1000000, last_round="post_ipo_equity"
+        )
+        sections = {s: "content" for s in REQUIRED_SECTIONS}
+        sections["Funding"] = "Post-IPO equity round"
+        issues = fact_mismatches(company, sections)
+        assert "last_round=post_ipo_equity not stated" not in issues
+
+    def test_fact_mismatches_last_round_case_insensitive_series(self):
+        """last_round series_x should match Series X in text."""
+        company = CompanyData(
+            name="Test", domain="test.com", industry="Tech", description="Test",
+            employee_count=100, founded_year=2015, hq_city="SF",
+            total_funding_usd=1000000, last_round="series_d"
+        )
+        sections = {s: "content" for s in REQUIRED_SECTIONS}
+        sections["Funding"] = "Series D round"
+        issues = fact_mismatches(company, sections)
+        assert "last_round=series_d not stated" not in issues
+
+    def test_fact_mismatches_hq_city_underscore_vs_space(self):
+        """hq_city with underscores should match space-separated in text."""
+        company = CompanyData(
+            name="Test", domain="test.com", industry="Tech", description="Test",
+            employee_count=100, founded_year=2015, hq_city="san_francisco",
+            total_funding_usd=1000000, last_round="Series A"
+        )
+        sections = {s: "content" for s in REQUIRED_SECTIONS}
+        sections["Overview"] = "Based in San Francisco"
+        issues = fact_mismatches(company, sections)
+        assert "hq_city=san_francisco not stated" not in issues
+
+    def test_fact_mismatches_total_funding_float_to_int(self):
+        """total_funding_usd as float should be converted to int before comparison."""
+        company = CompanyData(
+            name="Test", domain="test.com", industry="Tech", description="Test",
+            employee_count=100, founded_year=2015, hq_city="SF",
+            total_funding_usd=42000000.0, last_round="Series B"
+        )
+        sections = {s: "content" for s in REQUIRED_SECTIONS}
+        sections["Funding"] = "Total funding $42,000,000"
+        issues = fact_mismatches(company, sections)
+        assert "total_funding_usd=42000000 not stated in accepted format" not in issues
+
 
 class TestPackStudent:
     """Tests for the pack student agent."""
