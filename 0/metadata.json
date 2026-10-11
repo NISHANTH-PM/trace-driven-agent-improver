@@ -1,0 +1,56 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PD6VPTGA3CDMHTTJ7NBZ69",
+  "session_id": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T21:17:02.5791665Z",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".github/workflows/tests.yml",
+    "README.md",
+    "app/cli.py",
+    "app/pack/service.py",
+    "tests/test_pack_improver.py"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "ed3534a1dca0",
+  "checkpoint_transcript_start": 37,
+  "transcript_lines_at_start": 37,
+  "compact_transcript_start": 37,
+  "token_usage": {
+    "input_tokens": 277734,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1015200,
+    "output_tokens": 5775,
+    "api_call_count": 27
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T21:17:02.4969415Z",
+    "agent_lines": 259,
+    "agent_removed": 11,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 259,
+    "total_lines_changed": 270,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 45,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "debug_trace.py": 45
+      }
+    }
+  ]
+}
