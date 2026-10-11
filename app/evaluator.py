@@ -37,8 +37,8 @@ def _is_valid_output(case, output) -> bool:
 
 
 def evaluate_case(case, output, trace):
-    # A recorded tool failure means the requested action did not complete,
-    # regardless of whether the agent produced a plausible final output.
+    # Tool failures take precedence: an action can be selected correctly even
+    # when executing it fails, and must not be counted as a successful run.
     if _has_tool_error(trace):
         failure: FailureClass = "tool_error"
     elif not _is_valid_output(case, output):
@@ -53,6 +53,7 @@ def evaluate_case(case, output, trace):
         else:
             failure = "missing_verification"
 
+    success = failure == "none"
     selected_action = getattr(output, "selected_action", None)
     if not isinstance(selected_action, str):
         selected_action = repr(selected_action)
@@ -67,7 +68,7 @@ def evaluate_case(case, output, trace):
         selected_action=selected_action,
         expected_verified=case.expected_verified,
         verified=verified,
-        success=failure == "none",
+        success=success,
         failure_class=failure,
         trace=trace,
     )
