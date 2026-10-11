@@ -10,9 +10,14 @@ def run_pack_improvement_cycle(llm=None):
     """Run the pack improvement cycle."""
     llm = llm or get_llm()
 
-    baseline_config = PackConfig(version="baseline", output_dir="outputs/baseline")
+    pack_source = os.getenv("PACK_SOURCE", "fixtures").lower()
     dev = pack_cases_for_split("development")
     held = pack_cases_for_split("held_out")
+
+    dev_companies = [c.company_name for c in dev]
+    held_companies = [c.company_name for c in held]
+
+    baseline_config = PackConfig(version="baseline", output_dir="outputs/baseline")
 
     # Baseline runs
     bdev = run_pack_benchmark(dev, baseline_config, llm=llm)
@@ -50,6 +55,11 @@ def run_pack_improvement_cycle(llm=None):
     candidate_totals = compute_totals(cdev, cheld)
 
     return {
+        "source": pack_source,
+        "companies": {
+            "development": dev_companies,
+            "held_out": held_companies,
+        },
         "baseline": {
             "development": bdev.__dict__,
             "held_out": bheld.__dict__,

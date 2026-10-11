@@ -47,6 +47,8 @@ def run_pack_task():
 
         # Compact summary for stdout
         summary = {
+            "source": result["source"],
+            "companies": result["companies"],
             "baseline": {
                 "development": {
                     "success_rate": result["baseline"]["development"]["success_rate"],
