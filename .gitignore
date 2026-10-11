@@ -15,3 +15,10 @@ venv/
 
 # Project-generated data
 data/runs/
+
+# Logs and outputs
+*.log
+spans_*.log
+outputs/
+.codex/
+.opencode/
