@@ -1,0 +1,23 @@
+Task P1. Repo: trace-driven-agent-improver.
+
+1. Run `python -m pytest -q`. Record pass/fail counts. Do not change code yet.
+2. Create branch `feat/pack-agent`.
+3. .gitignore: add `*.log`, `spans_*.log`, `outputs/`, `.codex/`, `.opencode/`. Do NOT delete debug_trace.py; leave it untracked.
+4. Commit the already-modified `.env.example` as-is.
+5. Edit `.env.example`: keep existing keys, and add `CRUSTDATA_API_KEY=`, `LLM_MODE=live` (comment: use `fake` for offline tests).
+6. Add `requests>=2.31,<3` to requirements.txt.
+7. Create `app/llm.py` with:
+   - `class LLMClient` with method `complete(system: str, user: str, json_mode: bool = False) -> str`.
+   - Reads MODEL_BASE_URL, MODEL_API_KEY, MODEL_NAME from env (python-dotenv). Calls the OpenAI-compatible `POST {MODEL_BASE_URL}/chat/completions` using `requests`, timeout 60s, temperature 0.2.
+   - Returns the message content string. On HTTP error raise `LLMError(Exception)` with status code and the first 200 chars of the body (never the API key).
+   - Module-level counters on the client: `calls`, `prompt_tokens`, `completion_tokens` accumulated from the response `usage` field (default 0 if absent).
+   - `class FakeLLMClient` with the same interface; returns a canned string supplied in its constructor (a callable `(system, user) -> str`), and counts calls.
+   - `get_llm()` returns FakeLLMClient if LLM_MODE=fake, else LLMClient.
+8. Add `tests/test_llm.py`: tests for FakeLLMClient and for LLMClient error handling using `unittest.mock.patch('requests.post')`. No real network calls.
+9. Run pytest; all tests must pass.
+
+REPORT format (reply exactly with these headings):
+- Test results before / after (counts)
+- Files created/changed
+- Commit hashes
+- Anything ambiguous or deviating from the task
