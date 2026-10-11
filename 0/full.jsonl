@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 308075,
-      "output": 2217,
-      "reasoning": 1232,
+      "input": 325165,
+      "output": 3168,
+      "reasoning": 1261,
       "cache": {
-        "read": 354240,
+        "read": 397440,
         "write": 0
       }
     },
     "time": {
       "created": 1791752242652,
-      "updated": 1791752689982
+      "updated": 1791752706921
     }
   },
   "messages": [
@@ -3342,19 +3342,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 30113,
+          "input": 8432,
+          "output": 61,
+          "reasoning": 20,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 21600
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791752689981
+          "created": 1791752689981,
+          "completed": 1791752706915
         },
+        "finish": "tool-calls",
         "id": "msg_12cc8593d00107tYQbwq4LcFyK",
         "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ"
       },
@@ -3382,20 +3385,126 @@
           "tool": "bash",
           "callID": "call-d5c1de36-c468-4c49-b483-0f9b2ffd2dd3",
           "state": {
-            "metadata": {
-              "output": ""
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "git add evidence/pack_run_20261011_210448.json && git commit -m \"evidence: first live pack run\" && git push"
             },
+            "output": "[feat/pack-agent 74c7748] evidence: first live pack run\n 1 file changed, 133 insertions(+)\n create mode 100644 evidence/pack_run_20261011_210448.json\n[entire] Pushing 1 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   4b8ddc2..74c7748  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[feat/pack-agent 74c7748] evidence: first live pack run\n 1 file changed, 133 insertions(+)\n create mode 100644 evidence/pack_run_20261011_210448.json\n[entire] Pushing 1 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   4b8ddc2..74c7748  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git add evidence/pack_run_20261011_210448.json && git commit -m \"evidence: first live pack run\" && git push",
             "time": {
-              "start": 1791752694320
+              "start": 1791752694320,
+              "end": 1791752706311
             }
           },
           "id": "prt_12cc86a2b001J8f5AhPTNuVFjt",
           "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
           "messageID": "msg_12cc8593d00107tYQbwq4LcFyK"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 30113,
+            "input": 8432,
+            "output": 61,
+            "reasoning": 20,
+            "cache": {
+              "write": 0,
+              "read": 21600
+            }
+          },
+          "cost": 0,
+          "id": "prt_12cc89a45001kDDxpBN1pKCwi8",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12cc8593d00107tYQbwq4LcFyK"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12cc3e71c001UH1w3JrsJv1gkQ",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 31157,
+          "input": 8658,
+          "output": 890,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 21600
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791752706920,
+          "completed": 1791752733868
+        },
+        "finish": "stop",
+        "id": "msg_12cc89b68001OukHAl04jSmnvD",
+        "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12cc8bf4d0016pk5QoMl1xUN96",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12cc89b68001OukHAl04jSmnvD"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me compile the final report.",
+          "time": {
+            "start": 1791752716112,
+            "end": 1791752716273
+          },
+          "id": "prt_12cc8bf500016zGsMb682Tsuhy",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12cc89b68001OukHAl04jSmnvD"
+        },
+        {
+          "type": "text",
+          "text": "- **python and neatlogs versions**\n  - Python 3.12.10\n  - neatlogs 1.4.26\n\n- **Secret scan result (file:line:keyword) and what was untracked**\n  - No tracked files in `.codex` or `.opencode` (`git ls-files` returned empty)\n  - `git grep` found no secrets\n  - Nothing to untrack (folders were already untracked)\n\n- **observability.py: what was restored/kept (2-3 lines)**\n  - Restored `initialize_neatlogs()` to master version with `endpoint` and `workflow_name` params\n  - Restored `shutdown_neatlogs()` to call `neatlogs.flush()` and `neatlogs.shutdown()`\n  - Kept all 6 P3 attribute mappings (pack.company, tool.attempt, llm.prompt_tokens, llm.completion_tokens, llm.cost_usd, pack.verify_passed)\n  - Wrapped shutdown in try/except with one-line warning print\n\n- **Smoke test output and warnings**\n  ```\n  2026-10-12 02:32:47 - neatlogs - INFO - Neatlogs SDK shutdown complete\n  smoke done\n  ```\n\n- **pytest counts and skip status; CI python version**\n  - 102 passed, 1 skipped (`test_observability.py` skipped due to `neatlogs>=2.0.0` requirement for `InMemoryDiagnosticSpanExporter`)\n  - CI uses Python 3.11 (from `.github/workflows/tests.yml`)\n\n- **Commit hashes**\n  - `4b8ddc2` - chore: untrack agent config dirs; restore neatlogs init for SDK 1.4.26\n  - `74c7748` - evidence: first live pack run\n\n- **Live run: full compact summary JSON**\n  ```json\n  {\n    \"baseline\": {\n      \"development\": { \"success_rate\": 0.1667, \"successes\": \"1/6\", \"failure_counts\": { \"wrong_fact\": 3, \"tool_error\": 2 } },\n      \"held_out\": { \"success_rate\": 0.25, \"successes\": \"1/4\", \"failure_counts\": { \"tool_error\": 1, \"wrong_fact\": 2 } }\n    },\n    \"candidate\": {\n      \"development\": { \"success_rate\": 1.0, \"successes\": \"6/6\", \"failure_counts\": {} },\n      \"held_out\": { \"success_rate\": 1.0, \"successes\": \"4/4\", \"failure_counts\": {} }\n    },\n    \"proposals\": [\n      { \"target_failure\": \"tool_error\", \"change_type\": \"workflow_gate\", \"description\": \"Enable retry for tool errors to handle transient upstream failures.\", \"config_key\": \"retry_tool_errors\", \"config_value\": true },\n      { \"target_failure\": \"wrong_fact\", \"change_type\": \"prompt_rule\", \"description\": \"Use strict prompt that requires exact figures from data.\", \"config_key\": \"strict_prompt\", \"config_value\": true },\n      { \"target_failure\": \"wrong_fact\", \"change_type\": \"workflow_gate\", \"description\": \"Enable fact verification to catch and fix hallucinated figures.\", \"config_key\": \"verify_facts\", \"config_value\": true }\n    ],\n    \"promotion\": { \"promoted\": true, \"reasons\": [\"Development success rate improved.\", \"Held-out success rate did not regress.\", \"No critical failure regression on held-out.\"] },\n    \"active_version\": \"candidate\",\n    \"cost\": { \"baseline\": { \"llm_calls\": 4, \"prompt_tokens\": 615, \"completion_tokens\": 788 }, \"candidate\": { \"llm_calls\": 6, \"prompt_tokens\": 921, \"completion_tokens\": 1121 } }\n  }\n  ```",
+          "time": {
+            "start": 1791752716274,
+            "end": 1791752733268
+          },
+          "id": "prt_12cc8bff2001iQfWrB1mWWz1tb",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12cc89b68001OukHAl04jSmnvD"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 31157,
+            "input": 8658,
+            "output": 890,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 21600
+            }
+          },
+          "cost": 0,
+          "id": "prt_12cc9038b001bfVTcuTdMHb7ab",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12cc89b68001OukHAl04jSmnvD"
         }
       ]
     }
