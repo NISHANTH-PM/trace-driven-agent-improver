@@ -20,17 +20,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 1533088,
-      "output": 19317,
-      "reasoning": 5742,
+      "input": 1553267,
+      "output": 20209,
+      "reasoning": 5766,
       "cache": {
-        "read": 4099680,
+        "read": 4436640,
         "write": 0
       }
     },
     "time": {
       "created": 1791752242652,
-      "updated": 1791755086156
+      "updated": 1791755114316
     }
   },
   "messages": [
@@ -10416,19 +10416,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 118938,
+          "input": 6546,
+          "output": 61,
+          "reasoning": 11,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 112320
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791755086154
+          "created": 1791755086154,
+          "completed": 1791755095768
         },
+        "finish": "tool-calls",
         "id": "msg_12cece94a002DwtAooNGbpW9WL",
         "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ"
       },
@@ -10456,20 +10459,222 @@
           "tool": "bash",
           "callID": "call-2931d71a-a50d-43ed-b566-cd073dcb73c4",
           "state": {
-            "metadata": {
-              "output": "warning: in the working copy of 'app/pack/student.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/llm_span_smoke.py', LF will be replaced by CRLF the next time Git touches it\n"
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "git add app/pack/student.py scripts/llm_span_smoke.py && git commit -m \"fix: LLM spans expose model, tokens, cost to neatlogs\""
             },
+            "output": "warning: in the working copy of 'app/pack/student.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/llm_span_smoke.py', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent 7bb1d12] fix: LLM spans expose model, tokens, cost to neatlogs\n 2 files changed, 57 insertions(+), 11 deletions(-)\n create mode 100644 scripts/llm_span_smoke.py\n",
+            "metadata": {
+              "output": "warning: in the working copy of 'app/pack/student.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/llm_span_smoke.py', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent 7bb1d12] fix: LLM spans expose model, tokens, cost to neatlogs\n 2 files changed, 57 insertions(+), 11 deletions(-)\n create mode 100644 scripts/llm_span_smoke.py\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git add app/pack/student.py scripts/llm_span_smoke.py && git commit -m \"fix: LLM spans expose model, tokens, cost to neatlogs\"",
             "time": {
-              "start": 1791755088547
+              "start": 1791755088547,
+              "end": 1791755094741
             }
           },
           "id": "prt_12cecf29c001q3EitGIItCKqU9",
           "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
           "messageID": "msg_12cece94a002DwtAooNGbpW9WL"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 118938,
+            "input": 6546,
+            "output": 61,
+            "reasoning": 11,
+            "cache": {
+              "write": 0,
+              "read": 112320
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ced0cd6001yD9jwR5pWvrO9N",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12cece94a002DwtAooNGbpW9WL"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12cea42f2001ClcQLo87OWs4Xx",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 119113,
+          "input": 6762,
+          "output": 27,
+          "reasoning": 4,
+          "cache": {
+            "write": 0,
+            "read": 112320
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791755095812,
+          "completed": 1791755114298
+        },
+        "finish": "tool-calls",
+        "id": "msg_12ced0f04002QQE7B4jpBlyiva",
+        "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12ced36ff001gygQ5gApP4t68H",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced0f04002QQE7B4jpBlyiva"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let's push.",
+          "time": {
+            "start": 1791755106049,
+            "end": 1791755107875
+          },
+          "id": "prt_12ced3701001M5KByyJ44Si0Jg",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced0f04002QQE7B4jpBlyiva"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-a473f051-6d05-4048-b56e-97e7530bd0de",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "git push"
+            },
+            "output": "[entire] Pushing 4 checkpoint ref(s) to origin..... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   38abdf6..7bb1d12  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[entire] Pushing 4 checkpoint ref(s) to origin..... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   38abdf6..7bb1d12  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git push",
+            "time": {
+              "start": 1791755107881,
+              "end": 1791755113657
+            }
+          },
+          "id": "prt_12ced3e25001Lc4n4A8MHoLsli",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced0f04002QQE7B4jpBlyiva"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 119113,
+            "input": 6762,
+            "output": 27,
+            "reasoning": 4,
+            "cache": {
+              "write": 0,
+              "read": 112320
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ced55f60011nEuqjyG8N7m2z",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced0f04002QQE7B4jpBlyiva"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12cea42f2001ClcQLo87OWs4Xx",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 120004,
+          "input": 6871,
+          "output": 804,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 112320
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791755114309,
+          "completed": 1791755129261
+        },
+        "finish": "stop",
+        "id": "msg_12ced5745002OP62NqHqX0SQE0",
+        "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12ced60d7001FXIhn8f2rg9Bgd",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced5745002OP62NqHqX0SQE0"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me prepare the final report.",
+          "time": {
+            "start": 1791755116764,
+            "end": 1791755116904
+          },
+          "id": "prt_12ced60dc001Ol7Z0gyLEaCGI6",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced5745002OP62NqHqX0SQE0"
+        },
+        {
+          "type": "text",
+          "text": "- **Attribute keys the SDK recognizes (list)**\n  - `llm.model_name` → `neatlogs.llm.model_name` (sources: `llm.model_name`, `gen_ai.response.model`, `gen_ai.request.model`, `traceloop.association.properties.ls_model_name`)\n  - `llm.provider` → `neatlogs.llm.provider` (sources: `llm.provider`, `traceloop.association.properties.ls_provider`)\n  - `llm.system` → `neatlogs.llm.system` (sources: `llm.system`, `gen_ai.system`)\n  - `llm.token_count.prompt` → `neatlogs.llm.token_count.prompt` (sources: `llm.token_count.prompt`, `gen_ai.usage.input_tokens`)\n  - `llm.token_count.completion` → `neatlogs.llm.token_count.completion` (sources: `llm.token_count.completion`, `gen_ai.usage.output_tokens`)\n  - `llm.token_count.total` → `neatlogs.llm.token_count.total` (sources: `llm.token_count.total`, `llm.usage.total_tokens`)\n  - `llm.cost_usd` → `neatlogs.llm.cost_usd` (custom mapping via `_CUSTOM_ATTRIBUTE_MAPPINGS`)\n  - `gen_ai.usage.input_tokens` → `neatlogs.llm.token_count.prompt`\n  - `gen_ai.usage.output_tokens` → `neatlogs.llm.token_count.completion`\n  - `gen_ai.request.model` → `neatlogs.llm.model_name`\n  - `input.value` → `neatlogs.{span_kind}.input` (generic IO)\n  - `output.value` → `neatlogs.{span_kind}.output` (generic IO)\n\n- **What changed (3 lines)**\n  1. Added `_set_llm_attrs()` helper in `app/pack/student.py` setting all SDK-recognized LLM attributes plus existing custom ones\n  2. Updated `llm_draft` span to call `_set_llm_attrs()` with model name, tokens, cost, and truncated input/output\n  3. Added nested `llm_regenerate` span (kind=\"LLM\") inside `verify_facts` when regeneration occurs, also using `_set_llm_attrs()`\n\n- **Local verification output (which keys appear on the exported span)**\n  ```\n  Attributes set: ['neatlogs.internal', 'openinference.span.kind', 'llm.model_name', 'llm.provider', 'llm.system', 'llm.token_count.prompt', 'llm.token_count.completion', 'llm.token_count.total', 'gen_ai.usage.input_tokens', 'gen_ai.usage.output_tokens', 'gen_ai.request.model', 'llm.cost_usd', 'input.value', 'output.value', 'llm.prompt_tokens', 'llm.completion_tokens']\n  2026-10-12 03:13:45 - neatlogs - INFO - Neatlogs SDK shutdown complete\n  LLM span smoke test done\n  ```\n\n- **Live run timestamp**\n  - `20261011_214437` (evidence/pack_run_20261011_214437.json)\n\n- **Test results, commit hash**\n  - 104 passed, 1 skipped\n  - Commit: `7bb1d12` (fix: LLM spans expose model, tokens, cost to neatlogs)",
+          "time": {
+            "start": 1791755116906,
+            "end": 1791755128635
+          },
+          "id": "prt_12ced616a001udx3TSy7amOOWl",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced5745002OP62NqHqX0SQE0"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 120004,
+            "input": 6871,
+            "output": 804,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 112320
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ced9088001BzCLGqf1ujTdEq",
+          "sessionID": "ses_ed33e7a23ffe2iOWZemVKZUtoZ",
+          "messageID": "msg_12ced5745002OP62NqHqX0SQE0"
         }
       ]
     }
