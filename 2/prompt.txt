@@ -1,0 +1,50 @@
+We are debugging an HTTP 401 from the Neatlogs trace-read CLI in:
+
+D:\trace-driven-agent-improver
+
+Command:
+python -m neatlogs trace get 496a80a692ef870d4d1f026a25bd9775 --json
+
+Output:
+Trace read rejected the credentials (HTTP 401); check the token scope, project id and host
+
+Confirmed:
+- .env contains NEATLOGS_TOKEN and NEATLOGS_PROJECT_ID.
+- python-dotenv can load both variables.
+- The configured host defaults to https://app.neatlogs.com.
+- Loading the values into the PowerShell environment did not fix the 401.
+- The SDK is installed in .venv312.
+
+Investigate the actual installed SDK source. Do not guess.
+
+1. Read neatlogs/trace_cli.py and identify:
+   - The exact environment variables read.
+   - How the host and endpoint URL are constructed.
+   - The authentication header format.
+   - How the project ID is transmitted.
+   - How HTTP 401 responses are handled.
+
+2. Check whether the CLI loads .env itself or only reads os.environ.
+
+3. Inspect the CLI's documented credential requirements and determine
+   whether NEATLOGS_TOKEN must be a particular service-account token type
+   with observability:read scope.
+
+4. Check whether NEATLOGS_HOST should be the application host or a
+   different API host, using evidence from the installed SDK or official
+   documentation. Do not invent endpoint URLs.
+
+5. Add a safe diagnostic that prints:
+   - The resolved host and endpoint.
+   - Whether the token is present.
+   - Whether the project ID is present.
+   - The HTTP status and sanitized response body.
+
+Never print the token, authorization header, or other secrets.
+
+6. Do not change app/observability.py or generate another application
+   trace. We are debugging read access only.
+
+Report the precise cause if it can be established. If the token, project
+ID, or host cannot be validated locally, explain exactly what must be
+confirmed with Neatlogs support.
