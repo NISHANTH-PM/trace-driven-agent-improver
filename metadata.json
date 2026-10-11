@@ -1,0 +1,32 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4P9E0HE2CG1RQG9C8ZNFSM3",
+  "strategy": "manual-commit",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "app/pack/__init__.py",
+    "app/pack/benchmark.py",
+    "app/pack/models.py",
+    "app/pack/tools.py",
+    "data/fixtures/companies.json",
+    "tests/test_observability.py",
+    "tests/test_pack_tools.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 129804,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 142560,
+    "output_tokens": 4359,
+    "api_call_count": 13
+  }
+}
