@@ -1,23 +1,30 @@
-Task P1. Repo: trace-driven-agent-improver.
+Task P2. Branch feat/pack-agent. Do not modify existing files in app/ except where stated. Existing tests must keep passing.
 
-1. Run `python -m pytest -q`. Record pass/fail counts. Do not change code yet.
-2. Create branch `feat/pack-agent`.
-3. .gitignore: add `*.log`, `spans_*.log`, `outputs/`, `.codex/`, `.opencode/`. Do NOT delete debug_trace.py; leave it untracked.
-4. Commit the already-modified `.env.example` as-is.
-5. Edit `.env.example`: keep existing keys, and add `CRUSTDATA_API_KEY=`, `LLM_MODE=live` (comment: use `fake` for offline tests).
-6. Add `requests>=2.31,<3` to requirements.txt.
-7. Create `app/llm.py` with:
-   - `class LLMClient` with method `complete(system: str, user: str, json_mode: bool = False) -> str`.
-   - Reads MODEL_BASE_URL, MODEL_API_KEY, MODEL_NAME from env (python-dotenv). Calls the OpenAI-compatible `POST {MODEL_BASE_URL}/chat/completions` using `requests`, timeout 60s, temperature 0.2.
-   - Returns the message content string. On HTTP error raise `LLMError(Exception)` with status code and the first 200 chars of the body (never the API key).
-   - Module-level counters on the client: `calls`, `prompt_tokens`, `completion_tokens` accumulated from the response `usage` field (default 0 if absent).
-   - `class FakeLLMClient` with the same interface; returns a canned string supplied in its constructor (a callable `(system, user) -> str`), and counts calls.
-   - `get_llm()` returns FakeLLMClient if LLM_MODE=fake, else LLMClient.
-8. Add `tests/test_llm.py`: tests for FakeLLMClient and for LLMClient error handling using `unittest.mock.patch('requests.post')`. No real network calls.
-9. Run pytest; all tests must pass.
+0. tests/test_observability.py currently errors on import (missing InMemoryDiagnosticSpanExporter in neatlogs 1.4.26). I authorize ONE change: guard the failing import so the module is skipped with a clear reason (`pytest.importorskip` or try/except + `pytestmark = pytest.mark.skip(reason=...)`). Do not alter test bodies. If the file is untracked/not in git, say so in the report.
 
-REPORT format (reply exactly with these headings):
-- Test results before / after (counts)
+1. Create package `app/pack/` with `__init__.py` and `models.py` (pydantic v2):
+   - CompanyData: name, domain, industry, description, employee_count:int, founded_year:int, hq_city:str, total_funding_usd:int, last_round:str
+   - CompanyCase: case_id, company_name, domain, split: Literal["development","held_out"]
+   - PackOutput: case_id, docx_path:str|None, sections: dict[str,str], claimed_facts: dict[str,str|int], verified:bool, tool_attempts:int, rationale:str
+   - REQUIRED_SECTIONS = ["Overview","Key Facts","Funding","Risks"]
+
+2. Create data/fixtures/companies.json: 10 FICTIONAL companies (realistic names, distinct industries, distinct numbers: employee_count 15–4000, founded_year 2008–2022, funding 0–400M, mix of last_round values incl. "Bootstrapped"). Each matches CompanyData. Header comment is not allowed in JSON, so use a top-level object {"_note": "Illustrative fixtures; real Crustdata snapshots replace these in P5", "companies": [...]}.
+
+3. Create app/pack/benchmark.py: `load_pack_cases()` returning 10 CompanyCase: ids D01..D06 split development, H01..H04 split held_out, each mapped to one fixture company by domain. Add `pack_cases_for_split(split)`.
+
+4. Create app/pack/tools.py:
+   - class ToolError(Exception)
+   - class FixtureSource: `get_company(domain: str, attempt: int = 1) -> CompanyData` reading the JSON (raise ToolError("not found") if missing).
+   - class FlakySource(inner, fail_first: dict[str,int]): wraps a source; if attempt <= fail_first.get(domain,0) raise ToolError("upstream 503"). Otherwise delegate.
+   - `default_source()` returns FlakySource(FixtureSource(), fail_first = domains of D02, D05, H02 each -> 1).
+
+5. Tests in tests/test_pack_tools.py: fixture loads all 10 and validates; unknown domain raises; Flaky fails on attempt 1 and succeeds on attempt 2 for D02's domain; cases split counts are 6 dev / 4 held_out; no domain is duplicated.
+
+6. Run pytest. Commit: "feat: pack domain models, fixtures, flaky data tool".
+
+REPORT (exact headings):
+- Test results before / after (counts, skips, errors)
 - Files created/changed
-- Commit hashes
-- Anything ambiguous or deviating from the task
+- The 10 case_id -> company name -> domain table
+- Commit hash
+- Anything ambiguous or deviating
