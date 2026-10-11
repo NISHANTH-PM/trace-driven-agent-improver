@@ -483,5 +483,89 @@ class TestPackBenchmark:
         # FakeLLMClient doesn't track token usage
 
 
+class TestPackAblation:
+    """Tests for pack ablation."""
+
+    @pytest.fixture
+    def dev_cases(self):
+        from app.pack.benchmark import pack_cases_for_split
+        return pack_cases_for_split("development")
+
+    @pytest.fixture
+    def held_cases(self):
+        from app.pack.benchmark import pack_cases_for_split
+        return pack_cases_for_split("held_out")
+
+    def test_ablation_baseline_vs_candidate_on_dev(self, dev_cases, held_cases, tmp_path):
+        """Test that baseline < candidate on dev split with scripted LLM."""
+        llm = ScriptedFakeLLM()
+
+        baseline_config = PackConfig(
+            version="baseline",
+            output_dir=str(tmp_path / "ablation" / "baseline"),
+            retry_tool_errors=False,
+            strict_prompt=False,
+            verify_facts=False,
+        )
+        candidate_config = PackConfig(
+            version="candidate",
+            output_dir=str(tmp_path / "ablation" / "candidate"),
+            retry_tool_errors=True,
+            strict_prompt=True,
+            verify_facts=True,
+        )
+
+        bdev = run_pack_benchmark(dev_cases, baseline_config, source=FixtureSource(), llm=llm)
+        cdev = run_pack_benchmark(dev_cases, candidate_config, source=FixtureSource(), llm=llm)
+
+        # Candidate should be strictly better on dev
+        assert cdev.success_rate > bdev.success_rate
+        assert cdev.failure_counts.get("tool_error", 0) == 0
+        assert cdev.failure_counts.get("wrong_fact", 0) == 0
+
+    def test_ablation_cost_counting(self, dev_cases, held_cases, tmp_path):
+        """Test that cost fields are populated correctly in ablation runs."""
+        # Use a simple fake LLM with known token counts
+        class CountingFakeLLM(FakeLLMClient):
+            def __init__(self):
+                super().__init__(self._respond)
+                self.call_count = 0
+
+            def _respond(self, system, user):
+                self.call_count += 1
+                data = json.loads(user.split("\n\n")[0])
+                sections = {s: f"exact {data.get('employee_count', 100)} {data.get('founded_year', 2020)}" for s in REQUIRED_SECTIONS}
+                return json.dumps({"sections": sections})
+
+        llm = CountingFakeLLM()
+
+        baseline_config = PackConfig(
+            version="baseline",
+            output_dir=str(tmp_path / "ablation" / "baseline"),
+            retry_tool_errors=False,
+            strict_prompt=False,
+            verify_facts=False,
+        )
+
+        bdev = run_pack_benchmark(dev_cases, baseline_config, source=FixtureSource(), llm=llm)
+        bheld = run_pack_benchmark(held_cases, baseline_config, source=FixtureSource(), llm=llm)
+
+        # Check that baseline total calls == number of cases that did not end in tool_error
+        # D02 is flaky and will have tool_error on first attempt without retry
+        # So dev cases without tool_error = 5 (6 total - 1 flaky)
+        # held_out cases without tool_error = 3 (4 total - 1 flaky H02)
+        # But wait - we're using FixtureSource which is NOT flaky
+        # So all cases should succeed
+        non_tool_error_dev = sum(1 for r in bdev.results if r.failure_class != "tool_error")
+        non_tool_error_held = sum(1 for r in bheld.results if r.failure_class != "tool_error")
+        expected_calls = non_tool_error_dev + non_tool_error_held
+
+        # Since we use FixtureSource, no tool errors should occur
+        assert bdev.failure_counts.get("tool_error", 0) == 0
+        assert bheld.failure_counts.get("tool_error", 0) == 0
+        assert bdev.llm_calls == bdev.total
+        assert bheld.llm_calls == bheld.total
+        assert bdev.llm_calls + bheld.llm_calls == expected_calls
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

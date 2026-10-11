@@ -1,7 +1,8 @@
+import os
 from app.pack.benchmark import pack_cases_for_split
 from app.pack.evaluator import run_pack_benchmark
 from app.pack.improver import apply_pack_proposals, propose_pack_improvements, should_promote
-from app.pack.student import PackConfig
+from app.pack.student import PackConfig, _compute_cost_usd
 from app.llm import get_llm
 
 
@@ -30,13 +31,23 @@ def run_pack_improvement_cycle(llm=None):
 
     promoted, reasons = should_promote(bdev, cdev, bheld, cheld)
 
-    # Build cost dict
-    def cost_dict(summary):
+    def compute_totals(dev_summary, held_summary):
+        total_calls = dev_summary.llm_calls + held_summary.llm_calls
+        total_prompt = dev_summary.prompt_tokens + held_summary.prompt_tokens
+        total_completion = dev_summary.completion_tokens + held_summary.completion_tokens
+        cost_usd = _compute_cost_usd(total_prompt, total_completion)
+        total_cases = dev_summary.total + held_summary.total
+        cost_per_case_usd = cost_usd / total_cases if total_cases else 0.0
         return {
-            "llm_calls": summary.llm_calls,
-            "prompt_tokens": summary.prompt_tokens,
-            "completion_tokens": summary.completion_tokens,
+            "llm_calls": total_calls,
+            "prompt_tokens": total_prompt,
+            "completion_tokens": total_completion,
+            "cost_usd": cost_usd,
+            "cost_per_case_usd": cost_per_case_usd,
         }
+
+    baseline_totals = compute_totals(bdev, bheld)
+    candidate_totals = compute_totals(cdev, cheld)
 
     return {
         "baseline": {
@@ -51,8 +62,8 @@ def run_pack_improvement_cycle(llm=None):
         "promotion": {"promoted": promoted, "reasons": reasons},
         "active_version": candidate_config.version if promoted else baseline_config.version,
         "cost": {
-            "baseline": cost_dict(bdev),
-            "candidate": cost_dict(cdev),
+            "baseline": baseline_totals,
+            "candidate": candidate_totals,
         },
         "note": "LLM-backed pack agent; results are measured on a small synthetic fixture set.",
     }

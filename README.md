@@ -49,3 +49,38 @@ The held-out set is used only as a final regression guardrail. It must not be us
 3. Promote only when development performance improves and held-out performance does not regress.
 4. Report only measured results, including raw counts alongside percentages.
 5. Use synthetic data; no production actions or customer data.
+
+## Pack agent
+
+The pack agent writes one-page company briefings: it fetches company data from a tool, drafts sections via an LLM, optionally verifies facts against the source data, and renders a `.docx` file.
+
+### Run
+
+```bash
+# Full improvement cycle (baseline → proposals → candidate → promotion)
+python -m app.cli --task pack
+
+# Ablation study: runs 6 configs on both dev and held-out splits
+python -m app.cli --task pack-ablation
+```
+
+### Ablation configs
+
+| Config | Description |
+|--------|-------------|
+| `baseline` | No retries, base prompt, no verification |
+| `retry_only` | Retry tool errors (max 3 attempts) |
+| `strict_only` | Strict prompt (requires exact figures) |
+| `verify_only` | Fact verification with one regeneration |
+| `strict_verify` | Strict prompt + verification |
+| `candidate` | All three: retry + strict + verification |
+
+Each ablation run uses a fresh `default_source()` and writes outputs to `outputs/ablation/<name>/`. Results are printed as a markdown table and saved to `evidence/pack_ablation_<timestamp>.json`.
+
+### Limitations
+
+- **Baseline prompt deliberately encourages rounding** as a controlled weakness (e.g., "about 2,000 employees") so that `wrong_fact` failures appear and the improvement loop has something to fix.
+- **Proposals are rule-mapped from failure classes**, not LLM-diagnosed. The mapping is fixed: `tool_error → retry_tool_errors`, `wrong_fact → strict_prompt + verify_facts`, `missing_section → verify_facts`.
+- **Fixtures are fictional** (6 dev cases, 4 held-out cases) with synthetic company data.
+- **Small sample size** (6 dev / 4 held-out) limits statistical power.
+- **No general self-improvement is claimed**. This is a controlled demonstration of a trace-driven improvement loop on a synthetic task.
