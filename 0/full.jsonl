@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 456688,
-      "output": 5516,
-      "reasoning": 3111,
+      "input": 625061,
+      "output": 8050,
+      "reasoning": 3714,
       "cache": {
-        "read": 1507680,
+        "read": 2859840,
         "write": 0
       }
     },
     "time": {
       "created": 1791757007618,
-      "updated": 1791757408795
+      "updated": 1791757669231
     }
   },
   "messages": [
@@ -4951,19 +4951,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 90145,
+          "input": 7987,
+          "output": 60,
+          "reasoning": 18,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 82080
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791757408793
+          "created": 1791757408793,
+          "completed": 1791757419523
         },
+        "finish": "tool-calls",
         "id": "msg_12d105a19001fB8gVL9fiS4YMm",
         "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
       },
@@ -4991,20 +4994,1496 @@
           "tool": "bash",
           "callID": "call-e3f5b6f6-120d-48e4-8d92-3c136ed8ec23",
           "state": {
-            "metadata": {
-              "output": "warning: in the working copy of 'app/pack/service.py', LF will be replaced by CRLF the next time Git touches it\n"
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "cd /d/trace-driven-agent-improver && git add app/cli.py app/pack/service.py && git commit -m \"feat: add source and companies fields to pack run output\""
             },
+            "output": "warning: in the working copy of 'app/pack/service.py', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent 965abed] feat: add source and companies fields to pack run output\n 2 files changed, 13 insertions(+), 1 deletion(-)\n",
+            "metadata": {
+              "output": "warning: in the working copy of 'app/pack/service.py', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent 965abed] feat: add source and companies fields to pack run output\n 2 files changed, 13 insertions(+), 1 deletion(-)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add app/cli.py app/pack/service.py && git commit -m \"feat: add source and companies fields to pack run output\"",
             "time": {
-              "start": 1791757412540
+              "start": 1791757412540,
+              "end": 1791757418522
             }
           },
           "id": "prt_12d1068b2001OY1oA45u4EHRCp",
           "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
           "messageID": "msg_12d105a19001fB8gVL9fiS4YMm"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 90145,
+            "input": 7987,
+            "output": 60,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 82080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d1081f9001PIj21ci32QmKjB",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d105a19001fB8gVL9fiS4YMm"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 90338,
+          "input": 8151,
+          "output": 82,
+          "reasoning": 25,
+          "cache": {
+            "write": 0,
+            "read": 82080
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757419534,
+          "completed": 1791757465149
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d10840e001s2pksOAHeQ63E6",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d109335001OH2xR4KtsS89Bb",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d10840e001s2pksOAHeQ63E6"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I need to run the live pack run with PACK_SOURCE=\"snapshot\" and LLM_MODE=\"live\". Let me do that.",
+          "time": {
+            "start": 1791757423415,
+            "end": 1791757424341
+          },
+          "id": "prt_12d109337001Bl1GGPLu17UfvA",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d10840e001s2pksOAHeQ63E6"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-f816995d-70b6-4a60-89ce-b6841c9d7d31",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && $env:PACK_SOURCE=\"snapshot\"; $env:LLM_MODE=\"live\"; PYTHONPATH=. .venv312/Scripts/python.exe -m app.cli --task pack 2>&1"
+            },
+            "output": "/usr/bin/bash: line 1: :PACK_SOURCE=snapshot: command not found\n/usr/bin/bash: line 1: :LLM_MODE=live: command not found\nD:\\trace-driven-agent-improver\\app\\cli.py:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\r\n  timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\r\n{\r\n  \"source\": \"fixtures\",\r\n  \"companies\": {\r\n    \"development\": [\r\n      \"Apex Dynamics\",\r\n      \"Meridian Bio\",\r\n      \"Solaris Grid\",\r\n      \"Nexus Logistics\",\r\n      \"QuantumLeap Analytics\",\r\n      \"Verdant Foods\"\r\n    ],\r\n    \"held_out\": [\r\n      \"Ironclad Security\",\r\n      \"Orbit Communications\",\r\n      \"Astraea Materials\",\r\n      \"Cedar Health\"\r\n    ]\r\n  },\r\n  \"baseline\": {\r\n    \"development\": {\r\n      \"success_rate\": 0.1667,\r\n      \"successes\": \"1/6\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 3,\r\n        \"tool_error\": 2\r\n      }\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 0.25,\r\n      \"successes\": \"1/4\",\r\n      \"failure_counts\": {\r\n        \"tool_error\": 1,\r\n        \"wrong_fact\": 2\r\n      }\r\n    }\r\n  },\r\n  \"candidate\": {\r\n    \"development\": {\r\n      \"success_rate\": 1.0,\r\n      \"successes\": \"6/6\",\r\n      \"failure_counts\": {}\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 1.0,\r\n      \"successes\": \"4/4\",\r\n      \"failure_counts\": {}\r\n    }\r\n  },\r\n  \"proposals\": [\r\n    {\r\n      \"target_failure\": \"tool_error\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable retry for tool errors to handle transient upstream failures.\",\r\n      \"config_key\": \"retry_tool_errors\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"prompt_rule\",\r\n      \"description\": \"Use strict prompt that requires exact figures from data.\",\r\n      \"config_key\": \"strict_prompt\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable fact verification to catch and fix hallucinated figures.\",\r\n      \"config_key\": \"verify_facts\",\r\n      \"config_value\": true\r\n    }\r\n  ],\r\n  \"promotion\": {\r\n    \"promoted\": true,\r\n    \"reasons\": [\r\n      \"Development success rate improved.\",\r\n      \"Held-out success rate did not regress.\",\r\n      \"No critical failure regression on held-out.\"\r\n    ]\r\n  },\r\n  \"active_version\": \"candidate\",\r\n  \"cost\": {\r\n    \"baseline\": {\r\n      \"llm_calls\": 7,\r\n      \"prompt_tokens\": 1080,\r\n      \"completion_tokens\": 1423,\r\n      \"cost_usd\": 0.00040632,\r\n      \"cost_per_case_usd\": 4.0632e-05\r\n    },\r\n    \"candidate\": {\r\n      \"llm_calls\": 10,\r\n      \"prompt_tokens\": 1536,\r\n      \"completion_tokens\": 1831,\r\n      \"cost_usd\": 0.0005316,\r\n      \"cost_per_case_usd\": 5.316e-05\r\n    }\r\n  }\r\n}\r\n\r\nFull result written to evidence/pack_run_20261011_222423.json\r\n2026-10-12 03:54:24 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\n",
+            "metadata": {
+              "output": "/usr/bin/bash: line 1: :PACK_SOURCE=snapshot: command not found\n/usr/bin/bash: line 1: :LLM_MODE=live: command not found\nD:\\trace-driven-agent-improver\\app\\cli.py:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\r\n  timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\r\n{\r\n  \"source\": \"fixtures\",\r\n  \"companies\": {\r\n    \"development\": [\r\n      \"Apex Dynamics\",\r\n      \"Meridian Bio\",\r\n      \"Solaris Grid\",\r\n      \"Nexus Logistics\",\r\n      \"QuantumLeap Analytics\",\r\n      \"Verdant Foods\"\r\n    ],\r\n    \"held_out\": [\r\n      \"Ironclad Security\",\r\n      \"Orbit Communications\",\r\n      \"Astraea Materials\",\r\n      \"Cedar Health\"\r\n    ]\r\n  },\r\n  \"baseline\": {\r\n    \"development\": {\r\n      \"success_rate\": 0.1667,\r\n      \"successes\": \"1/6\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 3,\r\n        \"tool_error\": 2\r\n      }\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 0.25,\r\n      \"successes\": \"1/4\",\r\n      \"failure_counts\": {\r\n        \"tool_error\": 1,\r\n        \"wrong_fact\": 2\r\n      }\r\n    }\r\n  },\r\n  \"candidate\": {\r\n    \"development\": {\r\n      \"success_rate\": 1.0,\r\n      \"successes\": \"6/6\",\r\n      \"failure_counts\": {}\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 1.0,\r\n      \"successes\": \"4/4\",\r\n      \"failure_counts\": {}\r\n    }\r\n  },\r\n  \"proposals\": [\r\n    {\r\n      \"target_failure\": \"tool_error\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable retry for tool errors to handle transient upstream failures.\",\r\n      \"config_key\": \"retry_tool_errors\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"prompt_rule\",\r\n      \"description\": \"Use strict prompt that requires exact figures from data.\",\r\n      \"config_key\": \"strict_prompt\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable fact verification to catch and fix hallucinated figures.\",\r\n      \"config_key\": \"verify_facts\",\r\n      \"config_value\": true\r\n    }\r\n  ],\r\n  \"promotion\": {\r\n    \"promoted\": true,\r\n    \"reasons\": [\r\n      \"Development success rate improved.\",\r\n      \"Held-out success rate did not regress.\",\r\n      \"No critical failure regression on held-out.\"\r\n    ]\r\n  },\r\n  \"active_version\": \"candidate\",\r\n  \"cost\": {\r\n    \"baseline\": {\r\n      \"llm_calls\": 7,\r\n      \"prompt_tokens\": 1080,\r\n      \"completion_tokens\": 1423,\r\n      \"cost_usd\": 0.00040632,\r\n      \"cost_per_case_usd\": 4.0632e-05\r\n    },\r\n    \"candidate\": {\r\n      \"llm_calls\": 10,\r\n      \"prompt_tokens\": 1536,\r\n      \"completion_tokens\": 1831,\r\n      \"cost_usd\": 0.0005316,\r\n      \"cost_per_case_usd\": 5.316e-05\r\n    }\r\n  }\r\n}\r\n\r\nFull result written to evidence/pack_run_20261011_222423.json\r\n2026-10-12 03:54:24 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && $env:PACK_SOURCE=\"snapshot\"; $env:LLM_MODE=\"live\"; PYTHONPATH=. .venv312/Scripts/python.exe -m app.cli --task pack 2>&1",
+            "time": {
+              "start": 1791757424349,
+              "end": 1791757464497
+            }
+          },
+          "id": "prt_12d1096d7001jjKX16uMichkwN",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d10840e001s2pksOAHeQ63E6"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 90338,
+            "input": 8151,
+            "output": 82,
+            "reasoning": 25,
+            "cache": {
+              "write": 0,
+              "read": 82080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d11353c0012m75qmSPZDMSud",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d10840e001s2pksOAHeQ63E6"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 91527,
+          "input": 9349,
+          "output": 60,
+          "reasoning": 38,
+          "cache": {
+            "write": 0,
+            "read": 82080
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757465153,
+          "completed": 1791757471875
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d1136410014h2Ne1uLuRN0GO",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d1149b5001L7oAibteKPlzoy",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1136410014h2Ne1uLuRN0GO"
+        },
+        {
+          "type": "reasoning",
+          "text": "The environment variables weren't set correctly in the bash command. Let me try again with the proper syntax for setting environment variables in bash.",
+          "time": {
+            "start": 1791757470135,
+            "end": 1791757470863
+          },
+          "id": "prt_12d1149b7001Wln7UkeYAQhIS1",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1136410014h2Ne1uLuRN0GO"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-ca82a285-c5be-41f6-8c5d-c7828b6e4391",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot LLM_MODE=live PYTHONPATH=. .venv312/Scripts/python.exe -m app.cli --task pack 2>&1"
+            },
+            "output": "2026-10-12 03:54:31 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\nTraceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"D:\\trace-driven-agent-improver\\app\\cli.py\", line 213, in <module>\r\n    run_pack_task()\r\n  File \"D:\\trace-driven-agent-improver\\app\\cli.py\", line 46, in run_pack_task\r\n    result = run_pack_improvement_cycle()\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\service.py\", line 14, in run_pack_improvement_cycle\r\n    dev = pack_cases_for_split(\"development\")\r\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\benchmark.py\", line 51, in pack_cases_for_split\r\n    cases = load_pack_cases_from_snapshot()\r\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\benchmark.py\", line 40, in load_pack_cases_from_snapshot\r\n    company = source.get_company(domain)\r\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\tools.py\", line 60, in get_company\r\n    raise ToolError(\"not found\")\r\napp.pack.tools.ToolError: not found\r\n",
+            "metadata": {
+              "output": "2026-10-12 03:54:31 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\nTraceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"D:\\trace-driven-agent-improver\\app\\cli.py\", line 213, in <module>\r\n    run_pack_task()\r\n  File \"D:\\trace-driven-agent-improver\\app\\cli.py\", line 46, in run_pack_task\r\n    result = run_pack_improvement_cycle()\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\service.py\", line 14, in run_pack_improvement_cycle\r\n    dev = pack_cases_for_split(\"development\")\r\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\benchmark.py\", line 51, in pack_cases_for_split\r\n    cases = load_pack_cases_from_snapshot()\r\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\benchmark.py\", line 40, in load_pack_cases_from_snapshot\r\n    company = source.get_company(domain)\r\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\tools.py\", line 60, in get_company\r\n    raise ToolError(\"not found\")\r\napp.pack.tools.ToolError: not found\r\n",
+              "exit": 1,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot LLM_MODE=live PYTHONPATH=. .venv312/Scripts/python.exe -m app.cli --task pack 2>&1",
+            "time": {
+              "start": 1791757470869,
+              "end": 1791757471385
+            }
+          },
+          "id": "prt_12d114c91001Yv8Il7M5mPdNrW",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1136410014h2Ne1uLuRN0GO"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 91527,
+            "input": 9349,
+            "output": 60,
+            "reasoning": 38,
+            "cache": {
+              "write": 0,
+              "read": 82080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d114f8b001JsEOltO6aKKM1f",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1136410014h2Ne1uLuRN0GO"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 92163,
+          "input": 53085,
+          "output": 130,
+          "reasoning": 68,
+          "cache": {
+            "write": 0,
+            "read": 38880
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757471880,
+          "completed": 1791757478244
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d115088001oy9jkC7JgmLVnh",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d116023001lCAnKiduxDllwI",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d115088001oy9jkC7JgmLVnh"
+        },
+        {
+          "type": "reasoning",
+          "text": "The error is because linear.app and canva.com failed in the snapshot (HTTP 429), so they're not in the companies_real.json file. But the benchmark code tries to load them as held-out domains. Let me check the companies_real.json to see which domains are actually there.",
+          "time": {
+            "start": 1791757475877,
+            "end": 1791757477602
+          },
+          "id": "prt_12d116025001xB2AUUuMK0KT56",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d115088001oy9jkC7JgmLVnh"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-007b5373-3860-4472-8af7-5612211a5ba7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nwith open('data/snapshots/companies_real.json') as f:\n    data = json.load(f)\nprint('Dev domains:', data['dev_domains'])\nprint('Held domains:', data['held_out_domains'])\nprint('Companies:')\nfor c in data['companies']:\n    print(f'  {c[\\\"domain\\\"]}: {c[\\\"name\\\"]}')\n\""
+            },
+            "output": "Dev domains: ['razorpay.com', 'postman.com', 'browserstack.com', 'freshworks.com', 'swiggy.com', 'meesho.com']\r\nHeld domains: ['notion.so', 'figma.com', 'linear.app', 'canva.com']\r\nCompanies:\r\n  razorpay.com: Razorpay\r\n  postman.com: Postman\r\n  browserstack.com: BrowserStack\r\n  freshworks.com: Freshworks\r\n  swiggy.com: Swiggy\r\n  meesho.com: Fashnear Technologies Private Limited\r\n  notion.so: Hust�\r\n  figma.com: Figma\r\n",
+            "metadata": {
+              "output": "Dev domains: ['razorpay.com', 'postman.com', 'browserstack.com', 'freshworks.com', 'swiggy.com', 'meesho.com']\r\nHeld domains: ['notion.so', 'figma.com', 'linear.app', 'canva.com']\r\nCompanies:\r\n  razorpay.com: Razorpay\r\n  postman.com: Postman\r\n  browserstack.com: BrowserStack\r\n  freshworks.com: Freshworks\r\n  swiggy.com: Swiggy\r\n  meesho.com: Fashnear Technologies Private Limited\r\n  notion.so: Hust�\r\n  figma.com: Figma\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nwith open('data/snapshots/companies_real.json') as f:\n    data = json.load(f)\nprint('Dev domains:', data['dev_domains'])\nprint('Held domains:', data['held_out_domains'])\nprint('Companies:')\nfor c in data['companies']:\n    print(f'  {c[\\\"domain\\\"]}: {c[\\\"name\\\"]}')\n\"",
+            "time": {
+              "start": 1791757477647,
+              "end": 1791757477741
+            }
+          },
+          "id": "prt_12d1166e4001GLtrk69LQr6L8E",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d115088001oy9jkC7JgmLVnh"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 92163,
+            "input": 53085,
+            "output": 130,
+            "reasoning": 68,
+            "cache": {
+              "write": 0,
+              "read": 38880
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d1168650018BZnnYPYWDQUiN",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d115088001oy9jkC7JgmLVnh"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 92525,
+          "input": 5928,
+          "output": 25,
+          "reasoning": 172,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757478249,
+          "completed": 1791757484900
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d1169690017dE975iHgqdCdX",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d1174d1001lRGD9AWtegUEfQ",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1169690017dE975iHgqdCdX"
+        },
+        {
+          "type": "reasoning",
+          "text": "The issue is that the held_out_domains in the snapshot still includes linear.app and canva.com, but they failed to fetch (HTTP 429), so they're not in the companies list. The SnapshotSource.get_dev_domains() and get_held_domains() return the domains from the snapshot file, but the companies list doesn't have entries for linear.app and canva.com.\n\nI need to update the snapshot script to only include domains that actually succeeded in the dev_domains and held_out_domains lists. Or I need to update the SnapshotSource to only return domains that have company data.\n\nLet me update the snapshot script to filter the dev_domains and held_out_domains to only include successful ones.",
+          "time": {
+            "start": 1791757481170,
+            "end": 1791757484316
+          },
+          "id": "prt_12d1174d2001PUrncyxk90c0Xt",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1169690017dE975iHgqdCdX"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call-a36d995f-95c7-4aed-b221-b4d197240322",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py"
+            },
+            "output": "<path>D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py</path>\n<type>file</type>\n<content>\n1: \"\"\"Snapshot Crustdata API responses for real companies.\"\"\"\n2: \n3: import json\n4: import os\n5: from pathlib import Path\n6: \n7: from dotenv import load_dotenv\n8: \n9: load_dotenv()\n10: \n11: from app.pack.crustdata import CrustdataSource\n12: from app.pack.models import CompanyData\n13: \n14: \n15: DEV_DOMAINS = [\n16:     \"razorpay.com\",\n17:     \"postman.com\",\n18:     \"browserstack.com\",\n19:     \"freshworks.com\",\n20:     \"swiggy.com\",\n21:     \"meesho.com\",\n22: ]\n23: \n24: HELD_DOMAINS = [\n25:     \"notion.so\",\n26:     \"figma.com\",\n27:     \"linear.app\",\n28:     \"canva.com\",\n29: ]\n30: \n31: ALL_DOMAINS = DEV_DOMAINS + HELD_DOMAINS\n32: \n33: \n34: def main():\n35:     raw_dir = Path(__file__).parent.parent / \"data\" / \"snapshots\" / \"raw\"\n36:     raw_dir.mkdir(parents=True, exist_ok=True)\n37:     \n38:     snapshot_file = Path(__file__).parent.parent / \"data\" / \"snapshots\" / \"companies_real.json\"\n39:     \n40:     source = CrustdataSource()\n41:     companies = []\n42:     failed = []\n43:     total_credits = 0\n44:     \n45:     for domain in ALL_DOMAINS:\n46:         try:\n47:             company = source.get_company(domain)\n48:             companies.append(company.model_dump())\n49:             credits = source.last_credits_used\n50:             total_credits += credits\n51:             print(f\"{domain}: OK (credits: {credits})\")\n52:             \n53:             # Save raw response - we need to fetch it again or store it\n54:             # For now, we'll fetch raw again for saving\n55:             import requests\n56:             headers = {\n57:                 \"authorization\": f\"Bearer {os.getenv('CRUSTDATA_API_KEY')}\",\n58:                 \"x-api-version\": \"2025-11-01\",\n59:                 \"content-type\": \"application/json\",\n60:             }\n61:             payload = {\"domains\": [domain], \"fields\": [\"basic_info\", \"headcount\", \"funding\", \"locations\"]}\n62:             response = requests.post(\"https://api.crustdata.com/company/enrich\", headers=headers, json=payload, timeout=30)\n63:             raw_path = raw_dir / f\"{domain}.json\"\n64:             with raw_path.open(\"w\") as f:\n65:                 json.dump(response.json(), f, indent=2)\n66:                 \n67:         except Exception as e:\n68:             failed.append((domain, str(e)))\n69:             print(f\"{domain}: FAILED - {e}\")\n70:     \n71:     # Save mapped companies\n72:     snapshot_data = {\n73:         \"_note\": \"Real company snapshots from Crustdata API\",\n74:         \"companies\": companies,\n75:         \"dev_domains\": DEV_DOMAINS,\n76:         \"held_out_domains\": HELD_DOMAINS,\n77:     }\n78:     \n79:     with snapshot_file.open(\"w\") as f:\n80:         json.dump(snapshot_data, f, indent=2)\n81:     \n82:     print(f\"\\nTotal credits used: {total_credits}\")\n83:     print(f\"Succeeded: {len(companies)}\")\n84:     print(f\"Failed: {len(failed)}\")\n85:     for domain, error in failed:\n86:         print(f\"  {domain}: {error}\")\n87:     \n88:     print(f\"\\nSnapshot saved to {snapshot_file}\")\n89: \n90: \n91: if __name__ == \"__main__\":\n92:     main()\n\n(End of file - total 92 lines)\n</content>",
+            "metadata": {
+              "preview": "\"\"\"Snapshot Crustdata API responses for real companies.\"\"\"\n\nimport json\nimport os\nfrom pathlib import Path\n\nfrom dotenv import load_dotenv\n\nload_dotenv()\n\nfrom app.pack.crustdata import CrustdataSource\nfrom app.pack.models import CompanyData\n\n\nDEV_DOMAINS = [\n    \"razorpay.com\",\n    \"postman.com\",\n    \"browserstack.com\",\n    \"freshworks.com\",\n    \"swiggy.com\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py",
+                "text": "\"\"\"Snapshot Crustdata API responses for real companies.\"\"\"\n\nimport json\nimport os\nfrom pathlib import Path\n\nfrom dotenv import load_dotenv\n\nload_dotenv()\n\nfrom app.pack.crustdata import CrustdataSource\nfrom app.pack.models import CompanyData\n\n\nDEV_DOMAINS = [\n    \"razorpay.com\",\n    \"postman.com\",\n    \"browserstack.com\",\n    \"freshworks.com\",\n    \"swiggy.com\",\n    \"meesho.com\",\n]\n\nHELD_DOMAINS = [\n    \"notion.so\",\n    \"figma.com\",\n    \"linear.app\",\n    \"canva.com\",\n]\n\nALL_DOMAINS = DEV_DOMAINS + HELD_DOMAINS\n\n\ndef main():\n    raw_dir = Path(__file__).parent.parent / \"data\" / \"snapshots\" / \"raw\"\n    raw_dir.mkdir(parents=True, exist_ok=True)\n    \n    snapshot_file = Path(__file__).parent.parent / \"data\" / \"snapshots\" / \"companies_real.json\"\n    \n    source = CrustdataSource()\n    companies = []\n    failed = []\n    total_credits = 0\n    \n    for domain in ALL_DOMAINS:\n        try:\n            company = source.get_company(domain)\n            companies.append(company.model_dump())\n            credits = source.last_credits_used\n            total_credits += credits\n            print(f\"{domain}: OK (credits: {credits})\")\n            \n            # Save raw response - we need to fetch it again or store it\n            # For now, we'll fetch raw again for saving\n            import requests\n            headers = {\n                \"authorization\": f\"Bearer {os.getenv('CRUSTDATA_API_KEY')}\",\n                \"x-api-version\": \"2025-11-01\",\n                \"content-type\": \"application/json\",\n            }\n            payload = {\"domains\": [domain], \"fields\": [\"basic_info\", \"headcount\", \"funding\", \"locations\"]}\n            response = requests.post(\"https://api.crustdata.com/company/enrich\", headers=headers, json=payload, timeout=30)\n            raw_path = raw_dir / f\"{domain}.json\"\n            with raw_path.open(\"w\") as f:\n                json.dump(response.json(), f, indent=2)\n                \n        except Exception as e:\n            failed.append((domain, str(e)))\n            print(f\"{domain}: FAILED - {e}\")\n    \n    # Save mapped companies\n    snapshot_data = {\n        \"_note\": \"Real company snapshots from Crustdata API\",\n        \"companies\": companies,\n        \"dev_domains\": DEV_DOMAINS,\n        \"held_out_domains\": HELD_DOMAINS,\n    }\n    \n    with snapshot_file.open(\"w\") as f:\n        json.dump(snapshot_data, f, indent=2)\n    \n    print(f\"\\nTotal credits used: {total_credits}\")\n    print(f\"Succeeded: {len(companies)}\")\n    print(f\"Failed: {len(failed)}\")\n    for domain, error in failed:\n        print(f\"  {domain}: {error}\")\n    \n    print(f\"\\nSnapshot saved to {snapshot_file}\")\n\n\nif __name__ == \"__main__\":\n    main()",
+                "lineStart": 1,
+                "lineEnd": 92,
+                "totalLines": 92,
+                "truncated": false
+              }
+            },
+            "title": "scripts\\snapshot_crustdata.py",
+            "time": {
+              "start": 1791757484322,
+              "end": 1791757484327
+            }
+          },
+          "id": "prt_12d11811d0013ns60BKTzi63VG",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1169690017dE975iHgqdCdX"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 92525,
+            "input": 5928,
+            "output": 25,
+            "reasoning": 172,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d1182630017YHHC2Sx0sOeao",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1169690017dE975iHgqdCdX"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 93859,
+          "input": 7180,
+          "output": 245,
+          "reasoning": 34,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757484905,
+          "completed": 1791757492037
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d1183690011x4plNd0uXdvF7",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d1193450010YbHZ8TYzLRRHK",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1183690011x4plNd0uXdvF7"
+        },
+        {
+          "type": "reasoning",
+          "text": "I need to update the snapshot script to only include successful domains in the dev_domains and held_out_domains lists. Let me update it.",
+          "time": {
+            "start": 1791757488967,
+            "end": 1791757491305
+          },
+          "id": "prt_12d119347001o2WKkBV839LtnQ",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1183690011x4plNd0uXdvF7"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call-b008d64c-e14b-4f7d-9327-fe686534637e",
+          "state": {
+            "status": "completed",
+            "input": {
+              "newString": "# Determine successful domains per split\n    successful_domains = {c[\"domain\"] for c in companies}\n    successful_dev = [d for d in DEV_DOMAINS if d in successful_domains]\n    successful_held = [d for d in HELD_DOMAINS if d in successful_domains]\n    \n    # Save mapped companies\n    snapshot_data = {\n        \"_note\": \"Real company snapshots from Crustdata API\",\n        \"companies\": companies,\n        \"dev_domains\": successful_dev,\n        \"held_out_domains\": successful_held,\n    }",
+              "filePath": "D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py",
+              "oldString": "# Save mapped companies\n    snapshot_data = {\n        \"_note\": \"Real company snapshots from Crustdata API\",\n        \"companies\": companies,\n        \"dev_domains\": DEV_DOMAINS,\n        \"held_out_domains\": HELD_DOMAINS,\n    }"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py\n===================================================================\n--- D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py\n+++ D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py\n@@ -67,14 +67,19 @@\n     except Exception as e:\n         failed.append((domain, str(e)))\n         print(f\"{domain}: FAILED - {e}\")\n \n+# Determine successful domains per split\n+successful_domains = {c[\"domain\"] for c in companies}\n+successful_dev = [d for d in DEV_DOMAINS if d in successful_domains]\n+successful_held = [d for d in HELD_DOMAINS if d in successful_domains]\n+\n # Save mapped companies\n snapshot_data = {\n     \"_note\": \"Real company snapshots from Crustdata API\",\n     \"companies\": companies,\n-    \"dev_domains\": DEV_DOMAINS,\n-    \"held_out_domains\": HELD_DOMAINS,\n+    \"dev_domains\": successful_dev,\n+    \"held_out_domains\": successful_held,\n }\n \n with snapshot_file.open(\"w\") as f:\n     json.dump(snapshot_data, f, indent=2)\n",
+              "filediff": {
+                "file": "D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py",
+                "patch": "Index: D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py\n===================================================================\n--- D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py\n+++ D:\\trace-driven-agent-improver\\scripts\\snapshot_crustdata.py\n@@ -67,14 +67,19 @@\n     except Exception as e:\n         failed.append((domain, str(e)))\n         print(f\"{domain}: FAILED - {e}\")\n \n+# Determine successful domains per split\n+successful_domains = {c[\"domain\"] for c in companies}\n+successful_dev = [d for d in DEV_DOMAINS if d in successful_domains]\n+successful_held = [d for d in HELD_DOMAINS if d in successful_domains]\n+\n # Save mapped companies\n snapshot_data = {\n     \"_note\": \"Real company snapshots from Crustdata API\",\n     \"companies\": companies,\n-    \"dev_domains\": DEV_DOMAINS,\n-    \"held_out_domains\": HELD_DOMAINS,\n+    \"dev_domains\": successful_dev,\n+    \"held_out_domains\": successful_held,\n }\n \n with snapshot_file.open(\"w\") as f:\n     json.dump(snapshot_data, f, indent=2)\n",
+                "additions": 7,
+                "deletions": 2
+              },
+              "truncated": false
+            },
+            "title": "scripts\\snapshot_crustdata.py",
+            "time": {
+              "start": 1791757491312,
+              "end": 1791757491321
+            }
+          },
+          "id": "prt_12d119c6a001C6rgHOl8ex1P2v",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1183690011x4plNd0uXdvF7"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 93859,
+            "input": 7180,
+            "output": 245,
+            "reasoning": 34,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d119dee0018kCPX9uzDhY5Ea",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d1183690011x4plNd0uXdvF7"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 93966,
+          "input": 7477,
+          "output": 57,
+          "reasoning": 32,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757492045,
+          "completed": 1791757571247
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d119f4d001GUkLH0riMqzA2F",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d11ade2001RY9AvGY6fqw2gi",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d119f4d001GUkLH0riMqzA2F"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me re-run the snapshot script to regenerate the companies_real.json with the correct dev_domains and held_out_domains.",
+          "time": {
+            "start": 1791757495781,
+            "end": 1791757534519
+          },
+          "id": "prt_12d11ade5001lqBxaYO5GUUXgh",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d119f4d001GUkLH0riMqzA2F"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-511a579b-7e78-4f3e-9d44-35c9c211acb5",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe scripts/snapshot_crustdata.py 2>&1"
+            },
+            "output": "razorpay.com: OK (credits: 2)\r\npostman.com: OK (credits: 2)\r\nbrowserstack.com: OK (credits: 2)\r\nfreshworks.com: OK (credits: 2)\r\nswiggy.com: OK (credits: 4)\r\nmeesho.com: OK (credits: 6)\r\nnotion.so: OK (credits: 6)\r\nfigma.com: OK (credits: 2)\r\nlinear.app: FAILED - HTTP 429\r\ncanva.com: FAILED - HTTP 429\r\n\r\nTotal credits used: 26\r\nSucceeded: 8\r\nFailed: 2\r\n  linear.app: HTTP 429\r\n  canva.com: HTTP 429\r\n\r\nSnapshot saved to D:\\trace-driven-agent-improver\\data\\snapshots\\companies_real.json\r\n",
+            "metadata": {
+              "output": "razorpay.com: OK (credits: 2)\r\npostman.com: OK (credits: 2)\r\nbrowserstack.com: OK (credits: 2)\r\nfreshworks.com: OK (credits: 2)\r\nswiggy.com: OK (credits: 4)\r\nmeesho.com: OK (credits: 6)\r\nnotion.so: OK (credits: 6)\r\nfigma.com: OK (credits: 2)\r\nlinear.app: FAILED - HTTP 429\r\ncanva.com: FAILED - HTTP 429\r\n\r\nTotal credits used: 26\r\nSucceeded: 8\r\nFailed: 2\r\n  linear.app: HTTP 429\r\n  canva.com: HTTP 429\r\n\r\nSnapshot saved to D:\\trace-driven-agent-improver\\data\\snapshots\\companies_real.json\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe scripts/snapshot_crustdata.py 2>&1",
+            "time": {
+              "start": 1791757534533,
+              "end": 1791757570588
+            }
+          },
+          "id": "prt_12d12453b00160m6JLNBR3l8Bn",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d119f4d001GUkLH0riMqzA2F"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 93966,
+            "input": 7477,
+            "output": 57,
+            "reasoning": 32,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d12d367001Z7fLRo9Aj6tdVj",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d119f4d001GUkLH0riMqzA2F"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 94346,
+          "input": 7798,
+          "output": 135,
+          "reasoning": 13,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757571257,
+          "completed": 1791757575900
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d12d4b90013P94gcYcNPMI93",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d12dfff001RTRJ4qziSf9Z2u",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12d4b90013P94gcYcNPMI93"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me check the updated companies_real.json.",
+          "time": {
+            "start": 1791757574147,
+            "end": 1791757575071
+          },
+          "id": "prt_12d12e0030018xx4T7JsJ3BmSm",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12d4b90013P94gcYcNPMI93"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-dad6f3e5-2848-4adb-9224-86d7a5f68ed6",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nwith open('data/snapshots/companies_real.json') as f:\n    data = json.load(f)\nprint('Dev domains:', data['dev_domains'])\nprint('Held domains:', data['held_out_domains'])\nprint('Companies:')\nfor c in data['companies']:\n    print(f'  {c[\\\"domain\\\"]}: {c[\\\"name\\\"]}')\n\""
+            },
+            "output": "Dev domains: ['razorpay.com', 'postman.com', 'browserstack.com', 'freshworks.com', 'swiggy.com', 'meesho.com']\r\nHeld domains: ['notion.so', 'figma.com']\r\nCompanies:\r\n  razorpay.com: Razorpay\r\n  postman.com: Postman\r\n  browserstack.com: BrowserStack\r\n  freshworks.com: Freshworks\r\n  swiggy.com: Swiggy\r\n  meesho.com: Fashnear Technologies Private Limited\r\n  notion.so: Hust�\r\n  figma.com: Figma\r\n",
+            "metadata": {
+              "output": "Dev domains: ['razorpay.com', 'postman.com', 'browserstack.com', 'freshworks.com', 'swiggy.com', 'meesho.com']\r\nHeld domains: ['notion.so', 'figma.com']\r\nCompanies:\r\n  razorpay.com: Razorpay\r\n  postman.com: Postman\r\n  browserstack.com: BrowserStack\r\n  freshworks.com: Freshworks\r\n  swiggy.com: Swiggy\r\n  meesho.com: Fashnear Technologies Private Limited\r\n  notion.so: Hust�\r\n  figma.com: Figma\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nwith open('data/snapshots/companies_real.json') as f:\n    data = json.load(f)\nprint('Dev domains:', data['dev_domains'])\nprint('Held domains:', data['held_out_domains'])\nprint('Companies:')\nfor c in data['companies']:\n    print(f'  {c[\\\"domain\\\"]}: {c[\\\"name\\\"]}')\n\"",
+            "time": {
+              "start": 1791757575083,
+              "end": 1791757575198
+            }
+          },
+          "id": "prt_12d12e3a1001erEXFQ5KMfR37F",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12d4b90013P94gcYcNPMI93"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 94346,
+            "input": 7798,
+            "output": 135,
+            "reasoning": 13,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d12e567001k0QITpVcvXM34I",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12d4b90013P94gcYcNPMI93"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 94603,
+          "input": 8102,
+          "output": 69,
+          "reasoning": 32,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757575911,
+          "completed": 1791757623657
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d12e6e60013cyyS0a6caCmnN",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d12f495001dIv0Hvc9zQicPa",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12e6e60013cyyS0a6caCmnN"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now the held_out_domains only includes notion.so and figma.com (the ones that succeeded). Let me run the live pack run again.",
+          "time": {
+            "start": 1791757579422,
+            "end": 1791757581133
+          },
+          "id": "prt_12d12f49e001zHCypkTRi8T78N",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12e6e60013cyyS0a6caCmnN"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-bef714a7-103e-49ac-a8a2-b6417d588659",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot LLM_MODE=live PYTHONPATH=. .venv312/Scripts/python.exe -m app.cli --task pack 2>&1"
+            },
+            "output": "D:\\trace-driven-agent-improver\\app\\cli.py:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\r\n  timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\r\n{\r\n  \"source\": \"snapshot\",\r\n  \"companies\": {\r\n    \"development\": [\r\n      \"Razorpay\",\r\n      \"Postman\",\r\n      \"BrowserStack\",\r\n      \"Freshworks\",\r\n      \"Swiggy\",\r\n      \"Fashnear Technologies Private Limited\"\r\n    ],\r\n    \"held_out\": [\r\n      \"Hust\\u00e1\",\r\n      \"Figma\"\r\n    ]\r\n  },\r\n  \"baseline\": {\r\n    \"development\": {\r\n      \"success_rate\": 0.0,\r\n      \"successes\": \"0/6\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 4,\r\n        \"tool_error\": 2\r\n      }\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 0.5,\r\n      \"successes\": \"1/2\",\r\n      \"failure_counts\": {\r\n        \"tool_error\": 1\r\n      }\r\n    }\r\n  },\r\n  \"candidate\": {\r\n    \"development\": {\r\n      \"success_rate\": 0.5,\r\n      \"successes\": \"3/6\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 3\r\n      }\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 0.5,\r\n      \"successes\": \"1/2\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 1\r\n      }\r\n    }\r\n  },\r\n  \"proposals\": [\r\n    {\r\n      \"target_failure\": \"tool_error\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable retry for tool errors to handle transient upstream failures.\",\r\n      \"config_key\": \"retry_tool_errors\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"prompt_rule\",\r\n      \"description\": \"Use strict prompt that requires exact figures from data.\",\r\n      \"config_key\": \"strict_prompt\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable fact verification to catch and fix hallucinated figures.\",\r\n      \"config_key\": \"verify_facts\",\r\n      \"config_value\": true\r\n    }\r\n  ],\r\n  \"promotion\": {\r\n    \"promoted\": true,\r\n    \"reasons\": [\r\n      \"Development success rate improved.\",\r\n      \"Held-out success rate did not regress.\",\r\n      \"No critical failure regression on held-out.\"\r\n    ]\r\n  },\r\n  \"active_version\": \"candidate\",\r\n  \"cost\": {\r\n    \"baseline\": {\r\n      \"llm_calls\": 5,\r\n      \"prompt_tokens\": 1491,\r\n      \"completion_tokens\": 1047,\r\n      \"cost_usd\": 0.00034074,\r\n      \"cost_per_case_usd\": 4.25925e-05\r\n    },\r\n    \"candidate\": {\r\n      \"llm_calls\": 12,\r\n      \"prompt_tokens\": 3592,\r\n      \"completion_tokens\": 2900,\r\n      \"cost_usd\": 0.00091152,\r\n      \"cost_per_case_usd\": 0.00011394\r\n    }\r\n  }\r\n}\r\n\r\nFull result written to evidence/pack_run_20261011_222702.json\r\n2026-10-12 03:57:02 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\n",
+            "metadata": {
+              "output": "D:\\trace-driven-agent-improver\\app\\cli.py:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\r\n  timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\r\n{\r\n  \"source\": \"snapshot\",\r\n  \"companies\": {\r\n    \"development\": [\r\n      \"Razorpay\",\r\n      \"Postman\",\r\n      \"BrowserStack\",\r\n      \"Freshworks\",\r\n      \"Swiggy\",\r\n      \"Fashnear Technologies Private Limited\"\r\n    ],\r\n    \"held_out\": [\r\n      \"Hust\\u00e1\",\r\n      \"Figma\"\r\n    ]\r\n  },\r\n  \"baseline\": {\r\n    \"development\": {\r\n      \"success_rate\": 0.0,\r\n      \"successes\": \"0/6\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 4,\r\n        \"tool_error\": 2\r\n      }\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 0.5,\r\n      \"successes\": \"1/2\",\r\n      \"failure_counts\": {\r\n        \"tool_error\": 1\r\n      }\r\n    }\r\n  },\r\n  \"candidate\": {\r\n    \"development\": {\r\n      \"success_rate\": 0.5,\r\n      \"successes\": \"3/6\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 3\r\n      }\r\n    },\r\n    \"held_out\": {\r\n      \"success_rate\": 0.5,\r\n      \"successes\": \"1/2\",\r\n      \"failure_counts\": {\r\n        \"wrong_fact\": 1\r\n      }\r\n    }\r\n  },\r\n  \"proposals\": [\r\n    {\r\n      \"target_failure\": \"tool_error\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable retry for tool errors to handle transient upstream failures.\",\r\n      \"config_key\": \"retry_tool_errors\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"prompt_rule\",\r\n      \"description\": \"Use strict prompt that requires exact figures from data.\",\r\n      \"config_key\": \"strict_prompt\",\r\n      \"config_value\": true\r\n    },\r\n    {\r\n      \"target_failure\": \"wrong_fact\",\r\n      \"change_type\": \"workflow_gate\",\r\n      \"description\": \"Enable fact verification to catch and fix hallucinated figures.\",\r\n      \"config_key\": \"verify_facts\",\r\n      \"config_value\": true\r\n    }\r\n  ],\r\n  \"promotion\": {\r\n    \"promoted\": true,\r\n    \"reasons\": [\r\n      \"Development success rate improved.\",\r\n      \"Held-out success rate did not regress.\",\r\n      \"No critical failure regression on held-out.\"\r\n    ]\r\n  },\r\n  \"active_version\": \"candidate\",\r\n  \"cost\": {\r\n    \"baseline\": {\r\n      \"llm_calls\": 5,\r\n      \"prompt_tokens\": 1491,\r\n      \"completion_tokens\": 1047,\r\n      \"cost_usd\": 0.00034074,\r\n      \"cost_per_case_usd\": 4.25925e-05\r\n    },\r\n    \"candidate\": {\r\n      \"llm_calls\": 12,\r\n      \"prompt_tokens\": 3592,\r\n      \"completion_tokens\": 2900,\r\n      \"cost_usd\": 0.00091152,\r\n      \"cost_per_case_usd\": 0.00011394\r\n    }\r\n  }\r\n}\r\n\r\nFull result written to evidence/pack_run_20261011_222702.json\r\n2026-10-12 03:57:02 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot LLM_MODE=live PYTHONPATH=. .venv312/Scripts/python.exe -m app.cli --task pack 2>&1",
+            "time": {
+              "start": 1791757581141,
+              "end": 1791757622919
+            }
+          },
+          "id": "prt_12d12fb4f0010R07GUCeY2kcin",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12e6e60013cyyS0a6caCmnN"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 94603,
+            "input": 8102,
+            "output": 69,
+            "reasoning": 32,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d13a03d001paUsMTpLStV86i",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d12e6e60013cyyS0a6caCmnN"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 95793,
+          "input": 9250,
+          "output": 89,
+          "reasoning": 54,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757623663,
+          "completed": 1791757637885
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d13a16f001aK48H46GWxU5wF",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d13af30001Ayzqmagza5KaA3",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13a16f001aK48H46GWxU5wF"
+        },
+        {
+          "type": "reasoning",
+          "text": "The live pack run completed successfully with the snapshot source. The cost_usd is non-zero (0.00034074 for baseline and 0.00091152 for candidate). Now let me commit the evidence file and the updated snapshot data.",
+          "time": {
+            "start": 1791757627189,
+            "end": 1791757630887
+          },
+          "id": "prt_12d13af35001pHfsz1s1FA0JU9",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13a16f001aK48H46GWxU5wF"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-e944bff3-d412-4ff9-9289-9c56bd28a59f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git add data/snapshots/companies_real.json evidence/pack_run_20261011_222702.json && git commit -m \"evidence: pack run on real Crustdata snapshots\""
+            },
+            "output": "[feat/pack-agent f09bcc9] evidence: pack run on real Crustdata snapshots\n 2 files changed, 152 insertions(+), 3 deletions(-)\n create mode 100644 evidence/pack_run_20261011_222702.json\n",
+            "metadata": {
+              "output": "[feat/pack-agent f09bcc9] evidence: pack run on real Crustdata snapshots\n 2 files changed, 152 insertions(+), 3 deletions(-)\n create mode 100644 evidence/pack_run_20261011_222702.json\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add data/snapshots/companies_real.json evidence/pack_run_20261011_222702.json && git commit -m \"evidence: pack run on real Crustdata snapshots\"",
+            "time": {
+              "start": 1791757630895,
+              "end": 1791757636755
+            }
+          },
+          "id": "prt_12d13bda9001iHSE9ijOOP6vY4",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13a16f001aK48H46GWxU5wF"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 95793,
+            "input": 9250,
+            "output": 89,
+            "reasoning": 54,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d13d6a2001y4qgFon4AnZrav",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13a16f001aK48H46GWxU5wF"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 95961,
+          "input": 9482,
+          "output": 62,
+          "reasoning": 17,
+          "cache": {
+            "write": 0,
+            "read": 86400
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757637894,
+          "completed": 1791757644114
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d13d90600162sMzWkV6gZ3rq",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d13e377001L1ryLscNOJ1ji4",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13d90600162sMzWkV6gZ3rq"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run the tests again to make sure everything still passes.",
+          "time": {
+            "start": 1791757640569,
+            "end": 1791757641018
+          },
+          "id": "prt_12d13e379001iAxBsxBxQ4wAbd",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13d90600162sMzWkV6gZ3rq"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-fff70591-c56c-49c7-a78c-71397a17252b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1 | head -50"
+            },
+            "output": "........................................................................ [ 62%]\r\n............................................                             [100%]\r\n116 passed, 1 skipped in 1.81s\r\n",
+            "metadata": {
+              "output": "........................................................................ [ 62%]\r\n............................................                             [100%]\r\n116 passed, 1 skipped in 1.81s\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1 | head -50",
+            "time": {
+              "start": 1791757641025,
+              "end": 1791757643363
+            }
+          },
+          "id": "prt_12d13e53c001yllOr39oGm9gPY",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13d90600162sMzWkV6gZ3rq"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 95961,
+            "input": 9482,
+            "output": 62,
+            "reasoning": 17,
+            "cache": {
+              "write": 0,
+              "read": 86400
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d13efd7001eExy0DUl6taMtA",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13d90600162sMzWkV6gZ3rq"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 96075,
+          "input": 5298,
+          "output": 38,
+          "reasoning": 19,
+          "cache": {
+            "write": 0,
+            "read": 90720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757644121,
+          "completed": 1791757654976
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d13f15900138SGT2UoypRSSB",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d13fcf7001pYIi12SM5gTMNf",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13f15900138SGT2UoypRSSB"
+        },
+        {
+          "type": "reasoning",
+          "text": "All tests pass. Now let me push the changes and prepare the final report.",
+          "time": {
+            "start": 1791757647097,
+            "end": 1791757647786
+          },
+          "id": "prt_12d13fcf9001DWXc3WPhViwhDO",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13f15900138SGT2UoypRSSB"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-7bbb7cb5-162d-45c4-9aaf-35b0b23d995b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git push 2>&1"
+            },
+            "output": "[entire] Pushing 6 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   c2604a9..f09bcc9  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[entire] Pushing 6 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   c2604a9..f09bcc9  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git push 2>&1",
+            "time": {
+              "start": 1791757647794,
+              "end": 1791757654216
+            }
+          },
+          "id": "prt_12d13ffac001sj2Idvv460zXik",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13f15900138SGT2UoypRSSB"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 96075,
+            "input": 5298,
+            "output": 38,
+            "reasoning": 19,
+            "cache": {
+              "write": 0,
+              "read": 90720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d141a0c001J4WEtKMZyq7OAI",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d13f15900138SGT2UoypRSSB"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 96216,
+          "input": 5434,
+          "output": 36,
+          "reasoning": 26,
+          "cache": {
+            "write": 0,
+            "read": 90720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757654985,
+          "completed": 1791757658690
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d141bc9001xdQj61KEz35UAc",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d14257c001yHDnihoI4SrteI",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d141bc9001xdQj61KEz35UAc"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me prepare the final report with all the required information. Let me gather the necessary data.",
+          "time": {
+            "start": 1791757657470,
+            "end": 1791757657898
+          },
+          "id": "prt_12d14257e001FcNIJXsDPm6IeH",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d141bc9001xdQj61KEz35UAc"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-bb641c20-7d4d-4454-be25-4c239bcce59d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git log --oneline -5"
+            },
+            "output": "f09bcc9 evidence: pack run on real Crustdata snapshots\n965abed feat: add source and companies fields to pack run output\n7692614 feat: real Crustdata snapshots\nc0cdfae revert: remove mocked snapshot data (not real Crustdata responses)\nc2604a9 evidence: pack run on real Crustdata snapshots\n",
+            "metadata": {
+              "output": "f09bcc9 evidence: pack run on real Crustdata snapshots\n965abed feat: add source and companies fields to pack run output\n7692614 feat: real Crustdata snapshots\nc0cdfae revert: remove mocked snapshot data (not real Crustdata responses)\nc2604a9 evidence: pack run on real Crustdata snapshots\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git log --oneline -5",
+            "time": {
+              "start": 1791757657909,
+              "end": 1791757657996
+            }
+          },
+          "id": "prt_12d14272d001JMeRE6dnbW6KsT",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d141bc9001xdQj61KEz35UAc"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 96216,
+            "input": 5434,
+            "output": 36,
+            "reasoning": 26,
+            "cache": {
+              "write": 0,
+              "read": 90720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d1428d9001lRhzhSoalkCjnF",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d141bc9001xdQj61KEz35UAc"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 96390,
+          "input": 5601,
+          "output": 54,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 90720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757658696,
+          "completed": 1791757663484
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d142a48001Brgjh55Vc6l4Oi",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d143702001SfoP1mqrONVGYg",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d142a48001Brgjh55Vc6l4Oi"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me read the evidence file to include in the report.",
+          "time": {
+            "start": 1791757661957,
+            "end": 1791757662798
+          },
+          "id": "prt_12d143705001jopswoBCQaXfqO",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d142a48001Brgjh55Vc6l4Oi"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call-a5df60fb-3043-434f-a9fb-ce997fadf472",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "D:\\trace-driven-agent-improver\\evidence\\pack_run_20261011_222702.json"
+            },
+            "output": "<path>D:\\trace-driven-agent-improver\\evidence\\pack_run_20261011_222702.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"source\": \"snapshot\",\n3:   \"companies\": {\n4:     \"development\": [\n5:       \"Razorpay\",\n6:       \"Postman\",\n7:       \"BrowserStack\",\n8:       \"Freshworks\",\n9:       \"Swiggy\",\n10:       \"Fashnear Technologies Private Limited\"\n11:     ],\n12:     \"held_out\": [\n13:       \"Hust\\u00e1\",\n14:       \"Figma\"\n15:     ]\n16:   },\n17:   \"baseline\": {\n18:     \"development\": {\n19:       \"version\": \"baseline\",\n20:       \"split\": \"development\",\n21:       \"total\": 6,\n22:       \"successes\": 0,\n23:       \"success_rate\": 0.0,\n24:       \"failure_counts\": {\n25:         \"wrong_fact\": 4,\n26:         \"tool_error\": 2\n27:       },\n28:       \"llm_calls\": 4,\n29:       \"prompt_tokens\": 1283,\n30:       \"completion_tokens\": 880,\n31:       \"retries\": 0,\n32:       \"results\": [\n33:         \"PackCaseResult(case_id='D01', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=4042 not stated exactly', 'last_round=secondary_market not stated', 'total_funding_usd=816600000 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D01_baseline.docx', trace=[TraceEvent(event_id='ea20e67f-0469-4c55-81a5-c264b7a6d613', run_id='495e7dab-067a-4723-b825-8e14f30deea1', case_id='D01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='7690acc8-7b0c-41ab-aeab-488da2b0c472', run_id='495e7dab-067a-4723-b825-8e14f30deea1', case_id='D01', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='07181083-7d57-4b8f-a18e-fe8e04f0f207', run_id='495e7dab-067a-4723-b825-8e14f30deea1', case_id='D01', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D01_baseline.docx', outcome='warning', metadata={})])\",\n34:         \"PackCaseResult(case_id='D02', split='development', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='f8bf894e-a111-4120-96a9-923a93c93d45', run_id='1ebb31fe-ef3e-463f-8d0b-9159ab37fa5d', case_id='D02', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])\",\n35:         \"PackCaseResult(case_id='D03', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=1728 not stated exactly', 'last_round=series_b not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D03_baseline.docx', trace=[TraceEvent(event_id='8082d0db-139a-4a33-83de-c63b71fbd9eb', run_id='cb096c01-f391-4119-8a05-ca2842f230f5', case_id='D03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='bb56b7ca-4b8b-4400-9759-5f3fb3fae6ae', run_id='cb096c01-f391-4119-8a05-ca2842f230f5', case_id='D03', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='dcaec720-cae2-4a08-b13c-ecfb3a4fb28e', run_id='cb096c01-f391-4119-8a05-ca2842f230f5', case_id='D03', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D03_baseline.docx', outcome='warning', metadata={})])\",\n36:         \"PackCaseResult(case_id='D04', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=7814 not stated exactly', 'last_round=secondary_market not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D04_baseline.docx', trace=[TraceEvent(event_id='8d56b487-6679-4a36-bf17-345b3f5e8ba2', run_id='fb5dc3d8-99fb-4211-983b-cedb0e79dcd4', case_id='D04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='8384795c-7374-4edd-9e9b-c9a6523d0519', run_id='fb5dc3d8-99fb-4211-983b-cedb0e79dcd4', case_id='D04', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='e9549057-91e5-4c88-855a-27699a796c04', run_id='fb5dc3d8-99fb-4211-983b-cedb0e79dcd4', case_id='D04', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D04_baseline.docx', outcome='warning', metadata={})])\",\n37:         \"PackCaseResult(case_id='D05', split='development', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='242d4eb3-8e05-471e-998c-683feaf43de2', run_id='34cf7c82-15ee-4871-984c-00e80a96ae03', case_id='D05', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])\",\n38:         \"PackCaseResult(case_id='D06', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=101 not stated exactly'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D06_baseline.docx', trace=[TraceEvent(event_id='3d600b6f-4365-4e9b-bcf2-88176838f505', run_id='62e8516c-1beb-4aac-8114-d19ac8d4775d', case_id='D06', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='976c1fe1-b161-4fd2-a364-39cfb5c2b7a4', run_id='62e8516c-1beb-4aac-8114-d19ac8d4775d', case_id='D06', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='3a02afc5-3f15-490e-98a7-63b8bbdc88c5', run_id='62e8516c-1beb-4aac-8114-d19ac8d4775d', case_id='D06', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D06_baseline.docx', outcome='warning', metadata={})])\"\n39:       ]\n40:     },\n41:     \"held_out\": {\n42:       \"version\": \"baseline\",\n43:       \"split\": \"held_out\",\n44:       \"total\": 2,\n45:       \"successes\": 1,\n46:       \"success_rate\": 0.5,\n47:       \"failure_counts\": {\n48:         \"tool_error\": 1\n49:       },\n50:       \"llm_calls\": 1,\n51:       \"prompt_tokens\": 208,\n52:       \"completion_tokens\": 167,\n53:       \"retries\": 0,\n54:       \"results\": [\n55:         \"PackCaseResult(case_id='H01', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\H01_baseline.docx', trace=[TraceEvent(event_id='9c18c531-7115-4ac7-acfc-2f9f2fed9d7d', run_id='3f29860e-0311-4885-86d6-b99d296d0af5', case_id='H01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='fdf2f54d-e2a6-447c-a258-2d40927272c6', run_id='3f29860e-0311-4885-86d6-b99d296d0af5', case_id='H01', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='acedd8fa-21a7-47a6-b4e0-f0b19412d56c', run_id='3f29860e-0311-4885-86d6-b99d296d0af5', case_id='H01', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\H01_baseline.docx', outcome='warning', metadata={})])\",\n56:         \"PackCaseResult(case_id='H02', split='held_out', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='ee9b935a-2e06-4078-a49c-c3b87ce848c5', run_id='f76eaee6-1a6b-435f-9c38-b3f6c6e76a6a', case_id='H02', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])\"\n57:       ]\n58:     }\n59:   },\n60:   \"proposals\": [\n61:     {\n62:       \"target_failure\": \"tool_error\",\n63:       \"change_type\": \"workflow_gate\",\n64:       \"description\": \"Enable retry for tool errors to handle transient upstream failures.\",\n65:       \"config_key\": \"retry_tool_errors\",\n66:       \"config_value\": true\n67:     },\n68:     {\n69:       \"target_failure\": \"wrong_fact\",\n70:       \"change_type\": \"prompt_rule\",\n71:       \"description\": \"Use strict prompt that requires exact figures from data.\",\n72:       \"config_key\": \"strict_prompt\",\n73:       \"config_value\": true\n74:     },\n75:     {\n76:       \"target_failure\": \"wrong_fact\",\n77:       \"change_type\": \"workflow_gate\",\n78:       \"description\": \"Enable fact verification to catch and fix hallucinated figures.\",\n79:       \"config_key\": \"verify_facts\",\n80:       \"config_value\": true\n81:     }\n82:   ],\n83:   \"candidate\": {\n84:     \"development\": {\n85:       \"version\": \"candidate\",\n86:       \"split\": \"development\",\n87:       \"total\": 6,\n88:       \"successes\": 3,\n89:       \"success_rate\": 0.5,\n90:       \"failure_counts\": {\n91:         \"wrong_fact\": 3\n92:       },\n93:       \"llm_calls\": 9,\n94:       \"prompt_tokens\": 3058,\n95:       \"completion_tokens\": 2389,\n96:       \"retries\": 2,\n97:       \"results\": [\n98:         \"PackCaseResult(case_id='D01', split='development', success=False, failure_class='wrong_fact', issues=['last_round=secondary_market not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D01_candidate.docx', trace=[TraceEvent(event_id='3e29ff20-7bae-4e2c-a4ee-49369147e8b5', run_id='81b1729c-5701-4c1d-a8f6-62ab2164ba47', case_id='D01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='9e0847af-d16f-4980-8056-11038326d973', run_id='81b1729c-5701-4c1d-a8f6-62ab2164ba47', case_id='D01', step='verification', detail=\\\"Fact verification failed: ['last_round=secondary_market not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='48e8b4df-408d-4280-8037-76a37519e307', run_id='81b1729c-5701-4c1d-a8f6-62ab2164ba47', case_id='D01', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D01_candidate.docx', outcome='warning', metadata={})])\",\n99:         \"PackCaseResult(case_id='D02', split='development', success=False, failure_class='wrong_fact', issues=['last_round=series_d not stated'], tool_attempts=2, docx_path='outputs\\\\\\\\candidate\\\\\\\\D02_candidate.docx', trace=[TraceEvent(event_id='28633f11-e403-44c8-b0ea-aa9c4efcfae5', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='135c8a9e-b5c3-4852-85bb-e5bb4af31092', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='9bfe48c1-c45f-44c9-8b41-622f5d1a7636', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='verification', detail=\\\"Fact verification failed: ['last_round=series_d not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='923fb3c4-46cd-4a6e-9910-1133157bc56d', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D02_candidate.docx', outcome='warning', metadata={})])\",\n100:         \"PackCaseResult(case_id='D03', split='development', success=False, failure_class='wrong_fact', issues=['last_round=series_b not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D03_candidate.docx', trace=[TraceEvent(event_id='8c365812-e7e5-4016-b7ef-f1ec0abff75e', run_id='688cb217-ae14-4703-b9b3-30b8b90e4416', case_id='D03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='eaaa225d-7407-4f1b-a17c-94bf0eeb397c', run_id='688cb217-ae14-4703-b9b3-30b8b90e4416', case_id='D03', step='verification', detail=\\\"Fact verification failed: ['last_round=series_b not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='e41e94c2-a6b0-495a-b8f8-81ea6ec4d6dd', run_id='688cb217-ae14-4703-b9b3-30b8b90e4416', case_id='D03', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D03_candidate.docx', outcome='warning', metadata={})])\",\n101:         \"PackCaseResult(case_id='D04', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D04_candidate.docx', trace=[TraceEvent(event_id='242dc059-90eb-4bbf-b702-8ae655367efb', run_id='1a7372e5-70c1-44a4-8ab3-57be24fe9553', case_id='D04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='eb5fc142-a9f6-4a65-962a-6a68938f08ec', run_id='1a7372e5-70c1-44a4-8ab3-57be24fe9553', case_id='D04', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='a76e1aef-845f-437c-98f6-09e6fc60d39b', run_id='1a7372e5-70c1-44a4-8ab3-57be24fe9553', case_id='D04', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D04_candidate.docx', outcome='ok', metadata={})])\",\n102:         \"PackCaseResult(case_id='D05', split='development', success=True, failure_class='none', issues=[], tool_attempts=2, docx_path='outputs\\\\\\\\candidate\\\\\\\\D05_candidate.docx', trace=[TraceEvent(event_id='23c23e70-9aae-4992-baf0-0be032209de2', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='c35db6b0-66c8-494e-b2b5-be177ac0b1d7', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='73b03782-2dc5-474c-863e-3131c78e803b', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='62ec03b0-26fa-4eaa-a843-6e849a15d139', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D05_candidate.docx', outcome='ok', metadata={})])\",\n103:         \"PackCaseResult(case_id='D06', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D06_candidate.docx', trace=[TraceEvent(event_id='2db6cd3f-29b4-406e-b38f-bd37017a6af7', run_id='716cb76b-30e3-4616-a258-e7e2f47cad38', case_id='D06', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='20c5f931-8cab-436a-835f-88a6d3a384e8', run_id='716cb76b-30e3-4616-a258-e7e2f47cad38', case_id='D06', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='c9415fef-e897-40e4-950d-85bae0d738c1', run_id='716cb76b-30e3-4616-a258-e7e2f47cad38', case_id='D06', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D06_candidate.docx', outcome='ok', metadata={})])\"\n104:       ]\n105:     },\n106:     \"held_out\": {\n107:       \"version\": \"candidate\",\n108:       \"split\": \"held_out\",\n109:       \"total\": 2,\n110:       \"successes\": 1,\n111:       \"success_rate\": 0.5,\n112:       \"failure_counts\": {\n113:         \"wrong_fact\": 1\n114:       },\n115:       \"llm_calls\": 3,\n116:       \"prompt_tokens\": 534,\n117:       \"completion_tokens\": 511,\n118:       \"retries\": 1,\n119:       \"results\": [\n120:         \"PackCaseResult(case_id='H01', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\H01_candidate.docx', trace=[TraceEvent(event_id='5ce30eaa-4e7a-4708-99d7-b4e96b1697ad', run_id='1f379afb-55a2-4c7b-beb2-5773e5bc02d2', case_id='H01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='66645894-2516-4170-8ae7-b271a932530f', run_id='1f379afb-55a2-4c7b-beb2-5773e5bc02d2', case_id='H01', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='80fcec9a-f53c-486f-82ff-a9320b433499', run_id='1f379afb-55a2-4c7b-beb2-5773e5bc02d2', case_id='H01', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\H01_candidate.docx', outcome='ok', metadata={})])\",\n121:         \"PackCaseResult(case_id='H02', split='held_out', success=False, failure_class='wrong_fact', issues=['last_round=post_ipo_equity not stated'], tool_attempts=2, docx_path='outputs\\\\\\\\candidate\\\\\\\\H02_candidate.docx', trace=[TraceEvent(event_id='35558a17-a446-4b1a-ae64-e074988fc7b2', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='4c1732bf-17e8-43d3-ace6-af233024bfe5', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='dda961bd-6ce2-4f11-890f-45ceab06bc73', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='verification', detail=\\\"Fact verification failed: ['last_round=post_ipo_equity not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='59e0fd07-829d-434e-a6a3-064a1772a480', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\H02_candidate.docx', outcome='warning', metadata={})])\"\n122:       ]\n123:     }\n124:   },\n125:   \"promotion\": {\n126:     \"promoted\": true,\n127:     \"reasons\": [\n128:       \"Development success rate improved.\",\n129:       \"Held-out success rate did not regress.\",\n130:       \"No critical failure regression on held-out.\"\n131:     ]\n132:   },\n133:   \"active_version\": \"candidate\",\n134:   \"cost\": {\n135:     \"baseline\": {\n136:       \"llm_calls\": 5,\n137:       \"prompt_tokens\": 1491,\n138:       \"completion_tokens\": 1047,\n139:       \"cost_usd\": 0.00034074,\n140:       \"cost_per_case_usd\": 4.25925e-05\n141:     },\n142:     \"candidate\": {\n143:       \"llm_calls\": 12,\n144:       \"prompt_tokens\": 3592,\n145:       \"completion_tokens\": 2900,\n146:       \"cost_usd\": 0.00091152,\n147:       \"cost_per_case_usd\": 0.00011394\n148:     }\n149:   },\n150:   \"note\": \"LLM-backed pack agent; results are measured on a small synthetic fixture set.\"\n151: }\n\n(End of file - total 151 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"source\": \"snapshot\",\n  \"companies\": {\n    \"development\": [\n      \"Razorpay\",\n      \"Postman\",\n      \"BrowserStack\",\n      \"Freshworks\",\n      \"Swiggy\",\n      \"Fashnear Technologies Private Limited\"\n    ],\n    \"held_out\": [\n      \"Hust\\u00e1\",\n      \"Figma\"\n    ]\n  },\n  \"baseline\": {\n    \"development\": {\n      \"version\": \"baseline\",\n      \"split\": \"development\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "D:\\trace-driven-agent-improver\\evidence\\pack_run_20261011_222702.json",
+                "text": "{\n  \"source\": \"snapshot\",\n  \"companies\": {\n    \"development\": [\n      \"Razorpay\",\n      \"Postman\",\n      \"BrowserStack\",\n      \"Freshworks\",\n      \"Swiggy\",\n      \"Fashnear Technologies Private Limited\"\n    ],\n    \"held_out\": [\n      \"Hust\\u00e1\",\n      \"Figma\"\n    ]\n  },\n  \"baseline\": {\n    \"development\": {\n      \"version\": \"baseline\",\n      \"split\": \"development\",\n      \"total\": 6,\n      \"successes\": 0,\n      \"success_rate\": 0.0,\n      \"failure_counts\": {\n        \"wrong_fact\": 4,\n        \"tool_error\": 2\n      },\n      \"llm_calls\": 4,\n      \"prompt_tokens\": 1283,\n      \"completion_tokens\": 880,\n      \"retries\": 0,\n      \"results\": [\n        \"PackCaseResult(case_id='D01', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=4042 not stated exactly', 'last_round=secondary_market not stated', 'total_funding_usd=816600000 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D01_baseline.docx', trace=[TraceEvent(event_id='ea20e67f-0469-4c55-81a5-c264b7a6d613', run_id='495e7dab-067a-4723-b825-8e14f30deea1', case_id='D01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='7690acc8-7b0c-41ab-aeab-488da2b0c472', run_id='495e7dab-067a-4723-b825-8e14f30deea1', case_id='D01', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='07181083-7d57-4b8f-a18e-fe8e04f0f207', run_id='495e7dab-067a-4723-b825-8e14f30deea1', case_id='D01', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D01_baseline.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='D02', split='development', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='f8bf894e-a111-4120-96a9-923a93c93d45', run_id='1ebb31fe-ef3e-463f-8d0b-9159ab37fa5d', case_id='D02', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])\",\n        \"PackCaseResult(case_id='D03', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=1728 not stated exactly', 'last_round=series_b not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D03_baseline.docx', trace=[TraceEvent(event_id='8082d0db-139a-4a33-83de-c63b71fbd9eb', run_id='cb096c01-f391-4119-8a05-ca2842f230f5', case_id='D03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='bb56b7ca-4b8b-4400-9759-5f3fb3fae6ae', run_id='cb096c01-f391-4119-8a05-ca2842f230f5', case_id='D03', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='dcaec720-cae2-4a08-b13c-ecfb3a4fb28e', run_id='cb096c01-f391-4119-8a05-ca2842f230f5', case_id='D03', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D03_baseline.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='D04', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=7814 not stated exactly', 'last_round=secondary_market not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D04_baseline.docx', trace=[TraceEvent(event_id='8d56b487-6679-4a36-bf17-345b3f5e8ba2', run_id='fb5dc3d8-99fb-4211-983b-cedb0e79dcd4', case_id='D04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='8384795c-7374-4edd-9e9b-c9a6523d0519', run_id='fb5dc3d8-99fb-4211-983b-cedb0e79dcd4', case_id='D04', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='e9549057-91e5-4c88-855a-27699a796c04', run_id='fb5dc3d8-99fb-4211-983b-cedb0e79dcd4', case_id='D04', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D04_baseline.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='D05', split='development', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='242d4eb3-8e05-471e-998c-683feaf43de2', run_id='34cf7c82-15ee-4871-984c-00e80a96ae03', case_id='D05', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])\",\n        \"PackCaseResult(case_id='D06', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=101 not stated exactly'], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\D06_baseline.docx', trace=[TraceEvent(event_id='3d600b6f-4365-4e9b-bcf2-88176838f505', run_id='62e8516c-1beb-4aac-8114-d19ac8d4775d', case_id='D06', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='976c1fe1-b161-4fd2-a364-39cfb5c2b7a4', run_id='62e8516c-1beb-4aac-8114-d19ac8d4775d', case_id='D06', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='3a02afc5-3f15-490e-98a7-63b8bbdc88c5', run_id='62e8516c-1beb-4aac-8114-d19ac8d4775d', case_id='D06', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\D06_baseline.docx', outcome='warning', metadata={})])\"\n      ]\n    },\n    \"held_out\": {\n      \"version\": \"baseline\",\n      \"split\": \"held_out\",\n      \"total\": 2,\n      \"successes\": 1,\n      \"success_rate\": 0.5,\n      \"failure_counts\": {\n        \"tool_error\": 1\n      },\n      \"llm_calls\": 1,\n      \"prompt_tokens\": 208,\n      \"completion_tokens\": 167,\n      \"retries\": 0,\n      \"results\": [\n        \"PackCaseResult(case_id='H01', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\baseline\\\\\\\\H01_baseline.docx', trace=[TraceEvent(event_id='9c18c531-7115-4ac7-acfc-2f9f2fed9d7d', run_id='3f29860e-0311-4885-86d6-b99d296d0af5', case_id='H01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='fdf2f54d-e2a6-447c-a258-2d40927272c6', run_id='3f29860e-0311-4885-86d6-b99d296d0af5', case_id='H01', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='acedd8fa-21a7-47a6-b4e0-f0b19412d56c', run_id='3f29860e-0311-4885-86d6-b99d296d0af5', case_id='H01', step='finalize', detail='Pack output generated at outputs\\\\\\\\baseline\\\\\\\\H01_baseline.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='H02', split='held_out', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='ee9b935a-2e06-4078-a49c-c3b87ce848c5', run_id='f76eaee6-1a6b-435f-9c38-b3f6c6e76a6a', case_id='H02', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])\"\n      ]\n    }\n  },\n  \"proposals\": [\n    {\n      \"target_failure\": \"tool_error\",\n      \"change_type\": \"workflow_gate\",\n      \"description\": \"Enable retry for tool errors to handle transient upstream failures.\",\n      \"config_key\": \"retry_tool_errors\",\n      \"config_value\": true\n    },\n    {\n      \"target_failure\": \"wrong_fact\",\n      \"change_type\": \"prompt_rule\",\n      \"description\": \"Use strict prompt that requires exact figures from data.\",\n      \"config_key\": \"strict_prompt\",\n      \"config_value\": true\n    },\n    {\n      \"target_failure\": \"wrong_fact\",\n      \"change_type\": \"workflow_gate\",\n      \"description\": \"Enable fact verification to catch and fix hallucinated figures.\",\n      \"config_key\": \"verify_facts\",\n      \"config_value\": true\n    }\n  ],\n  \"candidate\": {\n    \"development\": {\n      \"version\": \"candidate\",\n      \"split\": \"development\",\n      \"total\": 6,\n      \"successes\": 3,\n      \"success_rate\": 0.5,\n      \"failure_counts\": {\n        \"wrong_fact\": 3\n      },\n      \"llm_calls\": 9,\n      \"prompt_tokens\": 3058,\n      \"completion_tokens\": 2389,\n      \"retries\": 2,\n      \"results\": [\n        \"PackCaseResult(case_id='D01', split='development', success=False, failure_class='wrong_fact', issues=['last_round=secondary_market not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D01_candidate.docx', trace=[TraceEvent(event_id='3e29ff20-7bae-4e2c-a4ee-49369147e8b5', run_id='81b1729c-5701-4c1d-a8f6-62ab2164ba47', case_id='D01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='9e0847af-d16f-4980-8056-11038326d973', run_id='81b1729c-5701-4c1d-a8f6-62ab2164ba47', case_id='D01', step='verification', detail=\\\"Fact verification failed: ['last_round=secondary_market not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='48e8b4df-408d-4280-8037-76a37519e307', run_id='81b1729c-5701-4c1d-a8f6-62ab2164ba47', case_id='D01', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D01_candidate.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='D02', split='development', success=False, failure_class='wrong_fact', issues=['last_round=series_d not stated'], tool_attempts=2, docx_path='outputs\\\\\\\\candidate\\\\\\\\D02_candidate.docx', trace=[TraceEvent(event_id='28633f11-e403-44c8-b0ea-aa9c4efcfae5', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='135c8a9e-b5c3-4852-85bb-e5bb4af31092', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='9bfe48c1-c45f-44c9-8b41-622f5d1a7636', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='verification', detail=\\\"Fact verification failed: ['last_round=series_d not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='923fb3c4-46cd-4a6e-9910-1133157bc56d', run_id='4017b3a1-384a-4619-958d-2167901c38e5', case_id='D02', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D02_candidate.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='D03', split='development', success=False, failure_class='wrong_fact', issues=['last_round=series_b not stated'], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D03_candidate.docx', trace=[TraceEvent(event_id='8c365812-e7e5-4016-b7ef-f1ec0abff75e', run_id='688cb217-ae14-4703-b9b3-30b8b90e4416', case_id='D03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='eaaa225d-7407-4f1b-a17c-94bf0eeb397c', run_id='688cb217-ae14-4703-b9b3-30b8b90e4416', case_id='D03', step='verification', detail=\\\"Fact verification failed: ['last_round=series_b not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='e41e94c2-a6b0-495a-b8f8-81ea6ec4d6dd', run_id='688cb217-ae14-4703-b9b3-30b8b90e4416', case_id='D03', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D03_candidate.docx', outcome='warning', metadata={})])\",\n        \"PackCaseResult(case_id='D04', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D04_candidate.docx', trace=[TraceEvent(event_id='242dc059-90eb-4bbf-b702-8ae655367efb', run_id='1a7372e5-70c1-44a4-8ab3-57be24fe9553', case_id='D04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='eb5fc142-a9f6-4a65-962a-6a68938f08ec', run_id='1a7372e5-70c1-44a4-8ab3-57be24fe9553', case_id='D04', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='a76e1aef-845f-437c-98f6-09e6fc60d39b', run_id='1a7372e5-70c1-44a4-8ab3-57be24fe9553', case_id='D04', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D04_candidate.docx', outcome='ok', metadata={})])\",\n        \"PackCaseResult(case_id='D05', split='development', success=True, failure_class='none', issues=[], tool_attempts=2, docx_path='outputs\\\\\\\\candidate\\\\\\\\D05_candidate.docx', trace=[TraceEvent(event_id='23c23e70-9aae-4992-baf0-0be032209de2', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='c35db6b0-66c8-494e-b2b5-be177ac0b1d7', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='73b03782-2dc5-474c-863e-3131c78e803b', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='62ec03b0-26fa-4eaa-a843-6e849a15d139', run_id='cfca544d-13b4-4d69-be2c-77abd4c7f2e5', case_id='D05', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D05_candidate.docx', outcome='ok', metadata={})])\",\n        \"PackCaseResult(case_id='D06', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\D06_candidate.docx', trace=[TraceEvent(event_id='2db6cd3f-29b4-406e-b38f-bd37017a6af7', run_id='716cb76b-30e3-4616-a258-e7e2f47cad38', case_id='D06', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='20c5f931-8cab-436a-835f-88a6d3a384e8', run_id='716cb76b-30e3-4616-a258-e7e2f47cad38', case_id='D06', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='c9415fef-e897-40e4-950d-85bae0d738c1', run_id='716cb76b-30e3-4616-a258-e7e2f47cad38', case_id='D06', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\D06_candidate.docx', outcome='ok', metadata={})])\"\n      ]\n    },\n    \"held_out\": {\n      \"version\": \"candidate\",\n      \"split\": \"held_out\",\n      \"total\": 2,\n      \"successes\": 1,\n      \"success_rate\": 0.5,\n      \"failure_counts\": {\n        \"wrong_fact\": 1\n      },\n      \"llm_calls\": 3,\n      \"prompt_tokens\": 534,\n      \"completion_tokens\": 511,\n      \"retries\": 1,\n      \"results\": [\n        \"PackCaseResult(case_id='H01', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\\\\\candidate\\\\\\\\H01_candidate.docx', trace=[TraceEvent(event_id='5ce30eaa-4e7a-4708-99d7-b4e96b1697ad', run_id='1f379afb-55a2-4c7b-beb2-5773e5bc02d2', case_id='H01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='66645894-2516-4170-8ae7-b271a932530f', run_id='1f379afb-55a2-4c7b-beb2-5773e5bc02d2', case_id='H01', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='80fcec9a-f53c-486f-82ff-a9320b433499', run_id='1f379afb-55a2-4c7b-beb2-5773e5bc02d2', case_id='H01', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\H01_candidate.docx', outcome='ok', metadata={})])\",\n        \"PackCaseResult(case_id='H02', split='held_out', success=False, failure_class='wrong_fact', issues=['last_round=post_ipo_equity not stated'], tool_attempts=2, docx_path='outputs\\\\\\\\candidate\\\\\\\\H02_candidate.docx', trace=[TraceEvent(event_id='35558a17-a446-4b1a-ae64-e074988fc7b2', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='4c1732bf-17e8-43d3-ace6-af233024bfe5', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='dda961bd-6ce2-4f11-890f-45ceab06bc73', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='verification', detail=\\\"Fact verification failed: ['last_round=post_ipo_equity not stated']\\\", outcome='warning', metadata={}), TraceEvent(event_id='59e0fd07-829d-434e-a6a3-064a1772a480', run_id='4078099c-5218-4209-a435-9d9d16346dd3', case_id='H02', step='finalize', detail='Pack output generated at outputs\\\\\\\\candidate\\\\\\\\H02_candidate.docx', outcome='warning', metadata={})])\"\n      ]\n    }\n  },\n  \"promotion\": {\n    \"promoted\": true,\n    \"reasons\": [\n      \"Development success rate improved.\",\n      \"Held-out success rate did not regress.\",\n      \"No critical failure regression on held-out.\"\n    ]\n  },\n  \"active_version\": \"candidate\",\n  \"cost\": {\n    \"baseline\": {\n      \"llm_calls\": 5,\n      \"prompt_tokens\": 1491,\n      \"completion_tokens\": 1047,\n      \"cost_usd\": 0.00034074,\n      \"cost_per_case_usd\": 4.25925e-05\n    },\n    \"candidate\": {\n      \"llm_calls\": 12,\n      \"prompt_tokens\": 3592,\n      \"completion_tokens\": 2900,\n      \"cost_usd\": 0.00091152,\n      \"cost_per_case_usd\": 0.00011394\n    }\n  },\n  \"note\": \"LLM-backed pack agent; results are measured on a small synthetic fixture set.\"\n}",
+                "lineStart": 1,
+                "lineEnd": 151,
+                "totalLines": 151,
+                "truncated": false
+              }
+            },
+            "title": "evidence\\pack_run_20261011_222702.json",
+            "time": {
+              "start": 1791757662805,
+              "end": 1791757662817
+            }
+          },
+          "id": "prt_12d143a50001RYKZFA40vw7B9Q",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d142a48001Brgjh55Vc6l4Oi"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 96390,
+            "input": 5601,
+            "output": 54,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 90720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d143ba8001Szr9yeMY92LZAo",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d142a48001Brgjh55Vc6l4Oi"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 104182,
+          "input": 13202,
+          "output": 238,
+          "reasoning": 22,
+          "cache": {
+            "write": 0,
+            "read": 90720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757663494,
+          "completed": 1791757669223
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d143d06001FnqVebHu4x26GT",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d1448b8001iDloLtoBm6HLmP",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d143d06001FnqVebHu4x26GT"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have all the information needed for the report. Let me compile the final report.",
+          "time": {
+            "start": 1791757666489,
+            "end": 1791757668478
+          },
+          "id": "prt_12d1448b90017HqyMWl08keMR4",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d143d06001FnqVebHu4x26GT"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-b82c95a1-e215-4650-b1c9-1e5b7ee74b41",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nwith open('data/snapshots/raw/razorpay.com.json') as f:\n    data = json.load(f)\ncompany_data = data[0]['matches'][0]['company_data']\nlocations = company_data.get('locations', {})\nfunding = company_data.get('funding', {})\nprint('=== LOCATIONS ===')\nprint('Keys:', list(locations.keys()))\nprint('headquarters:', repr(locations.get('headquarters')))\nprint('Type:', type(locations.get('headquarters')))\nprint()\nprint('=== FUNDING ===')\nprint('Keys:', list(funding.keys()))\nprint('total_investment_usd:', funding.get('total_investment_usd'), type(funding.get('total_investment_usd')))\nprint('last_round_type:', funding.get('last_round_type'), type(funding.get('last_round_type')))\n\""
+            },
+            "output": "=== LOCATIONS ===\r\nKeys: ['city', 'country', 'state', 'street_address', 'headquarters', 'all_office_addresses']\r\nheadquarters: 'Adugodi, Karnataka, India'\r\nType: <class 'str'>\r\n\r\n=== FUNDING ===\r\nKeys: ['acquired_by', 'acquisitions', 'investors_detailed', 'milestones', 'contact_email', 'is_investor', 'phone_number', 'funds_total_usd', 'last_fund_date', 'num_funding_rounds', 'num_funds', 'total_investment_usd', 'last_round_amount_usd', 'last_round_type', 'investors', 'last_fundraise_date']\r\ntotal_investment_usd: 816600000.0 <class 'float'>\r\nlast_round_type: secondary_market <class 'str'>\r\n",
+            "metadata": {
+              "output": "=== LOCATIONS ===\r\nKeys: ['city', 'country', 'state', 'street_address', 'headquarters', 'all_office_addresses']\r\nheadquarters: 'Adugodi, Karnataka, India'\r\nType: <class 'str'>\r\n\r\n=== FUNDING ===\r\nKeys: ['acquired_by', 'acquisitions', 'investors_detailed', 'milestones', 'contact_email', 'is_investor', 'phone_number', 'funds_total_usd', 'last_fund_date', 'num_funding_rounds', 'num_funds', 'total_investment_usd', 'last_round_amount_usd', 'last_round_type', 'investors', 'last_fundraise_date']\r\ntotal_investment_usd: 816600000.0 <class 'float'>\r\nlast_round_type: secondary_market <class 'str'>\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nwith open('data/snapshots/raw/razorpay.com.json') as f:\n    data = json.load(f)\ncompany_data = data[0]['matches'][0]['company_data']\nlocations = company_data.get('locations', {})\nfunding = company_data.get('funding', {})\nprint('=== LOCATIONS ===')\nprint('Keys:', list(locations.keys()))\nprint('headquarters:', repr(locations.get('headquarters')))\nprint('Type:', type(locations.get('headquarters')))\nprint()\nprint('=== FUNDING ===')\nprint('Keys:', list(funding.keys()))\nprint('total_investment_usd:', funding.get('total_investment_usd'), type(funding.get('total_investment_usd')))\nprint('last_round_type:', funding.get('last_round_type'), type(funding.get('last_round_type')))\n\"",
+            "time": {
+              "start": 1791757668486,
+              "end": 1791757668592
+            }
+          },
+          "id": "prt_12d145080001W518M1RTv6oMv4",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d143d06001FnqVebHu4x26GT"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 104182,
+            "input": 13202,
+            "output": 238,
+            "reasoning": 22,
+            "cache": {
+              "write": 0,
+              "read": 90720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d14524a001qewm0Oq5cJVBD7",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d143d06001FnqVebHu4x26GT"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d0a94ea001B0MpP5MmPvuOQW",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 105581,
+          "input": 5049,
+          "output": 1154,
+          "reasoning": 18,
+          "cache": {
+            "write": 0,
+            "read": 99360
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791757669229,
+          "completed": 1791757712850
+        },
+        "finish": "stop",
+        "id": "msg_12d14536d001gtA0IuPHTtlx1X",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d146091001itPh0mPu50w4pS",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d14536d001gtA0IuPHTtlx1X"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have all the information needed. Let me create the final report.",
+          "time": {
+            "start": 1791757672597,
+            "end": 1791757673553
+          },
+          "id": "prt_12d1460950013k3IGwK4Cxv2oz",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d14536d001gtA0IuPHTtlx1X"
+        },
+        {
+          "type": "text",
+          "text": "### REPORT\n\n**Key loaded (length only) and per-domain result table (status, credits, missing sections)**\n\nCRUSTDATA_API_KEY length: 39\n\n| Domain | HTTP Status | Credits Used | Missing Sections |\n|--------|-------------|--------------|------------------|\n| razorpay.com | 200 | 2 | — |\n| postman.com | 200 | 2 | — |\n| browserstack.com | 200 | 2 | — |\n| freshworks.com | 200 | 2 | — |\n| swiggy.com | 200 | 4 | — |\n| meesho.com | 200 | 6 | — |\n| notion.so | 200 | 6 | — |\n| figma.com | 200 | 2 | — |\n| linear.app | 429 (rate limit) | — | skipped |\n| canva.com | 429 (rate limit) | — | skipped |\n\n**Total credits used: 26 | Succeeded: 8 | Failed: 2**\n\n---\n\n**Real structure of locations.headquarters and funding fields (keys/types/one value)**\n\n`locations` keys: `['city', 'country', 'state', 'street_address', 'headquarters', 'all_office_addresses']`\n\n- `locations.headquarters`: **string** — `\"Adugodi, Karnataka, India\"` (type: `<class 'str'>`)\n\n`funding` keys: `['acquired_by', 'acquisitions', 'investors_detailed', 'milestones', 'contact_email', 'is_investor', 'phone_number', 'funds_total_usd', 'last_fund_date', 'num_funding_rounds', 'num_funds', 'total_investment_usd', 'last_round_amount_usd', 'last_round_type', 'investors', 'last_fundraise_date']`\n\n- `funding.total_investment_usd`: **float** — `816600000.0`\n- `funding.last_round_type`: **string** — `\"secondary_market\"`\n\nThe existing `_extract_hq_city()` and `map_company()` handle these types correctly (string HQ, float funding). No parser changes needed.\n\n---\n\n**Companies skipped and why**\n\n| Domain | Reason |\n|--------|--------|\n| linear.app | HTTP 429 (rate limit exceeded) |\n| canva.com | HTTP 429 (rate limit exceeded) |\n\nAdditionally, two domains returned unexpected company matches (data quality issues, not skipped):\n- `meesho.com` → \"Fashnear Technologies Private Limited\" (legal entity), funding=null, headcount=101\n- `notion.so` → \"Hustá\" (different company using notion.com), funding=null, headcount=26\n\n---\n\n**Commit hashes**\n\n- `c0cdfae` — revert: remove mocked snapshot data (not real Crustdata responses)\n- `7692614` — feat: real Crustdata snapshots\n- `965abed` — feat: add source and companies fields to pack run output\n- `f09bcc9` — evidence: pack run on real Crustdata snapshots\n\n---\n\n**Live run summary JSON including \"source\" and \"companies\"**\n\n```json\n{\n  \"source\": \"snapshot\",\n  \"companies\": {\n    \"development\": [\n      \"Razorpay\",\n      \"Postman\",\n      \"BrowserStack\",\n      \"Freshworks\",\n      \"Swiggy\",\n      \"Fashnear Technologies Private Limited\"\n    ],\n    \"held_out\": [\n      \"Hustá\",\n      \"Figma\"\n    ]\n  },\n  \"baseline\": {\n    \"development\": { \"success_rate\": 0.0, \"successes\": \"0/6\" },\n    \"held_out\": { \"success_rate\": 0.5, \"successes\": \"1/2\" }\n  },\n  \"candidate\": {\n    \"development\": { \"success_rate\": 0.5, \"successes\": \"3/6\" },\n    \"held_out\": { \"success_rate\": 0.5, \"successes\": \"1/2\" }\n  },\n  \"cost\": {\n    \"baseline\": { \"cost_usd\": 0.00034074 },\n    \"candidate\": { \"cost_usd\": 0.00091152 }\n  }\n}\n```\n\n---\n\n**Deviations**\n\n1. **Mocked data removed**: All fabricated snapshots and evidence from commit `c2604a9` were reverted per rule 6.\n2. **Domain match quality**: Crustdata returned legal entity names for `meesho.com` (Fashnear Technologies) and a different company for `notion.so` (Hustá). These are API data quality issues, not parser bugs.\n3. **Rate limits**: `linear.app` and `canva.com` hit HTTP 429; excluded from `held_out_domains` in the snapshot.\n4. **Parser compatibility**: Real API structure matches the existing parser (string HQ, float funding). No code changes to `map_company` were required.\n5. **Test status**: All 116 tests pass (1 skipped).",
+          "time": {
+            "start": 1791757673555,
+            "end": 1791757712083
+          },
+          "id": "prt_12d146453001Plz4cDON2KPwTf",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d14536d001gtA0IuPHTtlx1X"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 105581,
+            "input": 5049,
+            "output": 1154,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 99360
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d14fbff001cCPysKfcigph6Y",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d14536d001gtA0IuPHTtlx1X"
         }
       ]
     }
