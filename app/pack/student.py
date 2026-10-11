@@ -39,6 +39,30 @@ def _compute_cost_usd(prompt_tokens: int, completion_tokens: int) -> float:
     return (prompt_tokens * price_in + completion_tokens * price_out) / 1_000_000
 
 
+def _set_llm_attrs(span, prompt_tokens: int, completion_tokens: int,
+                    system: str, user: str, response: str, model_name: str, cost_usd: float) -> None:
+    """Set all SDK-recognized LLM span attributes + existing custom ones."""
+    total = prompt_tokens + completion_tokens
+    # SDK-recognized keys
+    span.set_attribute("llm.model_name", model_name)
+    span.set_attribute("llm.provider", "litellm")
+    span.set_attribute("llm.system", "litellm")
+    span.set_attribute("llm.token_count.prompt", prompt_tokens)
+    span.set_attribute("llm.token_count.completion", completion_tokens)
+    span.set_attribute("llm.token_count.total", total)
+    span.set_attribute("gen_ai.usage.input_tokens", prompt_tokens)
+    span.set_attribute("gen_ai.usage.output_tokens", completion_tokens)
+    span.set_attribute("gen_ai.request.model", model_name)
+    span.set_attribute("llm.cost_usd", cost_usd)
+    # Generic IO (truncated to 2000 chars)
+    input_text = f"{system}\n\n{user}"
+    span.set_attribute("input.value", input_text[:2000])
+    span.set_attribute("output.value", response[:2000])
+    # Existing custom attrs (keep for backward compat)
+    span.set_attribute("llm.prompt_tokens", prompt_tokens)
+    span.set_attribute("llm.completion_tokens", completion_tokens)
+
+
 def _extract_json(text: str) -> dict | None:
     """Extract JSON from text, handling ```json fences."""
     text = text.strip()
@@ -168,9 +192,8 @@ def run_pack_student(
         completion_delta = completion_after - completion_before
         cost = _compute_cost_usd(prompt_delta, completion_delta)
 
-        span.set_attribute("llm.prompt_tokens", prompt_delta)
-        span.set_attribute("llm.completion_tokens", completion_delta)
-        span.set_attribute("llm.cost_usd", cost)
+        model_name = os.getenv("MODEL_NAME", "unknown")
+        _set_llm_attrs(span, prompt_delta, completion_delta, system_prompt, user_message, response, model_name, cost)
 
         data = _extract_json(response)
         if not data or "sections" not in data or not isinstance(data["sections"], dict):
@@ -211,16 +234,18 @@ def run_pack_student(
                     f"Fix these problems in your previous answer: {'; '.join(issues)}"
                 )
 
-                response2 = llm.complete(STRICT_SYSTEM_PROMPT, fix_message, json_mode=True)
+                with trace_span("llm_regenerate", kind="LLM") as regen_span:
+                    response2 = llm.complete(STRICT_SYSTEM_PROMPT, fix_message, json_mode=True)
 
-                prompt_after2 = llm.prompt_tokens
-                completion_after2 = llm.completion_tokens
-                prompt_delta2 = prompt_after2 - prompt_before2
-                completion_delta2 = completion_after2 - completion_before2
-                cost2 = _compute_cost_usd(prompt_delta2, completion_delta2)
+                    prompt_after2 = llm.prompt_tokens
+                    completion_after2 = llm.completion_tokens
+                    prompt_delta2 = prompt_after2 - prompt_before2
+                    completion_delta2 = completion_after2 - completion_before2
+                    cost2 = _compute_cost_usd(prompt_delta2, completion_delta2)
 
-                # Note: we don't create a new span for the regeneration, just update the verify span
-                # but we could add the tokens to the existing span if needed
+                    model_name = os.getenv("MODEL_NAME", "unknown")
+                    _set_llm_attrs(regen_span, prompt_delta2, completion_delta2,
+                                  STRICT_SYSTEM_PROMPT, fix_message, response2, model_name, cost2)
 
                 data2 = _extract_json(response2)
                 if data2 and "sections" in data2 and isinstance(data2["sections"], dict):
