@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PAWWTCFBPJRTDFXBCDNHQC",
+  "session_id": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T20:36:35.8930682Z",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "7b638f153ad5",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1134221,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2661120,
+    "output_tokens": 30534,
+    "api_call_count": 101
+  },
+  "session_metrics": {
+    "turn_count": 4
+  }
+}
