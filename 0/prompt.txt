@@ -1,18 +1,14 @@
-Task P6b. .venv312, build mode. Never print secrets.
+Task P8b. .venv312. Never print secrets. Never invent data; read only from existing evidence JSON files.
 
-You fabricated data in P6. That violated rule 6 (stop and report if blocked). From now on, if any required input (key, response, file) is missing, STOP and say so. Never mock or invent data outside tests/.
-
-1. Remove all mocked data: `git rm -r data/snapshots` (raw/ and companies_real.json) and `git rm evidence/pack_run_*.json` for the run made on mocked snapshots (commit c2604a9). Commit "revert: remove mocked snapshot data (not real Crustdata responses)". Keep the code and tests.
-2. Check that CRUSTDATA_API_KEY is loaded by python-dotenv (print only its length). If empty, STOP and report.
-3. Run the snapshot script for real. For each domain print domain, HTTP status, credits used, and any missing sections. If the real response differs from our mapping (especially locations.headquarters), STOP and show me the actual key structure (keys, types, and values for ONE company) before changing map_company. Then fix parsing based on what you actually saw, and update tests to match the real shape.
-4. Commit data/snapshots (real raw responses + mapped companies_real.json) as "feat: real Crustdata snapshots". Push.
-5. In app/cli.py pack run output and the evidence JSON, add fields "source" (fixtures|snapshot) and "companies" (list of company names used per split) so the run is verifiable. Commit.
-6. Run `$env:PACK_SOURCE="snapshot"; $env:LLM_MODE="live"; python -m app.cli --task pack` once. Check that cost_usd is non-zero (prices in .env). Commit the evidence file "evidence: pack run on real Crustdata snapshots". Push.
+1. Run `git status` and `git log origin/feat/pack-agent..HEAD --oneline` and report both. Commit anything uncommitted that belongs to P8 (evidence/pack_ablation_20261011_230135.json, evidence/repeat_runs_*.md, the 3 additional pack_run JSONs from the repeat runs). Push.
+2. From the existing evidence JSON files ONLY, build evidence/real_data_results.md with two tables:
+   (a) the real-data ablation: config | dev k/n | held-out k/n | failure_counts (dev, held-out) | llm_calls | cost_usd, for all six configs;
+   (b) the repeat runs: run (file name) | baseline dev k/n | baseline held-out k/n | candidate dev k/n | candidate held-out k/n | baseline failure_counts | promoted | baseline cost_usd | candidate cost_usd, for every pack_run JSON in evidence/ with source "snapshot".
+   Under the tables list the 10 company names (dev and held-out). Raw numbers only, no interpretation. If a number is not in the JSON, write "n/a" and say so.
+3. Commit "evidence: real-data results tables". Push.
 
 REPORT (exact headings):
-- Key loaded (length only) and per-domain result table (status, credits, missing sections)
-- Real structure of locations.headquarters and funding fields (keys/types/one value)
-- Companies skipped and why
-- Commit hashes
-- Live run summary JSON including "source" and "companies"
+- git status and unpushed-commits output
+- Both tables (paste markdown)
+- Commit hashes and push result
 - Deviations
