@@ -1,0 +1,34 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PGYBH2SKVBEEVDA35QXCES",
+  "strategy": "manual-commit",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "data/snapshots/companies_real.json",
+    "data/snapshots/raw/browserstack.com.json",
+    "data/snapshots/raw/figma.com.json",
+    "data/snapshots/raw/freshworks.com.json",
+    "data/snapshots/raw/meesho.com.json",
+    "data/snapshots/raw/notion.so.json",
+    "data/snapshots/raw/postman.com.json",
+    "data/snapshots/raw/razorpay.com.json",
+    "data/snapshots/raw/swiggy.com.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 187764,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 773280,
+    "output_tokens": 1935,
+    "api_call_count": 19
+  }
+}

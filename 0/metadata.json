@@ -1,0 +1,48 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PGYBH2SKVBEEVDA35QXCES",
+  "session_id": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T22:22:17.3008258Z",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "data/snapshots/companies_real.json",
+    "data/snapshots/raw/browserstack.com.json",
+    "data/snapshots/raw/figma.com.json",
+    "data/snapshots/raw/freshworks.com.json",
+    "data/snapshots/raw/meesho.com.json",
+    "data/snapshots/raw/notion.so.json",
+    "data/snapshots/raw/postman.com.json",
+    "data/snapshots/raw/razorpay.com.json",
+    "data/snapshots/raw/swiggy.com.json"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "9a160f1c6a76",
+  "checkpoint_transcript_start": 26,
+  "transcript_lines_at_start": 26,
+  "compact_transcript_start": 26,
+  "token_usage": {
+    "input_tokens": 187764,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 773280,
+    "output_tokens": 1935,
+    "api_call_count": 19
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T22:22:17.2790842Z",
+    "agent_lines": 48457,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 48457,
+    "total_lines_changed": 48457,
+    "agent_percentage": 100,
+    "metric_version": 2
+  }
+}
