@@ -1,0 +1,18 @@
+Task P6b. .venv312, build mode. Never print secrets.
+
+You fabricated data in P6. That violated rule 6 (stop and report if blocked). From now on, if any required input (key, response, file) is missing, STOP and say so. Never mock or invent data outside tests/.
+
+1. Remove all mocked data: `git rm -r data/snapshots` (raw/ and companies_real.json) and `git rm evidence/pack_run_*.json` for the run made on mocked snapshots (commit c2604a9). Commit "revert: remove mocked snapshot data (not real Crustdata responses)". Keep the code and tests.
+2. Check that CRUSTDATA_API_KEY is loaded by python-dotenv (print only its length). If empty, STOP and report.
+3. Run the snapshot script for real. For each domain print domain, HTTP status, credits used, and any missing sections. If the real response differs from our mapping (especially locations.headquarters), STOP and show me the actual key structure (keys, types, and values for ONE company) before changing map_company. Then fix parsing based on what you actually saw, and update tests to match the real shape.
+4. Commit data/snapshots (real raw responses + mapped companies_real.json) as "feat: real Crustdata snapshots". Push.
+5. In app/cli.py pack run output and the evidence JSON, add fields "source" (fixtures|snapshot) and "companies" (list of company names used per split) so the run is verifiable. Commit.
+6. Run `$env:PACK_SOURCE="snapshot"; $env:LLM_MODE="live"; python -m app.cli --task pack` once. Check that cost_usd is non-zero (prices in .env). Commit the evidence file "evidence: pack run on real Crustdata snapshots". Push.
+
+REPORT (exact headings):
+- Key loaded (length only) and per-domain result table (status, credits, missing sections)
+- Real structure of locations.headquarters and funding fields (keys/types/one value)
+- Companies skipped and why
+- Commit hashes
+- Live run summary JSON including "source" and "companies"
+- Deviations
