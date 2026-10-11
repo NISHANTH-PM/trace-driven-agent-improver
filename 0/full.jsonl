@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 1134221,
-      "output": 30534,
-      "reasoning": 2939,
+      "input": 1182661,
+      "output": 31705,
+      "reasoning": 3039,
       "cache": {
-        "read": 2661120,
+        "read": 3049920,
         "write": 0
       }
     },
     "time": {
       "created": 1791747276170,
-      "updated": 1791750987800
+      "updated": 1791751035644
     }
   },
   "messages": [
@@ -10556,19 +10556,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 72586,
+          "input": 7713,
+          "output": 56,
+          "reasoning": 17,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 64800
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791750987783
+          "created": 1791750987783,
+          "completed": 1791750997187
         },
+        "finish": "tool-calls",
         "id": "msg_12cae6007001aetT7kwBCew9CV",
         "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW"
       },
@@ -10596,20 +10599,510 @@
           "tool": "bash",
           "callID": "call-49258565-1622-4305-956d-9ccd3d8a3aff",
           "state": {
-            "metadata": {
-              "output": ""
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "git add app/observability.py && git commit -m \"fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\""
             },
+            "output": "[feat/pack-agent 1df734c] fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\n 1 file changed, 3 insertions(+), 4 deletions(-)\n",
+            "metadata": {
+              "output": "[feat/pack-agent 1df734c] fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\n 1 file changed, 3 insertions(+), 4 deletions(-)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git add app/observability.py && git commit -m \"fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\"",
             "time": {
-              "start": 1791750992394
+              "start": 1791750992394,
+              "end": 1791750996146
             }
           },
           "id": "prt_12cae7206001yczAENk58w28Yn",
           "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
           "messageID": "msg_12cae6007001aetT7kwBCew9CV"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 72586,
+            "input": 7713,
+            "output": 56,
+            "reasoning": 17,
+            "cache": {
+              "write": 0,
+              "read": 64800
+            }
+          },
+          "cost": 0,
+          "id": "prt_12cae82ab001KNkrQITCe9ZSgH",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12cae6007001aetT7kwBCew9CV"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ca77c11001of4Whgm8yz0vf2",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 72691,
+          "input": 7853,
+          "output": 31,
+          "reasoning": 7,
+          "cache": {
+            "write": 0,
+            "read": 64800
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791750997203,
+          "completed": 1791751009224
+        },
+        "finish": "tool-calls",
+        "id": "msg_12cae84d30013BivSoK2fMkxp8",
+        "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12cae8f3a001UzuWqGX9yavFU5",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12cae84d30013BivSoK2fMkxp8"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me push to origin.",
+          "time": {
+            "start": 1791750999868,
+            "end": 1791751000452
+          },
+          "id": "prt_12cae8f3c001AgajFMnmoyywln",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12cae84d30013BivSoK2fMkxp8"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-30a8d7ed-3e45-4006-95a3-a17257030f84",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "git push origin feat/pack-agent"
+            },
+            "output": "[entire] Pushing 1 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   e27405d..1df734c  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[entire] Pushing 1 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   e27405d..1df734c  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git push origin feat/pack-agent",
+            "time": {
+              "start": 1791751000465,
+              "end": 1791751008576
+            }
+          },
+          "id": "prt_12cae9188001UqskHugWktoyF8",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12cae84d30013BivSoK2fMkxp8"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 72691,
+            "input": 7853,
+            "output": 31,
+            "reasoning": 7,
+            "cache": {
+              "write": 0,
+              "read": 64800
+            }
+          },
+          "cost": 0,
+          "id": "prt_12caeb282001Im4ze2L4OrGs5i",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12cae84d30013BivSoK2fMkxp8"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ca77c11001of4Whgm8yz0vf2",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 72819,
+          "input": 7970,
+          "output": 25,
+          "reasoning": 24,
+          "cache": {
+            "write": 0,
+            "read": 64800
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791751009233,
+          "completed": 1791751015345
+        },
+        "finish": "tool-calls",
+        "id": "msg_12caeb3d1001mlkaJN0z7chrV7",
+        "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12caebfa1001j3NKFsUZf1Rsxe",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caeb3d1001mlkaJN0z7chrV7"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run the tests one final time and collect all the information needed for the report.",
+          "time": {
+            "start": 1791751012262,
+            "end": 1791751012862
+          },
+          "id": "prt_12caebfa5001HfP42QWmA542G6",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caeb3d1001mlkaJN0z7chrV7"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-c6341a4b-f13f-44f2-a73c-62c37c6e0f90",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "python -m pytest -q"
+            },
+            "output": "........................................................................ [ 70%]\r\n..............................                                           [100%]\r\n102 passed, 1 skipped in 1.29s\r\n",
+            "metadata": {
+              "output": "........................................................................ [ 70%]\r\n..............................                                           [100%]\r\n102 passed, 1 skipped in 1.29s\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "python -m pytest -q",
+            "time": {
+              "start": 1791751012867,
+              "end": 1791751014731
+            }
+          },
+          "id": "prt_12caec1ff0018s2AdSfJ2OJ316",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caeb3d1001mlkaJN0z7chrV7"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 72819,
+            "input": 7970,
+            "output": 25,
+            "reasoning": 24,
+            "cache": {
+              "write": 0,
+              "read": 64800
+            }
+          },
+          "cost": 0,
+          "id": "prt_12caeca7d001Cy5oTK5ZRGb0wD",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caeb3d1001mlkaJN0z7chrV7"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ca77c11001of4Whgm8yz0vf2",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 72919,
+          "input": 8075,
+          "output": 30,
+          "reasoning": 14,
+          "cache": {
+            "write": 0,
+            "read": 64800
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791751015353,
+          "completed": 1791751028753
+        },
+        "finish": "tool-calls",
+        "id": "msg_12caecbb9001LvlL1fq3y3qS2t",
+        "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12caeefd4001p7Nn3XukH2R1MD",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caecbb9001LvlL1fq3y3qS2t"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me get the commit hashes and prepare the report.",
+          "time": {
+            "start": 1791751024598,
+            "end": 1791751028028
+          },
+          "id": "prt_12caeefd5001xyXvcKmVRVRIlG",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caecbb9001LvlL1fq3y3qS2t"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-f5eb7d86-909d-44b7-bcf4-339810702a94",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "git log --oneline -5"
+            },
+            "output": "1df734c fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\ne27405d feat: pack evaluator, improver and improvement cycle\n0ef3fdc feat: pack student with retry, fact verification and docx render\n7ca9731 feat: pack domain models, fixtures, flaky data tool\naf6ed83 feat: add LLM client with fake and live implementations\n",
+            "metadata": {
+              "output": "1df734c fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\ne27405d feat: pack evaluator, improver and improvement cycle\n0ef3fdc feat: pack student with retry, fact verification and docx render\n7ca9731 feat: pack domain models, fixtures, flaky data tool\naf6ed83 feat: add LLM client with fake and live implementations\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git log --oneline -5",
+            "time": {
+              "start": 1791751028038,
+              "end": 1791751028124
+            }
+          },
+          "id": "prt_12caefd3f001wBh7kyY50iXACx",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caecbb9001LvlL1fq3y3qS2t"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 72919,
+            "input": 8075,
+            "output": 30,
+            "reasoning": 14,
+            "cache": {
+              "write": 0,
+              "read": 64800
+            }
+          },
+          "cost": 0,
+          "id": "prt_12caefed6001WHmUGRiwlVYJoC",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caecbb9001LvlL1fq3y3qS2t"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ca77c11001of4Whgm8yz0vf2",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 73094,
+          "input": 8237,
+          "output": 28,
+          "reasoning": 29,
+          "cache": {
+            "write": 0,
+            "read": 64800
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791751028770,
+          "completed": 1791751035623
+        },
+        "finish": "tool-calls",
+        "id": "msg_12caf0022001oV12j4vkMb7kwk",
+        "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12caf0ccf001YuXLmRP0YafZBY",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf0022001oV12j4vkMb7kwk"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I need to prepare the full report with all the required headings. Let me also check the ls-remote output again.",
+          "time": {
+            "start": 1791751032018,
+            "end": 1791751033860
+          },
+          "id": "prt_12caf0cd2001JOoo6SYhDiy0if",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf0022001oV12j4vkMb7kwk"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-91c3cf88-770d-4b3c-85bb-21baa74d53ac",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "git ls-remote --heads origin"
+            },
+            "output": "1df734c973a0643ba94bddaa21015097fa06f586\trefs/heads/feat/pack-agent\ncdf045c9ee7229b5171ea105aa47b630ec3fce34\trefs/heads/fix/evaluator-critical-failures\nf1dff88cd5eb74db9587d9ebf06ddb1f57946460\trefs/heads/fix/promotion-gate-and-tests\n12147d9f56efa93b7caa408de630ea3824e2b2af\trefs/heads/master\nd4ebe60775943a40c3ce0c5b6088e7657da63f9b\trefs/heads/test/end-to-end-promotion-safety\n4771d304e03315ec8a6ee603b3f538341bd533d9\trefs/heads/test/evaluator-boundary-cases\n",
+            "metadata": {
+              "output": "1df734c973a0643ba94bddaa21015097fa06f586\trefs/heads/feat/pack-agent\ncdf045c9ee7229b5171ea105aa47b630ec3fce34\trefs/heads/fix/evaluator-critical-failures\nf1dff88cd5eb74db9587d9ebf06ddb1f57946460\trefs/heads/fix/promotion-gate-and-tests\n12147d9f56efa93b7caa408de630ea3824e2b2af\trefs/heads/master\nd4ebe60775943a40c3ce0c5b6088e7657da63f9b\trefs/heads/test/end-to-end-promotion-safety\n4771d304e03315ec8a6ee603b3f538341bd533d9\trefs/heads/test/evaluator-boundary-cases\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git ls-remote --heads origin",
+            "time": {
+              "start": 1791751033866,
+              "end": 1791751034988
+            }
+          },
+          "id": "prt_12caf1406001E0GALVEPKFWOUc",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf0022001oV12j4vkMb7kwk"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 73094,
+            "input": 8237,
+            "output": 28,
+            "reasoning": 29,
+            "cache": {
+              "write": 0,
+              "read": 64800
+            }
+          },
+          "cost": 0,
+          "id": "prt_12caf19ae001RYAEWM2rDo2UWn",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf0022001oV12j4vkMb7kwk"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ca77c11001of4Whgm8yz0vf2",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 74402,
+          "input": 8592,
+          "output": 1001,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 64800
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791751035632,
+          "completed": 1791751067029
+        },
+        "finish": "stop",
+        "id": "msg_12caf1af0001kwI3d1o121jikv",
+        "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12caf2aca0018Hugu7QdStDhQm",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf1af0001kwI3d1o121jikv"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me compile the full report.",
+          "time": {
+            "start": 1791751039691,
+            "end": 1791751039694
+          },
+          "id": "prt_12caf2acb001yiXsYlMY6u56sn",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf1af0001kwI3d1o121jikv"
+        },
+        {
+          "type": "text",
+          "text": "- Push result (ls-remote output)\n  ```\n  1df734c973a0643ba94bddaa21015097fa06f586\trefs/heads/feat/pack-agent\n  cdf045c9ee7229b5171ea105aa47b630ec3fce34\trefs/heads/fix/evaluator-critical-failures\n  f1dff88cd5eb74db9587d9ebf06ddb1f57946460\trefs/heads/fix/promotion-gate-and-tests\n  12147d9f56efa93b7caa408de630ea3824e2b2af\trefs/heads/master\n  d4ebe60775943a40c3ce0c5b6088e7657da63f9b\trefs/heads/test/end-to-end-promotion-safety\n  4771d304e03315ec8a6ee603b3f58341bd533d9\trefs/heads/test/evaluator-boundary-cases\n  ```\n\n- Test results (passed/skipped/failed)\n  - 102 passed, 1 skipped (test_observability.py skipped due to missing InMemoryDiagnosticSpanExporter in neatlogs 1.1.8)\n\n- Files created/changed\n  - app/models.py: extended FailureClass with \"wrong_fact\" and \"missing_section\"\n  - app/observability.py: added 6 attribute mappings; fixed neatlogs.init() call for v1.1.8 (removed endpoint/workflow_name); fixed shutdown_neatlogs() to use tracker.shutdown()\n  - app/pack/evaluator.py: created with PackCaseResult, PackSummary, evaluate_pack_case(), run_pack_benchmark()\n  - app/pack/improver.py: created with propose_pack_improvements(), apply_pack_proposals(), reuses should_promote\n  - app/pack/service.py: created with run_pack_improvement_cycle()\n  - app/cli.py: added --task {ticket,pack} argument, pack task prints compact summary JSON and writes full result to evidence/pack_run_<timestamp>.json\n  - evidence/.gitkeep: created\n  - tests/test_pack_improver.py: created with tests for evaluator precedence, improver proposals, and full improvement cycle with scripted FakeLLMClient\n\n- Live run: baseline vs candidate dev and held-out as k/n, failure_counts for each, proposals, promotion decision with reasons, token and call totals\n  - Live run failed with error: `ValueError: MODEL_BASE_URL must be set`\n  - The .env file has NEATLOGS_API_KEY set but MODEL_BASE_URL, MODEL_API_KEY, MODEL_NAME are empty\n  - No evidence file was generated (run failed before that point)\n  - Did not attempt second run per instructions\n\n- Did the neatlogs run print any warning or error?\n  - After fixing observability.py for neatlogs 1.1.8 API, no neatlogs warnings or errors during test runs\n  - The live run failed before neatlogs initialization due to missing MODEL_BASE_URL\n\n- Commit hashes\n  - e27405d: feat: pack evaluator, improver and improvement cycle\n  - 1df734c: fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)\n\n- Anything ambiguous or deviating\n  - The live run could not complete because MODEL_BASE_URL/MODEL_API_KEY/MODEL_NAME are not configured in the test environment. This is expected behavior - the error is reported as requested.\n  - The neatlogs version in the environment is 1.1.8 (not 1.4.26 as stated in requirements.txt), which has a different API (no endpoint/workflow_name params, no flush/shutdown methods). Fixed observability.py to handle this.\n  - The test_observability.py file was already untracked and was modified to add pytest.importorskip guard (authorized in P2).\n  - The ScriptedFakeLLM in tests uses a simple rounding heuristic (nearest 100 for employee_count, \"roughly $XM\" for funding) which may not match all \"rounded\" forms checked in fact_mismatches, but tests pass.",
+          "time": {
+            "start": 1791751039703,
+            "end": 1791751066420
+          },
+          "id": "prt_12caf2ad7001hmiIAW1125C12Y",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf1af0001kwI3d1o121jikv"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 74402,
+            "input": 8592,
+            "output": 1001,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 64800
+            }
+          },
+          "cost": 0,
+          "id": "prt_12caf9455001X4UFrlDLtnIHlS",
+          "sessionID": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+          "messageID": "msg_12caf1af0001kwI3d1o121jikv"
         }
       ]
     }
