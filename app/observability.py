@@ -139,8 +139,6 @@ def initialize_neatlogs() -> bool:
 
     neatlogs.init(
         api_key=api_key,
-        endpoint=os.getenv("NEATLOGS_ENDPOINT", "https://ingest.neatlogs.com"),
-        workflow_name="trace-driven-agent-improver",
         tags=["neathack", "trace-driven-agent-improver"],
     )
     _initialized = True
@@ -156,9 +154,10 @@ def shutdown_neatlogs() -> None:
         return
 
     try:
-        neatlogs.flush()
+        tracker = neatlogs.get_tracker()
+        if tracker:
+            tracker.shutdown()
     finally:
-        neatlogs.shutdown()
         _initialized = False
 
 
