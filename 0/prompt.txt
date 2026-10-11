@@ -1,0 +1,14 @@
+Task P8b. .venv312. Never print secrets. Never invent data; read only from existing evidence JSON files.
+
+1. Run `git status` and `git log origin/feat/pack-agent..HEAD --oneline` and report both. Commit anything uncommitted that belongs to P8 (evidence/pack_ablation_20261011_230135.json, evidence/repeat_runs_*.md, the 3 additional pack_run JSONs from the repeat runs). Push.
+2. From the existing evidence JSON files ONLY, build evidence/real_data_results.md with two tables:
+   (a) the real-data ablation: config | dev k/n | held-out k/n | failure_counts (dev, held-out) | llm_calls | cost_usd, for all six configs;
+   (b) the repeat runs: run (file name) | baseline dev k/n | baseline held-out k/n | candidate dev k/n | candidate held-out k/n | baseline failure_counts | promoted | baseline cost_usd | candidate cost_usd, for every pack_run JSON in evidence/ with source "snapshot".
+   Under the tables list the 10 company names (dev and held-out). Raw numbers only, no interpretation. If a number is not in the JSON, write "n/a" and say so.
+3. Commit "evidence: real-data results tables". Push.
+
+REPORT (exact headings):
+- git status and unpushed-commits output
+- Both tables (paste markdown)
+- Commit hashes and push result
+- Deviations
