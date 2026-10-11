@@ -1,0 +1,159 @@
+You are the senior engineer responsible for fixing a production-blocking observability bug. You have direct access to the repository and terminal. ACTUALLY MODIFY THE CODE AND VERIFY THE FIX.
+
+REPOSITORY:
+https://github.com/NISHANTH-PM/trace-driven-agent-improver
+
+LOCAL PROJECT:
+D:\trace-driven-agent-improver
+
+ENVIRONMENT:
+- Windows, PowerShell
+- Python 3.12
+- Virtual environment: .venv312
+- Neatlogs SDK: 1.4.26
+- Application: Python-based trace-driven agent improver
+
+## THE BUG
+
+Custom evaluation attributes are missing from Neatlogs' exported traces/dashboard.
+
+Expected attributes on benchmark evaluation spans include:
+- benchmark.case_id
+- benchmark.split
+- agent.version
+- evaluation.success
+- evaluation.failure_class
+- evaluation.expected_action
+- evaluation.selected_action
+
+These attributes are important for evaluating agent behavior and inspecting individual benchmark results.
+
+The application can successfully run its benchmark and improvement workflow. A recent run completed with candidate development and held-out scores of 1.0 and promotion succeeded. The problem is observability, not the benchmark's core execution.
+
+## INVESTIGATION ALREADY COMPLETED — DO NOT REPEAT IT
+
+1. `neatlogs doctor --local --json` passed.
+2. `neatlogs doctor --probe --json` passed, including authenticated trace API readback. These tests validate the SDK's own diagnostic spans, not our application's evaluation attributes.
+3. Raw SDK span logging CONFIRMS that application benchmark spans contain the custom evaluation attributes. For example, raw spans include `benchmark.case_id`, `evaluation.success`, and `evaluation.failure_class`.
+4. The processed SDK diagnostic log does NOT show those custom attributes. It mostly shows generated `neatlogs.*` attributes.
+5. The installed SDK's `AttributeProcessor.process()` initially merges resource and span attributes, so custom attributes exist at that stage.
+6. The SDK's namespace mapping intentionally leaves unmapped custom attributes on the native OpenTelemetry span for OTLP export. The installed mapping's `keep_as_is` list does not include our benchmark/evaluation keys. Their absence from the processed diagnostic log alone does NOT prove that they are lost during export.
+7. The export pipeline includes:
+   - `OTLPSpanExporter`
+   - `ByteLimitedSpanExporter`
+   - `TypedMediaSpanExporter`
+   - `HttpFilteringSpanExporter`
+   - `MaskingSpanExporter`
+   - `ObservableBatchSpanProcessor`
+8. HTTP filtering appears to filter transport spans, not ordinary benchmark spans. The remaining question is whether custom attributes survive the actual export and backend ingestion/readback.
+9. Application integration lives in `app/observability.py`; evaluation spans are created in `app/evaluator.py`; application startup/shutdown is in `app/main.py`. Inspect `app/cli.py` and the actual execution paths too.
+10. The project uses `neatlogs.trace(...)` and `span.set_attribute(...)`. Do not assume these APIs are broken without evidence.
+
+## YOUR MISSION
+
+Find and FIX the actual root cause. Do not stop at a diagnosis, explanation, proposed patch, or list of commands for me to run.
+
+### Step 1 — Inspect the repository
+
+Inspect the relevant application code, SDK installation, dependencies, and configuration. Use the existing virtual environment.
+
+Check:
+- Whether Neatlogs is initialized before benchmark spans are created.
+- Whether CLI and API entry points behave differently.
+- Whether span attributes are attached to the correct span.
+- Whether values survive the processor/exporter pipeline.
+- Whether the SDK's configuration or export contract excludes, renames, or drops custom attributes.
+- Whether the dashboard/backend expects a particular attribute naming convention or representation.
+
+Do not spend time re-running the already-passing doctor tests unless needed for a targeted comparison.
+
+### Step 2 — Reproduce the failure with a minimal test
+
+Create a minimal diagnostic trace using unique, harmless scalar attributes, such as:
+
+`debug.custom_string = "attribute_probe_20261011"`
+`debug.custom_bool = true`
+`debug.custom_number = 42`
+
+Also test one real application evaluation span.
+
+Capture evidence at the relevant stages:
+1. Attributes on the ended application span.
+2. Attributes after SDK processing.
+3. Attributes in the actual OTLP export payload, if accessible.
+4. Attributes returned by the authenticated backend trace readback, if supported.
+
+Use the SDK's existing logs, source, and supported APIs. Avoid printing API keys or secrets.
+
+IMPORTANT: A local processed-span log is not the same as the OTLP payload. An attribute being absent from the local diagnostic log does not prove that it was absent from the exported span.
+
+### Step 3 — Implement the smallest correct fix
+
+Fix the earliest proven point where attributes are lost.
+
+Potential fixes, ONLY if supported by evidence:
+- Correct application span creation or initialization.
+- Correct attribute handling in the application integration.
+- Correct SDK processor/export configuration.
+- A compatible application-level workaround that preserves attributes through the supported public SDK API.
+- Correct naming/mapping if the backend requires it.
+
+Do not modify installed third-party SDK files as the permanent solution. If a third-party SDK defect is responsible, implement a maintainable workaround in this repository and explain the upstream defect.
+
+Do not replace Neatlogs with another observability vendor.
+Do not remove evaluation instrumentation.
+Do not hardcode a successful result.
+Do not introduce unnecessary dependencies.
+Do not weaken security, leak secrets, or disable normal SDK safeguards.
+Do not make unrelated refactors.
+
+### Step 4 — Add regression tests
+
+Add tests that verify:
+- Custom scalar attributes are attached to the intended benchmark span.
+- `evaluation.success`, `evaluation.failure_class`, and `benchmark.case_id` survive the application's relevant instrumentation path.
+- Missing or uninitialized Neatlogs configuration does not break benchmark execution.
+- Existing evaluation and promotion behavior remains unchanged.
+
+Mock external network calls in ordinary automated tests where appropriate. If an authenticated live test is possible, run it separately.
+
+### Step 5 — Verify the actual fix
+
+Run relevant tests using the project's existing environment, for example:
+
+`.\.venv312\Scripts\python.exe -m pytest`
+
+Also run the relevant benchmark/CLI path if feasible.
+
+If the problem can only be verified against the live backend, perform a targeted authenticated round-trip using a unique trace/span name and inspect the returned data. Report precisely what was verified.
+
+A successful benchmark run or visible trace is NOT sufficient proof that custom attributes are fixed.
+
+If live verification is impossible, state that explicitly and provide the strongest local evidence available. Do not claim success without evidence.
+
+### Step 6 — Finish the work
+
+Modify the repository files directly. Do not merely print replacement code or ask me to edit files manually.
+
+At the end, report only:
+1. ROOT CAUSE.
+2. FILES CHANGED.
+3. FIX IMPLEMENTED.
+4. TESTS RUN AND RESULTS.
+5. LIVE BACKEND VERIFICATION: PASS, FAIL, or BLOCKED, with evidence.
+6. Any one remaining action genuinely required from me.
+
+## OPERATING RULES
+
+- We have already spent approximately six hours on this. Time is critical.
+- Be decisive. Investigate in a tight loop and make the change as soon as the evidence supports it.
+- Do not ask me to paste files or logs you can inspect directly.
+- Do not give me another long list of diagnostic PowerShell commands.
+- Do not repeat generic explanations about tracing, spans, or OpenTelemetry.
+- Do not stop after discovering that the SDK's processed log omits custom attributes.
+- Do not silently declare the bug fixed just because a test passes locally.
+- If the backend's public API or service contract prevents a conclusive fix, establish that with evidence, implement the best safe application-side fix possible, and state the exact blocker.
+- Preserve existing user changes. Inspect `git status` before modifying anything. Never reset, discard, or overwrite unrelated work.
+- Use the tools available in your environment and act autonomously.
+
+START NOW. Inspect the current repository, trace the attribute through the real export path, implement the fix, and run the tests. do not make any mistakes

@@ -1,0 +1,151 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4P5F40ACRPN1JHD3S6PY7SX",
+  "session_id": "ses_ed55beda0ffeE9ASM4rOZPXud7",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T19:01:52.6452922Z",
+  "branch": "master",
+  "checkpoints_count": 9,
+  "save_step_count": 9,
+  "files_touched": [
+    "app/observability.py"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "6b325aec5f61",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 4872545,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 44845920,
+    "output_tokens": 41431,
+    "api_call_count": 210
+  },
+  "session_metrics": {
+    "turn_count": 9
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T19:01:52.536041Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 170,
+    "human_removed": 0,
+    "total_committed": 170,
+    "total_lines_changed": 170,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 723,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269,
+        "diagnose_attributes.py": 39,
+        "diagnose_neatlogs.py": 18,
+        "neatlogs_diagnostic.log": 268,
+        "spans_raw_optimized.log": 128
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 272,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 272,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 272,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 400,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 6,
+      "user_lines_added": 398,
+      "user_lines_removed": 0,
+      "agent_lines_added": 528,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269,
+        "spans_raw_optimized.log": 128
+      }
+    },
+    {
+      "checkpoint_number": 7,
+      "user_lines_added": 526,
+      "user_lines_removed": 0,
+      "agent_lines_added": 547,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269,
+        "spans_optimized.log": 128,
+        "spans_raw_optimized.log": 128
+      }
+    },
+    {
+      "checkpoint_number": 8,
+      "user_lines_added": 910,
+      "user_lines_removed": 0,
+      "agent_lines_added": 552,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269,
+        "spans_optimized.log": 512,
+        "spans_raw_optimized.log": 128
+      }
+    },
+    {
+      "checkpoint_number": 9,
+      "user_lines_added": 1038,
+      "user_lines_removed": 0,
+      "agent_lines_added": 552,
+      "agent_lines_removed": 75,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269,
+        "spans_optimized.log": 640,
+        "spans_raw_optimized.log": 128
+      }
+    }
+  ]
+}
