@@ -69,10 +69,9 @@ def _validate_heldout_failure_counts(summary) -> tuple[dict[str, int] | None, st
 def should_promote(baseline_dev, candidate_dev, baseline_holdout, candidate_holdout):
     """Promote when development improves, held-out does not regress, and no critical failures increase.
 
-    Critical failure classes are 'invalid_output' and 'tool_error'. These are
-    defined in the failure taxonomy (app/models.py) but the current evaluator
-    (app/evaluator.py) does not emit them; they are reserved for future LLM-based
-    agents where schema violations and tool crashes are safety-relevant.
+    Critical failure classes are 'invalid_output' and 'tool_error'. The
+    evaluator emits these when output validation fails or a tool execution
+    explicitly errors; increases on held-out cases block promotion.
     """
     reasons = []
 
