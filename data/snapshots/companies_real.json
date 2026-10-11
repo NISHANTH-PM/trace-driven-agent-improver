@@ -1,0 +1,129 @@
+{
+  "_note": "Real company snapshots from Crustdata API (with exact_match and acceptance filtering)",
+  "companies": [
+    {
+      "name": "Postman",
+      "domain": "postman.com",
+      "industry": "Privately Held",
+      "description": "Postman is the world\u2019s leading API platform. Postman's features simplify each step of building an API and streamline collaboration to help create better APIs\u2014faster. More than 40 million developers and 500,000 organizations across the globe use Postman today.Our customers are doing more and more astounding things with the Postman product every day, and as a result, we are growing rapidly.  Check out our open positions if you\u2019d like to learn more: https://www.postman.com/careers/",
+      "employee_count": 3547,
+      "founded_year": 2014,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 433000000,
+      "last_round": "series_d"
+    },
+    {
+      "name": "Swiggy",
+      "domain": "swiggy.com",
+      "industry": "Public Company",
+      "description": "Swiggy is India\u2019s pioneering on-demand convenience platform, catering to millions of consumers each month. Founded in 2014, its mission is to elevate the quality of life for the urban consumer by offering unparalleled convenience. With an extensive footprint in food delivery, Swiggy Food collaborates with nearly 2 lakh restaurants across 600+ cities. Swiggy Instamart, its quick commerce platform operating in 120+ cities, delivers groceries and other essentials across 40+ categories in 10 minutes. Fueled by a commitment to innovation, Swiggy continually incubates and integrates new services like Swiggy Dineout and Swiggy Genie into its multi-service app. Leveraging cutting-edge technology and Swiggy One, the country\u2019s only membership program offering benefits across food, quick commerce, dining out, and pick-up and drop services, Swiggy aims to provide a superior experience to its consumers. For more information, visit www.swiggy.com",
+      "employee_count": 29252,
+      "founded_year": 2014,
+      "hq_city": "Bengaluru",
+      "total_funding_usd": 5130834891,
+      "last_round": "post_ipo_secondary"
+    },
+    {
+      "name": "Freshworks",
+      "domain": "freshworks.com",
+      "industry": "Public Company",
+      "description": "Freshworks Inc. (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee to be more productive. We give agile enterprises the depth they need to operate at scale, without the operational drag of legacy platforms.Domain-specific AI built for IT, HR, finance and every business team on a decade of real service context.Trusted by Seagate, New Balance, Nucor Corp, Sony Music Entertainment, McLaren Racing, and agile enterprises everywhere.",
+      "employee_count": 7814,
+      "founded_year": 2010,
+      "hq_city": "San Mateo",
+      "total_funding_usd": 483999930,
+      "last_round": "secondary_market"
+    },
+    {
+      "name": "BrowserStack",
+      "domain": "browserstack.com",
+      "industry": "Privately Held",
+      "description": "BrowserStack is the world\u2019s leading software testing platform, powered by AI and trusted by over 50,000 teams, including Amazon, Microsoft, and NVIDIA, to deliver quality software at speed. With a community of over 9 million registered developers and testers, we power 3 million+ tests every day across 21 global data centers.Our platform provides instant access to 30,000+ real devices and browsers, eliminating the need for in-house test infrastructure. BrowserStack supports the entire testing lifecycle with scalable solutions for functional, visual, performance, and accessibility testing, alongside powerful test management and debugging tools. With AI Agents built into key workflows, teams can debug faster, automate smarter, and release with confidence.",
+      "employee_count": 1728,
+      "founded_year": 2011,
+      "hq_city": "Dublin",
+      "total_funding_usd": 250000000,
+      "last_round": "series_b"
+    },
+    {
+      "name": "Razorpay",
+      "domain": "razorpay.com",
+      "industry": "Privately Held",
+      "description": "Power your finance, grow your business.Razorpay is India\u2019s first full-stack financial solutions company. We are on a mission to enhance the payment experience of over 300 million end consumers. And in doing so, we aim to enable Indian businesses - big and small - accept payments digitally with minimal effort and maximum ease. Razorpay has grown from being a payment gateway provider to a solutions-driven organization boasting of an extensive products suite to accept and disburse payments as well as raise capital and park money. In a nutshell, we fit into every nook and corner where your business touches money. #OutgrowOrdinaryWe identify ourselves as disruptors in the digital payments space and our vision is to power the financial ecosystem for other disruptors. Like attracts like and Razorpay actively looks to partner with established companies and startups that have either broken the glass ceiling in their industry or are set to. The Razorpay Product Suite today comprises verticals, along with Payment Gateway, like Payment Links, Payment Pages, Subscriptions, Smart Collect, Route, Razorpay Capital, RazorpayX, Payroll and Thirdwatch.Razorpay was started in 2014 by two IIT Roorkee alumni, Harshil Mathur and Shashank Kumar. Just a short few years later, Razorpay has evolved into a 800-odd strong organization with some of the best talents in the country helping some of the best companies manage their money movement seamlessly.Certified coolWe are a bunch of spirited, ambitious and fun folks. And no, we\u2019re not saying this ourselves--leading institutions have recognized Razorpay for the high trust and high-performance culture that we maintain. Our strength lies in the people we are and we go to great lengths to nurture a family of coders, designers, sellers, marketers, analysts, writers, runners, photographers, gamers, tinkerers, and above all, people who are dreamers and doers at the same time. Be a part of our exciting journey.",
+      "employee_count": 4042,
+      "founded_year": 2014,
+      "hq_city": "Adugodi",
+      "total_funding_usd": 816600000,
+      "last_round": "secondary_market"
+    },
+    {
+      "name": "Chargebee",
+      "domain": "chargebee.com",
+      "industry": "Privately Held",
+      "description": "Over a decade ago, four friends set out to tackle the growing complexities of SaaS billing. What began as a shared dream quickly evolved into a mission to address the biggest hurdles facing businesses: billing complexity, revenue leakage, and missing or disconnected data to inform pricing decisions.As the world shifted from one-time transactions to ongoing customer relationships, Chargebee emerged as a flexible, agile, and elegant solution to help businesses manage recurring customer relationships and accelerate growth.Today, Chargebee is the billing and monetization platform built for the AI economy.From fast-scaling startups to global enterprises, we help companies capture, optimize, and scale revenue \u2014 no matter their GTM strategy or pricing model. Whether you\u2019re experimenting with usage-based pricing, launching AI-powered products, or expanding globally, Chargebee gives you the flexibility and automation to grow with confidence.As the age of AI reshapes how companies deliver and charge for value, we\u2019re excited to shape the future of monetization \u2014 one billing breakthrough at a time.",
+      "employee_count": 1303,
+      "founded_year": 2011,
+      "hq_city": "Rockville",
+      "total_funding_usd": 468170000,
+      "last_round": "series_h"
+    },
+    {
+      "name": "Figma",
+      "domain": "figma.com",
+      "industry": "Privately Held",
+      "description": "Trying all the skills",
+      "employee_count": 3135,
+      "founded_year": 2012,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 1448624736,
+      "last_round": "post_ipo_equity"
+    },
+    {
+      "name": "Linear",
+      "domain": "linear.app",
+      "industry": "Privately Held",
+      "description": "At Linear, we are on a mission to bring magic back to software. To empower product teams to do their best work, we are building an issue tracking and project management tool that combines UI elegance with world-class performance. Founded in 2019, Linear has become the tool of choice for thousands of high-impact companies to build their products better.Linear was set up as a fully remote company from the start. Today, our small but mighty team is distributed across North America and Europe. What unites us is relentless focus, fast execution, and our passion for software craftsmanship. We are all makers at heart and care deeply about the quality of our work.",
+      "employee_count": 291,
+      "founded_year": 2019,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 233200000,
+      "last_round": "secondary_market"
+    },
+    {
+      "name": "Canva",
+      "domain": "canva.com",
+      "industry": "Privately Held",
+      "description": "We're a global online visual communications platform on a mission to empower the world to design. Featuring a simple drag-and-drop user interface and a vast range of templates ranging from presentations, documents, websites, social media graphics, posters, apparel to videos, plus a huge library of fonts, stock photography, illustrations, video footage, and audio clips, anyone can take an idea and create something beautiful on Canva on any device, from anywhere in the world.Since our launch in 2013, we\u2019ve had the crazy big goal of making design accessible to everyone. We were founded on the belief that people shouldn't need to understand complex software to unlock their creativity. We\u2019re leveling the playing field and democratizing access to design and visual communication by empowering 100% of the world to communicate in a way that was once limited to the 1%. We've always had a deeper mission surrounding Canva \u2014 which we talk about as our 'simple' two-step plan: to build one of the world\u2019s most valuable companies, and to do the most good we possibly can. We're committed to our core value of Being a Force for Good, so as the value of our company grows, so too does our ability to have a positive impact on the world.",
+      "employee_count": 19252,
+      "founded_year": 2012,
+      "hq_city": "Darlinghurst",
+      "total_funding_usd": 2533450682,
+      "last_round": "private_equity"
+    },
+    {
+      "name": "Notion",
+      "domain": "notion.com",
+      "industry": "Privately Held",
+      "description": "Notion blends your everyday work tools into one. Product roadmap? Company wiki? Meeting notes? With Notion, they're all in one place, and totally customizable to meet the needs of any workflow. It's the all-in-one workspace for you, your team, and your whole company. We humans are toolmakers by nature, but most of us can't build or modify the software we use every day \u2014 arguably our most powerful tool. Our team at Notion is on a mission to make it possible for everyone to shape the tools that shape their lives.",
+      "employee_count": 7591,
+      "founded_year": 2016,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 343199697,
+      "last_round": "secondary_market"
+    }
+  ],
+  "dev_domains": [
+    "postman.com",
+    "swiggy.com",
+    "freshworks.com",
+    "browserstack.com",
+    "razorpay.com",
+    "chargebee.com"
+  ],
+  "held_out_domains": [
+    "figma.com",
+    "linear.app",
+    "canva.com",
+    "notion.com"
+  ]
+}

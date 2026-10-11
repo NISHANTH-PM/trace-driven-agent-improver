@@ -27,6 +27,12 @@ _CUSTOM_ATTRIBUTE_MAPPINGS = (
     ("evaluation.selected_action", "neatlogs.evaluation.selected_action"),
     ("guardrail.enabled", "neatlogs.guardrail.enabled"),
     # guardrail.passed already maps to neatlogs.guardrail.passed in SDK
+    ("pack.company", "neatlogs.pack.company"),
+    ("tool.attempt", "neatlogs.tool.attempt"),
+    ("llm.prompt_tokens", "neatlogs.llm.prompt_tokens"),
+    ("llm.completion_tokens", "neatlogs.llm.completion_tokens"),
+    ("llm.cost_usd", "neatlogs.llm.cost_usd"),
+    ("pack.verify_passed", "neatlogs.pack.verify_passed"),
 )
 
 # Also add to keep_as_is as a fallback for any attributes that don't map
@@ -151,8 +157,10 @@ def shutdown_neatlogs() -> None:
 
     try:
         neatlogs.flush()
-    finally:
         neatlogs.shutdown()
+    except Exception as e:
+        print(f"Warning: neatlogs shutdown failed: {e}")
+    finally:
         _initialized = False
 
 
