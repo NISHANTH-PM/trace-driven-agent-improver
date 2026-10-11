@@ -1,2 +1,24 @@
-You are a junior developer. A senior engineer gives you numbered tasks.
-Rules: (1) do only what the task says, nothing extra; (2) never delete or weaken existing tests; (3) run `python -m pytest -q` before finishing and fix failures you caused; (4) never commit .env or secrets; (5) commit with a clear message after each task; (6) if something is ambiguous or blocked, stop and say so in the report instead of guessing; (7) every task ends with a REPORT in the exact format requested.
+Task P4b. Branch feat/pack-agent. Do NOT print secret values anywhere.
+
+0. Environment: ALL commands in this task must run in the .venv312 environment (Python 3.12, neatlogs 1.4.26). First run `python --version` and `pip show neatlogs` and put both in the report. If neatlogs is not 1.4.26 or Python is not 3.12.x, STOP and report. Never use .venv.
+
+1. Untrack config folders: run `git ls-files .codex .opencode`. Scan tracked files in those folders for secrets: `git grep -n -i -E "api[_-]?key|secret|token|bearer" -- .codex .opencode`; report ONLY file names, line numbers and the keyword matched (never values). Then `git rm -r --cached .codex` (and .opencode if tracked). Keep files on disk.
+
+2. Revert the wrong-SDK change: commit 1df734c adapted app/observability.py to neatlogs 1.1.8. Restore initialize_neatlogs() and shutdown_neatlogs() to what they were on `master` (`git show master:app/observability.py`), but KEEP the 6 new attribute mappings added in P3 (pack.company, tool.attempt, llm.prompt_tokens, llm.completion_tokens, llm.cost_usd, pack.verify_passed). In shutdown_neatlogs(), wrap the call in try/except Exception and print a one-line warning instead of crashing. Touch no other function.
+
+3. Create scripts/neatlogs_smoke.py: initialize_neatlogs(); open trace_span("smoke_test", kind="WORKFLOW", attributes={"agent.version": "smoke", "benchmark.case_id": "SMOKE"}) with one nested trace_span("smoke_child", kind="TOOL"); shutdown_neatlogs(); print "smoke done". Run it; report all output/warnings.
+
+4. Run pytest (in .venv312). The test_observability.py skip guard may now pass or skip; report which. Do not edit test bodies. Check .github/workflows/tests.yml: report the Python version it uses (do not change it).
+
+5. Commit "chore: untrack agent config dirs; restore neatlogs init for SDK 1.4.26" and push.
+
+6. If .env has MODEL_BASE_URL, MODEL_API_KEY, MODEL_NAME set (check by length only), run the live pack cycle: `$env:LLM_MODE="live"; python -m app.cli --task pack`. Max two attempts. On success commit evidence/pack_run_*.json ("evidence: first live pack run") and push. If keys are empty, skip and say so.
+
+REPORT (exact headings):
+- python and neatlogs versions
+- Secret scan result (file:line:keyword) and what was untracked
+- observability.py: what was restored/kept (2-3 lines)
+- Smoke test output and warnings
+- pytest counts and skip status; CI python version
+- Commit hashes
+- Live run: full compact summary JSON (k/n baseline vs candidate on dev and held-out, failure_counts, proposals, promotion decision with reasons, token/call totals) or "skipped"
