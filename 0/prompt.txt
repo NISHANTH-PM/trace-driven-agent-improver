@@ -1,24 +1,21 @@
-Task P4b. Branch feat/pack-agent. Do NOT print secret values anywhere.
+Task P5. Branch feat/pack-agent, .venv312. No secrets in output.
 
-0. Environment: ALL commands in this task must run in the .venv312 environment (Python 3.12, neatlogs 1.4.26). First run `python --version` and `pip show neatlogs` and put both in the report. If neatlogs is not 1.4.26 or Python is not 3.12.x, STOP and report. Never use .venv.
+1. Cost accounting: in app/pack/service.py the "cost" for baseline and candidate must be the SUM over development AND held_out runs (llm_calls, prompt_tokens, completion_tokens), plus "cost_usd" computed with env LLM_PRICE_IN_PER_M / LLM_PRICE_OUT_PER_M (default 0) and "cost_per_case_usd" = cost_usd / total cases. Add a test with a counting FakeLLM asserting baseline total calls == number of cases that did not end in tool_error across both splits.
 
-1. Untrack config folders: run `git ls-files .codex .opencode`. Scan tracked files in those folders for secrets: `git grep -n -i -E "api[_-]?key|secret|token|bearer" -- .codex .opencode`; report ONLY file names, line numbers and the keyword matched (never values). Then `git rm -r --cached .codex` (and .opencode if tracked). Keep files on disk.
+2. .github/workflows/tests.yml: change python-version to "3.12". Change nothing else.
 
-2. Revert the wrong-SDK change: commit 1df734c adapted app/observability.py to neatlogs 1.1.8. Restore initialize_neatlogs() and shutdown_neatlogs() to what they were on `master` (`git show master:app/observability.py`), but KEEP the 6 new attribute mappings added in P3 (pack.company, tool.attempt, llm.prompt_tokens, llm.completion_tokens, llm.cost_usd, pack.verify_passed). In shutdown_neatlogs(), wrap the call in try/except Exception and print a one-line warning instead of crashing. Touch no other function.
+3. Ablation. Add CLI `--task pack-ablation`. For these configs, each run on BOTH splits with a fresh default_source() and its own output_dir under outputs/ablation/<name>: baseline; retry_only (retry_tool_errors); strict_only (strict_prompt); verify_only (verify_facts); strict_verify; candidate (all three). Print a markdown table: config | dev k/n | held-out k/n | failure_counts (dev+held-out merged) | llm_calls | tokens. Also write evidence/pack_ablation_<UTC timestamp>.json. Reporting only: nothing here feeds proposals or promotion.
 
-3. Create scripts/neatlogs_smoke.py: initialize_neatlogs(); open trace_span("smoke_test", kind="WORKFLOW", attributes={"agent.version": "smoke", "benchmark.case_id": "SMOKE"}) with one nested trace_span("smoke_child", kind="TOOL"); shutdown_neatlogs(); print "smoke done". Run it; report all output/warnings.
+4. Tests for ablation with the scripted FakeLLM (structure and that baseline < candidate on dev).
 
-4. Run pytest (in .venv312). The test_observability.py skip guard may now pass or skip; report which. Do not edit test bodies. Check .github/workflows/tests.yml: report the Python version it uses (do not change it).
+5. README: add a "Pack agent" section covering: what it does (company data tool -> LLM draft -> verify -> .docx); how to run `--task pack` and `--task pack-ablation`; an explicit "Limitations" list: baseline prompt deliberately encourages rounding as a controlled weakness; proposals are rule-mapped from failure classes, not LLM-diagnosed; fixtures are fictional; small sample (6 dev / 4 held-out). Do not claim general self-improvement.
 
-5. Commit "chore: untrack agent config dirs; restore neatlogs init for SDK 1.4.26" and push.
-
-6. If .env has MODEL_BASE_URL, MODEL_API_KEY, MODEL_NAME set (check by length only), run the live pack cycle: `$env:LLM_MODE="live"; python -m app.cli --task pack`. Max two attempts. On success commit evidence/pack_run_*.json ("evidence: first live pack run") and push. If keys are empty, skip and say so.
+6. pytest, commit "feat: cost totals, CI py3.12, ablation, README", push. Then run the live ablation: `$env:LLM_MODE="live"; python -m app.cli --task pack-ablation` (max 2 attempts), commit the evidence JSON, push.
 
 REPORT (exact headings):
-- python and neatlogs versions
-- Secret scan result (file:line:keyword) and what was untracked
-- observability.py: what was restored/kept (2-3 lines)
-- Smoke test output and warnings
-- pytest counts and skip status; CI python version
+- Test results
+- Corrected live-cycle cost (calls, tokens, cost_usd, cost_per_case_usd) — run `--task pack` once more and commit its evidence file too
+- Ablation table (paste the markdown)
+- Did any run use verify regeneration (llm_calls > number of non-tool-error cases)? 
 - Commit hashes
-- Live run: full compact summary JSON (k/n baseline vs candidate on dev and held-out, failure_counts, proposals, promotion decision with reasons, token/call totals) or "skipped"
+- Deviations
