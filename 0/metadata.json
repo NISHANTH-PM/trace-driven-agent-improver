@@ -1,0 +1,84 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4P5F40ACRPN1JHD3S6PY7SX",
+  "session_id": "ses_ed46ee64effezSY8YSA83DpO7L",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T19:01:49.8403753Z",
+  "branch": "master",
+  "checkpoints_count": 3,
+  "save_step_count": 3,
+  "files_touched": [
+    "app/observability.py"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "12b493d3a439",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1123379,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 5944320,
+    "output_tokens": 19024,
+    "api_call_count": 83
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T19:01:49.8054364Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 170,
+    "human_removed": 75,
+    "total_committed": 0,
+    "total_lines_changed": 245,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 1644,
+      "user_lines_removed": 82,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".env.example": 9,
+        ".opencode/plugins/entire.ts": 269,
+        "app/observability.py": 170,
+        "debug_trace.py": 45,
+        "spans_optimized.log": 768,
+        "spans_raw_optimized.log": 256,
+        "tests/test_observability.py": 126
+      },
+      "user_removed_per_file": {
+        ".env.example": 7,
+        "app/observability.py": 75
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1374,
+      "agent_lines_removed": 82,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 270,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1374,
+      "agent_lines_removed": 82,
+      "user_added_per_file": {
+        ".codex/hooks.json": 1,
+        ".opencode/plugins/entire.ts": 269
+      }
+    }
+  ]
+}
