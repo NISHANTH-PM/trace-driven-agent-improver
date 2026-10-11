@@ -1,5 +1,4 @@
 from app import service
-from app.models import BenchmarkSummary
 
 
 def test_critical_heldout_failure_keeps_baseline_active(monkeypatch):
@@ -43,5 +42,11 @@ def test_successfully_promoted_candidate_becomes_active():
 
     assert result["promotion"]["promoted"] is True
     assert result["active_version"] == "candidate"
-    assert result["candidate"]["development"]["success_rate"] > result["baseline"]["development"]["success_rate"]
-    assert result["candidate"]["held_out"]["success_rate"] >= result["baseline"]["held_out"]["success_rate"]
+    assert (
+        result["candidate"]["development"]["success_rate"]
+        > result["baseline"]["development"]["success_rate"]
+    )
+    assert (
+        result["candidate"]["held_out"]["success_rate"]
+        >= result["baseline"]["held_out"]["success_rate"]
+    )
