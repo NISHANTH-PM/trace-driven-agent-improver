@@ -1,30 +1,47 @@
-Task P2. Branch feat/pack-agent. Do not modify existing files in app/ except where stated. Existing tests must keep passing.
+Task P3. Branch feat/pack-agent. Keep existing tests passing. Use FakeLLMClient in all tests; no network.
 
-0. tests/test_observability.py currently errors on import (missing InMemoryDiagnosticSpanExporter in neatlogs 1.4.26). I authorize ONE change: guard the failing import so the module is skipped with a clear reason (`pytest.importorskip` or try/except + `pytestmark = pytest.mark.skip(reason=...)`). Do not alter test bodies. If the file is untracked/not in git, say so in the report.
+1. requirements.txt: add `python-docx>=1.1,<2`. Install it.
 
-1. Create package `app/pack/` with `__init__.py` and `models.py` (pydantic v2):
-   - CompanyData: name, domain, industry, description, employee_count:int, founded_year:int, hq_city:str, total_funding_usd:int, last_round:str
-   - CompanyCase: case_id, company_name, domain, split: Literal["development","held_out"]
-   - PackOutput: case_id, docx_path:str|None, sections: dict[str,str], claimed_facts: dict[str,str|int], verified:bool, tool_attempts:int, rationale:str
-   - REQUIRED_SECTIONS = ["Overview","Key Facts","Funding","Risks"]
+2. app/observability.py: add these pairs to _CUSTOM_ATTRIBUTE_MAPPINGS (same tuple format, mapping X -> neatlogs.X): "pack.company", "tool.attempt", "llm.prompt_tokens", "llm.completion_tokens", "llm.cost_usd", "pack.verify_passed". Change nothing else in that file.
 
-2. Create data/fixtures/companies.json: 10 FICTIONAL companies (realistic names, distinct industries, distinct numbers: employee_count 15–4000, founded_year 2008–2022, funding 0–400M, mix of last_round values incl. "Bootstrapped"). Each matches CompanyData. Header comment is not allowed in JSON, so use a top-level object {"_note": "Illustrative fixtures; real Crustdata snapshots replace these in P5", "companies": [...]}.
+3. Create app/pack/checks.py (pure functions, no I/O):
+   - `missing_sections(sections: dict) -> list[str]`: names from REQUIRED_SECTIONS that are absent or whose text is blank.
+   - `fact_mismatches(company: CompanyData, sections: dict) -> list[str]`: search the concatenated text of all sections (case-insensitive) for each fact; return a list like ["employee_count=4000 not stated exactly"] for each missing one. Accepted forms:
+       employee_count: "4000" or "4,000"
+       founded_year: str(year)
+       hq_city: city name substring
+       last_round: substring
+       total_funding_usd: if 0 -> "bootstrapped" or "no external funding" or "$0"; else any of f"{usd:,}", str(usd), f"${m:g}M", f"{m:g}M", f"${m:g} million", f"{m:g} million" where m = usd/1e6.
+     Rounded or approximate figures like "about 2,000" when the exact value is 2,347 must NOT match.
 
-3. Create app/pack/benchmark.py: `load_pack_cases()` returning 10 CompanyCase: ids D01..D06 split development, H01..H04 split held_out, each mapped to one fixture company by domain. Add `pack_cases_for_split(split)`.
+4. Create app/pack/student.py:
+   - `@dataclass PackConfig`: verify_facts=False, retry_tool_errors=False, strict_prompt=False, max_attempts=3, version="baseline", output_dir="outputs".
+   - `run_pack_student(case: CompanyCase, config: PackConfig, source=None, llm=None) -> tuple[PackOutput, list[TraceEvent]]`. source defaults to default_source(), llm to get_llm(). Reuse TraceEvent from app.models (fields: event_id, run_id, case_id, step, detail, outcome, metadata) and trace_span from app.observability, same style as app/student.py.
+   Flow:
+   a) Fetch (span name "fetch_company", kind="TOOL", attribute tool.attempt per try, pack.company=case.company_name). attempts allowed = config.max_attempts if retry_tool_errors else 1. For each attempt call source.get_company(case.domain, attempt). On ToolError: if more attempts remain, add trace event step="tool_retry", outcome="warning" and continue; if none remain, add event step="tool_execution", outcome="error" and RETURN PackOutput(case_id, docx_path=None, sections={}, claimed_facts={}, verified=False, tool_attempts=n, rationale="tool failed") with the trace. On success add event step="tool_execution", outcome="ok".
+   b) Draft (span "llm_draft", kind="LLM"; if neatlogs rejects that kind use "CHAIN" and say so in report). System prompt (module constants):
+      BASE = "You write one-page company briefings for busy executives. Return ONLY JSON: {\"sections\": {\"Overview\": str, \"Key Facts\": str, \"Funding\": str, \"Risks\": str}}. Keep it concise and readable; prefer rounded, reader-friendly figures (for example 'about 2,000 employees', 'roughly $40M')."
+      STRICT = BASE with that last 'prefer rounded...' sentence replaced by "State every figure exactly as given in the data (employee count, founding year, headquarters city, total funding in USD, last funding round). Never round or estimate."  -> used when config.strict_prompt.
+      User message = the CompanyData as JSON. After the call, set span attributes llm.prompt_tokens and llm.completion_tokens from the llm client's counter deltas (counters exist on the client: prompt_tokens, completion_tokens), and llm.cost_usd computed from env LLM_PRICE_IN_PER_M / LLM_PRICE_OUT_PER_M (USD per million tokens, default 0).
+      Parse JSON (strip ``` fences first). On parse failure or missing "sections" dict: add event step="llm_parse", outcome="error", and return PackOutput with sections={}, docx_path=None, verified=False, rationale="invalid llm output".
+   c) Verify (span "verify_facts", kind="GUARDRAIL", attribute guardrail.enabled=config.verify_facts). Only if config.verify_facts: issues = missing_sections + fact_mismatches. If issues, ONE regeneration: call llm again with the STRICT system prompt and user message = data JSON + "\nFix these problems in your previous answer: " + "; ".join(issues). Re-parse, re-check. verified = no remaining issues. Set span attribute pack.verify_passed. Add event step="verification" with outcome "ok" if verified else "warning". If verify_facts is False: verified=False and add event step="verification", outcome="warning", detail "Verification not enabled".
+   d) Render: write a .docx to f"{config.output_dir}/{case.case_id}_{config.version}.docx" using python-docx (title = company name as Heading 0, then each section as Heading 1 + paragraph). Create the directory if needed. docx_path = that path string.
+   e) Return PackOutput(... tool_attempts, verified, rationale=f"version={config.version}") and the trace.
 
-4. Create app/pack/tools.py:
-   - class ToolError(Exception)
-   - class FixtureSource: `get_company(domain: str, attempt: int = 1) -> CompanyData` reading the JSON (raise ToolError("not found") if missing).
-   - class FlakySource(inner, fail_first: dict[str,int]): wraps a source; if attempt <= fail_first.get(domain,0) raise ToolError("upstream 503"). Otherwise delegate.
-   - `default_source()` returns FlakySource(FixtureSource(), fail_first = domains of D02, D05, H02 each -> 1).
+5. tests/test_pack_student.py (use tmp_path for output_dir; FakeLLMClient with canned JSON):
+   - happy path: good JSON, all facts exact -> docx exists and re-opens with python-docx, headings contain all 4 sections.
+   - baseline on D02 (flaky) -> trace has step "tool_execution" outcome "error", docx_path None, tool_attempts 1.
+   - retry_tool_errors=True on D02 -> succeeds, tool_attempts 2, trace contains a "tool_retry".
+   - verify_facts=True: first fake response uses rounded numbers, second exact -> llm.calls == 2, verified True; if both responses are bad -> verified False and still exactly 2 calls.
+   - invalid JSON -> docx_path None, trace has "llm_parse" error.
+   - unit tests for checks.py incl. the rounding-must-not-match case and the bootstrapped case.
 
-5. Tests in tests/test_pack_tools.py: fixture loads all 10 and validates; unknown domain raises; Flaky fails on attempt 1 and succeeds on attempt 2 for D02's domain; cases split counts are 6 dev / 4 held_out; no domain is duplicated.
-
-6. Run pytest. Commit: "feat: pack domain models, fixtures, flaky data tool".
+6. Run pytest, then commit "feat: pack student with retry, fact verification and docx render".
+7. Run: `git push origin feat/pack-agent`.
 
 REPORT (exact headings):
-- Test results before / after (counts, skips, errors)
+- Test results (passed/skipped/failed counts)
 - Files created/changed
-- The 10 case_id -> company name -> domain table
-- Commit hash
+- Which neatlogs span kind was used for the LLM span, and any neatlogs warnings at import
+- Commit hash and push result
 - Anything ambiguous or deviating
