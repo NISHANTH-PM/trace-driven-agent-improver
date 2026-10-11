@@ -1,0 +1,44 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4P7H4M0WGVRN1Z7DAR4E51K",
+  "session_id": "ses_ed38a4275ffehtT5vUXlrCiCcW",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T19:37:45.6739216Z",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".env.example",
+    ".gitignore",
+    "app/llm.py",
+    "requirements.txt",
+    "tests/test_llm.py"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "db0375aeb71d",
+  "checkpoint_transcript_start": 16,
+  "transcript_lines_at_start": 16,
+  "compact_transcript_start": 16,
+  "token_usage": {
+    "input_tokens": 54151,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 56160,
+    "output_tokens": 3485,
+    "api_call_count": 8
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T19:37:45.6593439Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 369,
+    "human_modified": 1,
+    "human_removed": 0,
+    "total_committed": 369,
+    "total_lines_changed": 370,
+    "agent_percentage": 0,
+    "metric_version": 2
+  }
+}
