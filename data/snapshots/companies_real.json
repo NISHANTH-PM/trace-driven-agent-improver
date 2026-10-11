@@ -100,8 +100,6 @@
   ],
   "held_out_domains": [
     "notion.so",
-    "figma.com",
-    "linear.app",
-    "canva.com"
+    "figma.com"
   ]
 }
