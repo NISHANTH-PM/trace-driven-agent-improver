@@ -33,3 +33,6 @@ These files are **not deleted** but kept for transparency and audit trail. They 
 
 ### pack_ablation_20261011_230135.json, pack_ablation_20261012_000908.json
 - **Runs on the snapshot with neighbourhood-level HQ values (Razorpay 'Adugodi', Canva 'Darlinghurst')**: Same as above. Results are identical in shape to the final runs, superseded because the data was corrected.
+
+### office_outputs_20261012_074455.json, office_outputs_20261012_074455.md
+- **Office outputs demo with missing token/cost counters**: The script had a bug where llm_calls, tokens, and cost were all reported as 0 because it tried to read trace metadata that was never populated. Superseded by a corrected run that properly records per-case and total token/call/cost counters.
