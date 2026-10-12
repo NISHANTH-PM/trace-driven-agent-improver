@@ -16,6 +16,7 @@ from app.llm import FakeLLMClient, LLMClient, get_llm
 from app.pack.models import CompanyCase, PackOutput, REQUIRED_SECTIONS
 from app.pack.tools import FixtureSource, FlakySource, ToolError, default_source
 from app.pack.checks import fact_mismatches, missing_sections
+from app.pack.office import render_xlsx, render_pptx, verify_office_files
 
 
 BASE_SYSTEM_PROMPT = (
@@ -90,6 +91,7 @@ class PackConfig:
     max_attempts: int = 3
     version: str = "baseline"
     output_dir: str = "outputs"
+    outputs: tuple[str, ...] = ("docx",)
 
 
 def run_pack_student(
@@ -298,6 +300,30 @@ def run_pack_student(
 
     doc.save(docx_path)
 
+    # Step d.2) Render optional office files (PPTX, XLSX)
+    office_paths: dict[str, str] = {}
+    if "pptx" in config.outputs:
+        pptx_path = output_dir / f"{case.case_id}_{config.version}.pptx"
+        with trace_span("render_pptx", kind="TOOL", attributes={"pack.company": case.company_name}):
+            render_pptx(company, sections, pptx_path)
+        office_paths["pptx"] = str(pptx_path)
+    if "xlsx" in config.outputs:
+        xlsx_path = output_dir / f"{case.case_id}_{config.version}.xlsx"
+        with trace_span("render_xlsx", kind="TOOL", attributes={"pack.company": case.company_name}):
+            render_xlsx(company, xlsx_path)
+        office_paths["xlsx"] = str(xlsx_path)
+
+    # Step d.3) Verify office artifacts
+    if "pptx" in config.outputs or "xlsx" in config.outputs:
+        xlsx_p = Path(office_paths.get("xlsx", ""))
+        pptx_p = Path(office_paths.get("pptx", ""))
+        with trace_span("verify_artifacts", kind="GUARDRAIL", attributes={"pack.company": case.company_name}):
+            mismatches = verify_office_files(company, xlsx_p, pptx_p)
+            if mismatches:
+                event("artifact_verification", f"Mismatches: {mismatches}", "error", mismatches=mismatches)
+            else:
+                event("artifact_verification", "Office artifacts verified", "ok")
+
     # Step e) Return output
     rationale = f"version={config.version}"
     output = PackOutput(
@@ -308,6 +334,7 @@ def run_pack_student(
         verified=verified,
         tool_attempts=tool_attempts,
         rationale=rationale,
+        office_paths=office_paths,
     )
 
     event("finalize", f"Pack output generated at {docx_path}", "ok" if verified else "warning")

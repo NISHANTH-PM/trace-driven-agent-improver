@@ -663,3 +663,105 @@ class TestPackEvaluatorSpans:
             if original_trace_span:
                 import app.pack.evaluator as evaluator_module
                 evaluator_module.trace_span = original_trace_span
+
+
+class TestOfficeOutputs:
+    """Tests for optional PPTX and XLSX outputs."""
+
+    def test_office_files_render_and_verify_pass(self, case_d01, good_json_response, tmp_path):
+        """Render both files for a fixture company, reopen, verify_office_files returns []."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        assert output.docx_path is not None
+        assert "pptx" in output.office_paths
+        assert "xlsx" in output.office_paths
+        assert Path(output.office_paths["pptx"]).exists()
+        assert Path(output.office_paths["xlsx"]).exists()
+
+        # Verify using verify_office_files
+        from app.pack.office import verify_office_files
+        mismatches = verify_office_files(
+            FixtureSource().get_company(case_d01.domain),
+            Path(output.office_paths["xlsx"]),
+            Path(output.office_paths["pptx"]),
+        )
+        assert mismatches == [], f"Expected no mismatches, got: {mismatches}"
+
+    def test_verify_office_files_detects_tampered_xlsx(self, case_d01, good_json_response, tmp_path):
+        """Tamper the xlsx value then verify returns a mismatch."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        # Tamper the xlsx file - change employee_count (row 4 in Facts sheet: header=1, name=2, domain=3, employee_count=4)
+        from openpyxl import load_workbook
+        wb = load_workbook(output.office_paths["xlsx"])
+        ws = wb["Facts"]
+        # employee_count is row 4 (header=1, name=2, domain=3, employee_count=4)
+        ws.cell(row=4, column=2, value=999999)
+        wb.save(output.office_paths["xlsx"])
+
+        from app.pack.office import verify_office_files
+        mismatches = verify_office_files(
+            FixtureSource().get_company(case_d01.domain),
+            Path(output.office_paths["xlsx"]),
+            Path(output.office_paths["pptx"]),
+        )
+        assert any("employee_count" in m for m in mismatches)
+
+    def test_default_config_no_office_files(self, case_d01, good_json_response, tmp_path):
+        """Default config (docx only) produces no office files and unchanged trace steps."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(output_dir=str(tmp_path), version="test")
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        assert output.docx_path is not None
+        assert output.office_paths == {}
+        # Check trace has no render_pptx, render_xlsx, verify_artifacts steps
+        trace_steps = [e.step for e in trace]
+        assert "render_pptx" not in trace_steps
+        assert "render_xlsx" not in trace_steps
+        assert "verify_artifacts" not in trace_steps
+
+    def test_all_three_outputs_end_to_end(self, case_d01, good_json_response, tmp_path):
+        """FakeLLM end-to-end run with outputs all three produces three files."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=True,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        assert output.docx_path is not None
+        assert Path(output.docx_path).exists()
+        assert "pptx" in output.office_paths
+        assert "xlsx" in output.office_paths
+        assert Path(output.office_paths["pptx"]).exists()
+        assert Path(output.office_paths["xlsx"]).exists()
+
+        # Verify trace has the office steps (artifact_verification event)
+        trace_steps = [e.step for e in trace]
+        assert "artifact_verification" in trace_steps
+
+        # Verify all three files exist
+        assert Path(output.docx_path).exists()
+        assert Path(output.office_paths["pptx"]).exists()
+        assert Path(output.office_paths["xlsx"]).exists()

@@ -38,6 +38,7 @@ class PackOutput(BaseModel):
     verified: bool
     tool_attempts: int
     rationale: str
+    office_paths: dict[str, str] = Field(default_factory=dict)
 
 
 REQUIRED_SECTIONS = ["Overview", "Key Facts", "Funding", "Risks"]
