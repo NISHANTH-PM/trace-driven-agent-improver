@@ -117,6 +117,88 @@ class TestMapCompany:
         result = map_company(company_data, "test.com")
         assert result.hq_city == "Bengaluru"
 
+    def test_hq_city_prefers_locations_city(self):
+        """Test hq_city uses locations.city when present (string)."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "city": "Bengaluru",
+                "headquarters": "Adugodi, Karnataka, India"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "Bengaluru"
+
+    def test_hq_city_falls_back_to_headquarters_when_city_empty(self):
+        """Test hq_city falls back to headquarters first comma segment when city is empty."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "city": "",
+                "headquarters": "San Francisco, CA, USA"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "San Francisco"
+
+    def test_hq_city_falls_back_to_headquarters_when_city_missing(self):
+        """Test hq_city falls back to headquarters when city key is missing."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "headquarters": "London, England, UK"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "London"
+
+    def test_hq_city_title_cases_all_upper(self):
+        """Test hq_city converts all-uppercase city to title case."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "city": "DARLINGHURST",
+                "headquarters": "Darlinghurst, NSW, Australia"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "Darlinghurst"
+
+    def test_hq_city_title_cases_all_upper_from_headquarters(self):
+        """Test hq_city converts all-uppercase from headquarters when city missing."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "headquarters": "DARLINGHURST, NSW, Australia"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "Darlinghurst"
+
+    def test_hq_city_preserves_mixed_case(self):
+        """Test hq_city preserves mixed-case city names."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "city": "San Francisco",
+                "headquarters": "San Francisco, CA, USA"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "San Francisco"
+
 
 class TestCrustdataSource:
     """Tests for CrustdataSource class."""

@@ -2,19 +2,22 @@
 
 import json
 import os
+import time
 import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 from docx import Document
+from docx.shared import Pt, RGBColor
 
 from app.models import TraceEvent
-from app.observability import trace_span
+from app.observability import trace_span, mark_span_failed
 from app.llm import FakeLLMClient, LLMClient, get_llm
 from app.pack.models import CompanyCase, PackOutput, REQUIRED_SECTIONS
 from app.pack.tools import FixtureSource, FlakySource, ToolError, default_source
 from app.pack.checks import fact_mismatches, missing_sections
+from app.pack.office import render_xlsx, render_pptx, verify_office_files
 
 
 BASE_SYSTEM_PROMPT = (
@@ -87,8 +90,10 @@ class PackConfig:
     retry_tool_errors: bool = False
     strict_prompt: bool = False
     max_attempts: int = 3
+    retry_backoff_s: float = 0.4
     version: str = "baseline"
     output_dir: str = "outputs"
+    outputs: tuple[str, ...] = ("docx",)
 
 
 def run_pack_student(
@@ -135,16 +140,21 @@ def run_pack_student(
             "fetch_company",
             kind="TOOL",
             attributes={"tool.attempt": attempt, "pack.company": case.company_name},
-        ):
+        ) as span:
             try:
                 company = source.get_company(case.domain, attempt)
                 event("tool_execution", f"Fetched company data on attempt {attempt}", "ok")
+                span.set_attribute("output.value", f"OK attempt {attempt}: fetched {company.name}")
                 break
             except ToolError as e:
                 if attempt < max_attempts:
                     event("tool_retry", f"Tool error on attempt {attempt}: {e}", "warning", attempt=attempt)
+                    mark_span_failed(span, f"tool_error (attempt {attempt}): {e}")
+                    span.set_attribute("output.value", f"FAILED attempt {attempt}/{max_attempts}: {e}. Retrying.")
                 else:
                     event("tool_execution", f"Tool failed after {attempt} attempts: {e}", "error", attempt=attempt)
+                    mark_span_failed(span, f"tool_error (attempt {attempt}): {e}")
+                    span.set_attribute("output.value", f"FAILED attempt {attempt}/{max_attempts}: {e}. Giving up.")
                     return (
                         PackOutput(
                             case_id=case.case_id,
@@ -157,6 +167,13 @@ def run_pack_student(
                         ),
                         trace,
                     )
+
+        # Backoff before next attempt (if another attempt remains)
+        if attempt < max_attempts:
+            backoff_s = config.retry_backoff_s * attempt
+            if backoff_s > 0:
+                event("backoff", f"backoff {backoff_s:.1f}s", "ok", backoff_s=backoff_s)
+                time.sleep(backoff_s)
 
     # Step b) Draft
     system_prompt = STRICT_SYSTEM_PROMPT if config.strict_prompt else BASE_SYSTEM_PROMPT
@@ -279,7 +296,47 @@ def run_pack_student(
         else:
             doc.add_paragraph("[Section not provided]")
 
+    # Add provenance/verification footer
+    if config.verify_facts:
+        if verified:
+            footer_status = "Yes"
+        else:
+            footer_status = "No - at least one figure could not be confirmed"
+    else:
+        footer_status = "Not checked"
+
+    footer_para = doc.add_paragraph()
+    footer_run = footer_para.add_run(
+        f"Source: Crustdata company data. Figures checked against source: {footer_status}."
+    )
+    footer_run.font.size = Pt(8)
+    footer_run.font.color.rgb = RGBColor(0x80, 0x80, 0x80)
+
     doc.save(docx_path)
+
+    # Step d.2) Render optional office files (PPTX, XLSX)
+    office_paths: dict[str, str] = {}
+    if "pptx" in config.outputs:
+        pptx_path = output_dir / f"{case.case_id}_{config.version}.pptx"
+        with trace_span("render_pptx", kind="TOOL", attributes={"pack.company": case.company_name}):
+            render_pptx(company, sections, pptx_path)
+        office_paths["pptx"] = str(pptx_path)
+    if "xlsx" in config.outputs:
+        xlsx_path = output_dir / f"{case.case_id}_{config.version}.xlsx"
+        with trace_span("render_xlsx", kind="TOOL", attributes={"pack.company": case.company_name}):
+            render_xlsx(company, xlsx_path)
+        office_paths["xlsx"] = str(xlsx_path)
+
+    # Step d.3) Verify office artifacts
+    if "pptx" in config.outputs or "xlsx" in config.outputs:
+        xlsx_p = Path(office_paths.get("xlsx", ""))
+        pptx_p = Path(office_paths.get("pptx", ""))
+        with trace_span("verify_artifacts", kind="GUARDRAIL", attributes={"pack.company": case.company_name}):
+            mismatches = verify_office_files(company, xlsx_p, pptx_p)
+            if mismatches:
+                event("artifact_verification", f"Mismatches: {mismatches}", "error", mismatches=mismatches)
+            else:
+                event("artifact_verification", "Office artifacts verified", "ok")
 
     # Step e) Return output
     rationale = f"version={config.version}"
@@ -291,6 +348,7 @@ def run_pack_student(
         verified=verified,
         tool_attempts=tool_attempts,
         rationale=rationale,
+        office_paths=office_paths,
     )
 
     event("finalize", f"Pack output generated at {docx_path}", "ok" if verified else "warning")

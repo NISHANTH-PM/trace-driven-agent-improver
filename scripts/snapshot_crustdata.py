@@ -1,5 +1,6 @@
 """Snapshot Crustdata API responses for real companies."""
 
+import argparse
 import json
 import os
 import time
@@ -92,12 +93,120 @@ def check_acceptance(company_data: dict, requested_domain: str) -> tuple[bool, s
     return True, ""
 
 
+def rebuild_from_raw(raw_dir: Path, snapshot_file: Path) -> tuple[list, dict, list, list]:
+    """Rebuild snapshot from existing raw files without HTTP calls."""
+    companies = []
+    accepted_domains = {"development": [], "held_out": []}
+    skipped = []
+    total_credits = 0
+
+    for domain in ALL_DOMAINS:
+        raw_path = raw_dir / f"{domain}.json"
+        if not raw_path.exists():
+            skipped.append((domain, "no raw file"))
+            print(f"{domain}: SKIPPED - no raw file")
+            continue
+
+        with raw_path.open() as f:
+            data = json.load(f)
+
+        if not isinstance(data, list) or len(data) == 0:
+            skipped.append((domain, "invalid raw format"))
+            print(f"{domain}: SKIPPED - invalid raw format")
+            continue
+
+        result = data[0]
+        matches = result.get("matches", [])
+        if not matches:
+            skipped.append((domain, "no matches in raw"))
+            print(f"{domain}: SKIPPED - no matches in raw")
+            continue
+
+        best_match = max(matches, key=lambda m: m.get("confidence_score", 0))
+        company_data = best_match.get("company_data", {})
+
+        accepted, reason = check_acceptance(company_data, domain)
+        matched_name = company_data.get("basic_info", {}).get("name", "unknown")
+
+        if accepted:
+            try:
+                company = CrustdataSource().get_company(domain)
+                companies.append(company.model_dump())
+                split = "development" if domain in DEV_DOMAINS else "held_out"
+                accepted_domains[split].append(domain)
+                old_hq = None
+                # Get old hq_city from existing snapshot if available
+                if snapshot_file.exists():
+                    with snapshot_file.open() as f:
+                        existing = json.load(f)
+                    for c in existing.get("companies", []):
+                        if c["domain"] == domain:
+                            old_hq = c.get("hq_city")
+                            break
+                new_hq = company.hq_city
+                if old_hq and old_hq != new_hq:
+                    print(f"{domain}: OK (rebuilt) - {matched_name} | hq_city: {old_hq!r} -> {new_hq!r}")
+                else:
+                    print(f"{domain}: OK (rebuilt) - {matched_name} | hq_city: {new_hq!r}")
+            except Exception as e:
+                skipped.append((domain, f"mapping error: {e}"))
+                print(f"{domain}: SKIPPED - mapping error: {e}")
+        else:
+            skipped.append((domain, reason))
+            print(f"{domain}: SKIPPED - {reason}")
+
+    # Check minimum requirements
+    dev_count = len(accepted_domains["development"])
+    held_count = len(accepted_domains["held_out"])
+
+    print(f"\nAccepted DEV: {dev_count}/6")
+    print(f"Accepted HELD-OUT: {held_count}/4")
+
+    if dev_count < 6 or held_count < 4:
+        print("\nERROR: Insufficient accepted companies!")
+        print(f"  DEV domains accepted: {accepted_domains['development']}")
+        print(f"  HELD-OUT domains accepted: {accepted_domains['held_out']}")
+        print(f"  Skipped: {skipped}")
+        raise SystemExit(1)
+
+    return companies, accepted_domains, skipped, total_credits
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--from-raw", action="store_true", help="Rebuild snapshot from existing raw files without HTTP calls")
+    args = parser.parse_args()
+
     raw_dir = Path(__file__).parent.parent / "data" / "snapshots" / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
 
     snapshot_file = Path(__file__).parent.parent / "data" / "snapshots" / "companies_real.json"
 
+    if args.from_raw:
+        print("Rebuilding snapshot from raw files (no HTTP calls)...")
+        companies, accepted_domains, skipped, total_credits = rebuild_from_raw(raw_dir, snapshot_file)
+
+        # Save mapped companies
+        snapshot_data = {
+            "_note": "Real company snapshots from Crustdata API (rebuilt from raw with city preference)",
+            "companies": companies,
+            "dev_domains": accepted_domains["development"],
+            "held_out_domains": accepted_domains["held_out"],
+        }
+
+        with snapshot_file.open("w") as f:
+            json.dump(snapshot_data, f, indent=2)
+
+        print(f"\nTotal credits used: {total_credits}")
+        print(f"Accepted: {len(companies)}")
+        print(f"Skipped: {len(skipped)}")
+        for domain, reason in skipped:
+            print(f"  {domain}: {reason}")
+
+        print(f"\nSnapshot saved to {snapshot_file}")
+        return
+
+    # Original fetch logic
     # Load existing snapshot to preserve accepted companies
     existing_companies = []
     existing_dev = []

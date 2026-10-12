@@ -1,6 +1,17 @@
 {
-  "_note": "Real company snapshots from Crustdata API (with exact_match and acceptance filtering)",
+  "_note": "Real company snapshots from Crustdata API (rebuilt from raw with city preference)",
   "companies": [
+    {
+      "name": "Razorpay",
+      "domain": "razorpay.com",
+      "industry": "Privately Held",
+      "description": "Power your finance, grow your business.Razorpay is India\u2019s first full-stack financial solutions company. We are on a mission to enhance the payment experience of over 300 million end consumers. And in doing so, we aim to enable Indian businesses - big and small - accept payments digitally with minimal effort and maximum ease. Razorpay has grown from being a payment gateway provider to a solutions-driven organization boasting of an extensive products suite to accept and disburse payments as well as raise capital and park money. In a nutshell, we fit into every nook and corner where your business touches money. #OutgrowOrdinaryWe identify ourselves as disruptors in the digital payments space and our vision is to power the financial ecosystem for other disruptors. Like attracts like and Razorpay actively looks to partner with established companies and startups that have either broken the glass ceiling in their industry or are set to. The Razorpay Product Suite today comprises verticals, along with Payment Gateway, like Payment Links, Payment Pages, Subscriptions, Smart Collect, Route, Razorpay Capital, RazorpayX, Payroll and Thirdwatch.Razorpay was started in 2014 by two IIT Roorkee alumni, Harshil Mathur and Shashank Kumar. Just a short few years later, Razorpay has evolved into a 800-odd strong organization with some of the best talents in the country helping some of the best companies manage their money movement seamlessly.Certified coolWe are a bunch of spirited, ambitious and fun folks. And no, we\u2019re not saying this ourselves--leading institutions have recognized Razorpay for the high trust and high-performance culture that we maintain. Our strength lies in the people we are and we go to great lengths to nurture a family of coders, designers, sellers, marketers, analysts, writers, runners, photographers, gamers, tinkerers, and above all, people who are dreamers and doers at the same time. Be a part of our exciting journey.",
+      "employee_count": 4042,
+      "founded_year": 2014,
+      "hq_city": "Bengaluru",
+      "total_funding_usd": 816600000,
+      "last_round": "secondary_market"
+    },
     {
       "name": "Postman",
       "domain": "postman.com",
@@ -11,28 +22,6 @@
       "hq_city": "San Francisco",
       "total_funding_usd": 433000000,
       "last_round": "series_d"
-    },
-    {
-      "name": "Swiggy",
-      "domain": "swiggy.com",
-      "industry": "Public Company",
-      "description": "Swiggy is India\u2019s pioneering on-demand convenience platform, catering to millions of consumers each month. Founded in 2014, its mission is to elevate the quality of life for the urban consumer by offering unparalleled convenience. With an extensive footprint in food delivery, Swiggy Food collaborates with nearly 2 lakh restaurants across 600+ cities. Swiggy Instamart, its quick commerce platform operating in 120+ cities, delivers groceries and other essentials across 40+ categories in 10 minutes. Fueled by a commitment to innovation, Swiggy continually incubates and integrates new services like Swiggy Dineout and Swiggy Genie into its multi-service app. Leveraging cutting-edge technology and Swiggy One, the country\u2019s only membership program offering benefits across food, quick commerce, dining out, and pick-up and drop services, Swiggy aims to provide a superior experience to its consumers. For more information, visit www.swiggy.com",
-      "employee_count": 29252,
-      "founded_year": 2014,
-      "hq_city": "Bengaluru",
-      "total_funding_usd": 5130834891,
-      "last_round": "post_ipo_secondary"
-    },
-    {
-      "name": "Freshworks",
-      "domain": "freshworks.com",
-      "industry": "Public Company",
-      "description": "Freshworks Inc. (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee to be more productive. We give agile enterprises the depth they need to operate at scale, without the operational drag of legacy platforms.Domain-specific AI built for IT, HR, finance and every business team on a decade of real service context.Trusted by Seagate, New Balance, Nucor Corp, Sony Music Entertainment, McLaren Racing, and agile enterprises everywhere.",
-      "employee_count": 7814,
-      "founded_year": 2010,
-      "hq_city": "San Mateo",
-      "total_funding_usd": 483999930,
-      "last_round": "secondary_market"
     },
     {
       "name": "BrowserStack",
@@ -46,15 +35,26 @@
       "last_round": "series_b"
     },
     {
-      "name": "Razorpay",
-      "domain": "razorpay.com",
-      "industry": "Privately Held",
-      "description": "Power your finance, grow your business.Razorpay is India\u2019s first full-stack financial solutions company. We are on a mission to enhance the payment experience of over 300 million end consumers. And in doing so, we aim to enable Indian businesses - big and small - accept payments digitally with minimal effort and maximum ease. Razorpay has grown from being a payment gateway provider to a solutions-driven organization boasting of an extensive products suite to accept and disburse payments as well as raise capital and park money. In a nutshell, we fit into every nook and corner where your business touches money. #OutgrowOrdinaryWe identify ourselves as disruptors in the digital payments space and our vision is to power the financial ecosystem for other disruptors. Like attracts like and Razorpay actively looks to partner with established companies and startups that have either broken the glass ceiling in their industry or are set to. The Razorpay Product Suite today comprises verticals, along with Payment Gateway, like Payment Links, Payment Pages, Subscriptions, Smart Collect, Route, Razorpay Capital, RazorpayX, Payroll and Thirdwatch.Razorpay was started in 2014 by two IIT Roorkee alumni, Harshil Mathur and Shashank Kumar. Just a short few years later, Razorpay has evolved into a 800-odd strong organization with some of the best talents in the country helping some of the best companies manage their money movement seamlessly.Certified coolWe are a bunch of spirited, ambitious and fun folks. And no, we\u2019re not saying this ourselves--leading institutions have recognized Razorpay for the high trust and high-performance culture that we maintain. Our strength lies in the people we are and we go to great lengths to nurture a family of coders, designers, sellers, marketers, analysts, writers, runners, photographers, gamers, tinkerers, and above all, people who are dreamers and doers at the same time. Be a part of our exciting journey.",
-      "employee_count": 4042,
-      "founded_year": 2014,
-      "hq_city": "Adugodi",
-      "total_funding_usd": 816600000,
+      "name": "Freshworks",
+      "domain": "freshworks.com",
+      "industry": "Public Company",
+      "description": "Freshworks Inc. (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee to be more productive. We give agile enterprises the depth they need to operate at scale, without the operational drag of legacy platforms.Domain-specific AI built for IT, HR, finance and every business team on a decade of real service context.Trusted by Seagate, New Balance, Nucor Corp, Sony Music Entertainment, McLaren Racing, and agile enterprises everywhere.",
+      "employee_count": 7814,
+      "founded_year": 2010,
+      "hq_city": "San Mateo",
+      "total_funding_usd": 483999930,
       "last_round": "secondary_market"
+    },
+    {
+      "name": "Swiggy",
+      "domain": "swiggy.com",
+      "industry": "Public Company",
+      "description": "Swiggy is India\u2019s pioneering on-demand convenience platform, catering to millions of consumers each month. Founded in 2014, its mission is to elevate the quality of life for the urban consumer by offering unparalleled convenience. With an extensive footprint in food delivery, Swiggy Food collaborates with nearly 2 lakh restaurants across 600+ cities. Swiggy Instamart, its quick commerce platform operating in 120+ cities, delivers groceries and other essentials across 40+ categories in 10 minutes. Fueled by a commitment to innovation, Swiggy continually incubates and integrates new services like Swiggy Dineout and Swiggy Genie into its multi-service app. Leveraging cutting-edge technology and Swiggy One, the country\u2019s only membership program offering benefits across food, quick commerce, dining out, and pick-up and drop services, Swiggy aims to provide a superior experience to its consumers. For more information, visit www.swiggy.com",
+      "employee_count": 29252,
+      "founded_year": 2014,
+      "hq_city": "Bengaluru",
+      "total_funding_usd": 5130834891,
+      "last_round": "post_ipo_secondary"
     },
     {
       "name": "Chargebee",
@@ -113,11 +113,11 @@
     }
   ],
   "dev_domains": [
-    "postman.com",
-    "swiggy.com",
-    "freshworks.com",
-    "browserstack.com",
     "razorpay.com",
+    "postman.com",
+    "browserstack.com",
+    "freshworks.com",
+    "swiggy.com",
     "chargebee.com"
   ],
   "held_out_domains": [

@@ -98,6 +98,10 @@ def run_pack_ablation_task():
         dev_cases = pack_cases_for_split("development")
         held_cases = pack_cases_for_split("held_out")
 
+        pack_source = os.getenv("PACK_SOURCE", "fixtures").lower()
+        dev_companies = [c.company_name for c in dev_cases]
+        held_companies = [c.company_name for c in held_cases]
+
         configs = {
             "baseline": PackConfig(
                 version="baseline",
@@ -194,6 +198,11 @@ def run_pack_ablation_task():
         evidence_path = f"evidence/pack_ablation_{timestamp}.json"
         with open(evidence_path, "w") as f:
             json.dump({
+                "source": pack_source,
+                "companies": {
+                    "development": dev_companies,
+                    "held_out": held_companies,
+                },
                 "timestamp": timestamp,
                 "results": results,
             }, f, indent=2, default=str)
