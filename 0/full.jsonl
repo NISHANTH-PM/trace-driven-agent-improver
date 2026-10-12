@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 3230916,
-      "output": 41729,
-      "reasoning": 8277,
+      "input": 3267507,
+      "output": 43703,
+      "reasoning": 8342,
       "cache": {
-        "read": 16351200,
+        "read": 17366400,
         "write": 0
       }
     },
     "time": {
       "created": 1791757007618,
-      "updated": 1791764024616
+      "updated": 1791764059856
     }
   },
   "messages": [
@@ -16319,19 +16319,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 209826,
+          "input": 6581,
+          "output": 187,
+          "reasoning": 18,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 203040
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791764024615
+          "created": 1791764024615,
+          "completed": 1791764036377
         },
+        "finish": "tool-calls",
         "id": "msg_12d754d270016SsKMuCN23rBfg",
         "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
       },
@@ -16359,20 +16362,414 @@
           "tool": "bash",
           "callID": "call-2aa25f42-5ab6-4932-898f-88408e169514",
           "state": {
-            "metadata": {
-              "output": "warning: in the working copy of 'app/pack/crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/snapshot_crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'evidence/real_data_results.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'evidence/superseded/README.md', LF will be replaced by CRLF the next time Git touches it\n"
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "cd /d/trace-driven-agent-improver && git add app/pack/crustdata.py scripts/snapshot_crustdata.py tests/test_crustdata.py .gitignore README.md evidence/pack_ablation_20261012_000908.json evidence/pack_run_20261012_001001.json evidence/pack_run_20261012_001046.json evidence/pack_run_20261012_001130.json evidence/real_data_results.md evidence/superseded/ && git commit -m \"evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\""
             },
+            "output": "warning: in the working copy of 'app/pack/crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/snapshot_crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'evidence/real_data_results.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'evidence/superseded/README.md', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent 32c3b1d] evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\n 16 files changed, 871 insertions(+), 25 deletions(-)\n create mode 100644 evidence/pack_ablation_20261012_000908.json\n create mode 100644 evidence/pack_run_20261012_001001.json\n create mode 100644 evidence/pack_run_20261012_001046.json\n create mode 100644 evidence/pack_run_20261012_001130.json\n create mode 100644 evidence/superseded/README.md\n rename evidence/{ => superseded}/pack_ablation_20261011_225757.json (100%)\n rename evidence/{ => superseded}/pack_run_20261011_222702.json (100%)\n rename evidence/{ => superseded}/pack_run_20261011_224432.json (100%)\n create mode 100644 evidence/superseded/real_data_results.md\n rename evidence/{ => superseded}/repeat_runs_20261011_230408.md (100%)\n",
+            "metadata": {
+              "output": "warning: in the working copy of 'app/pack/crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/snapshot_crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_crustdata.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'evidence/real_data_results.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'evidence/superseded/README.md', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent 32c3b1d] evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\n 16 files changed, 871 insertions(+), 25 deletions(-)\n create mode 100644 evidence/pack_ablation_20261012_000908.json\n create mode 100644 evidence/pack_run_20261012_001001.json\n create mode 100644 evidence/pack_run_20261012_001046.json\n create mode 100644 evidence/pack_run_20261012_001130.json\n create mode 100644 evidence/superseded/README.md\n rename evidence/{ => superseded}/pack_ablation_20261011_225757.json (100%)\n rename evidence/{ => superseded}/pack_run_20261011_222702.json (100%)\n rename evidence/{ => superseded}/pack_run_20261011_224432.json (100%)\n create mode 100644 evidence/superseded/real_data_results.md\n rename evidence/{ => superseded}/repeat_runs_20261011_230408.md (100%)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add app/pack/crustdata.py scripts/snapshot_crustdata.py tests/test_crustdata.py .gitignore README.md evidence/pack_ablation_20261012_000908.json evidence/pack_run_20261012_001001.json evidence/pack_run_20261012_001046.json evidence/pack_run_20261012_001130.json evidence/real_data_results.md evidence/superseded/ && git commit -m \"evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\"",
             "time": {
-              "start": 1791764030438
+              "start": 1791764030438,
+              "end": 1791764035363
             }
           },
           "id": "prt_12d7563e0001VM3UTIZKpnyobj",
           "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
           "messageID": "msg_12d754d270016SsKMuCN23rBfg"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 209826,
+            "input": 6581,
+            "output": 187,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 203040
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d7579140010w6itMoPG5GMxG",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d754d270016SsKMuCN23rBfg"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d69ee64001S0BWARA2wS2wj5",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 210389,
+          "input": 7301,
+          "output": 41,
+          "reasoning": 7,
+          "cache": {
+            "write": 0,
+            "read": 203040
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791764036408,
+          "completed": 1791764049199
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d757b38001e85KFy2jpNXrr6",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d7591a3001HaVMP70XzVIxN6",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d757b38001e85KFy2jpNXrr6"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me push the changes.",
+          "time": {
+            "start": 1791764042149,
+            "end": 1791764042497
+          },
+          "id": "prt_12d7591a5001NT8DMWE4tCgs9U",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d757b38001e85KFy2jpNXrr6"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-85fc02b5-5d80-4653-9b80-e6c6d7110bda",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git push 2>&1"
+            },
+            "output": "[entire] Pushing 3 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   d2a8238..32c3b1d  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[entire] Pushing 3 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   d2a8238..32c3b1d  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git push 2>&1",
+            "time": {
+              "start": 1791764042508,
+              "end": 1791764048424
+            }
+          },
+          "id": "prt_12d759303001JNF7jB6C1OW4Ok",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d757b38001e85KFy2jpNXrr6"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 210389,
+            "input": 7301,
+            "output": 41,
+            "reasoning": 7,
+            "cache": {
+              "write": 0,
+              "read": 203040
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d75abab001t11NcJcIZqhHMW",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d757b38001e85KFy2jpNXrr6"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d69ee64001S0BWARA2wS2wj5",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 210545,
+          "input": 7429,
+          "output": 58,
+          "reasoning": 18,
+          "cache": {
+            "write": 0,
+            "read": 203040
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791764049219,
+          "completed": 1791764055956
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d75ad430014N7IhMSXJTaBZ8",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d75b874001mu2Tle7XxccX88",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75ad430014N7IhMSXJTaBZ8"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run the tests one more time to make sure everything is good.",
+          "time": {
+            "start": 1791764052086,
+            "end": 1791764052877
+          },
+          "id": "prt_12d75b876001a95z2IuqThaoJs",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75ad430014N7IhMSXJTaBZ8"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-aebb0497-b556-4006-b269-8ea826c5aa32",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1"
+            },
+            "output": "........................................................................ [ 58%]\r\n....................................................                     [100%]\r\n124 passed, 1 skipped in 1.88s\r\n",
+            "metadata": {
+              "output": "........................................................................ [ 58%]\r\n....................................................                     [100%]\r\n124 passed, 1 skipped in 1.88s\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1",
+            "time": {
+              "start": 1791764052890,
+              "end": 1791764055281
+            }
+          },
+          "id": "prt_12d75bb91001gw0GhnTAPqW2Sb",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75ad430014N7IhMSXJTaBZ8"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 210545,
+            "input": 7429,
+            "output": 58,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 203040
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d75c642001qQwNHr3XvjY5K5",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75ad430014N7IhMSXJTaBZ8"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d69ee64001S0BWARA2wS2wj5",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 210656,
+          "input": 7562,
+          "output": 41,
+          "reasoning": 13,
+          "cache": {
+            "write": 0,
+            "read": 203040
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791764055974,
+          "completed": 1791764059836
+        },
+        "finish": "tool-calls",
+        "id": "msg_12d75c7a6001kw2WSsON005uy3",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d75d2090017KxfjQ6UKVe0lU",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75c7a6001kw2WSsON005uy3"
+        },
+        {
+          "type": "reasoning",
+          "text": "All tests pass. Let me now create the final report.",
+          "time": {
+            "start": 1791764058636,
+            "end": 1791764058987
+          },
+          "id": "prt_12d75d20c001uhNZuc9I2dK7ha",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75c7a6001kw2WSsON005uy3"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-01777621-e636-42ba-8d97-2936de13aed4",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git log --oneline -5"
+            },
+            "output": "32c3b1d evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\nd2a8238 evidence: real-data results tables\ne420059 evidence: add P8 ablation and repeat run artifacts\nbc7e8db docs: real-data pack flow and limitations\n728c0ab evidence: label synthetic-fixture runs\n",
+            "metadata": {
+              "output": "32c3b1d evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\nd2a8238 evidence: real-data results tables\ne420059 evidence: add P8 ablation and repeat run artifacts\nbc7e8db docs: real-data pack flow and limitations\n728c0ab evidence: label synthetic-fixture runs\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git log --oneline -5",
+            "time": {
+              "start": 1791764058998,
+              "end": 1791764059089
+            }
+          },
+          "id": "prt_12d75d36e001Pr3ks7zRcGNdEe",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75c7a6001kw2WSsON005uy3"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 210656,
+            "input": 7562,
+            "output": 41,
+            "reasoning": 13,
+            "cache": {
+              "write": 0,
+              "read": 203040
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d75d545001iiJ4TjD0DZc4V9",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75c7a6001kw2WSsON005uy3"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12d69ee64001S0BWARA2wS2wj5",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 212414,
+          "input": 7718,
+          "output": 1647,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 203040
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791764059852,
+          "completed": 1791764090674
+        },
+        "finish": "stop",
+        "id": "msg_12d75d6cc001vEz07xyRaqv2ry",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-start",
+          "id": "prt_12d760fe4001qPe96LzPMAHjwA",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75d6cc001vEz07xyRaqv2ry"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me compile the final report.",
+          "time": {
+            "start": 1791764074472,
+            "end": 1791764074478
+          },
+          "id": "prt_12d760fe8001AKRQLz1Cu4I4WM",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75d6cc001vEz07xyRaqv2ry"
+        },
+        {
+          "type": "text",
+          "text": "### REPORT\n\n**HQ city changes (company: old -> new)**\n\n| Company | Old hq_city | New hq_city | Source |\n|---------|-------------|-------------|--------|\n| Razorpay | 'Adugodi' | 'Bengaluru' | locations.city='Bengaluru' vs headquarters='Adugodi, Karnataka, India' |\n| Canva | 'Darlinghurst' | 'DARLINGHURST' | locations.city='DARLINGHURST' vs headquarters='Darlinghurst, Taylor Square, Surry Hills, NSW, Australia' |\n\n*Other 8 companies unchanged (city matches headquarters first segment): Postman, BrowserStack, Freshworks, Swiggy, Chargebee, Figma, Linear, Notion*\n\n---\n\n**What 225757 was**\n\n`pack_ablation_20261011_225757.json` — First ablation run on real Crustdata snapshots. Run **before**:\n1. The fact-check formatting fix (commit db39c70) — so it has false mismatches on `last_round` (underscores vs spaces/hyphens/case)\n2. The HQ city fix (this commit) — uses old `hq_city` from `locations.headquarters` first comma segment\n3. The corrected snapshot with domain acceptance rule (commit 0762a0c)\n\nCandidate achieved 5/6 dev (83.3%), 4/4 held-out (100%) with 1 wrong_fact failure. No `source` or `companies` fields in JSON.\n\n---\n\n**Final ablation table (config | dev | held-out | failure_counts | llm_calls | cost_usd)**\n\n| Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Cost (USD) |\n|--------|---------|--------------|-------------------------------|-----------|------------|\n| baseline | 0/6 | 0/4 | {\"wrong_fact\": 7, \"tool_error\": 3} | 7 | 0.000532 |\n| retry_only | 0/6 | 0/4 | {\"wrong_fact\": 10} | 10 | 0.000754 |\n| strict_only | 4/6 | 3/4 | {\"tool_error\": 3} | 7 | 0.000591 |\n| verify_only | 3/6 | 3/4 | {\"tool_error\": 3, \"wrong_fact\": 1} | 14 | 0.001133 |\n| strict_verify | 4/6 | 3/4 | {\"tool_error\": 3} | 7 | 0.000570 |\n| candidate | 6/6 | 4/4 | {} | 10 | 0.000832 |\n\n*Source: evidence/pack_ablation_20261012_000908.json*\n\n---\n\n**The 3 repeat runs (baseline and candidate dev/held-out k/n, failure_counts, promoted, costs)**\n\n| Run | Baseline Dev k/n | Baseline Held-out k/n | Candidate Dev k/n | Candidate Held-out k/n | Baseline Failure Counts | Promoted | Baseline Cost | Candidate Cost |\n|-----|------------------|-----------------------|-------------------|------------------------|-------------------------|----------|---------------|----------------|\n| 1 (001001) | 0/6 | 0/4 | 6/6 | 4/4 | dev: {\"wrong_fact\": 4, \"tool_error\": 2}, held: {\"tool_error\": 1, \"wrong_fact\": 3} | Yes | 0.000515 | 0.000832 |\n| 2 (001046) | 0/6 | 0/4 | 6/6 | 4/4 | dev: {\"wrong_fact\": 4, \"tool_error\": 2}, held: {\"tool_error\": 1, \"wrong_fact\": 3} | Yes | 0.000518 | 0.000822 |\n| 3 (001130) | 0/6 | 0/4 | 6/6 | 4/4 | dev: {\"wrong_fact\": 4, \"tool_error\": 2}, held: {\"tool_error\": 1, \"wrong_fact\": 3} | Yes | 0.000534 | 0.000791 |\n\n*Zero variance in success rates across all 3 runs. Candidate always 100% on both splits.*\n\n---\n\n**Any candidate failures and why**\n\nNone. All 3 runs: candidate Dev 6/6, Held-out 4/4 with zero failures.\n\n---\n\n**Test counts, commit hashes, push result**\n\n- **Tests:** 124 passed, 1 skipped\n- **Commits:**\n  - `32c3b1d` — evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results\n  - `d2a8238` — evidence: real-data results tables\n  - `e420059` — evidence: add P8 ablation and repeat run artifacts\n  - `bc7e8db` — docs: real-data pack flow and limitations\n  - `728c0ab` — evidence: label synthetic-fixture runs\n- **Push result:** `d2a8238..32c3b1d  feat/pack-agent -> feat/pack-agent`\n\n---\n\n**Deviations**\n\n1. **HQ city fix**: Changed `_extract_hq_city()` in `app/pack/crustdata.py` to prefer `locations.city` (string) over `locations.headquarters` first comma segment. Added 4 new tests for city preference and fallback behavior.\n\n2. **Snapshot rebuild**: Added `--from-raw` option to `scripts/snapshot_crustdata.py` that rebuilds `companies_real.json` from existing raw files without HTTP calls (0 credits). Printed old->new hq_city for each company.\n\n3. **Superseded evidence**: Moved 5 files to `evidence/superseded/` with README explaining why each is superseded:\n   - `pack_run_20261011_222702.json` — used mismatched companies (meesho.com, notion.so)\n   - `pack_run_20261011_224432.json` — ran before fact-check formatting fix\n   - `pack_ablation_20261011_225757.json` — first ablation, before checker fix and snapshot correction\n   - `real_data_results.md` and `repeat_runs_20261011_230408.md` — described older data\n\n4. **README updates**: Added \"Results (real Crustdata snapshots)\" subsection with ablation table and three plain sentences. Added two new limitation bullets about injected tool failures and baseline failing by design.\n\n5. **gitignore**: Added `debug_trace.py` to .gitignore. Did not commit junk files (`=1.1,`, `nul`, `.entire/`, `docs/cfo_plan/`).",
+          "time": {
+            "start": 1791764074481,
+            "end": 1791764089983
+          },
+          "id": "prt_12d760ff10014E7dU4Cl6o6zpF",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75d6cc001vEz07xyRaqv2ry"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "3b4ab8836aff788ee82c950a94593aeec508402c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 212414,
+            "input": 7718,
+            "output": 1647,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 203040
+            }
+          },
+          "cost": 0,
+          "id": "prt_12d764dd90012veM42aS92HcYi",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12d75d6cc001vEz07xyRaqv2ry"
         }
       ]
     }
