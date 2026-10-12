@@ -1,0 +1,17 @@
+Perform a final pre-submission verification. Do not commit or push.
+
+1. Inspect the full diff of app/observability.py and requirements.txt.
+2. Explain exactly which SDK APIs were removed and why.
+3. Verify which Neatlogs SDK version is actually installed in the active
+   environment and which version the code supports.
+4. Inspect the official installed SDK interfaces. Do not guess API names.
+5. If possible without changing the current environment or exposing secrets,
+   verify remote trace export using the supported configuration.
+6. If remote export cannot be verified, explicitly report that limitation.
+7. Run pytest and the documented CLI benchmark again.
+8. Run git status --short, git diff --check, git diff --cached --stat,
+   git diff --stat, and inspect both staged and unstaged changes.
+9. Check that .env and other sensitive artifacts are not staged or tracked.
+10. Do not stage, unstage, delete, commit, or push anything.
+
+Return the exact evidence and the smallest remaining action list.
