@@ -1,0 +1,762 @@
+{
+  "info": {
+    "id": "ses_eceddc418ffeTzm6ognuvBw6S8",
+    "slug": "glowing-cabin",
+    "projectID": "2451c7edd2c30b117408423cb0ae0583162ff150",
+    "directory": "D:\\trace-driven-agent-improver",
+    "path": "",
+    "title": "Running traces in neatlogs",
+    "agent": "build",
+    "model": {
+      "id": "nemotron-3-ultra-free",
+      "providerID": "opencode"
+    },
+    "version": "1.18.35",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 76207,
+      "output": 568,
+      "reasoning": 250,
+      "cache": {
+        "read": 8640,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1791825689575,
+      "updated": 1791825718232
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1791825689612
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "nemotron-3-ultra-free"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_131223c0c00134gqFUJ8QstbsC",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "How do you run the code to display traces in neatlogs",
+          "id": "prt_131223c0e0014gYlb6DQq07l2l",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131223c0c00134gqFUJ8QstbsC"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 8619,
+          "input": 8551,
+          "output": 13,
+          "reasoning": 55,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825689947,
+          "completed": 1791825695787
+        },
+        "finish": "tool-calls",
+        "id": "msg_131223d5b001eSz16KGsuF4zgJ",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_131224afc001wHHdcm4vME63AS",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131223d5b001eSz16KGsuF4zgJ"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user is asking how to run code to display traces in neatlogs. I need to explore the codebase to understand the project structure and find how to run the application, specifically for displaying traces in neatlogs.",
+          "time": {
+            "start": 1791825693439,
+            "end": 1791825695438
+          },
+          "id": "prt_131224aff001dKIT8ntbej7YlD",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131223d5b001eSz16KGsuF4zgJ"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call-8803c7e1-6437-4f28-bc14-a89b9b8093b5",
+          "state": {
+            "status": "error",
+            "input": {
+              "pattern": "**/*"
+            },
+            "error": "ripgrep execution failed",
+            "time": {
+              "start": 1791825695450,
+              "end": 1791825695455
+            }
+          },
+          "id": "prt_1312252d1001ybM0MPo2cUImq1",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131223d5b001eSz16KGsuF4zgJ"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 8619,
+            "input": 8551,
+            "output": 13,
+            "reasoning": 55,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_13122538a0016eXR8U5mONLmNH",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131223d5b001eSz16KGsuF4zgJ"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 8682,
+          "input": 8641,
+          "output": 24,
+          "reasoning": 17,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825695791,
+          "completed": 1791825699127
+        },
+        "finish": "tool-calls",
+        "id": "msg_13122542f001FNFCTEuTRe4E9e",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_131225b3c001ds1m6ai34FnpN1",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122542f001FNFCTEuTRe4E9e"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me try using the bash command to list files in the directory.",
+          "time": {
+            "start": 1791825697598,
+            "end": 1791825698557
+          },
+          "id": "prt_131225b3e001gkOF5kvBHKXZ6O",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122542f001FNFCTEuTRe4E9e"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-04ca2ce1-6cad-4c02-a59b-be5f5f89a3f2",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "ls -la"
+            },
+            "output": "total 1344\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 22:32 .\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 19:12 ..\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 17:54 .codex\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 19:31 .entire\n-rw-r--r-- 1 Nishanth 197121     542 Oct 12 03:44 .env\n-rw-r--r-- 1 Nishanth 197121     336 Oct 12 21:46 .env.example\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 22:17 .git\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 16:08 .github\n-rw-r--r-- 1 Nishanth 197121     621 Oct 12 22:18 .gitignore\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 18:06 .opencode\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 12:53 .pytest_cache\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 12:47 .venv\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 02:30 .venv312\n-rw-r--r-- 1 Nishanth 197121       0 Oct 12 01:45 =1.1,\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 app\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 data\n-rw-r--r-- 1 Nishanth 197121    2158 Oct 11 20:53 debug_trace.py\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 docs\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 22:14 evidence\n-rw-r--r-- 1 Nishanth 197121       0 Oct 12 02:04 nul\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 14:41 outputs\n-rw-r--r-- 1 Nishanth 197121    6884 Oct 12 21:46 README.md\n-rw-r--r-- 1 Nishanth 197121     214 Oct 12 21:46 requirements.txt\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 scripts\n-rw-r--r-- 1 Nishanth 197121 1067629 Oct 11 19:18 spans_optimized.log\n-rw-r--r-- 1 Nishanth 197121  243912 Oct 11 18:31 spans_raw_optimized.log\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 tests\n",
+            "metadata": {
+              "output": "total 1344\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 22:32 .\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 19:12 ..\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 17:54 .codex\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 19:31 .entire\n-rw-r--r-- 1 Nishanth 197121     542 Oct 12 03:44 .env\n-rw-r--r-- 1 Nishanth 197121     336 Oct 12 21:46 .env.example\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 22:17 .git\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 16:08 .github\n-rw-r--r-- 1 Nishanth 197121     621 Oct 12 22:18 .gitignore\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 18:06 .opencode\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 12:53 .pytest_cache\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 10 12:47 .venv\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 02:30 .venv312\n-rw-r--r-- 1 Nishanth 197121       0 Oct 12 01:45 =1.1,\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 app\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 data\n-rw-r--r-- 1 Nishanth 197121    2158 Oct 11 20:53 debug_trace.py\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 docs\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 22:14 evidence\n-rw-r--r-- 1 Nishanth 197121       0 Oct 12 02:04 nul\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 14:41 outputs\n-rw-r--r-- 1 Nishanth 197121    6884 Oct 12 21:46 README.md\n-rw-r--r-- 1 Nishanth 197121     214 Oct 12 21:46 requirements.txt\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 scripts\n-rw-r--r-- 1 Nishanth 197121 1067629 Oct 11 19:18 spans_optimized.log\n-rw-r--r-- 1 Nishanth 197121  243912 Oct 11 18:31 spans_raw_optimized.log\ndrwxr-xr-x 1 Nishanth 197121       0 Oct 12 21:46 tests\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "ls -la",
+            "time": {
+              "start": 1791825698566,
+              "end": 1791825698749
+            }
+          },
+          "id": "prt_131225eff001uIKiWUpTl1ycL6",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122542f001FNFCTEuTRe4E9e"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 8682,
+            "input": 8641,
+            "output": 24,
+            "reasoning": 17,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_131226090001z6UdPJgZQdXohx",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122542f001FNFCTEuTRe4E9e"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 9712,
+          "input": 9629,
+          "output": 53,
+          "reasoning": 30,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825699131,
+          "completed": 1791825703254
+        },
+        "finish": "tool-calls",
+        "id": "msg_13122613b001WMlJVkU6Nl3U7t",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_131226c9a001mGa1boKBA7Rn6L",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122613b001WMlJVkU6Nl3U7t"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me check the README.md and the app directory to understand how to run the code for displaying traces in neatlogs.",
+          "time": {
+            "start": 1791825702044,
+            "end": 1791825702722
+          },
+          "id": "prt_131226c9c001jUqFxWB3Di3VdQ",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122613b001WMlJVkU6Nl3U7t"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call-f1cae9d2-a11e-41d4-b9a6-943ad50656a7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "D:\\trace-driven-agent-improver\\README.md"
+            },
+            "output": "<path>D:\\trace-driven-agent-improver\\README.md</path>\n<type>file</type>\n<content>\n1: # Trace-Driven Agent Improver\n2: \n3: A hackathon MVP that observes a task agent, classifies failures, applies bounded improvements, and promotes a candidate only when benchmark evidence supports it.\n4: \n5: ## Current scope\n6: \n7: - Synthetic support-ticket routing task.\n8: - Two real baseline failure classes: wrong action selection and missing verification.\n9: - Separate development and held-out benchmark splits.\n10: - Local structured trace events plus optional Neatlogs spans.\n11: - Bounded improvement proposals and a promotion/rejection gate.\n12: - CLI and FastAPI endpoints.\n13: \n14: The current student agent is deterministic. Neatlogs integration makes its workflow and evaluation outcomes observable; it does not imply that this version uses an LLM or proves general self-improvement.\n15: \n16: ## Setup\n17: \n18: Requires Python 3.11+.\n19: \n20: \\`\\`\\`bash\n21: python -m venv .venv\n22: # Windows PowerShell: .venv\\\\Scripts\\\\Activate.ps1\n23: # macOS/Linux: source .venv/bin/activate\n24: pip install -r requirements.txt\n25: \\`\\`\\`\n26: \n27: Copy .env.example to .env and set NEATLOGS_API_KEY to the project key from your Neatlogs dashboard. Do not commit .env. If the key is absent, the app and tests run locally without exporting traces.\n28: \n29: ## Run\n30: \n31: \\`\\`\\`bash\n32: python -m pytest -q\n33: python -m app.cli\n34: uvicorn app.main:app --reload\n35: \\`\\`\\`\n36: \n37: Open http://127.0.0.1:8000/docs. Call POST /improve to run a complete benchmark and improvement cycle. With a valid NEATLOGS_API_KEY, each benchmark case is exported as a workflow trace with nested action-selection, tool-execution, and verification spans. Check the Neatlogs dashboard for the trace-driven-agent-improver workflow.\n38: \n39: ## Improvement loop\n40: \n41: Benchmark → Student agent → trace/evaluate → classify failures → propose bounded change → candidate benchmark → promotion gate.\n42: \n43: The held-out set is used only as a final regression guardrail. It must not be used to generate proposals or tune the candidate.\n44: \n45: ## Guardrails\n46: \n47: 1. Never modify the baseline in place.\n48: 2. Generate proposals from development-set failures only.\n49: 3. Promote only when development performance improves and held-out performance does not regress.\n50: 4. Report only measured results, including raw counts alongside percentages.\n51: 5. Use synthetic data; no production actions or customer data.\n52: \n53: ## Pack agent\n54: \n55: The pack agent writes one-page company briefings: it fetches company data from a tool, drafts sections via an LLM, optionally verifies facts against the source data, and renders a `.docx` file.\n56: \n57: ### Real-data flow\n58: \n59: 1. **Crustdata snapshots**: Real company data is fetched from the Crustdata API via `scripts/snapshot_crustdata.py`. Requests use `exact_match=true`, 1.5 s pacing between calls, and 15 s wait + retry (max 2 retries) on HTTP 429.\n60: 2. **Acceptance rule**: A company is accepted only if (a) `basic_info.primary_domain` (lowercased, `www.` stripped) matches the requested domain, and (b) `headcount.total`, `basic_info.year_founded`, and `locations.headquarters` are all present. Mismatched or incomplete companies are skipped and reported.\n61: 3. **Storage**: Raw JSON responses saved to `data/snapshots/raw/<domain>.json`; mapped `CompanyData` saved to `data/snapshots/companies_real.json` with `dev_domains` and `held_out_domains` lists.\n62: 4. **PACK_SOURCE modes**:\n63:    - `fixtures` (default): Uses synthetic fixtures in `data/fixtures/companies.json` (10 fictional companies).\n64:    - `snapshot`: Uses real Crustdata snapshots from `data/snapshots/companies_real.json` (6 dev, 4 held-out companies).\n65: \n66: ### Run\n67: \n68: ```bash\n69: # Full improvement cycle (baseline → proposals → candidate → promotion) on fixtures\n70: python -m app.cli --task pack\n71: \n72: # On real Crustdata snapshots\n73: PACK_SOURCE=snapshot python -m app.cli --task pack\n74: \n75: # Ablation study: runs 6 configs on both dev and held-out splits\n76: python -m app.cli --task pack-ablation\n77: \n78: # Ablation on real snapshots\n79: PACK_SOURCE=snapshot python -m app.cli --task pack-ablation\n80: ```\n81: \n82: ### Ablation configs\n83: \n84: | Config | Description |\n85: |--------|-------------|\n86: | `baseline` | No retries, base prompt, no verification |\n87: | `retry_only` | Retry tool errors (max 3 attempts) |\n88: | `strict_only` | Strict prompt (requires exact figures) |\n89: | `verify_only` | Fact verification with one regeneration |\n90: | `strict_verify` | Strict prompt + verification |\n91: | `candidate` | All three: retry + strict + verification |\n92: \n93: Each ablation run uses a fresh `default_source()` and writes outputs to `outputs/ablation/<name>/`. Results are printed as a markdown table and saved to `evidence/pack_ablation_<timestamp>.json` with `source` and `companies` fields for verifiability.\n94: \n95: ### Results (real Crustdata snapshots)\n96: \n97: **Ablation table (source: snapshot, 6 dev / 4 held-out companies)**\n98: \n99: | Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Cost (USD) |\n100: |--------|---------|--------------|-------------------------------|-----------|------------|\n101: | baseline | 0/6 | 0/4 | {\"wrong_fact\": 7, \"tool_error\": 3} | 7 | 0.000533 |\n102: | retry_only | 0/6 | 0/4 | {\"wrong_fact\": 10} | 10 | 0.000750 |\n103: | strict_only | 4/6 | 3/4 | {\"tool_error\": 3} | 7 | 0.000566 |\n104: | verify_only | 3/6 | 3/4 | {\"tool_error\": 3, \"wrong_fact\": 1} | 14 | 0.001176 |\n105: | strict_verify | 4/6 | 3/4 | {\"tool_error\": 3} | 7 | 0.000567 |\n106: | candidate | 6/6 | 4/4 | {} | 10 | 0.000822 |\n107: \n108: *Source: evidence/pack_ablation_20261012_003253.json*\n109: \n110: - Retry fixes tool errors but not wrong figures.\n111: - The strict prompt is the main fix for wrong figures.\n112: - Verification rescues a weak prompt (verify_only) but is never triggered in the final candidate because the strict prompt passes first time.\n113: \n114: ### Limitations\n115: \n116: - The baseline prompt deliberately encourages rounding (a controlled weakness), so baseline failures are expected.\n117: - The evaluator and the verification step share `app/pack/checks.py`, so verification is checked against its own rules; ground truth is the Crustdata snapshot, not external reality.\n118: - The fact-check normalization for formatting (e.g. \"series_d\" vs \"Series D\") was added after diagnosing false mismatches; see `evidence/diagnosis_*.md`. It applies to all configs equally.\n119: - Improvement proposals are rule-mapped from failure classes, not LLM-diagnosed.\n120: - Small sample: 6 development and 4 held-out companies; the model is non-deterministic; see `evidence/repeat_runs_*.md` for run-to-run spread.\n121: - Company data is Crustdata's, which can be stale or wrong.\n122: - The promotion gate promotes on any dev improvement with no held-out regression; it is a guardrail, not a significance test.\n123: - Earlier synthetic-fixture runs live in `evidence/synthetic_fixtures/` and are not comparable to real-data runs.\n124: - Tool failures are injected (simulated upstream outages on 3 companies) to test recovery; they say nothing about Crustdata's real reliability.\n125: - The baseline fails by design; its prompt asks for rounded figures.\n\n(End of file - total 125 lines)\n</content>",
+            "metadata": {
+              "preview": "# Trace-Driven Agent Improver\n\nA hackathon MVP that observes a task agent, classifies failures, applies bounded improvements, and promotes a candidate only when benchmark evidence supports it.\n\n## Current scope\n\n- Synthetic support-ticket routing task.\n- Two real baseline failure classes: wrong action selection and missing verification.\n- Separate development and held-out benchmark splits.\n- Local structured trace events plus optional Neatlogs spans.\n- Bounded improvement proposals and a promotion/rejection gate.\n- CLI and FastAPI endpoints.\n\nThe current student agent is deterministic. Neatlogs integration makes its workflow and evaluation outcomes observable; it does not imply that this version uses an LLM or proves general self-improvement.\n\n## Setup\n\nRequires Python 3.11+.\n\n\\`\\`\\`bash",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "D:\\trace-driven-agent-improver\\README.md",
+                "text": "# Trace-Driven Agent Improver\n\nA hackathon MVP that observes a task agent, classifies failures, applies bounded improvements, and promotes a candidate only when benchmark evidence supports it.\n\n## Current scope\n\n- Synthetic support-ticket routing task.\n- Two real baseline failure classes: wrong action selection and missing verification.\n- Separate development and held-out benchmark splits.\n- Local structured trace events plus optional Neatlogs spans.\n- Bounded improvement proposals and a promotion/rejection gate.\n- CLI and FastAPI endpoints.\n\nThe current student agent is deterministic. Neatlogs integration makes its workflow and evaluation outcomes observable; it does not imply that this version uses an LLM or proves general self-improvement.\n\n## Setup\n\nRequires Python 3.11+.\n\n\\`\\`\\`bash\npython -m venv .venv\n# Windows PowerShell: .venv\\\\Scripts\\\\Activate.ps1\n# macOS/Linux: source .venv/bin/activate\npip install -r requirements.txt\n\\`\\`\\`\n\nCopy .env.example to .env and set NEATLOGS_API_KEY to the project key from your Neatlogs dashboard. Do not commit .env. If the key is absent, the app and tests run locally without exporting traces.\n\n## Run\n\n\\`\\`\\`bash\npython -m pytest -q\npython -m app.cli\nuvicorn app.main:app --reload\n\\`\\`\\`\n\nOpen http://127.0.0.1:8000/docs. Call POST /improve to run a complete benchmark and improvement cycle. With a valid NEATLOGS_API_KEY, each benchmark case is exported as a workflow trace with nested action-selection, tool-execution, and verification spans. Check the Neatlogs dashboard for the trace-driven-agent-improver workflow.\n\n## Improvement loop\n\nBenchmark → Student agent → trace/evaluate → classify failures → propose bounded change → candidate benchmark → promotion gate.\n\nThe held-out set is used only as a final regression guardrail. It must not be used to generate proposals or tune the candidate.\n\n## Guardrails\n\n1. Never modify the baseline in place.\n2. Generate proposals from development-set failures only.\n3. Promote only when development performance improves and held-out performance does not regress.\n4. Report only measured results, including raw counts alongside percentages.\n5. Use synthetic data; no production actions or customer data.\n\n## Pack agent\n\nThe pack agent writes one-page company briefings: it fetches company data from a tool, drafts sections via an LLM, optionally verifies facts against the source data, and renders a `.docx` file.\n\n### Real-data flow\n\n1. **Crustdata snapshots**: Real company data is fetched from the Crustdata API via `scripts/snapshot_crustdata.py`. Requests use `exact_match=true`, 1.5 s pacing between calls, and 15 s wait + retry (max 2 retries) on HTTP 429.\n2. **Acceptance rule**: A company is accepted only if (a) `basic_info.primary_domain` (lowercased, `www.` stripped) matches the requested domain, and (b) `headcount.total`, `basic_info.year_founded`, and `locations.headquarters` are all present. Mismatched or incomplete companies are skipped and reported.\n3. **Storage**: Raw JSON responses saved to `data/snapshots/raw/<domain>.json`; mapped `CompanyData` saved to `data/snapshots/companies_real.json` with `dev_domains` and `held_out_domains` lists.\n4. **PACK_SOURCE modes**:\n   - `fixtures` (default): Uses synthetic fixtures in `data/fixtures/companies.json` (10 fictional companies).\n   - `snapshot`: Uses real Crustdata snapshots from `data/snapshots/companies_real.json` (6 dev, 4 held-out companies).\n\n### Run\n\n```bash\n# Full improvement cycle (baseline → proposals → candidate → promotion) on fixtures\npython -m app.cli --task pack\n\n# On real Crustdata snapshots\nPACK_SOURCE=snapshot python -m app.cli --task pack\n\n# Ablation study: runs 6 configs on both dev and held-out splits\npython -m app.cli --task pack-ablation\n\n# Ablation on real snapshots\nPACK_SOURCE=snapshot python -m app.cli --task pack-ablation\n```\n\n### Ablation configs\n\n| Config | Description |\n|--------|-------------|\n| `baseline` | No retries, base prompt, no verification |\n| `retry_only` | Retry tool errors (max 3 attempts) |\n| `strict_only` | Strict prompt (requires exact figures) |\n| `verify_only` | Fact verification with one regeneration |\n| `strict_verify` | Strict prompt + verification |\n| `candidate` | All three: retry + strict + verification |\n\nEach ablation run uses a fresh `default_source()` and writes outputs to `outputs/ablation/<name>/`. Results are printed as a markdown table and saved to `evidence/pack_ablation_<timestamp>.json` with `source` and `companies` fields for verifiability.\n\n### Results (real Crustdata snapshots)\n\n**Ablation table (source: snapshot, 6 dev / 4 held-out companies)**\n\n| Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Cost (USD) |\n|--------|---------|--------------|-------------------------------|-----------|------------|\n| baseline | 0/6 | 0/4 | {\"wrong_fact\": 7, \"tool_error\": 3} | 7 | 0.000533 |\n| retry_only | 0/6 | 0/4 | {\"wrong_fact\": 10} | 10 | 0.000750 |\n| strict_only | 4/6 | 3/4 | {\"tool_error\": 3} | 7 | 0.000566 |\n| verify_only | 3/6 | 3/4 | {\"tool_error\": 3, \"wrong_fact\": 1} | 14 | 0.001176 |\n| strict_verify | 4/6 | 3/4 | {\"tool_error\": 3} | 7 | 0.000567 |\n| candidate | 6/6 | 4/4 | {} | 10 | 0.000822 |\n\n*Source: evidence/pack_ablation_20261012_003253.json*\n\n- Retry fixes tool errors but not wrong figures.\n- The strict prompt is the main fix for wrong figures.\n- Verification rescues a weak prompt (verify_only) but is never triggered in the final candidate because the strict prompt passes first time.\n\n### Limitations\n\n- The baseline prompt deliberately encourages rounding (a controlled weakness), so baseline failures are expected.\n- The evaluator and the verification step share `app/pack/checks.py`, so verification is checked against its own rules; ground truth is the Crustdata snapshot, not external reality.\n- The fact-check normalization for formatting (e.g. \"series_d\" vs \"Series D\") was added after diagnosing false mismatches; see `evidence/diagnosis_*.md`. It applies to all configs equally.\n- Improvement proposals are rule-mapped from failure classes, not LLM-diagnosed.\n- Small sample: 6 development and 4 held-out companies; the model is non-deterministic; see `evidence/repeat_runs_*.md` for run-to-run spread.\n- Company data is Crustdata's, which can be stale or wrong.\n- The promotion gate promotes on any dev improvement with no held-out regression; it is a guardrail, not a significance test.\n- Earlier synthetic-fixture runs live in `evidence/synthetic_fixtures/` and are not comparable to real-data runs.\n- Tool failures are injected (simulated upstream outages on 3 companies) to test recovery; they say nothing about Crustdata's real reliability.\n- The baseline fails by design; its prompt asks for rounded figures.",
+                "lineStart": 1,
+                "lineEnd": 125,
+                "totalLines": 125,
+                "truncated": false
+              }
+            },
+            "title": "README.md",
+            "time": {
+              "start": 1791825702730,
+              "end": 1791825702744
+            }
+          },
+          "id": "prt_131226f44001H7nzjs1vZXULjH",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122613b001WMlJVkU6Nl3U7t"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call-23104998-b0cb-4c47-bc46-532a466cf580",
+          "state": {
+            "status": "error",
+            "input": {
+              "pattern": "app/**/*"
+            },
+            "error": "ripgrep execution failed",
+            "time": {
+              "start": 1791825702888,
+              "end": 1791825702891
+            }
+          },
+          "id": "prt_131226fe00010rIvB1Ce2YyKSU",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122613b001WMlJVkU6Nl3U7t"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 9712,
+            "input": 9629,
+            "output": 53,
+            "reasoning": 30,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_1312270b3001w7TKOrG8YRy5Q8",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122613b001WMlJVkU6Nl3U7t"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12063,
+          "input": 7701,
+          "output": 24,
+          "reasoning": 18,
+          "cache": {
+            "write": 0,
+            "read": 4320
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825703257,
+          "completed": 1791825706221
+        },
+        "finish": "tool-calls",
+        "id": "msg_131227159001mzr6xtAjSMsNz1",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_131227827001LimNsx5WX4x53u",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227159001mzr6xtAjSMsNz1"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me check the app directory structure and find the CLI entry point.",
+          "time": {
+            "start": 1791825705001,
+            "end": 1791825705801
+          },
+          "id": "prt_1312278290010ymTBrCPxd6Ls3",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227159001mzr6xtAjSMsNz1"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-e23e72b6-34ac-421c-b4df-3aaa9870ab3d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "ls -la app/"
+            },
+            "output": "total 73\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 21:46 .\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 22:32 ..\n-rw-r--r-- 1 Nishanth 197121    0 Oct 10 12:45 __init__.py\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 21:52 __pycache__\n-rw-r--r-- 1 Nishanth 197121 2882 Oct 10 16:08 benchmark.py\n-rw-r--r-- 1 Nishanth 197121 9209 Oct 12 21:46 cli.py\n-rw-r--r-- 1 Nishanth 197121 4141 Oct 11 14:18 evaluator.py\n-rw-r--r-- 1 Nishanth 197121 4593 Oct 11 14:18 improver.py\n-rw-r--r-- 1 Nishanth 197121 3006 Oct 12 21:46 llm.py\n-rw-r--r-- 1 Nishanth 197121  681 Oct 10 16:08 main.py\n-rw-r--r-- 1 Nishanth 197121 1546 Oct 12 21:46 models.py\n-rw-r--r-- 1 Nishanth 197121 7808 Oct 12 21:46 observability.py\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 21:46 pack\n-rw-r--r-- 1 Nishanth 197121 1224 Oct 10 12:45 service.py\n-rw-r--r-- 1 Nishanth 197121 3415 Oct 10 16:08 student.py\n",
+            "metadata": {
+              "output": "total 73\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 21:46 .\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 22:32 ..\n-rw-r--r-- 1 Nishanth 197121    0 Oct 10 12:45 __init__.py\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 21:52 __pycache__\n-rw-r--r-- 1 Nishanth 197121 2882 Oct 10 16:08 benchmark.py\n-rw-r--r-- 1 Nishanth 197121 9209 Oct 12 21:46 cli.py\n-rw-r--r-- 1 Nishanth 197121 4141 Oct 11 14:18 evaluator.py\n-rw-r--r-- 1 Nishanth 197121 4593 Oct 11 14:18 improver.py\n-rw-r--r-- 1 Nishanth 197121 3006 Oct 12 21:46 llm.py\n-rw-r--r-- 1 Nishanth 197121  681 Oct 10 16:08 main.py\n-rw-r--r-- 1 Nishanth 197121 1546 Oct 12 21:46 models.py\n-rw-r--r-- 1 Nishanth 197121 7808 Oct 12 21:46 observability.py\ndrwxr-xr-x 1 Nishanth 197121    0 Oct 12 21:46 pack\n-rw-r--r-- 1 Nishanth 197121 1224 Oct 10 12:45 service.py\n-rw-r--r-- 1 Nishanth 197121 3415 Oct 10 16:08 student.py\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "ls -la app/",
+            "time": {
+              "start": 1791825705808,
+              "end": 1791825705896
+            }
+          },
+          "id": "prt_131227b4b001KiRUQHDs3GWO8l",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227159001mzr6xtAjSMsNz1"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12063,
+            "input": 7701,
+            "output": 24,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 4320
+            }
+          },
+          "cost": 0,
+          "id": "prt_131227c4e001vssJwyLkSkBrD1",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227159001mzr6xtAjSMsNz1"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12669,
+          "input": 12601,
+          "output": 35,
+          "reasoning": 33,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825706224,
+          "completed": 1791825711639
+        },
+        "finish": "tool-calls",
+        "id": "msg_131227cf0001Uv3mIPYKZ8Ao9d",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_131228a4c0013EYgxnVkMTZvuh",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227cf0001Uv3mIPYKZ8Ao9d"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me check the observability.py file to understand how neatlogs is integrated, and also check the CLI to see how to run the code.",
+          "time": {
+            "start": 1791825709646,
+            "end": 1791825711202
+          },
+          "id": "prt_131228a4e001t4X4g2ZWt1IeAv",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227cf0001Uv3mIPYKZ8Ao9d"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call-4e29dd9c-58e5-48af-a665-3346c1ffd9ef",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "D:\\trace-driven-agent-improver\\app\\observability.py"
+            },
+            "output": "<path>D:\\trace-driven-agent-improver\\app\\observability.py</path>\n<type>file</type>\n<content>\n1: \"\"\"Neatlogs observability integration, with a local-only fallback.\"\"\"\n2: \n3: from contextlib import contextmanager\n4: from typing import Any\n5: import os\n6: \n7: try:\n8:     import neatlogs\n9: except ImportError:  # Keep local tests usable if the optional SDK isn't installed.\n10:     neatlogs = None\n11: \n12: _initialized = False\n13: \n14: # Custom attributes that must survive the Neatlogs attribute processor and\n15: # appear in the backend's queryable span_metadata. The SDK only materializes\n16: # `neatlogs.*` namespace attributes into span_metadata. We must map our custom\n17: # attributes to `neatlogs.*` equivalents via the attribute-mapping.json mappings.\n18: #\n19: # Structure: (source_attribute, target_neatlogs_attribute)\n20: _CUSTOM_ATTRIBUTE_MAPPINGS = (\n21:     (\"benchmark.case_id\", \"neatlogs.benchmark.case_id\"),\n22:     (\"benchmark.split\", \"neatlogs.benchmark.split\"),\n23:     (\"agent.version\", \"neatlogs.agent.version\"),\n24:     (\"agent.selected_action\", \"neatlogs.agent.selected_action\"),\n25:     (\"evaluation.success\", \"neatlogs.evaluation.success\"),\n26:     (\"evaluation.failure_class\", \"neatlogs.evaluation.failure_class\"),\n27:     (\"evaluation.expected_action\", \"neatlogs.evaluation.expected_action\"),\n28:     (\"evaluation.selected_action\", \"neatlogs.evaluation.selected_action\"),\n29:     (\"evaluation.issues\", \"neatlogs.evaluation.issues\"),\n30:     (\"evaluation.truth\", \"neatlogs.evaluation.truth\"),\n31:     (\"guardrail.enabled\", \"neatlogs.guardrail.enabled\"),\n32:     # guardrail.passed already maps to neatlogs.guardrail.passed in SDK\n33:     (\"pack.company\", \"neatlogs.pack.company\"),\n34:     (\"tool.attempt\", \"neatlogs.tool.attempt\"),\n35:     (\"llm.prompt_tokens\", \"neatlogs.llm.prompt_tokens\"),\n36:     (\"llm.completion_tokens\", \"neatlogs.llm.completion_tokens\"),\n37:     (\"llm.cost_usd\", \"neatlogs.llm.cost_usd\"),\n38:     (\"pack.verify_passed\", \"neatlogs.pack.verify_passed\"),\n39:     (\"demo.label\", \"neatlogs.demo.label\"),\n40: )\n41: \n42: # Also add to keep_as_is as a fallback for any attributes that don't map\n43: _CUSTOM_KEEP_AS_IS_ATTRIBUTES = tuple(src for src, _ in _CUSTOM_ATTRIBUTE_MAPPINGS) + (\n44:     \"guardrail.passed\",\n45: )\n46: \n47: \n48: def _patch_attribute_mapping() -> None:\n49:     \"\"\"Extend the Neatlogs attribute mapping to preserve custom attributes.\n50: \n51:     The Neatlogs SDK loads its attribute-mapping.json once at span processor\n52:     initialization. The UnifiedAttributeProcessor reads `keep_as_is.attributes`\n53:     and `ignore.patterns` from the TOP LEVEL of the config, but the JSON file\n54:     incorrectly nests them inside `mappings`. This function fixes that structural\n55:     mismatch and adds our custom attribute mappings so they appear in the\n56:     `neatlogs.*` namespace and are materialized into backend span_metadata.\n57: \n58:     Note: keep_as_is does EXACT matching, not prefix matching. We must list\n59:     every attribute name individually.\n60:     \"\"\"\n61:     if neatlogs is None:\n62:         return\n63: \n64:     try:\n65:         from neatlogs.init import _span_processor\n66:         if _span_processor is None:\n67:             return\n68:         unified_processor = getattr(_span_processor, \"unified_processor\", None)\n69:         if unified_processor is None:\n70:             return\n71:         mapping = getattr(unified_processor, \"mapping\", None)\n72:         if not isinstance(mapping, dict):\n73:             return\n74: \n75:         # SDK bug: attribute-mapping.json nests keep_as_is/ignore inside mappings,\n76:         # but UnifiedAttributeProcessor._apply_namespace_mapping expects them at\n77:         # the top level. Promote them to where the code actually looks.\n78:         mappings = mapping.get(\"mappings\", {})\n79:         if isinstance(mappings, dict):\n80:             if \"keep_as_is\" in mappings and \"keep_as_is\" not in mapping:\n81:                 mapping[\"keep_as_is\"] = mappings[\"keep_as_is\"]\n82:             if \"ignore\" in mappings and \"ignore\" not in mapping:\n83:                 mapping[\"ignore\"] = mappings[\"ignore\"]\n84: \n85:         # Now add our custom attribute mappings to the mappings dict so they\n86:         # get transformed to `neatlogs.*` namespace and materialized into span_metadata\n87:         if isinstance(mappings, dict):\n88:             # Add a new mapping section for our custom attributes.\n89:             # The SDK's _map_recursive expects a \"mappings\" key with nested attribute configs.\n90:             custom_mappings = mappings.setdefault(\"custom\", {})\n91:             if not isinstance(custom_mappings, dict):\n92:                 custom_mappings = {}\n93:                 mappings[\"custom\"] = custom_mappings\n94: \n95:             # Wrap in \"mappings\" key as expected by _map_recursive\n96:             if \"mappings\" not in custom_mappings:\n97:                 custom_mappings[\"mappings\"] = {}\n98: \n99:             for src_attr, target_attr in _CUSTOM_ATTRIBUTE_MAPPINGS:\n100:                 custom_mappings[\"mappings\"][src_attr] = {\n101:                     \"sources\": [src_attr],\n102:                     \"target\": target_attr,\n103:                 }\n104: \n105:         # Also add to keep_as_is as a fallback\n106:         keep_as_is = mapping.setdefault(\"keep_as_is\", {}).setdefault(\"attributes\", [])\n107:         if not isinstance(keep_as_is, list):\n108:             return\n109:         for attr_name in _CUSTOM_KEEP_AS_IS_ATTRIBUTES:\n110:             if attr_name not in keep_as_is:\n111:                 keep_as_is.append(attr_name)\n112:     except Exception:\n113:         # Best-effort patch; if the SDK internals change, we fail silently\n114:         # and the custom attributes will be dropped (observability degradation only).\n115:         pass\n116: \n117: \n118: class _NullSpan:\n119:     \"\"\"No-op span used when Neatlogs is not configured.\"\"\"\n120: \n121:     def set_attribute(self, key, value):\n122:         return None\n123: \n124: \n125: def initialize_neatlogs() -> bool:\n126:     \"\"\"Initialize Neatlogs if a project API key is configured.\"\"\"\n127:     global _initialized\n128: \n129:     if _initialized:\n130:         return True\n131:     if neatlogs is None:\n132:         return False\n133: \n134:     try:\n135:         from dotenv import load_dotenv\n136:         load_dotenv()\n137:     except ImportError:\n138:         pass\n139: \n140:     api_key = os.getenv(\"NEATLOGS_API_KEY\")\n141:     if not api_key:\n142:         return False\n143: \n144:     neatlogs.init(\n145:         api_key=api_key,\n146:         endpoint=os.getenv(\"NEATLOGS_ENDPOINT\", \"https://ingest.neatlogs.com\"),\n147:         workflow_name=\"trace-driven-agent-improver\",\n148:         tags=[\"neathack\", \"trace-driven-agent-improver\"],\n149:     )\n150:     _initialized = True\n151:     _patch_attribute_mapping()\n152:     return True\n153: \n154: \n155: def shutdown_neatlogs() -> None:\n156:     \"\"\"Flush and stop Neatlogs after a short-lived process or at server shutdown.\"\"\"\n157:     global _initialized\n158: \n159:     if not _initialized or neatlogs is None:\n160:         return\n161: \n162:     try:\n163:         neatlogs.flush()\n164:         neatlogs.shutdown()\n165:     except Exception as e:\n166:         print(f\"Warning: neatlogs shutdown failed: {e}\")\n167:     finally:\n168:         _initialized = False\n169: \n170: \n171: def mark_span_failed(span: Any, description: str) -> None:\n172:     \"\"\"Mark a span as failed with an error status and description.\n173: \n174:     Uses OpenTelemetry Status/StatusCode if available; otherwise falls back\n175:     to setting an error attribute.\n176:     \"\"\"\n177:     if not _initialized or neatlogs is None:\n178:         return\n179:     try:\n180:         from opentelemetry.trace import Status, StatusCode\n181:         span.set_status(Status(StatusCode.ERROR, description))\n182:     except Exception:\n183:         # Fallback: set error attribute if OpenTelemetry not available\n184:         span.set_attribute(\"error\", True)\n185:         span.set_attribute(\"error.description\", description)\n186: \n187: \n188: @contextmanager\n189: def trace_span(name: str, kind: str = \"CHAIN\", attributes: dict | None = None):\n190:     \"\"\"Open a Neatlogs span when initialized, otherwise no-op.\"\"\"\n191:     if not _initialized or neatlogs is None:\n192:         yield _NullSpan()\n193:         return\n194: \n195:     with neatlogs.trace(name, kind=kind) as span:\n196:         for key, value in (attributes or {}).items():\n197:             if value is not None and isinstance(value, (str, bool, int, float)):\n198:                 span.set_attribute(key, value)\n199:         yield span\n\n(End of file - total 199 lines)\n</content>",
+            "metadata": {
+              "preview": "\"\"\"Neatlogs observability integration, with a local-only fallback.\"\"\"\n\nfrom contextlib import contextmanager\nfrom typing import Any\nimport os\n\ntry:\n    import neatlogs\nexcept ImportError:  # Keep local tests usable if the optional SDK isn't installed.\n    neatlogs = None\n\n_initialized = False\n\n# Custom attributes that must survive the Neatlogs attribute processor and\n# appear in the backend's queryable span_metadata. The SDK only materializes\n# `neatlogs.*` namespace attributes into span_metadata. We must map our custom\n# attributes to `neatlogs.*` equivalents via the attribute-mapping.json mappings.\n#\n# Structure: (source_attribute, target_neatlogs_attribute)\n_CUSTOM_ATTRIBUTE_MAPPINGS = (",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "D:\\trace-driven-agent-improver\\app\\observability.py",
+                "text": "\"\"\"Neatlogs observability integration, with a local-only fallback.\"\"\"\n\nfrom contextlib import contextmanager\nfrom typing import Any\nimport os\n\ntry:\n    import neatlogs\nexcept ImportError:  # Keep local tests usable if the optional SDK isn't installed.\n    neatlogs = None\n\n_initialized = False\n\n# Custom attributes that must survive the Neatlogs attribute processor and\n# appear in the backend's queryable span_metadata. The SDK only materializes\n# `neatlogs.*` namespace attributes into span_metadata. We must map our custom\n# attributes to `neatlogs.*` equivalents via the attribute-mapping.json mappings.\n#\n# Structure: (source_attribute, target_neatlogs_attribute)\n_CUSTOM_ATTRIBUTE_MAPPINGS = (\n    (\"benchmark.case_id\", \"neatlogs.benchmark.case_id\"),\n    (\"benchmark.split\", \"neatlogs.benchmark.split\"),\n    (\"agent.version\", \"neatlogs.agent.version\"),\n    (\"agent.selected_action\", \"neatlogs.agent.selected_action\"),\n    (\"evaluation.success\", \"neatlogs.evaluation.success\"),\n    (\"evaluation.failure_class\", \"neatlogs.evaluation.failure_class\"),\n    (\"evaluation.expected_action\", \"neatlogs.evaluation.expected_action\"),\n    (\"evaluation.selected_action\", \"neatlogs.evaluation.selected_action\"),\n    (\"evaluation.issues\", \"neatlogs.evaluation.issues\"),\n    (\"evaluation.truth\", \"neatlogs.evaluation.truth\"),\n    (\"guardrail.enabled\", \"neatlogs.guardrail.enabled\"),\n    # guardrail.passed already maps to neatlogs.guardrail.passed in SDK\n    (\"pack.company\", \"neatlogs.pack.company\"),\n    (\"tool.attempt\", \"neatlogs.tool.attempt\"),\n    (\"llm.prompt_tokens\", \"neatlogs.llm.prompt_tokens\"),\n    (\"llm.completion_tokens\", \"neatlogs.llm.completion_tokens\"),\n    (\"llm.cost_usd\", \"neatlogs.llm.cost_usd\"),\n    (\"pack.verify_passed\", \"neatlogs.pack.verify_passed\"),\n    (\"demo.label\", \"neatlogs.demo.label\"),\n)\n\n# Also add to keep_as_is as a fallback for any attributes that don't map\n_CUSTOM_KEEP_AS_IS_ATTRIBUTES = tuple(src for src, _ in _CUSTOM_ATTRIBUTE_MAPPINGS) + (\n    \"guardrail.passed\",\n)\n\n\ndef _patch_attribute_mapping() -> None:\n    \"\"\"Extend the Neatlogs attribute mapping to preserve custom attributes.\n\n    The Neatlogs SDK loads its attribute-mapping.json once at span processor\n    initialization. The UnifiedAttributeProcessor reads `keep_as_is.attributes`\n    and `ignore.patterns` from the TOP LEVEL of the config, but the JSON file\n    incorrectly nests them inside `mappings`. This function fixes that structural\n    mismatch and adds our custom attribute mappings so they appear in the\n    `neatlogs.*` namespace and are materialized into backend span_metadata.\n\n    Note: keep_as_is does EXACT matching, not prefix matching. We must list\n    every attribute name individually.\n    \"\"\"\n    if neatlogs is None:\n        return\n\n    try:\n        from neatlogs.init import _span_processor\n        if _span_processor is None:\n            return\n        unified_processor = getattr(_span_processor, \"unified_processor\", None)\n        if unified_processor is None:\n            return\n        mapping = getattr(unified_processor, \"mapping\", None)\n        if not isinstance(mapping, dict):\n            return\n\n        # SDK bug: attribute-mapping.json nests keep_as_is/ignore inside mappings,\n        # but UnifiedAttributeProcessor._apply_namespace_mapping expects them at\n        # the top level. Promote them to where the code actually looks.\n        mappings = mapping.get(\"mappings\", {})\n        if isinstance(mappings, dict):\n            if \"keep_as_is\" in mappings and \"keep_as_is\" not in mapping:\n                mapping[\"keep_as_is\"] = mappings[\"keep_as_is\"]\n            if \"ignore\" in mappings and \"ignore\" not in mapping:\n                mapping[\"ignore\"] = mappings[\"ignore\"]\n\n        # Now add our custom attribute mappings to the mappings dict so they\n        # get transformed to `neatlogs.*` namespace and materialized into span_metadata\n        if isinstance(mappings, dict):\n            # Add a new mapping section for our custom attributes.\n            # The SDK's _map_recursive expects a \"mappings\" key with nested attribute configs.\n            custom_mappings = mappings.setdefault(\"custom\", {})\n            if not isinstance(custom_mappings, dict):\n                custom_mappings = {}\n                mappings[\"custom\"] = custom_mappings\n\n            # Wrap in \"mappings\" key as expected by _map_recursive\n            if \"mappings\" not in custom_mappings:\n                custom_mappings[\"mappings\"] = {}\n\n            for src_attr, target_attr in _CUSTOM_ATTRIBUTE_MAPPINGS:\n                custom_mappings[\"mappings\"][src_attr] = {\n                    \"sources\": [src_attr],\n                    \"target\": target_attr,\n                }\n\n        # Also add to keep_as_is as a fallback\n        keep_as_is = mapping.setdefault(\"keep_as_is\", {}).setdefault(\"attributes\", [])\n        if not isinstance(keep_as_is, list):\n            return\n        for attr_name in _CUSTOM_KEEP_AS_IS_ATTRIBUTES:\n            if attr_name not in keep_as_is:\n                keep_as_is.append(attr_name)\n    except Exception:\n        # Best-effort patch; if the SDK internals change, we fail silently\n        # and the custom attributes will be dropped (observability degradation only).\n        pass\n\n\nclass _NullSpan:\n    \"\"\"No-op span used when Neatlogs is not configured.\"\"\"\n\n    def set_attribute(self, key, value):\n        return None\n\n\ndef initialize_neatlogs() -> bool:\n    \"\"\"Initialize Neatlogs if a project API key is configured.\"\"\"\n    global _initialized\n\n    if _initialized:\n        return True\n    if neatlogs is None:\n        return False\n\n    try:\n        from dotenv import load_dotenv\n        load_dotenv()\n    except ImportError:\n        pass\n\n    api_key = os.getenv(\"NEATLOGS_API_KEY\")\n    if not api_key:\n        return False\n\n    neatlogs.init(\n        api_key=api_key,\n        endpoint=os.getenv(\"NEATLOGS_ENDPOINT\", \"https://ingest.neatlogs.com\"),\n        workflow_name=\"trace-driven-agent-improver\",\n        tags=[\"neathack\", \"trace-driven-agent-improver\"],\n    )\n    _initialized = True\n    _patch_attribute_mapping()\n    return True\n\n\ndef shutdown_neatlogs() -> None:\n    \"\"\"Flush and stop Neatlogs after a short-lived process or at server shutdown.\"\"\"\n    global _initialized\n\n    if not _initialized or neatlogs is None:\n        return\n\n    try:\n        neatlogs.flush()\n        neatlogs.shutdown()\n    except Exception as e:\n        print(f\"Warning: neatlogs shutdown failed: {e}\")\n    finally:\n        _initialized = False\n\n\ndef mark_span_failed(span: Any, description: str) -> None:\n    \"\"\"Mark a span as failed with an error status and description.\n\n    Uses OpenTelemetry Status/StatusCode if available; otherwise falls back\n    to setting an error attribute.\n    \"\"\"\n    if not _initialized or neatlogs is None:\n        return\n    try:\n        from opentelemetry.trace import Status, StatusCode\n        span.set_status(Status(StatusCode.ERROR, description))\n    except Exception:\n        # Fallback: set error attribute if OpenTelemetry not available\n        span.set_attribute(\"error\", True)\n        span.set_attribute(\"error.description\", description)\n\n\n@contextmanager\ndef trace_span(name: str, kind: str = \"CHAIN\", attributes: dict | None = None):\n    \"\"\"Open a Neatlogs span when initialized, otherwise no-op.\"\"\"\n    if not _initialized or neatlogs is None:\n        yield _NullSpan()\n        return\n\n    with neatlogs.trace(name, kind=kind) as span:\n        for key, value in (attributes or {}).items():\n            if value is not None and isinstance(value, (str, bool, int, float)):\n                span.set_attribute(key, value)\n        yield span",
+                "lineStart": 1,
+                "lineEnd": 199,
+                "totalLines": 199,
+                "truncated": false
+              }
+            },
+            "title": "app\\observability.py",
+            "time": {
+              "start": 1791825711208,
+              "end": 1791825711217
+            }
+          },
+          "id": "prt_1312290640016KVsHTueB4lsx7",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227cf0001Uv3mIPYKZ8Ao9d"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12669,
+            "input": 12601,
+            "output": 35,
+            "reasoning": 33,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_131229167001wiAS11eZWcrBql",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_131227cf0001Uv3mIPYKZ8Ao9d"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 15307,
+          "input": 10935,
+          "output": 37,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 4320
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825711642,
+          "completed": 1791825718220
+        },
+        "finish": "tool-calls",
+        "id": "msg_13122921a001ghgd56LOGpOjPl",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_13122a840001d3MY1sGFYVKxfg",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122921a001ghgd56LOGpOjPl"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me check the CLI to understand how to run the code.",
+          "time": {
+            "start": 1791825717315,
+            "end": 1791825717798
+          },
+          "id": "prt_13122a843001g3c5Zam2eYgZ03",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122921a001ghgd56LOGpOjPl"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call-52d99a5d-07e9-4e5c-ac6d-647fd204ea4e",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "D:\\trace-driven-agent-improver\\app\\cli.py"
+            },
+            "output": "<path>D:\\trace-driven-agent-improver\\app\\cli.py</path>\n<type>file</type>\n<content>\n1: import argparse\n2: import json\n3: import os\n4: from datetime import datetime\n5: from collections import Counter\n6: \n7: from app.observability import initialize_neatlogs, shutdown_neatlogs\n8: from app.service import run_improvement_cycle\n9: from app.pack.service import run_pack_improvement_cycle\n10: from app.pack.benchmark import pack_cases_for_split\n11: from app.pack.evaluator import run_pack_benchmark\n12: from app.pack.student import PackConfig, _compute_cost_usd\n13: from app.llm import get_llm\n14: \n15: \n16: def run_ticket_task():\n17:     initialize_neatlogs()\n18:     try:\n19:         result = run_improvement_cycle()\n20:         print(\n21:             json.dumps(\n22:                 {\n23:                     \"baseline\": {\n24:                         key: result[\"baseline\"][key][\"success_rate\"]\n25:                         for key in [\"development\", \"held_out\"]\n26:                     },\n27:                     \"candidate\": {\n28:                         key: result[\"candidate\"][key][\"success_rate\"]\n29:                         for key in [\"development\", \"held_out\"]\n30:                     },\n31:                     \"proposals\": result[\"proposals\"],\n32:                     \"promotion\": result[\"promotion\"],\n33:                     \"active_version\": result[\"active_version\"],\n34:                     \"note\": result[\"note\"],\n35:                 },\n36:                 indent=2,\n37:             )\n38:         )\n39:     finally:\n40:         shutdown_neatlogs()\n41: \n42: \n43: def run_pack_task():\n44:     initialize_neatlogs()\n45:     try:\n46:         result = run_pack_improvement_cycle()\n47: \n48:         # Compact summary for stdout\n49:         summary = {\n50:             \"source\": result[\"source\"],\n51:             \"companies\": result[\"companies\"],\n52:             \"baseline\": {\n53:                 \"development\": {\n54:                     \"success_rate\": result[\"baseline\"][\"development\"][\"success_rate\"],\n55:                     \"successes\": f\"{result['baseline']['development']['successes']}/{result['baseline']['development']['total']}\",\n56:                     \"failure_counts\": result[\"baseline\"][\"development\"][\"failure_counts\"],\n57:                 },\n58:                 \"held_out\": {\n59:                     \"success_rate\": result[\"baseline\"][\"held_out\"][\"success_rate\"],\n60:                     \"successes\": f\"{result['baseline']['held_out']['successes']}/{result['baseline']['held_out']['total']}\",\n61:                     \"failure_counts\": result[\"baseline\"][\"held_out\"][\"failure_counts\"],\n62:                 },\n63:             },\n64:             \"candidate\": {\n65:                 \"development\": {\n66:                     \"success_rate\": result[\"candidate\"][\"development\"][\"success_rate\"],\n67:                     \"successes\": f\"{result['candidate']['development']['successes']}/{result['candidate']['development']['total']}\",\n68:                     \"failure_counts\": result[\"candidate\"][\"development\"][\"failure_counts\"],\n69:                 },\n70:                 \"held_out\": {\n71:                     \"success_rate\": result[\"candidate\"][\"held_out\"][\"success_rate\"],\n72:                     \"successes\": f\"{result['candidate']['held_out']['successes']}/{result['candidate']['held_out']['total']}\",\n73:                     \"failure_counts\": result[\"candidate\"][\"held_out\"][\"failure_counts\"],\n74:                 },\n75:             },\n76:             \"proposals\": result[\"proposals\"],\n77:             \"promotion\": result[\"promotion\"],\n78:             \"active_version\": result[\"active_version\"],\n79:             \"cost\": result[\"cost\"],\n80:         }\n81:         print(json.dumps(summary, indent=2))\n82: \n83:         # Write full result to evidence/\n84:         os.makedirs(\"evidence\", exist_ok=True)\n85:         timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\n86:         evidence_path = f\"evidence/pack_run_{timestamp}.json\"\n87:         with open(evidence_path, \"w\") as f:\n88:             json.dump(result, f, indent=2, default=str)\n89:         print(f\"\\nFull result written to {evidence_path}\")\n90:     finally:\n91:         shutdown_neatlogs()\n92: \n93: \n94: def run_pack_ablation_task():\n95:     initialize_neatlogs()\n96:     try:\n97:         llm = get_llm()\n98:         dev_cases = pack_cases_for_split(\"development\")\n99:         held_cases = pack_cases_for_split(\"held_out\")\n100: \n101:         pack_source = os.getenv(\"PACK_SOURCE\", \"fixtures\").lower()\n102:         dev_companies = [c.company_name for c in dev_cases]\n103:         held_companies = [c.company_name for c in held_cases]\n104: \n105:         configs = {\n106:             \"baseline\": PackConfig(\n107:                 version=\"baseline\",\n108:                 output_dir=\"outputs/ablation/baseline\",\n109:                 retry_tool_errors=False,\n110:                 strict_prompt=False,\n111:                 verify_facts=False,\n112:             ),\n113:             \"retry_only\": PackConfig(\n114:                 version=\"retry_only\",\n115:                 output_dir=\"outputs/ablation/retry_only\",\n116:                 retry_tool_errors=True,\n117:                 strict_prompt=False,\n118:                 verify_facts=False,\n119:             ),\n120:             \"strict_only\": PackConfig(\n121:                 version=\"strict_only\",\n122:                 output_dir=\"outputs/ablation/strict_only\",\n123:                 retry_tool_errors=False,\n124:                 strict_prompt=True,\n125:                 verify_facts=False,\n126:             ),\n127:             \"verify_only\": PackConfig(\n128:                 version=\"verify_only\",\n129:                 output_dir=\"outputs/ablation/verify_only\",\n130:                 retry_tool_errors=False,\n131:                 strict_prompt=False,\n132:                 verify_facts=True,\n133:             ),\n134:             \"strict_verify\": PackConfig(\n135:                 version=\"strict_verify\",\n136:                 output_dir=\"outputs/ablation/strict_verify\",\n137:                 retry_tool_errors=False,\n138:                 strict_prompt=True,\n139:                 verify_facts=True,\n140:             ),\n141:             \"candidate\": PackConfig(\n142:                 version=\"candidate\",\n143:                 output_dir=\"outputs/ablation/candidate\",\n144:                 retry_tool_errors=True,\n145:                 strict_prompt=True,\n146:                 verify_facts=True,\n147:             ),\n148:         }\n149: \n150:         results = {}\n151:         for name, config in configs.items():\n152:             # Fresh source for each run\n153:             from app.pack.tools import default_source\n154:             source = default_source()\n155: \n156:             bdev = run_pack_benchmark(dev_cases, config, source=source, llm=llm)\n157:             bheld = run_pack_benchmark(held_cases, config, source=source, llm=llm)\n158: \n159:             # Merge failure counts\n160:             merged_failures = dict(Counter(bdev.failure_counts) + Counter(bheld.failure_counts))\n161: \n162:             total_calls = bdev.llm_calls + bheld.llm_calls\n163:             total_prompt = bdev.prompt_tokens + bheld.prompt_tokens\n164:             total_completion = bdev.completion_tokens + bheld.completion_tokens\n165:             cost_usd = _compute_cost_usd(total_prompt, total_completion)\n166: \n167:             results[name] = {\n168:                 \"dev\": {\n169:                     \"k\": bdev.successes,\n170:                     \"n\": bdev.total,\n171:                     \"success_rate\": bdev.success_rate,\n172:                 },\n173:                 \"held_out\": {\n174:                     \"k\": bheld.successes,\n175:                     \"n\": bheld.total,\n176:                     \"success_rate\": bheld.success_rate,\n177:                 },\n178:                 \"failure_counts\": merged_failures,\n179:                 \"llm_calls\": total_calls,\n180:                 \"prompt_tokens\": total_prompt,\n181:                 \"completion_tokens\": total_completion,\n182:                 \"cost_usd\": cost_usd,\n183:             }\n184: \n185:         # Print markdown table\n186:         print(\"| Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Prompt Tokens | Completion Tokens | Cost (USD) |\")\n187:         print(\"|--------|---------|--------------|-------------------------------|-----------|---------------|-------------------|------------|\")\n188:         for name in [\"baseline\", \"retry_only\", \"strict_only\", \"verify_only\", \"strict_verify\", \"candidate\"]:\n189:             r = results[name]\n190:             dev_str = f\"{r['dev']['k']}/{r['dev']['n']}\"\n191:             held_str = f\"{r['held_out']['k']}/{r['held_out']['n']}\"\n192:             fail_str = str(r[\"failure_counts\"])\n193:             print(f\"| {name} | {dev_str} | {held_str} | {fail_str} | {r['llm_calls']} | {r['prompt_tokens']} | {r['completion_tokens']} | {r['cost_usd']:.6f} |\")\n194: \n195:         # Write evidence JSON\n196:         os.makedirs(\"evidence\", exist_ok=True)\n197:         timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\n198:         evidence_path = f\"evidence/pack_ablation_{timestamp}.json\"\n199:         with open(evidence_path, \"w\") as f:\n200:             json.dump({\n201:                 \"source\": pack_source,\n202:                 \"companies\": {\n203:                     \"development\": dev_companies,\n204:                     \"held_out\": held_companies,\n205:                 },\n206:                 \"timestamp\": timestamp,\n207:                 \"results\": results,\n208:             }, f, indent=2, default=str)\n209:         print(f\"\\nFull ablation result written to {evidence_path}\")\n210:     finally:\n211:         shutdown_neatlogs()\n212: \n213: \n214: if __name__ == \"__main__\":\n215:     parser = argparse.ArgumentParser()\n216:     parser.add_argument(\"--task\", choices=[\"ticket\", \"pack\", \"pack-ablation\"], default=\"ticket\")\n217:     args = parser.parse_args()\n218: \n219:     if args.task == \"ticket\":\n220:         run_ticket_task()\n221:     elif args.task == \"pack\":\n222:         run_pack_task()\n223:     else:\n224:         run_pack_ablation_task()\n\n(End of file - total 224 lines)\n</content>",
+            "metadata": {
+              "preview": "import argparse\nimport json\nimport os\nfrom datetime import datetime\nfrom collections import Counter\n\nfrom app.observability import initialize_neatlogs, shutdown_neatlogs\nfrom app.service import run_improvement_cycle\nfrom app.pack.service import run_pack_improvement_cycle\nfrom app.pack.benchmark import pack_cases_for_split\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig, _compute_cost_usd\nfrom app.llm import get_llm\n\n\ndef run_ticket_task():\n    initialize_neatlogs()\n    try:\n        result = run_improvement_cycle()\n        print(",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "D:\\trace-driven-agent-improver\\app\\cli.py",
+                "text": "import argparse\nimport json\nimport os\nfrom datetime import datetime\nfrom collections import Counter\n\nfrom app.observability import initialize_neatlogs, shutdown_neatlogs\nfrom app.service import run_improvement_cycle\nfrom app.pack.service import run_pack_improvement_cycle\nfrom app.pack.benchmark import pack_cases_for_split\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig, _compute_cost_usd\nfrom app.llm import get_llm\n\n\ndef run_ticket_task():\n    initialize_neatlogs()\n    try:\n        result = run_improvement_cycle()\n        print(\n            json.dumps(\n                {\n                    \"baseline\": {\n                        key: result[\"baseline\"][key][\"success_rate\"]\n                        for key in [\"development\", \"held_out\"]\n                    },\n                    \"candidate\": {\n                        key: result[\"candidate\"][key][\"success_rate\"]\n                        for key in [\"development\", \"held_out\"]\n                    },\n                    \"proposals\": result[\"proposals\"],\n                    \"promotion\": result[\"promotion\"],\n                    \"active_version\": result[\"active_version\"],\n                    \"note\": result[\"note\"],\n                },\n                indent=2,\n            )\n        )\n    finally:\n        shutdown_neatlogs()\n\n\ndef run_pack_task():\n    initialize_neatlogs()\n    try:\n        result = run_pack_improvement_cycle()\n\n        # Compact summary for stdout\n        summary = {\n            \"source\": result[\"source\"],\n            \"companies\": result[\"companies\"],\n            \"baseline\": {\n                \"development\": {\n                    \"success_rate\": result[\"baseline\"][\"development\"][\"success_rate\"],\n                    \"successes\": f\"{result['baseline']['development']['successes']}/{result['baseline']['development']['total']}\",\n                    \"failure_counts\": result[\"baseline\"][\"development\"][\"failure_counts\"],\n                },\n                \"held_out\": {\n                    \"success_rate\": result[\"baseline\"][\"held_out\"][\"success_rate\"],\n                    \"successes\": f\"{result['baseline']['held_out']['successes']}/{result['baseline']['held_out']['total']}\",\n                    \"failure_counts\": result[\"baseline\"][\"held_out\"][\"failure_counts\"],\n                },\n            },\n            \"candidate\": {\n                \"development\": {\n                    \"success_rate\": result[\"candidate\"][\"development\"][\"success_rate\"],\n                    \"successes\": f\"{result['candidate']['development']['successes']}/{result['candidate']['development']['total']}\",\n                    \"failure_counts\": result[\"candidate\"][\"development\"][\"failure_counts\"],\n                },\n                \"held_out\": {\n                    \"success_rate\": result[\"candidate\"][\"held_out\"][\"success_rate\"],\n                    \"successes\": f\"{result['candidate']['held_out']['successes']}/{result['candidate']['held_out']['total']}\",\n                    \"failure_counts\": result[\"candidate\"][\"held_out\"][\"failure_counts\"],\n                },\n            },\n            \"proposals\": result[\"proposals\"],\n            \"promotion\": result[\"promotion\"],\n            \"active_version\": result[\"active_version\"],\n            \"cost\": result[\"cost\"],\n        }\n        print(json.dumps(summary, indent=2))\n\n        # Write full result to evidence/\n        os.makedirs(\"evidence\", exist_ok=True)\n        timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\n        evidence_path = f\"evidence/pack_run_{timestamp}.json\"\n        with open(evidence_path, \"w\") as f:\n            json.dump(result, f, indent=2, default=str)\n        print(f\"\\nFull result written to {evidence_path}\")\n    finally:\n        shutdown_neatlogs()\n\n\ndef run_pack_ablation_task():\n    initialize_neatlogs()\n    try:\n        llm = get_llm()\n        dev_cases = pack_cases_for_split(\"development\")\n        held_cases = pack_cases_for_split(\"held_out\")\n\n        pack_source = os.getenv(\"PACK_SOURCE\", \"fixtures\").lower()\n        dev_companies = [c.company_name for c in dev_cases]\n        held_companies = [c.company_name for c in held_cases]\n\n        configs = {\n            \"baseline\": PackConfig(\n                version=\"baseline\",\n                output_dir=\"outputs/ablation/baseline\",\n                retry_tool_errors=False,\n                strict_prompt=False,\n                verify_facts=False,\n            ),\n            \"retry_only\": PackConfig(\n                version=\"retry_only\",\n                output_dir=\"outputs/ablation/retry_only\",\n                retry_tool_errors=True,\n                strict_prompt=False,\n                verify_facts=False,\n            ),\n            \"strict_only\": PackConfig(\n                version=\"strict_only\",\n                output_dir=\"outputs/ablation/strict_only\",\n                retry_tool_errors=False,\n                strict_prompt=True,\n                verify_facts=False,\n            ),\n            \"verify_only\": PackConfig(\n                version=\"verify_only\",\n                output_dir=\"outputs/ablation/verify_only\",\n                retry_tool_errors=False,\n                strict_prompt=False,\n                verify_facts=True,\n            ),\n            \"strict_verify\": PackConfig(\n                version=\"strict_verify\",\n                output_dir=\"outputs/ablation/strict_verify\",\n                retry_tool_errors=False,\n                strict_prompt=True,\n                verify_facts=True,\n            ),\n            \"candidate\": PackConfig(\n                version=\"candidate\",\n                output_dir=\"outputs/ablation/candidate\",\n                retry_tool_errors=True,\n                strict_prompt=True,\n                verify_facts=True,\n            ),\n        }\n\n        results = {}\n        for name, config in configs.items():\n            # Fresh source for each run\n            from app.pack.tools import default_source\n            source = default_source()\n\n            bdev = run_pack_benchmark(dev_cases, config, source=source, llm=llm)\n            bheld = run_pack_benchmark(held_cases, config, source=source, llm=llm)\n\n            # Merge failure counts\n            merged_failures = dict(Counter(bdev.failure_counts) + Counter(bheld.failure_counts))\n\n            total_calls = bdev.llm_calls + bheld.llm_calls\n            total_prompt = bdev.prompt_tokens + bheld.prompt_tokens\n            total_completion = bdev.completion_tokens + bheld.completion_tokens\n            cost_usd = _compute_cost_usd(total_prompt, total_completion)\n\n            results[name] = {\n                \"dev\": {\n                    \"k\": bdev.successes,\n                    \"n\": bdev.total,\n                    \"success_rate\": bdev.success_rate,\n                },\n                \"held_out\": {\n                    \"k\": bheld.successes,\n                    \"n\": bheld.total,\n                    \"success_rate\": bheld.success_rate,\n                },\n                \"failure_counts\": merged_failures,\n                \"llm_calls\": total_calls,\n                \"prompt_tokens\": total_prompt,\n                \"completion_tokens\": total_completion,\n                \"cost_usd\": cost_usd,\n            }\n\n        # Print markdown table\n        print(\"| Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Prompt Tokens | Completion Tokens | Cost (USD) |\")\n        print(\"|--------|---------|--------------|-------------------------------|-----------|---------------|-------------------|------------|\")\n        for name in [\"baseline\", \"retry_only\", \"strict_only\", \"verify_only\", \"strict_verify\", \"candidate\"]:\n            r = results[name]\n            dev_str = f\"{r['dev']['k']}/{r['dev']['n']}\"\n            held_str = f\"{r['held_out']['k']}/{r['held_out']['n']}\"\n            fail_str = str(r[\"failure_counts\"])\n            print(f\"| {name} | {dev_str} | {held_str} | {fail_str} | {r['llm_calls']} | {r['prompt_tokens']} | {r['completion_tokens']} | {r['cost_usd']:.6f} |\")\n\n        # Write evidence JSON\n        os.makedirs(\"evidence\", exist_ok=True)\n        timestamp = datetime.utcnow().strftime(\"%Y%m%d_%H%M%S\")\n        evidence_path = f\"evidence/pack_ablation_{timestamp}.json\"\n        with open(evidence_path, \"w\") as f:\n            json.dump({\n                \"source\": pack_source,\n                \"companies\": {\n                    \"development\": dev_companies,\n                    \"held_out\": held_companies,\n                },\n                \"timestamp\": timestamp,\n                \"results\": results,\n            }, f, indent=2, default=str)\n        print(f\"\\nFull ablation result written to {evidence_path}\")\n    finally:\n        shutdown_neatlogs()\n\n\nif __name__ == \"__main__\":\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--task\", choices=[\"ticket\", \"pack\", \"pack-ablation\"], default=\"ticket\")\n    args = parser.parse_args()\n\n    if args.task == \"ticket\":\n        run_ticket_task()\n    elif args.task == \"pack\":\n        run_pack_task()\n    else:\n        run_pack_ablation_task()",
+                "lineStart": 1,
+                "lineEnd": 224,
+                "totalLines": 224,
+                "truncated": false
+              }
+            },
+            "title": "app\\cli.py",
+            "time": {
+              "start": 1791825717807,
+              "end": 1791825717833
+            }
+          },
+          "id": "prt_13122aa29001OrvPGEz4BUtKCz",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122921a001ghgd56LOGpOjPl"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15307,
+            "input": 10935,
+            "output": 37,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 4320
+            }
+          },
+          "cost": 0,
+          "id": "prt_13122ab0e0016hCoOPx5krPGuD",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122921a001ghgd56LOGpOjPl"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_131223c0c00134gqFUJ8QstbsC",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 18613,
+          "input": 18149,
+          "output": 382,
+          "reasoning": 82,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791825718227,
+          "completed": 1791825743370
+        },
+        "finish": "stop",
+        "id": "msg_13122abd3001Cmb2RkYoJjvpRa",
+        "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8"
+      },
+      "parts": [
+        {
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-start",
+          "id": "prt_13122b5c9001AZxcWYDeLiv75L",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122abd3001Cmb2RkYoJjvpRa"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I understand the project structure. Based on the README and code, to run the code and display traces in neatlogs, you need to:\n\n1. Set up the environment with NEATLOGS_API_KEY in .env\n2. Run the CLI or FastAPI server\n\nThe traces are exported to Neatlogs when NEATLOGS_API_KEY is set. Let me provide a clear answer.",
+          "time": {
+            "start": 1791825720780,
+            "end": 1791825731121
+          },
+          "id": "prt_13122b5cc001aNU7dV2XxC2LOh",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122abd3001Cmb2RkYoJjvpRa"
+        },
+        {
+          "type": "text",
+          "text": "Based on the codebase, here's how to run the code to display traces in Neatlogs:\n\n## Setup\n1. Copy `.env.example` to `.env` and add your `NEATLOGS_API_KEY`:\n   ```bash\n   cp .env.example .env\n   # Edit .env and set REDACTED\n   ```\n\n2. Install dependencies:\n   ```bash\n   python -m venv .venv\n   # Windows: .venv\\Scripts\\Activate.ps1\n   # macOS/Linux: source .venv/bin/activate\n   pip install -r requirements.txt\n   ```\n\n## Run (traces export to Neatlogs automatically when API key is set)\n\n**CLI - Ticket task (support-ticket routing):**\n```bash\npython -m app.cli --task ticket\n```\n\n**CLI - Pack task (company briefings):**\n```bash\npython -m app.cli --task pack\n# Or with real Crustdata data:\nPACK_SOURCE=snapshot python -m app.cli --task pack\n```\n\n**CLI - Ablation study (runs 6 configs, exports each as separate trace):**\n```bash\npython -m app.cli --task pack-ablation\n# With real data:\nPACK_SOURCE=snapshot python -m app.cli --task pack-ablation\n```\n\n**FastAPI server:**\n```bash\nuvicorn app.main:app --reload\n# Then POST to http://127.0.0.1:8000/improve\n```\n\nEach benchmark case is exported as a workflow trace with nested spans (action-selection, tool-execution, verification) to the **trace-driven-agent-improver** workflow in your Neatlogs dashboard.",
+          "time": {
+            "start": 1791825731124,
+            "end": 1791825743011
+          },
+          "id": "prt_13122de34001dRlEZsemJD3Z2D",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122abd3001Cmb2RkYoJjvpRa"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "09a98ceffe11caa2628be21659660d1d0f05a542",
+          "type": "step-finish",
+          "tokens": {
+            "total": 18613,
+            "input": 18149,
+            "output": 382,
+            "reasoning": 82,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_131230d51001XFaWd84v8iN5F3",
+          "sessionID": "ses_eceddc418ffeTzm6ognuvBw6S8",
+          "messageID": "msg_13122abd3001Cmb2RkYoJjvpRa"
+        }
+      ]
+    }
+  ]
+}
