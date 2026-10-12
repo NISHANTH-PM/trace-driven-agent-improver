@@ -1,0 +1,42 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PRM5WHXAV8MK24JCY8XQ4Y",
+  "session_id": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T00:36:33.0700259Z",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "README.md",
+    "evidence/real_data_results.md",
+    "evidence/superseded/README.md"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "2a4f227143cf",
+  "checkpoint_transcript_start": 189,
+  "transcript_lines_at_start": 189,
+  "compact_transcript_start": 189,
+  "token_usage": {
+    "input_tokens": 145499,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 4246560,
+    "output_tokens": 4227,
+    "api_call_count": 20
+  },
+  "session_metrics": {
+    "turn_count": 6
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T00:36:33.0127054Z",
+    "agent_lines": 44,
+    "agent_removed": 28,
+    "human_added": 1948,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 1992,
+    "total_lines_changed": 3370,
+    "agent_percentage": 2.136498516320475,
+    "metric_version": 2
+  }
+}
