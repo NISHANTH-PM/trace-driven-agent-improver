@@ -11,7 +11,7 @@ from docx import Document
 from docx.shared import Pt, RGBColor
 
 from app.models import TraceEvent
-from app.observability import trace_span
+from app.observability import trace_span, mark_span_failed
 from app.llm import FakeLLMClient, LLMClient, get_llm
 from app.pack.models import CompanyCase, PackOutput, REQUIRED_SECTIONS
 from app.pack.tools import FixtureSource, FlakySource, ToolError, default_source
@@ -138,16 +138,21 @@ def run_pack_student(
             "fetch_company",
             kind="TOOL",
             attributes={"tool.attempt": attempt, "pack.company": case.company_name},
-        ):
+        ) as span:
             try:
                 company = source.get_company(case.domain, attempt)
                 event("tool_execution", f"Fetched company data on attempt {attempt}", "ok")
+                span.set_attribute("output.value", f"OK attempt {attempt}: fetched {company.name}")
                 break
             except ToolError as e:
                 if attempt < max_attempts:
                     event("tool_retry", f"Tool error on attempt {attempt}: {e}", "warning", attempt=attempt)
+                    mark_span_failed(span, f"tool_error (attempt {attempt}): {e}")
+                    span.set_attribute("output.value", f"FAILED attempt {attempt}/{max_attempts}: {e}. Retrying.")
                 else:
                     event("tool_execution", f"Tool failed after {attempt} attempts: {e}", "error", attempt=attempt)
+                    mark_span_failed(span, f"tool_error (attempt {attempt}): {e}")
+                    span.set_attribute("output.value", f"FAILED attempt {attempt}/{max_attempts}: {e}. Giving up.")
                     return (
                         PackOutput(
                             case_id=case.case_id,
