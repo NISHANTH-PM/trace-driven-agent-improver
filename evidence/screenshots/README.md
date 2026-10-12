@@ -5,10 +5,10 @@
 | File Name | What to Show | Done? |
 |-----------|--------------|-------|
 | neat_baseline_fail.png | llm_draft I/O tab and benchmark_case attributes for baseline_wrong_fact | [Y] |
-| neat_retry_recovery.png | Span tree with two fetch_company spans for candidate_retry_recovery | [ ] |
+| neat_retry_recovery.png | Span tree with two fetch_company spans for candidate_retry_recovery | [Y] |
 | neat_candidate_success.png | Overview of candidate_success run | [Y] |
-| neat_llm_attributes.png | LLM span attributes for candidate_success | [ ] |
-| neat_llm_io.png | LLM input/output for candidate_success | [ ] |
+| neat_llm_attributes.png | LLM span attributes for candidate_success | [Y] |
+| neat_llm_io.png | LLM input/output for candidate_success | [Y] |
 | neat_verify_regeneration.png | llm_regenerate nested in verify_facts for verify_regeneration | [Y] |
 | neat_compare.png | Compare view: baseline_wrong_fact vs candidate_success (if dashboard offers) | [ ] |
 | entire_checkpoints.png | `entire status` output | [ ] |
