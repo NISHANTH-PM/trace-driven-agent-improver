@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 7634437,
-      "output": 103613,
-      "reasoning": 20015,
+      "input": 7668902,
+      "output": 104448,
+      "reasoning": 20078,
       "cache": {
-        "read": 83700000,
+        "read": 85773600,
         "write": 0
       }
     },
     "time": {
       "created": 1791757007618,
-      "updated": 1791792196041
+      "updated": 1791792243642
     }
   },
   "messages": [
@@ -40509,19 +40509,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 421272,
+          "input": 6427,
+          "output": 109,
+          "reasoning": 16,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 414720
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791792196017
+          "created": 1791792196017,
+          "completed": 1791792214416
         },
+        "finish": "tool-calls",
         "id": "msg_12f2329b100134gn6KWhOHuTVN",
         "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
       },
@@ -40549,20 +40552,414 @@
           "tool": "bash",
           "callID": "call-ca85f9c6-195f-4428-8d6f-e02ff1c3157e",
           "state": {
-            "metadata": {
-              "output": "warning: in the working copy of 'evidence/superseded/README.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/office_demo.py', LF will be replaced by CRLF the next time Git touches it\n"
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "cd /d/trace-driven-agent-improver && git add scripts/office_demo.py evidence/office_outputs_20261012_080308.json evidence/office_outputs_20261012_080308.md evidence/superseded/ && git commit -m \"fix: office demo records real token/call/cost counters\""
             },
+            "output": "warning: in the working copy of 'evidence/superseded/README.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/office_demo.py', LF will be replaced by CRLF the next time Git touches it\n[feat/office-outputs ac9887f] fix: office demo records real token/call/cost counters\n 6 files changed, 272 insertions(+), 40 deletions(-)\n create mode 100644 evidence/office_outputs_20261012_080308.json\n create mode 100644 evidence/office_outputs_20261012_080308.md\n rename evidence/{ => superseded}/office_outputs_20261012_074455.json (100%)\n rename evidence/{ => superseded}/office_outputs_20261012_074455.md (100%)\n",
+            "metadata": {
+              "output": "warning: in the working copy of 'evidence/superseded/README.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/office_demo.py', LF will be replaced by CRLF the next time Git touches it\n[feat/office-outputs ac9887f] fix: office demo records real token/call/cost counters\n 6 files changed, 272 insertions(+), 40 deletions(-)\n create mode 100644 evidence/office_outputs_20261012_080308.json\n create mode 100644 evidence/office_outputs_20261012_080308.md\n rename evidence/{ => superseded}/office_outputs_20261012_074455.json (100%)\n rename evidence/{ => superseded}/office_outputs_20261012_074455.md (100%)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add scripts/office_demo.py evidence/office_outputs_20261012_080308.json evidence/office_outputs_20261012_080308.md evidence/superseded/ && git commit -m \"fix: office demo records real token/call/cost counters\"",
             "time": {
-              "start": 1791792204396
+              "start": 1791792204396,
+              "end": 1791792213821
             }
           },
           "id": "prt_12f234a62001FdFtORrcKNfBHU",
           "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
           "messageID": "msg_12f2329b100134gn6KWhOHuTVN"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 421272,
+            "input": 6427,
+            "output": 109,
+            "reasoning": 16,
+            "cache": {
+              "write": 0,
+              "read": 414720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f23704d001oKiQxdoy2zUxSd",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f2329b100134gn6KWhOHuTVN"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f200f3b001Qo2nz73i3bffpn",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 421572,
+          "input": 6804,
+          "output": 41,
+          "reasoning": 7,
+          "cache": {
+            "write": 0,
+            "read": 414720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791792214504,
+          "completed": 1791792227419
+        },
+        "finish": "tool-calls",
+        "id": "msg_12f2371e8001BY7VhkMjVPBim4",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-start",
+          "id": "prt_12f2385f8001JwofEPJ73lHWKI",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f2371e8001BY7VhkMjVPBim4"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me push the changes.",
+          "time": {
+            "start": 1791792219643,
+            "end": 1791792220290
+          },
+          "id": "prt_12f2385fb00194meSy6hgT5Atq",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f2371e8001BY7VhkMjVPBim4"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-54535096-7d00-4133-9e27-efee76a87c94",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git push 2>&1"
+            },
+            "output": "[entire] Pushing 3 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   9506d6f..ac9887f  feat/office-outputs -> feat/office-outputs\n",
+            "metadata": {
+              "output": "[entire] Pushing 3 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   9506d6f..ac9887f  feat/office-outputs -> feat/office-outputs\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git push 2>&1",
+            "time": {
+              "start": 1791792220301,
+              "end": 1791792227006
+            }
+          },
+          "id": "prt_12f238885001AAjHiwkOw9w8LZ",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f2371e8001BY7VhkMjVPBim4"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 421572,
+            "input": 6804,
+            "output": 41,
+            "reasoning": 7,
+            "cache": {
+              "write": 0,
+              "read": 414720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f23a38f001ZMgTyGoVrwcOYs",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f2371e8001BY7VhkMjVPBim4"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f200f3b001Qo2nz73i3bffpn",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 421732,
+          "input": 6934,
+          "output": 58,
+          "reasoning": 20,
+          "cache": {
+            "write": 0,
+            "read": 414720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791792227482,
+          "completed": 1791792237973
+        },
+        "finish": "tool-calls",
+        "id": "msg_12f23a49a001swdOdgcuk0QLHJ",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-start",
+          "id": "prt_12f23b422001CfpFw59MIXq12M",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23a49a001swdOdgcuk0QLHJ"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run the tests again to confirm they pass, and then create the report.",
+          "time": {
+            "start": 1791792231459,
+            "end": 1791792234005
+          },
+          "id": "prt_12f23b4230013J0yfzvAZU04uF",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23a49a001swdOdgcuk0QLHJ"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-ae5cd4d8-b2cc-41ef-9472-1368bbf84d94",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1"
+            },
+            "output": "........................................................................ [ 50%]\r\n......................................................................   [100%]\r\n142 passed, 1 skipped in 2.77s\r\n",
+            "metadata": {
+              "output": "........................................................................ [ 50%]\r\n......................................................................   [100%]\r\n142 passed, 1 skipped in 2.77s\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1",
+            "time": {
+              "start": 1791792234015,
+              "end": 1791792237602
+            }
+          },
+          "id": "prt_12f23be18001t0c00pVdLd1NqN",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23a49a001swdOdgcuk0QLHJ"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 421732,
+            "input": 6934,
+            "output": 58,
+            "reasoning": 20,
+            "cache": {
+              "write": 0,
+              "read": 414720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f23ccd7001LYCo4jWVRjWZe2",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23a49a001swdOdgcuk0QLHJ"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f200f3b001Qo2nz73i3bffpn",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 421843,
+          "input": 7070,
+          "output": 41,
+          "reasoning": 12,
+          "cache": {
+            "write": 0,
+            "read": 414720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791792238039,
+          "completed": 1791792243562
+        },
+        "finish": "tool-calls",
+        "id": "msg_12f23cdd7001A6dsgDLSJm0B9P",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-start",
+          "id": "prt_12f23dfce001rpIVODwwLh57EU",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23cdd7001A6dsgDLSJm0B9P"
+        },
+        {
+          "type": "reasoning",
+          "text": "All tests pass. Now let me create the report.",
+          "time": {
+            "start": 1791792242640,
+            "end": 1791792243068
+          },
+          "id": "prt_12f23dfd0001KgsH647K7CBSWR",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23cdd7001A6dsgDLSJm0B9P"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-78d7b53b-a5df-4965-b882-f65ef6037af0",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git log --oneline -5"
+            },
+            "output": "ac9887f fix: office demo records real token/call/cost counters\n9506d6f evidence: refresh demo manifest with failed tool spans\n0e99745 feat: failed tool attempts visible as error spans\n85604c6 feat: optional pptx and xlsx outputs with deterministic artifact verification\n7f89af8 evidence: refresh demo manifest with footer footers\n",
+            "metadata": {
+              "output": "ac9887f fix: office demo records real token/call/cost counters\n9506d6f evidence: refresh demo manifest with failed tool spans\n0e99745 feat: failed tool attempts visible as error spans\n85604c6 feat: optional pptx and xlsx outputs with deterministic artifact verification\n7f89af8 evidence: refresh demo manifest with footer footers\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git log --oneline -5",
+            "time": {
+              "start": 1791792243075,
+              "end": 1791792243176
+            }
+          },
+          "id": "prt_12f23e17d001BGicJNDlxA5hiJ",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23cdd7001A6dsgDLSJm0B9P"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 421843,
+            "input": 7070,
+            "output": 41,
+            "reasoning": 12,
+            "cache": {
+              "write": 0,
+              "read": 414720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f23e299001LPKtWywME5Uvo6",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23cdd7001A6dsgDLSJm0B9P"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f200f3b001Qo2nz73i3bffpn",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 422544,
+          "input": 7230,
+          "output": 586,
+          "reasoning": 8,
+          "cache": {
+            "write": 0,
+            "read": 414720
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791792243615,
+          "completed": 1791792257733
+        },
+        "finish": "stop",
+        "id": "msg_12f23e39f001OW3QZqyKG3vcby",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-start",
+          "id": "prt_12f23f4560011KP1jFtKBX3ml6",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23e39f001OW3QZqyKG3vcby"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me create the report.",
+          "time": {
+            "start": 1791792247896,
+            "end": 1791792248022
+          },
+          "id": "prt_12f23f458001ulrVKBEQWpijsd",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23e39f001OW3QZqyKG3vcby"
+        },
+        {
+          "type": "text",
+          "text": "### REPORT\n\n**Model name printed by the script**\n- `nova-lite`\n\n**Totals: cases, artifact passes, evaluator passes, total_llm_calls, tokens, total_cost_usd, cost_per_case_usd**\n\n| Metric | Value |\n|--------|-------|\n| Total cases | 10 |\n| Artifact checks passed | 10/10 |\n| Evaluator passed | 10/10 |\n| Total LLM calls | 10 |\n| Total prompt tokens | 3,172 |\n| Total completion tokens | 2,581 |\n| Total cost (USD) | $0.000810 |\n| Cost per case (USD) | $0.000081 |\n\n**Per-case llm_calls column (10 values)**\n| Case | Company | LLM Calls |\n|------|---------|-----------|\n| D01 | Razorpay | 1 |\n| D02 | Postman | 1 |\n| D03 | BrowserStack | 1 |\n| D04 | Freshworks | 1 |\n| D05 | Swiggy | 1 |\n| D06 | Chargebee | 1 |\n| H01 | Figma | 1 |\n| H02 | Linear | 1 |\n| H03 | Canva | 1 |\n| H04 | Notion | 1 |\n\n**Test counts, commit hashes, push result**\n- Tests: **142 passed, 1 skipped** (same as before)\n- Commits:\n  - `ac9887f` — fix: office demo records real token/call/cost counters\n- Push: `9506d6f..ac9887f  feat/office-outputs -> feat/office-outputs`\n\n**Deviations**\n\n1. **Cost still $0.000810 total**: The cost is very small because the model prices are set low in `.env` (LLM_PRICE_IN_PER_M=0.06, LLM_PRICE_OUT_PER_M=0.24). In production with real pricing, costs would be higher.\n\n2. **File paths use forward slashes**: Used `Path(...).as_posix()` to ensure JSON/markdown have no backslashes.\n\n3. **Old evidence moved to superseded**: The previous `office_outputs_20261012_074455.*` files were moved to `evidence/superseded/` with README note about the token/cost recording bug.\n\n4. **Test counts unchanged**: 142 passed, 1 skipped — same as before, confirming no regression.",
+          "time": {
+            "start": 1791792248024,
+            "end": 1791792257425
+          },
+          "id": "prt_12f23f4d80014uIZzKW7k4L0Dc",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23e39f001OW3QZqyKG3vcby"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "fe62751119aadc740682f437e86379811641fb4a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 422544,
+            "input": 7230,
+            "output": 586,
+            "reasoning": 8,
+            "cache": {
+              "write": 0,
+              "read": 414720
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f241a24001URgmUiPTopsa5H",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f23e39f001OW3QZqyKG3vcby"
         }
       ]
     }
