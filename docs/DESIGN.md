@@ -1,3 +1,7 @@
+﻿> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
+> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
 # System Design
 ## Trace-Driven Agent Improver
 
@@ -10,61 +14,61 @@
 ## 1. Architecture overview
 
 ```text
-                 ┌─────────────────────────┐
-                 │ Benchmark / Task Cases  │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │      Student Agent      │
-                 │ task-specific adapter   │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Trace Collector / Sink  │──────► neatlogs
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Deterministic Evaluator │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Failure Classifier      │
-                 └────────────┬────────────┘
-                              │ evidence + failure counts
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Bounded Improver        │
-                 │ proposes allowed change │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Candidate Configuration │──────► Git / Entire
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Candidate Evaluation    │
-                 │ development + held-out  │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Promotion Gate          │
-                 └────────────┬────────────┘
-                         ┌────┴────┐
-                         ▼         ▼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Benchmark / Task Cases  â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚      Student Agent      â”‚
+                 â”‚ task-specific adapter   â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Trace Collector / Sink  â”‚â”€â”€â”€â”€â”€â”€â–º neatlogs
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Deterministic Evaluator â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Failure Classifier      â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚ evidence + failure counts
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Bounded Improver        â”‚
+                 â”‚ proposes allowed change â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Candidate Configuration â”‚â”€â”€â”€â”€â”€â”€â–º Git / Entire
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Candidate Evaluation    â”‚
+                 â”‚ development + held-out  â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                              â”‚
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Promotion Gate          â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                         â”Œâ”€â”€â”€â”€â”´â”€â”€â”€â”€â”
+                         â–¼         â–¼
                      Promote     Reject
-                         │         │
-                         └────┬────┘
-                              ▼
-                 ┌─────────────────────────┐
-                 │ Results / API / UI      │
-                 └─────────────────────────┘
+                         â”‚         â”‚
+                         â””â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”˜
+                              â–¼
+                 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                 â”‚ Results / API / UI      â”‚
+                 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 cfo.ai: business plan and product unit-economics analysis
 ```
@@ -90,7 +94,7 @@ Normalizes execution steps into trace events:
 Avoid logging secrets or personal data. The initial synthetic benchmark contains no real customer data.
 
 ### 2.4 Evaluator
-Compares agent outputs to expected outcomes. For known benchmark tasks, the evaluator—not the Improver's narrative—determines correctness. It emits per-case results and aggregate metrics.
+Compares agent outputs to expected outcomes. For known benchmark tasks, the evaluatorâ€”not the Improver's narrativeâ€”determines correctness. It emits per-case results and aggregate metrics.
 
 ### 2.5 Failure classifier
 Groups failures into a small taxonomy:
@@ -129,18 +133,18 @@ Promotes only if acceptance criteria pass. It must reject a candidate that fails
 
 ```text
 IDLE
-  ↓ start run
+  â†“ start run
 BASELINE_RUNNING
-  ↓ traces captured
+  â†“ traces captured
 BASELINE_EVALUATED
-  ↓ failures identified
+  â†“ failures identified
 PROPOSALS_READY
-  ↓ candidate isolated
+  â†“ candidate isolated
 CANDIDATE_RUNNING
-  ↓ candidate evaluated
+  â†“ candidate evaluated
 PROMOTION_CHECK
-  ├── pass ──► PROMOTED
-  └── fail ──► REJECTED
+  â”œâ”€â”€ pass â”€â”€â–º PROMOTED
+  â””â”€â”€ fail â”€â”€â–º REJECTED
 ```
 
 Each transition should record a timestamp and a reason. Exceptions should move the run into a failed state with a readable error rather than silently continuing.

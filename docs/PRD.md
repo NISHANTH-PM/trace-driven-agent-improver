@@ -1,3 +1,7 @@
+﻿> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
+> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
 # Product Requirements Document (PRD)
 ## Trace-Driven Agent Improver
 
@@ -14,7 +18,7 @@ Trace-Driven Agent Improver observes a task-specific AI agent, evaluates its out
 
 The product is not a general-purpose agent builder. The MVP focuses on one controlled workflow and demonstrates the loop:
 
-**Run → Trace → Evaluate → Diagnose → Improve → Re-evaluate → Promote or reject**
+**Run â†’ Trace â†’ Evaluate â†’ Diagnose â†’ Improve â†’ Re-evaluate â†’ Promote or reject**
 
 The first task domain is synthetic support-ticket routing. The initial scaffold uses a deterministic adapter to validate the benchmark and promotion mechanics. A later milestone replaces or supplements it with an LLM-backed agent and real observability integration.
 

@@ -29,4 +29,5 @@ debug_trace.py
 # Stray local files
 =1.1,
 nul
-.entire/
+.entire/data/snapshots/raw/
+data/snapshots/raw/

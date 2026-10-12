@@ -1,3 +1,7 @@
+﻿> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
+> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
 # Technical Stack
 ## Trace-Driven Agent Improver
 
@@ -42,25 +46,25 @@ pip install -r requirements.txt
 
 ```text
 trace-driven-agent-improver/
-├── app/
-│   ├── __init__.py
-│   ├── main.py             # FastAPI routes
-│   ├── cli.py              # Run cycle from terminal
-│   ├── models.py           # Pydantic data contracts
-│   ├── benchmark.py        # Synthetic benchmark cases
-│   ├── student.py          # Agent adapter and trace events
-│   ├── evaluator.py        # Correctness checks and metrics
-│   ├── improver.py         # Bounded proposals and promotion policy
-│   └── service.py          # Improvement-cycle orchestration
-├── tests/
-│   └── test_improver.py
-├── .env.example
-├── .gitignore
-├── requirements.txt
-├── README.md
-├── PRD.md
-├── DESIGN.md
-└── TECH_STACK.md
+â”œâ”€â”€ app/
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ main.py             # FastAPI routes
+â”‚   â”œâ”€â”€ cli.py              # Run cycle from terminal
+â”‚   â”œâ”€â”€ models.py           # Pydantic data contracts
+â”‚   â”œâ”€â”€ benchmark.py        # Synthetic benchmark cases
+â”‚   â”œâ”€â”€ student.py          # Agent adapter and trace events
+â”‚   â”œâ”€â”€ evaluator.py        # Correctness checks and metrics
+â”‚   â”œâ”€â”€ improver.py         # Bounded proposals and promotion policy
+â”‚   â””â”€â”€ service.py          # Improvement-cycle orchestration
+â”œâ”€â”€ tests/
+â”‚   â””â”€â”€ test_improver.py
+â”œâ”€â”€ .env.example
+â”œâ”€â”€ .gitignore
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ README.md
+â”œâ”€â”€ PRD.md
+â”œâ”€â”€ DESIGN.md
+â””â”€â”€ TECH_STACK.md
 ```
 
 ## 4. LLM integration decision

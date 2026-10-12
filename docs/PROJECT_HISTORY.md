@@ -1,4 +1,8 @@
-# Project History — Trace-Driven Agent Improver
+﻿> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
+> **Status:** written for the original support-ticket MVP (Oct 10). The company-briefing agent added on Oct 11 to 12 is described in README.md and EVIDENCE.md.
+
+# Project History â€” Trace-Driven Agent Improver
 
 > Continuity document for future development sessions. Update after meaningful decisions, milestones, experiments, integrations, or blockers. Never store API keys or secrets here.
 
