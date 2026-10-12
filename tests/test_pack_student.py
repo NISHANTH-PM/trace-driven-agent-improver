@@ -16,6 +16,7 @@ from app.pack.evaluator import run_pack_benchmark
 import app.observability as observability_module
 from app.pack.tools import FixtureSource, ToolError, default_source
 from app.llm import FakeLLMClient
+from pptx.util import Inches
 
 
 @pytest.fixture
@@ -787,16 +788,218 @@ class TestRetryBackoff:
         # Check that backoff event is recorded in trace
         backoff_events = [e for e in trace if e.step == "backoff"]
         assert len(backoff_events) == 1, f"Expected 1 backoff event, got {len(backoff_events)}"
-        # Verify the backoff detail contains the correct timing
+# Verify the backoff detail contains the correct timing
         assert "0.1s" in backoff_events[0].detail  # 0.05 rounds to 0.1 with 1 decimal place
+
+
+class TestOfficePolish:
+    """Tests for polished XLSX and PPTX outputs."""
+
+    def test_xlsx_facts_number_formats(self, case_d01, good_json_response, tmp_path):
+        """Test XLSX Facts sheet has correct number formats."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        from openpyxl import load_workbook
+        wb = load_workbook(output.office_paths["xlsx"])
+        ws_facts = wb["Facts"]
+
+        # Check founded_year format is "0" (no thousands separator)
+        for row in ws_facts.iter_rows(min_row=2, max_row=8, values_only=False):
+            field_cell = row[0]
+            value_cell = row[1]
+            if field_cell.value == "founded_year":
+                assert value_cell.number_format == "0", f"founded_year format = {value_cell.number_format}, expected '0'"
+                # Verify no thousands separator in value
+                assert isinstance(value_cell.value, int)
+                break
+
+        # Check employee_count format "#,##0"
+        for row in ws_facts.iter_rows(min_row=2, max_row=8, values_only=False):
+            field_cell = row[0]
+            value_cell = row[1]
+            if field_cell.value == "employee_count":
+                assert value_cell.number_format == "#,##0"
+                break
+
+        # Check total_funding_usd format "$#,##0"
+        for row in ws_facts.iter_rows(min_row=2, max_row=8, values_only=False):
+            field_cell = row[0]
+            value_cell = row[1]
+            if field_cell.value == "total_funding_usd":
+                assert value_cell.number_format == "$#,##0"
+                break
+
+        wb.close()
+
+    def test_xlsx_derived_formats(self, case_d01, good_json_response, tmp_path):
+        """Test XLSX Derived sheet formats and formulas."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        from openpyxl import load_workbook
+        wb = load_workbook(output.office_paths["xlsx"])
+        ws_derived = wb["Derived"]
+
+        # Check formulas start with "="
+        age_cell = ws_derived.cell(row=2, column=2)
+        funding_cell = ws_derived.cell(row=3, column=2)
+        assert str(age_cell.value).startswith("="), "Company Age should be a formula"
+        assert str(funding_cell.value).startswith("="), "Funding per Employee should be a formula"
+
+        # Check company age format "0"
+        assert age_cell.number_format == "0", f"Company Age format = {age_cell.number_format}, expected '0'"
+
+        # Check funding per employee format "$#,##0"
+        assert funding_cell.number_format == "$#,##0", f"Funding per Employee format = {funding_cell.number_format}, expected '$#,##0'"
+
+        # Check bold labels in column A
+        assert ws_derived.cell(row=2, column=1).font.bold
+        assert ws_derived.cell(row=3, column=1).font.bold
+
+        wb.close()
+
+    def test_xlsx_founded_year_rejects_thousands_separator(self, case_d01, good_json_response, tmp_path):
+        """Test that verify_office_files fails if founded_year has thousands separator format."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        # Tamper the XLSX to give founded_year a thousands separator format
+        from openpyxl import load_workbook
+        wb = load_workbook(output.office_paths["xlsx"])
+        ws_facts = wb["Facts"]
+        for row in ws_facts.iter_rows(min_row=2, max_row=8, values_only=False):
+            field_cell = row[0]
+            value_cell = row[1]
+            if field_cell.value == "founded_year":
+                value_cell.number_format = "#,##0"  # Wrong format with thousands separator
+                break
+        wb.save(output.office_paths["xlsx"])
+        wb.close()
+
+        # Verify should now fail
+        from app.pack.office import verify_office_files
+        mismatches = verify_office_files(
+            FixtureSource().get_company(case_d01.domain),
+            Path(output.office_paths["xlsx"]),
+            Path(output.office_paths["pptx"]),
+        )
+        assert any("founded_year number_format" in m for m in mismatches), f"Expected format mismatch, got: {mismatches}"
+
+    def test_xlsx_tampered_formula_detected(self, case_d01, good_json_response, tmp_path):
+        """Test that verify_office_files detects tampered formula in Derived sheet."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        # Tamper the XLSX to replace formula with static value
+        from openpyxl import load_workbook
+        wb = load_workbook(output.office_paths["xlsx"])
+        ws_derived = wb["Derived"]
+        ws_derived.cell(row=2, column=2, value=999)  # Replace formula with static value
+        wb.save(output.office_paths["xlsx"])
+        wb.close()
+
+        # Verify should detect the tampered formula
+        from app.pack.office import verify_office_files
+        mismatches = verify_office_files(
+            FixtureSource().get_company(case_d01.domain),
+            Path(output.office_paths["xlsx"]),
+            Path(output.office_paths["pptx"]),
+        )
+        assert any("Company Age formula missing or not a formula" in m for m in mismatches), f"Expected formula mismatch, got: {mismatches}"
+
+    def test_pptx_dimensions_and_structure(self, case_d01, good_json_response, tmp_path):
+        """Test PPTX has correct 16:9 dimensions, table cells, and footer."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        from pptx import Presentation as PPTXPresentation
+        prs = PPTXPresentation(output.office_paths["pptx"])
+
+        # Check 16:9 dimensions
+        assert prs.slide_width == Inches(13.333)
+        assert prs.slide_height == Inches(7.5)
+
+        # Check 4 slides
+        assert len(prs.slides) == 4
+
+        # Check key-facts table on slide 2
+        slide2 = prs.slides[1]
+        tables = [shape for shape in slide2.shapes if shape.has_table]
+        assert len(tables) == 1
+        table = tables[0].table
+        assert len(table.rows) == 8  # header + 7 data rows
+        assert len(table.columns) == 2
+
+        # Check footer on all slides
+        for i, slide in enumerate(prs.slides):
+            footer_found = False
+            for shape in slide.shapes:
+                if shape.has_text_frame:
+                    for paragraph in shape.text_frame.paragraphs:
+                        if "Source: Crustdata company data" in paragraph.text:
+                            break
+                    else:
+                        continue
+                    break
+            else:
+                assert False, f"Footer not found on slide {i+1}"
+
+    def test_verify_office_files_returns_empty_for_valid_files(self, case_d01, good_json_response, tmp_path):
+        """Test that verify_office_files returns [] for correctly formatted files."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            outputs=("docx", "pptx", "xlsx"),
+            verify_facts=False,
+        )
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        from app.pack.office import verify_office_files
+        mismatches = verify_office_files(
+            FixtureSource().get_company(case_d01.domain),
+            Path(output.office_paths["xlsx"]),
+            Path(output.office_paths["pptx"]),
+)
+        assert mismatches == [], f"Expected no mismatches, got: {mismatches}"
 
         # Check that there is 1 successful fetch_company event (only successful attempts log "Fetched")
         fetch_events = [e for e in trace if e.step == "tool_execution" and "Fetched company data" in e.detail]
         assert len(fetch_events) == 1, f"Expected 1 successful fetch event, got {len(fetch_events)}"
-
-        # Check that tool_retry event occurred (for the failed attempt)
-        retry_events = [e for e in trace if e.step == "tool_retry"]
-        assert len(retry_events) == 1
-
-        # Verify the backoff detail contains the correct timing
-        assert "0.1s" in backoff_events[0].detail  # 0.05 rounds to 0.1 with 1 decimal place

@@ -34,5 +34,5 @@ These files are **not deleted** but kept for transparency and audit trail. They 
 ### pack_ablation_20261011_230135.json, pack_ablation_20261012_000908.json
 - **Runs on the snapshot with neighbourhood-level HQ values (Razorpay 'Adugodi', Canva 'Darlinghurst')**: Same as above. Results are identical in shape to the final runs, superseded because the data was corrected.
 
-### office_outputs_20261012_074455.json, office_outputs_20261012_074455.md
-- **Office outputs demo with missing token/cost counters**: The script had a bug where llm_calls, tokens, and cost were all reported as 0 because it tried to read trace metadata that was never populated. Superseded by a corrected run that properly records per-case and total token/call/cost counters.
+### office_outputs_20261012_080308.json, office_outputs_20261012_080308.md
+- **Office outputs demo before formatting polish**: The outputs were generated before the XLSX/PPTX formatting polish (commit to be determined). Superseded by a corrected run with proper XLSX number formats (founded_year "0", employee_count "#,##0", total_funding_usd "$#,##0"), Derived sheet formats (company age "0", funding per employee "$#,##0"), PPTX 16:9 dimensions, shaded header row, 20pt text, 12pt grey footer.
