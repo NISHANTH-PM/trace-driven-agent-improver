@@ -1,0 +1,17 @@
+Task P11b. .venv312, build mode, branch feat/pack-agent. Never print secrets. Never invent data. Do not change app/pack/checks.py, scoring, benchmark or improver logic. P11 part 1b is already committed (1ba05f1); do NOT redo it.
+
+1. DOCX footer (this was not done). In the docx renderer in app/pack/student.py, after the four sections add a final small-font paragraph: "Source: Crustdata company data. Figures checked against source: <status>." where <status> is "Yes" if config.verify_facts is True and the final check had no issues; "No - at least one figure could not be confirmed" if verify_facts is True and issues remain; "Not checked" if verify_facts is False. The footer must not be part of `sections` or of any fact/section check, and must not change the benchmark result for any config. Tests: re-open the docx with python-docx and assert the footer text for each of the three statuses; assert that fact_mismatches/missing_sections on the sections dict are unaffected.
+
+2. pytest must pass. Commit by explicit path (never git add -A): "feat: provenance and verification status footer in generated docs". Push.
+
+3. Rerun ONLY the demo script: `$env:PACK_SOURCE="snapshot"; $env:LLM_MODE="live"; python scripts/demo_run.py` (max 2 attempts). Do NOT rerun the benchmark or ablation. Commit the refreshed evidence/demo_manifest.md (explicit path), push.
+
+4. Local check of the new span data. Using the same technique as P5b (debug_trace.py or the exporter/span-log approach) print, for the demo scenarios baseline_wrong_fact and candidate_success, the benchmark_case span's: status code and description, and the keys present among output.value / evaluation.* / neatlogs.evaluation.*. Report what is present, with values (company figures are fine, no secrets).
+
+REPORT (exact headings; no terminal banners):
+- Footer text for each demo scenario (label: footer line)
+- Test counts
+- Span check: for baseline_wrong_fact and candidate_success, status + which keys present with values
+- Manifest timestamps (UTC start of each scenario) so the human can find the traces
+- Commit hashes and push result
+- Deviations
