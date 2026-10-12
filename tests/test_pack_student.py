@@ -3,6 +3,7 @@
 import json
 import os
 import tempfile
+import time
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -765,3 +766,37 @@ class TestOfficeOutputs:
         assert Path(output.docx_path).exists()
         assert Path(output.office_paths["pptx"]).exists()
         assert Path(output.office_paths["xlsx"]).exists()
+
+
+class TestRetryBackoff:
+    """Tests for retry backoff functionality."""
+
+    def test_retry_backoff_timing(self, case_d02, good_json_response, tmp_path):
+        """Test that backoff occurs between retries with configurable delay."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(
+            output_dir=str(tmp_path),
+            version="test",
+            retry_tool_errors=True,
+            max_attempts=3,
+            retry_backoff_s=0.05,  # 50ms base backoff
+        )
+
+        output, trace = run_pack_student(case_d02, config, llm=FakeLLMClient(good_json_response))
+
+        # Check that backoff event is recorded in trace
+        backoff_events = [e for e in trace if e.step == "backoff"]
+        assert len(backoff_events) == 1, f"Expected 1 backoff event, got {len(backoff_events)}"
+        # Verify the backoff detail contains the correct timing
+        assert "0.1s" in backoff_events[0].detail  # 0.05 rounds to 0.1 with 1 decimal place
+
+        # Check that there is 1 successful fetch_company event (only successful attempts log "Fetched")
+        fetch_events = [e for e in trace if e.step == "tool_execution" and "Fetched company data" in e.detail]
+        assert len(fetch_events) == 1, f"Expected 1 successful fetch event, got {len(fetch_events)}"
+
+        # Check that tool_retry event occurred (for the failed attempt)
+        retry_events = [e for e in trace if e.step == "tool_retry"]
+        assert len(retry_events) == 1
+
+        # Verify the backoff detail contains the correct timing
+        assert "0.1s" in backoff_events[0].detail  # 0.05 rounds to 0.1 with 1 decimal place

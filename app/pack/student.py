@@ -2,6 +2,7 @@
 
 import json
 import os
+import time
 import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -89,6 +90,7 @@ class PackConfig:
     retry_tool_errors: bool = False
     strict_prompt: bool = False
     max_attempts: int = 3
+    retry_backoff_s: float = 0.4
     version: str = "baseline"
     output_dir: str = "outputs"
     outputs: tuple[str, ...] = ("docx",)
@@ -165,6 +167,13 @@ def run_pack_student(
                         ),
                         trace,
                     )
+
+        # Backoff before next attempt (if another attempt remains)
+        if attempt < max_attempts:
+            backoff_s = config.retry_backoff_s * attempt
+            if backoff_s > 0:
+                event("backoff", f"backoff {backoff_s:.1f}s", "ok", backoff_s=backoff_s)
+                time.sleep(backoff_s)
 
     # Step b) Draft
     system_prompt = STRICT_SYSTEM_PROMPT if config.strict_prompt else BASE_SYSTEM_PROMPT
