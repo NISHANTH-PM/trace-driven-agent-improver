@@ -1,43 +1,7 @@
-Task P10. .venv312, build mode, branch feat/pack-agent. Step 0 (before anything else): known working-tree state is expected and is NOT a reason to stop: untracked .entire/, "=1.1,", "nul", docs/cfo_plan/ (committed separately by the human). 
-(a) Run `git rm evidence/pack_ablation_20261011_212106.json` (the same file already exists in evidence/synthetic_fixtures/; confirm with git hash-object that the hashes match first, STOP if they don't) and commit "evidence: remove duplicate synthetic ablation from root".
-(b) Add these lines to .gitignore: `=1.1,`, `nul`, `outputs/`, `.entire/`. Commit "chore: ignore stray local files". Never run `git add -A` or `git add .`; add files by explicit path only, so docs/cfo_plan and .entire are not swept in.
-(c) Push.
-If `git log origin/feat/pack-agent..HEAD` shows unpushed commits other than these, STOP and report.. Never print secrets. Never invent data. If something is missing, STOP and report.
-
-GOAL: produce labeled, searchable neatlogs traces, ready-to-open .docx files and a manifest, so the human can take screenshots quickly. You cannot take screenshots; do not try.
-
-1. app/observability.py: add ("demo.label", "neatlogs.demo.label") to _CUSTOM_ATTRIBUTE_MAPPINGS (same tuple format). Change nothing else.
-
-2. Create scripts/demo_run.py. Env: PACK_SOURCE=snapshot, LLM_MODE=live (refuse to run otherwise). initialize_neatlogs() at start, shutdown_neatlogs() at the end (flush). Reuse existing code (run_pack_benchmark with a single-case list, default_source() created fresh per scenario, truth_source() for ground truth, one get_llm() per scenario). For each scenario wrap the call in an outer trace_span(f"demo_{label}", kind="WORKFLOW", attributes={"demo.label": label}). Write each scenario's output .docx to outputs/demo/<label>/. Scenarios (config -> case_id):
-   a) baseline_wrong_fact: baseline PackConfig on D01
-   b) baseline_tool_error: baseline on D02
-   c) candidate_retry_recovery: candidate config (retry_tool_errors, strict_prompt, verify_facts all True) on D02
-   d) candidate_success: candidate on D01
-   e) verify_regeneration: verify_only config (verify_facts=True only) on the FIRST of D01, D03, D04, D06 whose run makes 2 LLM calls (i.e. the regeneration fired). Try them in that order and stop at the first. If none fires, record that fact.
-   For each scenario record: label, case_id, company, config flags, failure_class, success, tool_attempts, llm_calls, prompt_tokens, completion_tokens, cost_usd, docx path, UTC start and end time, the "issues" list, and the TRUE values (employee_count, founded_year, hq_city, total_funding_usd, last_round) next to the text of the "Key Facts" and "Funding" sections as actually written. 
-
-3. The script writes evidence/demo_manifest.md containing, per scenario: a heading with the label, a table of the fields above, and one line "In neatlogs: search for demo.label = <label> (or the span name demo_<label>)". Also add a final section "Screenshot checklist" mapping each scenario to the screenshot file names:
-   a -> neat_baseline_fail.png (open the llm_draft I/O tab and the benchmark_case attributes)
-   c -> neat_retry_recovery.png (span tree with two fetch_company spans)
-   d -> neat_candidate_success.png, neat_llm_attributes.png, neat_llm_io.png
-   e -> neat_verify_regeneration.png (llm_regenerate nested in verify_facts)
-   a vs d -> neat_compare.png if the dashboard offers a compare view
-   Also in the manifest give the paths of the baseline and candidate .docx for D01 and say "open both in Word: agent_output_docx.png".
-   Print a short summary to the terminal as well.
-
-4. Tests: a test for the manifest builder function (pure function, FakeLLMClient, tmp_path); the script's live run itself is not tested. pytest must pass.
-
-5. Run `python scripts/demo_run.py` once (max 2 attempts). Commit scripts/demo_run.py, evidence/demo_manifest.md and the code change. Do NOT commit outputs/. Message: "evidence: labeled demo run for screenshots (neatlogs traces, manifest)". Push.
-
-6. Create evidence/screenshots/README.md with this checklist table (file name | what to show | done? [ ]): neat_baseline_fail.png, neat_retry_recovery.png, neat_candidate_success.png, neat_llm_attributes.png, neat_llm_io.png, neat_verify_regeneration.png, neat_compare.png, entire_checkpoints.png, entire_graph_or_status.png, cfo_scenario_comparison.png, cfo_api_price_margin.png, cfo_pricing_assumptions.png, cfo_economics_cash.png, agent_output_docx.png, ablation_table.png, github_commits.png, ci_green.png. Add a one-line note at the top: "Crop out emails, API keys and .env before saving." Create evidence/screenshots/LINKS.md with a table (scenario | neatlogs trace link | notes) holding one empty row per neatlogs scenario. Commit "docs: screenshot checklist and links template". Push.
-
-7. Entire and git history (read-only, change nothing): run `entire status`; run `entire --help`; check whether the `entire-graph` command exists (`entire-graph --help` or `where entire-graph`; do not install anything). Save the output of `git log --format="%h %ad %s" --date=iso` to evidence/git_history.txt (commit it). Report the exact Entire commands for: listing checkpoints, and producing the graph (if available).
-
-REPORT (exact headings; do not paste terminal UI banners):
-* Scenario table (label | case_id | company | failure_class | success | tool_attempts | llm_calls | cost_usd)
-* For scenarios a, d, e: the true values vs the written Key Facts text (short)
-* Which case triggered the regeneration for e (or "none")
-* Paths of the .docx files for D01 baseline and D01 candidate
-* Entire: status output summary, the exact commands for checkpoints and graph, and whether entire-graph exists
-* Test counts, commit hashes, push result
-* Deviations
+1b. Make evaluation results visible in neatlogs.
+   (i) Investigate, as in P5b: in site-packages/neatlogs find attribute-mapping.json (or the span processor) and list which attribute keys the SDK surfaces on NON-LLM spans (WORKFLOW/TOOL/GUARDRAIL): any metadata.*, tags, session/user ids, "association.properties" style keys, generic input.value/output.value, status/error fields. Report the key names you found (not whole files). Do not guess.
+   (ii) In run_pack_benchmark (app/pack/evaluator.py), after evaluation, on the benchmark_case span:
+       - if the case failed: call span.set_status(Status(StatusCode.ERROR, f"{failure_class}: {issues joined with '; ' truncated to 300 chars}")) using opentelemetry.trace.Status/StatusCode; if the trace_span wrapper in app/observability.py does not expose the raw span, add a small helper `mark_span_failed(span, description)` there rather than changing the wrapper's behaviour for other spans.
+       - set output.value to a short human-readable verdict: "FAILED wrong_fact: <issues>. TRUTH: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=secondary_market" for failures, and "PASSED" for successes (truth values built from the ground-truth CompanyData).
+       - additionally set evaluation.failure_class, evaluation.issues, evaluation.truth using whichever surfaced key pattern you found in (i) (for example a metadata.* prefix) in ADDITION to the current keys. If no surfaced pattern exists for non-LLM spans, say so in the report and rely on status + output.value.
+   (iii) Tests: failed case -> span status ERROR with description starting with the failure class; passing case -> no error status; output.value contains "TRUTH:" only for failures. Use the existing span-capture/mocking approach. No change to checks.py, scoring or benchmark logic.
