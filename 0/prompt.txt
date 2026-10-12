@@ -1,0 +1,24 @@
+Task P9b. .venv312, build mode, branch feat/pack-agent. Never print secrets. No Crustdata API calls (0 credits). Never invent data.
+
+1. Snapshot. First print the current hq_city of all 10 companies in data/snapshots/companies_real.json (expected: Razorpay is still "Adugodi" and Canva "Darlinghurst" because the earlier rebuild was never committed). In app/pack/crustdata.py, after choosing the city: if the city string is entirely upper-case, convert it with .title(). Then run `python scripts/snapshot_crustdata.py --from-raw`. Print old -> new hq_city for all 10. Required result: Razorpay = Bengaluru, Canva = Darlinghurst, others unchanged. Run `git diff --stat data/snapshots/companies_real.json` and put it in the report. Add a unit test for the title-case rule. Commit "fix: HQ city from locations.city; snapshot rebuilt from raw responses".
+
+2. Duplicate: verify with `git hash-object` that evidence/pack_ablation_20261011_212106.json is identical to evidence/synthetic_fixtures/pack_ablation_20261011_212106.json; if so `git rm` the copy in evidence/ root. If not identical, STOP and report.
+
+3. Supersede: `git mv` into evidence/superseded/ every file in evidence/ root whose name starts with pack_run_ or pack_ablation_ or is real_data_results.md. Keep the diagnosis_*.md files in the root. Append to evidence/superseded/README.md: "Runs on the snapshot with neighbourhood-level HQ values (Razorpay 'Adugodi', Canva 'Darlinghurst'). Results are identical in shape to the final runs, superseded because the data was corrected."
+
+4. Final runs on the corrected snapshot: `$env:PACK_SOURCE="snapshot"; $env:LLM_MODE="live"`; run `python -m app.cli --task pack-ablation` once, then `python -m app.cli --task pack` three times (max 2 attempts each).
+
+5. Create evidence/real_data_results.md ONLY from the 4 evidence JSON files made in step 4. (a) ablation table: config | dev k/n | held-out k/n | failure_counts (dev, held-out) | llm_calls | cost_usd. (b) the 3 repeat runs: file | baseline dev | baseline held-out | candidate dev | candidate held-out | baseline failure_counts | candidate failure_counts | promoted | baseline cost_usd | candidate cost_usd. (c) the 10 company names with hq_city. Raw numbers only; if a value is absent write "n/a".
+
+6. README "Results (real Crustdata snapshots)": replace the table with the new ablation numbers and update the source line. Keep the three sentences only if the new numbers still support them; if not, change them to match. Keep the limitations list.
+
+7. Run pytest. Commit "evidence: final runs on corrected snapshot; previous runs superseded". Push. Run `git status --short` and `git log origin/feat/pack-agent..HEAD --oneline` and include both in the report.
+
+REPORT (exact headings; do NOT paste terminal UI banners; every table must include the cost column):
+- hq_city before/after for all 10 companies, and the git diff --stat line
+- Duplicate-file check result
+- Final ablation table
+- The 3 repeat runs table
+- Any candidate failure and why
+- Test counts, commit hashes, git status, unpushed commits
+- Deviations
