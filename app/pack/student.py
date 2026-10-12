@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from docx import Document
+from docx.shared import Pt, RGBColor
 
 from app.models import TraceEvent
 from app.observability import trace_span
@@ -278,6 +279,22 @@ def run_pack_student(
             doc.add_paragraph(content)
         else:
             doc.add_paragraph("[Section not provided]")
+
+    # Add provenance/verification footer
+    if config.verify_facts:
+        if verified:
+            footer_status = "Yes"
+        else:
+            footer_status = "No - at least one figure could not be confirmed"
+    else:
+        footer_status = "Not checked"
+
+    footer_para = doc.add_paragraph()
+    footer_run = footer_para.add_run(
+        f"Source: Crustdata company data. Figures checked against source: {footer_status}."
+    )
+    footer_run.font.size = Pt(8)
+    footer_run.font.color.rgb = RGBColor(0x80, 0x80, 0x80)
 
     doc.save(docx_path)
 

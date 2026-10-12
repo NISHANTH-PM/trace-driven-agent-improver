@@ -359,6 +359,87 @@ class TestPackStudent:
         assert output.docx_path is not None
 
 
+class TestDocxFooter:
+    """Tests for the verification status footer in generated DOCX files."""
+
+    def test_footer_not_checked_when_verify_facts_false(self, case_d01, good_json_response, tmp_path):
+        """Footer says 'Not checked' when verify_facts=False."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(output_dir=str(tmp_path), version="test", verify_facts=False)
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        assert output.docx_path is not None
+        from docx import Document
+        doc = Document(output.docx_path)
+        # Find footer paragraph (last paragraph)
+        footer_text = doc.paragraphs[-1].text
+        assert "Source: Crustdata company data." in footer_text
+        assert "Not checked" in footer_text
+
+    def test_footer_not_checked_when_verify_facts_true_but_fails(self, case_d01, tmp_path):
+        """Footer says 'No - at least one figure could not be confirmed' when verify_facts=True but issues remain."""
+        bad_response = json.dumps({
+            "sections": {
+                "Overview": "Apex Dynamics is a robotics company.",
+                "Key Facts": "About 340 employees, founded around 2015, HQ in Pittsburgh area",
+                "Funding": "Raised roughly $85M, last round Series B",
+                "Risks": "Market competition"
+            }
+        })
+        fake_llm = FakeLLMClient(bad_response)
+        config = PackConfig(output_dir=str(tmp_path), version="test", verify_facts=True)
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        assert output.docx_path is not None
+        assert output.verified is False
+        from docx import Document
+        doc = Document(output.docx_path)
+        footer_text = doc.paragraphs[-1].text
+        assert "Source: Crustdata company data." in footer_text
+        assert "No - at least one figure could not be confirmed" in footer_text
+
+    def test_footer_yes_when_verify_facts_true_and_passes(self, case_d01, good_json_response, tmp_path):
+        """Footer says 'Yes' when verify_facts=True and verification passes."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(output_dir=str(tmp_path), version="test", verify_facts=True)
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        assert output.docx_path is not None
+        assert output.verified is True
+        from docx import Document
+        doc = Document(output.docx_path)
+        footer_text = doc.paragraphs[-1].text
+        assert "Source: Crustdata company data." in footer_text
+        assert "Yes" in footer_text
+        assert "Not checked" not in footer_text
+        assert "No - at least one figure could not be confirmed" not in footer_text
+
+    def test_footer_not_part_of_sections_or_fact_checks(self, case_d01, good_json_response, tmp_path):
+        """Footer text does not affect fact_mismatches or missing_sections on sections dict."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(output_dir=str(tmp_path), version="test", verify_facts=True)
+
+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)
+
+        # The footer is added at render time, not in the sections dict
+        # So fact_mismatches on the sections dict should be unaffected
+        from app.pack.checks import fact_mismatches, missing_sections
+        missing = missing_sections(output.sections)
+        issues = fact_mismatches(
+            CompanyData(
+                name="Apex Dynamics", domain="apex-dynamics.com", industry="Technology",
+                description="Test", employee_count=342, founded_year=2015,
+                hq_city="Pittsburgh", total_funding_usd=85000000, last_round="Series B"
+            ),
+            output.sections
+        )
+        assert missing == []
+        assert issues == []
+
+
 class TestPackStudentWithFixtureSource:
     """Tests using real fixture source."""
 
