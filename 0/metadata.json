@@ -1,0 +1,41 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QK9K3EB2WZS0RMP8QBTYDR",
+  "session_id": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T08:22:37.8154492Z",
+  "branch": "feat/office-outputs",
+  "checkpoints_count": 1,
+  "save_step_count": 2,
+  "files_touched": [],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "570e58395067",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 8283237,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 96945120,
+    "output_tokens": 109869,
+    "api_call_count": 425
+  },
+  "session_metrics": {
+    "turn_count": 15
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 189,
+      "agent_lines_removed": 3
+    }
+  ]
+}
