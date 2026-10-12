@@ -1,17 +1,24 @@
-Task P11b. .venv312, build mode, branch feat/pack-agent. Never print secrets. Never invent data. Do not change app/pack/checks.py, scoring, benchmark or improver logic. P11 part 1b is already committed (1ba05f1); do NOT redo it.
+Task P12. .venv312, build mode. Never print secrets. Never invent data. TIME-BOX 90 minutes. Do NOT modify app/pack/checks.py, the benchmark, the evaluator scoring, the improver or promotion logic, or any evidence already committed.
 
-1. DOCX footer (this was not done). In the docx renderer in app/pack/student.py, after the four sections add a final small-font paragraph: "Source: Crustdata company data. Figures checked against source: <status>." where <status> is "Yes" if config.verify_facts is True and the final check had no issues; "No - at least one figure could not be confirmed" if verify_facts is True and issues remain; "Not checked" if verify_facts is False. The footer must not be part of `sections` or of any fact/section check, and must not change the benchmark result for any config. Tests: re-open the docx with python-docx and assert the footer text for each of the three statuses; assert that fact_mismatches/missing_sections on the sections dict are unaffected.
+0. `git checkout -b feat/office-outputs`. `pip install python-pptx openpyxl`; add `python-pptx>=0.6.23,<2` and `openpyxl>=3.1,<4` to requirements.txt.
 
-2. pytest must pass. Commit by explicit path (never git add -A): "feat: provenance and verification status footer in generated docs". Push.
+1. Create app/pack/office.py with pure functions that take a CompanyData and the sections dict:
+   - render_xlsx(company, path): sheet "Facts" with header Field | Value | Source, one row each for name, domain, employee_count, founded_year, hq_city, total_funding_usd, last_round (Source = "Crustdata"); sheet "Derived" with labeled formula cells: company age =YEAR(TODAY())-<founded_year cell>, funding per employee =IF(<employees cell>>0,<funding cell>/<employees cell>,0). Number formats: thousands separator for employee and funding values.
+   - render_pptx(company, sections, path): 4 slides with python-pptx using the blank/default layouts and plain text boxes: (1) title = company name and subtitle "Company briefing"; (2) "Key facts": a table with the 7 fields exactly as the data (employee_count as integer with thousands separator, funding as "$816,600,000"-style exact integer); (3) "Overview" = sections["Overview"] truncated to 600 chars at a sentence boundary; (4) "Funding and risks" = sections["Funding"] and sections["Risks"] (each truncated to 400 chars at a sentence boundary). Footer text on every slide: "Source: Crustdata company data".
+   - verify_office_files(company, xlsx_path, pptx_path) -> list[str]: REOPEN both files from disk. xlsx: each Facts row's value equals the CompanyData value. pptx: the key-facts table cells contain the exact strings for the 7 fields, and exactly 4 slides exist. Return a list of mismatch messages (empty = pass).
 
-3. Rerun ONLY the demo script: `$env:PACK_SOURCE="snapshot"; $env:LLM_MODE="live"; python scripts/demo_run.py` (max 2 attempts). Do NOT rerun the benchmark or ablation. Commit the refreshed evidence/demo_manifest.md (explicit path), push.
+2. app/pack/student.py: add `outputs: tuple[str, ...] = ("docx",)` to PackConfig (default unchanged). In run_pack_student, AFTER the existing docx render, if "pptx"/"xlsx" in config.outputs: render them into the same output_dir as f"{case_id}_{version}.pptx"/".xlsx" inside trace_span("render_pptx", kind="TOOL") and trace_span("render_xlsx", kind="TOOL"), then trace_span("verify_artifacts", kind="GUARDRAIL") calling verify_office_files; add a trace event step "artifact_verification" outcome "ok" or "error" with the mismatch list in detail. Store paths in a new optional PackOutput field `office_paths: dict[str,str] = {}` (default empty; do not break existing JSON/tests). When outputs == ("docx",) the behaviour and the trace MUST be byte-for-byte unchanged.
 
-4. Local check of the new span data. Using the same technique as P5b (debug_trace.py or the exporter/span-log approach) print, for the demo scenarios baseline_wrong_fact and candidate_success, the benchmark_case span's: status code and description, and the keys present among output.value / evaluation.* / neatlogs.evaluation.*. Report what is present, with values (company figures are fine, no secrets).
+3. Tests (tmp_path): render both files for a fixture company, reopen, verify_office_files returns []; tamper the xlsx value then verify returns a mismatch; default config produces no office files and unchanged trace steps; a FakeLLM end-to-end run with outputs all three produces three files.
+
+4. Create scripts/office_demo.py: requires PACK_SOURCE=snapshot and LLM_MODE=live. Runs the CANDIDATE config with outputs=("docx","pptx","xlsx") on every snapshot case (dev and held-out), using default_source() (the flaky wrapper stays), one shared llm, output_dir outputs/office. Wrap each case in trace_span(f"office_{case_id}", kind="WORKFLOW"). For each case record: case_id, company, tool_attempts, llm_calls, tokens, cost_usd, the three file paths, artifact mismatches, and the pre-existing evaluator verdict (use evaluate_pack_case). Write evidence/office_outputs_<UTC timestamp>.json plus evidence/office_outputs.md (a table: case | company | docx/pptx/xlsx created | artifact check pass? | evaluator pass? | cost_usd) and totals (k/10 artifact checks passed, k/10 evaluator passed, total cost, cost per case). Raw numbers only; no claims.
+
+5. pytest. Commit by explicit path (never git add -A): "feat: optional pptx and xlsx outputs with deterministic artifact verification". Run scripts/office_demo.py once (max 2 attempts), commit the evidence files and push the branch.
 
 REPORT (exact headings; no terminal banners):
-- Footer text for each demo scenario (label: footer line)
-- Test counts
-- Span check: for baseline_wrong_fact and candidate_success, status + which keys present with values
-- Manifest timestamps (UTC start of each scenario) so the human can find the traces
+- Files created/changed
+- Confirmation that the default (docx only) trace and all existing tests are unchanged (test counts before/after)
+- office_outputs table (paste the markdown)
+- Any failures and why
 - Commit hashes and push result
 - Deviations
