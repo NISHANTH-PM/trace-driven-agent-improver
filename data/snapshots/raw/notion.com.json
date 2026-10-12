@@ -1,0 +1,4978 @@
+[
+  {
+    "matched_on": "notion.com",
+    "match_type": "domain",
+    "matches": [
+      {
+        "confidence_score": 1.0,
+        "company_data": {
+          "crustdata_company_id": 3552555,
+          "funding": {
+            "acquired_by": [],
+            "acquisitions": [
+              {
+                "acquiree_company_id": 704455,
+                "acquiree_company_name": "Automate.io (acquired by Notion)",
+                "acquiree_crunchbase_url": "https://crunchbase.com/organization/automate-io",
+                "acquirer_company_id": 3552555,
+                "acquirer_company_name": "Notion",
+                "acquirer_crunchbase_url": "https://crunchbase.com/organization/notion-so",
+                "announced_on_date": "2021-09-08",
+                "transaction_text": "Automate.io (acquired by Notion) acquired by Notion"
+              },
+              {
+                "acquiree_company_id": 636088,
+                "acquiree_company_name": "Skiff",
+                "acquiree_crunchbase_url": "https://crunchbase.com/organization/skiff-402f",
+                "acquirer_company_id": 3552555,
+                "acquirer_company_name": "Notion",
+                "acquirer_crunchbase_url": "https://crunchbase.com/organization/notion-so",
+                "announced_on_date": "2024-02-09",
+                "transaction_text": "Skiff acquired by Notion"
+              },
+              {
+                "acquiree_company_id": 3147786,
+                "acquiree_company_name": "ZeroEntropy",
+                "acquiree_crunchbase_url": "https://crunchbase.com/organization/zeroentropy",
+                "acquirer_company_id": 3552555,
+                "acquirer_company_name": "Notion",
+                "acquirer_crunchbase_url": "https://crunchbase.com/organization/notion-so",
+                "announced_on_date": "2026-07-24",
+                "transaction_text": "ZeroEntropy acquired by Notion"
+              },
+              {
+                "acquiree_company_id": 811274,
+                "acquiree_company_name": "Cron",
+                "acquiree_crunchbase_url": "https://crunchbase.com/organization/cron",
+                "acquirer_company_id": 3552555,
+                "acquirer_company_name": "Notion",
+                "acquirer_crunchbase_url": "https://crunchbase.com/organization/notion-so",
+                "announced_on_date": "2022-06-09",
+                "transaction_text": "Cron acquired by Notion"
+              },
+              {
+                "acquiree_company_id": 100574033,
+                "acquiree_company_name": "Sugarbox.io (became Notion)",
+                "acquiree_crunchbase_url": "https://crunchbase.com/organization/sugarbox-io",
+                "acquirer_company_id": 3552555,
+                "acquirer_company_name": "Notion",
+                "acquirer_crunchbase_url": "https://crunchbase.com/organization/notion-so",
+                "announced_on_date": "2014-01-01",
+                "transaction_text": "Sugarbox.io (became Notion) acquired by Notion"
+              },
+              {
+                "acquiree_company_id": 811283,
+                "acquiree_company_name": "Flowdash",
+                "acquiree_crunchbase_url": "https://crunchbase.com/organization/flowdash",
+                "acquirer_company_id": 3552555,
+                "acquirer_company_name": "Notion",
+                "acquirer_crunchbase_url": "https://crunchbase.com/organization/notion-so",
+                "announced_on_date": "2022-07-12",
+                "transaction_text": "Flowdash acquired by Notion"
+              }
+            ],
+            "investors_detailed": [
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/capital-partners-l-p",
+                "permalink": "capital-partners-l-p",
+                "name": "A.Capital Ventures",
+                "uuid": "1a3f81de-d5b2-0745-0c62-efaae40629d6",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/avichal-garg",
+                "permalink": "avichal-garg",
+                "name": "Avichal Garg",
+                "uuid": "e98345ec-cc19-bd4c-f502-affff6b3ec87",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/aydin-senkut",
+                "permalink": "aydin-senkut",
+                "name": "Aydin Senkut",
+                "uuid": "5f09abce-dad7-f86e-7771-aef578c9e7e4",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/base10-partners",
+                "permalink": "base10-partners",
+                "name": "Base10 Partners",
+                "uuid": "17955436-6f1d-4ee5-82b1-22ff269bea6a",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/bossanova-investimentos",
+                "permalink": "bossanova-investimentos",
+                "name": "Bossa Invest",
+                "uuid": "1bd15aa6-56ac-0d89-9405-7b7a4c8f76f0",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/bouaziz-partners",
+                "permalink": "bouaziz-partners",
+                "name": "Bouaziz & Partners",
+                "uuid": "55317f90-e057-def5-0abc-f0c2671e6d39",
+                "type": "organization",
+                "categories": [
+                  "family_investment_office"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/csc-upshot",
+                "permalink": "csc-upshot",
+                "name": "CSC Upshot",
+                "uuid": "b18dbd75-deab-9c4a-5ff6-c22e5ae36ff0",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/caffeinated-capital",
+                "permalink": "caffeinated-capital",
+                "name": "Caffeinated Capital",
+                "uuid": "39e6ad18-504f-fde9-1eb0-f4825a9b24d2",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/matthew-macinnis",
+                "permalink": "matthew-macinnis",
+                "name": "Charles Macinnis",
+                "uuid": "057171e9-080c-9edb-7f35-7b35df751942",
+                "type": "person",
+                "categories": [
+                  "angel"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/christian-reber",
+                "permalink": "christian-reber",
+                "name": "Christian Reber",
+                "uuid": "aab38224-f646-d320-bc93-ecccb244d500",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/coatue",
+                "permalink": "coatue",
+                "name": "Coatue",
+                "uuid": "d41a176d-2d63-8120-abdd-09962ffac419",
+                "type": "organization",
+                "categories": [
+                  "hedge_fund",
+                  "private_equity_firm"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/daniel-gross",
+                "permalink": "daniel-gross",
+                "name": "Daniel Gross",
+                "uuid": "a84e3ad4-46f1-4703-3d07-a558c4f6d9e1",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/designer-fund",
+                "permalink": "designer-fund",
+                "name": "Designer Fund",
+                "uuid": "368e8dcb-0d85-1b7c-7ed5-afe47873f4b5",
+                "type": "organization",
+                "categories": [
+                  "angel_group",
+                  "micro_vc"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/draft-ventures",
+                "permalink": "draft-ventures",
+                "name": "Draft Ventures",
+                "uuid": "c89fd86d-e149-d6f8-c270-150d03993598",
+                "type": "organization",
+                "categories": [
+                  "incubator",
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/elad-gil",
+                "permalink": "elad-gil",
+                "name": "Elad Gil",
+                "uuid": "d6598180-584e-4d64-9dff-6189bb4a0b30",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": null,
+                "permalink": null,
+                "name": "Elad Gil",
+                "uuid": "f644352a-5dbd-1c0e-fe20-286831c0dbc0",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/felicis-ventures",
+                "permalink": "felicis-ventures",
+                "name": "Felicis",
+                "uuid": "735a53c6-a7ba-2434-d97d-b788536da89d",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/first-round-capital",
+                "permalink": "first-round-capital",
+                "name": "First Round Capital",
+                "uuid": "043d9e52-dcc0-0dd8-6074-206e42e20e13",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/gic",
+                "permalink": "gic",
+                "name": "GIC",
+                "uuid": "4e0d468f-9f29-b370-c20c-38f8e1c9b96c",
+                "type": "organization",
+                "categories": [
+                  "private_equity_firm",
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/iconiq-growth",
+                "permalink": "iconiq-growth",
+                "name": "ICONIQ Growth",
+                "uuid": "569fa35b-e92c-4c8b-a6e4-1031977c8694",
+                "type": "organization",
+                "categories": [
+                  "private_equity_firm",
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/index-ventures",
+                "permalink": "index-ventures",
+                "name": "Index Ventures",
+                "uuid": "60b5dade-24ed-84b0-99e2-1ecda554a1ab",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/inertia-ventures",
+                "permalink": "inertia-ventures",
+                "name": "Inertia Ventures",
+                "uuid": "005d7f1a-ea59-4791-aae1-b12001a7d8ea",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/josh-kopelman",
+                "permalink": "josh-kopelman",
+                "name": "Josh Kopelman",
+                "uuid": "5e8dbc3d-ea24-e881-dd2e-8e35b4b842a8",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/lachy-groom",
+                "permalink": "lachy-groom",
+                "name": "Lachy Groom",
+                "uuid": "48799440-ee04-35a0-1f7c-9ece8b4aa6ef",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/ling-wong",
+                "permalink": "ling-wong",
+                "name": "Ling Wong",
+                "uuid": "08ad4e0f-c2a0-05ff-5961-18d21ea03752",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/lombardstreet-io",
+                "permalink": "lombardstreet-io",
+                "name": "Lombardstreet Ventures",
+                "uuid": "ed746eec-54ff-19e1-690c-75216d0654c8",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/luigi-bajetti",
+                "permalink": "luigi-bajetti",
+                "name": "Luigi Bajetti",
+                "uuid": "832cebb0-f851-bf28-73ac-20b59ffea794",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/natalie-carnegie",
+                "permalink": "natalie-carnegie",
+                "name": "Natalie Carnegie",
+                "uuid": "41987e35-faf2-4993-88cd-d883de303a01",
+                "type": "person",
+                "categories": [
+                  "angel"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/naval-ravikant",
+                "permalink": "naval-ravikant",
+                "name": "Naval Ravikant",
+                "uuid": "bb0955c3-af0d-2d01-cd4f-985a93252432",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/nextplay-ventures",
+                "permalink": "nextplay-ventures",
+                "name": "Next Play Ventures",
+                "uuid": "9d64d65b-3c92-52bb-cb61-7e3ce7c0700c",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/octave-183e",
+                "permalink": "octave-183e",
+                "name": "Octave",
+                "uuid": "ce45678d-514c-4bb6-ac99-d2b5e485183e",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/offline-ventures",
+                "permalink": "offline-ventures",
+                "name": "Offline Ventures",
+                "uuid": "741c8ece-66f6-46d2-b911-090e3b869f19",
+                "type": "organization",
+                "categories": [
+                  "private_equity_firm",
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/pascal-levy",
+                "permalink": "pascal-levy",
+                "name": "Pascal Levy-Garboua",
+                "uuid": "a6d70aa3-9053-5839-a93f-638b19d9fdbc",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/quentin-nickmans",
+                "permalink": "quentin-nickmans",
+                "name": "Quentin Nickmans",
+                "uuid": "6d8a81d1-cc40-4109-5105-7f43d89327b9",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/ram-shriram",
+                "permalink": "ram-shriram",
+                "name": "Ram Shriram",
+                "uuid": "d42f37dd-84af-a978-7ca6-703ab534dde7",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/roger-lee-2",
+                "permalink": "roger-lee-2",
+                "name": "Roger Lee",
+                "uuid": "ad7f8728-257e-87aa-b900-fe13f60cd46f",
+                "type": "person",
+                "categories": [
+                  "angel"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/sv-angel",
+                "permalink": "sv-angel",
+                "name": "SV Angel",
+                "uuid": "902deab4-ec41-68ce-d9df-c0c959578176",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/salesforce-ventures",
+                "permalink": "salesforce-ventures",
+                "name": "Salesforce Ventures",
+                "uuid": "982a5418-5d06-aca1-726e-c55bd12d1bf2",
+                "type": "organization",
+                "categories": [
+                  "corporate_venture_capital",
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/scott-belsky",
+                "permalink": "scott-belsky",
+                "name": "Scott Belsky",
+                "uuid": "af778eb2-d12c-d953-7d7c-2e3bd5581cfe",
+                "type": "person",
+                "categories": [
+                  "angel"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/sectionpartners",
+                "permalink": "sectionpartners",
+                "name": "Section Partners",
+                "uuid": "e3d3a80d-3f37-ddbe-5724-cc0e99bf40c2",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/sequoia-capital",
+                "permalink": "sequoia-capital",
+                "name": "Sequoia Capital",
+                "uuid": "0c867fde-2b9a-df10-fdb9-66b74f355f91",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/sherpalo-ventures",
+                "permalink": "sherpalo-ventures",
+                "name": "Sherpalo Ventures",
+                "uuid": "3770826e-7225-3584-f78a-a1cb11a38b1a",
+                "type": "organization",
+                "categories": [
+                  "angel_group"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/shine-capital",
+                "permalink": "shine-capital",
+                "name": "Shine Capital",
+                "uuid": "94534263-e7e3-4cb9-8db8-e8c68cb90d60",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/tgm-ventures",
+                "permalink": "tgm-ventures",
+                "name": "TGM ventures",
+                "uuid": "1e3080e1-5758-0b42-99bc-9695fb0e2371",
+                "type": "organization",
+                "categories": [
+                  "angel_group",
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": null,
+                "permalink": null,
+                "name": "Terrence Rohan",
+                "uuid": "0ddc4473-524d-f527-e327-7b9b31b861c2",
+                "type": "person",
+                "categories": [
+                  "angel"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/terrence-rohan",
+                "permalink": "terrence-rohan",
+                "name": "Terrence Rohan",
+                "uuid": "17f4a4b9-6ad9-4cba-a45f-a18d996d9f37",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/person/thibaud-elziere",
+                "permalink": "thibaud-elziere",
+                "name": "Thibaud Elziere",
+                "uuid": "8d9b5e65-ddb3-4ac0-9be5-ca4e254948f1",
+                "type": "person",
+                "categories": [
+                  "angel",
+                  "investment_partner"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/high-line-venture-partners",
+                "permalink": "high-line-venture-partners",
+                "name": "Third Kind Venture Capital",
+                "uuid": "639cbfc4-efa7-6e93-b6a3-68289b2ef7fd",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              },
+              {
+                "crunchbase_profile_url": "https://www.crunchbase.com/organization/verdure-capital-management-llc",
+                "permalink": "verdure-capital-management-llc",
+                "name": "Verdure Capital Management",
+                "uuid": "53b82c28-d5d8-46ef-8b09-3140a67b1cb2",
+                "type": "organization",
+                "categories": [
+                  "venture_capital"
+                ]
+              }
+            ],
+            "milestones": [
+              {
+                "round_type": "secondary_market",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "private_equity_firm",
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/gic",
+                    "name": "GIC",
+                    "permalink": "gic",
+                    "type": "organization",
+                    "uuid": "4e0d468f-9f29-b370-c20c-38f8e1c9b96c"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/index-ventures",
+                    "name": "Index Ventures",
+                    "permalink": "index-ventures",
+                    "type": "organization",
+                    "uuid": "60b5dade-24ed-84b0-99e2-1ecda554a1ab"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sequoia-capital",
+                    "name": "Sequoia Capital",
+                    "permalink": "sequoia-capital",
+                    "type": "organization",
+                    "uuid": "0c867fde-2b9a-df10-fdb9-66b74f355f91"
+                  }
+                ],
+                "permalink": "notion-so-secondary-market--e076c912",
+                "date": "2025-12-15",
+                "funding_date": "2025-12-15",
+                "amount_usd": null,
+                "investors": "GIC, Index Ventures, Sequoia Capital",
+                "lead_investors": null
+              },
+              {
+                "round_type": "series_c",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "hedge_fund",
+                      "private_equity_firm"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/coatue",
+                    "name": "Coatue",
+                    "permalink": "coatue",
+                    "type": "organization",
+                    "uuid": "d41a176d-2d63-8120-abdd-09962ffac419"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sequoia-capital",
+                    "name": "Sequoia Capital",
+                    "permalink": "sequoia-capital",
+                    "type": "organization",
+                    "uuid": "0c867fde-2b9a-df10-fdb9-66b74f355f91"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/base10-partners",
+                    "name": "Base10 Partners",
+                    "permalink": "base10-partners",
+                    "type": "organization",
+                    "uuid": "17955436-6f1d-4ee5-82b1-22ff269bea6a"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/shine-capital",
+                    "name": "Shine Capital",
+                    "permalink": "shine-capital",
+                    "type": "organization",
+                    "uuid": "94534263-e7e3-4cb9-8db8-e8c68cb90d60"
+                  }
+                ],
+                "permalink": "notion-so-series-c--f6bd2436",
+                "date": "2021-10-08",
+                "funding_date": "2021-10-08",
+                "amount_usd": 275000000.0,
+                "investors": "Coatue, Sequoia Capital, Base10 Partners, Shine Capital",
+                "lead_investors": "Coatue, Sequoia Capital"
+              },
+              {
+                "round_type": "series_b",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/index-ventures",
+                    "name": "Index Ventures",
+                    "permalink": "index-ventures",
+                    "type": "organization",
+                    "uuid": "60b5dade-24ed-84b0-99e2-1ecda554a1ab"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/bossanova-investimentos",
+                    "name": "Bossa Invest",
+                    "permalink": "bossanova-investimentos",
+                    "type": "organization",
+                    "uuid": "1bd15aa6-56ac-0d89-9405-7b7a4c8f76f0"
+                  },
+                  {
+                    "categories": [
+                      "private_equity_firm",
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/iconiq-growth",
+                    "name": "ICONIQ Growth",
+                    "permalink": "iconiq-growth",
+                    "type": "organization",
+                    "uuid": "569fa35b-e92c-4c8b-a6e4-1031977c8694"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/inertia-ventures",
+                    "name": "Inertia Ventures",
+                    "permalink": "inertia-ventures",
+                    "type": "organization",
+                    "uuid": "005d7f1a-ea59-4791-aae1-b12001a7d8ea"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/octave-183e",
+                    "name": "Octave",
+                    "permalink": "octave-183e",
+                    "type": "organization",
+                    "uuid": "ce45678d-514c-4bb6-ac99-d2b5e485183e"
+                  },
+                  {
+                    "categories": [
+                      "corporate_venture_capital",
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/salesforce-ventures",
+                    "name": "Salesforce Ventures",
+                    "permalink": "salesforce-ventures",
+                    "type": "organization",
+                    "uuid": "982a5418-5d06-aca1-726e-c55bd12d1bf2"
+                  },
+                  {
+                    "categories": [
+                      "angel"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/scott-belsky",
+                    "name": "Scott Belsky",
+                    "permalink": "scott-belsky",
+                    "type": "person",
+                    "uuid": "af778eb2-d12c-d953-7d7c-2e3bd5581cfe"
+                  },
+                  {
+                    "categories": [
+                      "angel_group",
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/tgm-ventures",
+                    "name": "TGM ventures",
+                    "permalink": "tgm-ventures",
+                    "type": "organization",
+                    "uuid": "1e3080e1-5758-0b42-99bc-9695fb0e2371"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/verdure-capital-management-llc",
+                    "name": "Verdure Capital Management",
+                    "permalink": "verdure-capital-management-llc",
+                    "type": "organization",
+                    "uuid": "53b82c28-d5d8-46ef-8b09-3140a67b1cb2"
+                  }
+                ],
+                "permalink": "notion-so-series-b--4fb8370d",
+                "date": "2020-04-02",
+                "funding_date": "2020-04-02",
+                "amount_usd": 50000000.0,
+                "investors": "Index Ventures, Bossa Invest, ICONIQ Growth, Inertia Ventures, Octave, Salesforce Ventures, Scott Belsky, TGM ventures, Verdure Capital Management",
+                "lead_investors": "Index Ventures"
+              },
+              {
+                "round_type": "series_a",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/capital-partners-l-p",
+                    "name": "A.Capital Ventures",
+                    "permalink": "capital-partners-l-p",
+                    "type": "organization",
+                    "uuid": "1a3f81de-d5b2-0745-0c62-efaae40629d6"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/aydin-senkut",
+                    "name": "Aydin Senkut",
+                    "permalink": "aydin-senkut",
+                    "type": "person",
+                    "uuid": "5f09abce-dad7-f86e-7771-aef578c9e7e4"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/daniel-gross",
+                    "name": "Daniel Gross",
+                    "permalink": "daniel-gross",
+                    "type": "person",
+                    "uuid": "a84e3ad4-46f1-4703-3d07-a558c4f6d9e1"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/elad-gil",
+                    "name": "Elad Gil",
+                    "permalink": "elad-gil",
+                    "type": "person",
+                    "uuid": "d6598180-584e-4d64-9dff-6189bb4a0b30"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/first-round-capital",
+                    "name": "First Round Capital",
+                    "permalink": "first-round-capital",
+                    "type": "organization",
+                    "uuid": "043d9e52-dcc0-0dd8-6074-206e42e20e13"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/lachy-groom",
+                    "name": "Lachy Groom",
+                    "permalink": "lachy-groom",
+                    "type": "person",
+                    "uuid": "48799440-ee04-35a0-1f7c-9ece8b4aa6ef"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/ling-wong",
+                    "name": "Ling Wong",
+                    "permalink": "ling-wong",
+                    "type": "person",
+                    "uuid": "08ad4e0f-c2a0-05ff-5961-18d21ea03752"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/luigi-bajetti",
+                    "name": "Luigi Bajetti",
+                    "permalink": "luigi-bajetti",
+                    "type": "person",
+                    "uuid": "832cebb0-f851-bf28-73ac-20b59ffea794"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/nextplay-ventures",
+                    "name": "Next Play Ventures",
+                    "permalink": "nextplay-ventures",
+                    "type": "organization",
+                    "uuid": "9d64d65b-3c92-52bb-cb61-7e3ce7c0700c"
+                  },
+                  {
+                    "categories": [
+                      "private_equity_firm",
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/offline-ventures",
+                    "name": "Offline Ventures",
+                    "permalink": "offline-ventures",
+                    "type": "organization",
+                    "uuid": "741c8ece-66f6-46d2-b911-090e3b869f19"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/ram-shriram",
+                    "name": "Ram Shriram",
+                    "permalink": "ram-shriram",
+                    "type": "person",
+                    "uuid": "d42f37dd-84af-a978-7ca6-703ab534dde7"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sectionpartners",
+                    "name": "Section Partners",
+                    "permalink": "sectionpartners",
+                    "type": "organization",
+                    "uuid": "e3d3a80d-3f37-ddbe-5724-cc0e99bf40c2"
+                  }
+                ],
+                "permalink": "notion-so-series-a--aaae61c8",
+                "date": "2019-07-08",
+                "funding_date": "2019-07-08",
+                "amount_usd": 18199697.0,
+                "investors": "A.Capital Ventures, Aydin Senkut, Daniel Gross, Elad Gil, First Round Capital, Lachy Groom, Ling Wong, Luigi Bajetti, Next Play Ventures, Offline Ventures, Ram Shriram, Section Partners",
+                "lead_investors": null
+              },
+              {
+                "round_type": "seed",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "family_investment_office"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/bouaziz-partners",
+                    "name": "Bouaziz & Partners",
+                    "permalink": "bouaziz-partners",
+                    "type": "organization",
+                    "uuid": "55317f90-e057-def5-0abc-f0c2671e6d39"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/caffeinated-capital",
+                    "name": "Caffeinated Capital",
+                    "permalink": "caffeinated-capital",
+                    "type": "organization",
+                    "uuid": "39e6ad18-504f-fde9-1eb0-f4825a9b24d2"
+                  }
+                ],
+                "permalink": "notion-so-seed--9b52a2e0",
+                "date": "2018-03-01",
+                "funding_date": "2018-03-01",
+                "amount_usd": null,
+                "investors": "Bouaziz & Partners, Caffeinated Capital",
+                "lead_investors": null
+              },
+              {
+                "round_type": "angel",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/capital-partners-l-p",
+                    "name": "A.Capital Ventures",
+                    "permalink": "capital-partners-l-p",
+                    "type": "organization",
+                    "uuid": "1a3f81de-d5b2-0745-0c62-efaae40629d6"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/avichal-garg",
+                    "name": "Avichal Garg",
+                    "permalink": "avichal-garg",
+                    "type": "person",
+                    "uuid": "e98345ec-cc19-bd4c-f502-affff6b3ec87"
+                  },
+                  {
+                    "categories": [
+                      "angel"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/matthew-macinnis",
+                    "name": "Charles Macinnis",
+                    "permalink": "matthew-macinnis",
+                    "type": "person",
+                    "uuid": "057171e9-080c-9edb-7f35-7b35df751942"
+                  },
+                  {
+                    "categories": [
+                      "incubator",
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/draft-ventures",
+                    "name": "Draft Ventures",
+                    "permalink": "draft-ventures",
+                    "type": "organization",
+                    "uuid": "c89fd86d-e149-d6f8-c270-150d03993598"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/felicis-ventures",
+                    "name": "Felicis",
+                    "permalink": "felicis-ventures",
+                    "type": "organization",
+                    "uuid": "735a53c6-a7ba-2434-d97d-b788536da89d"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/first-round-capital",
+                    "name": "First Round Capital",
+                    "permalink": "first-round-capital",
+                    "type": "organization",
+                    "uuid": "043d9e52-dcc0-0dd8-6074-206e42e20e13"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/lachy-groom",
+                    "name": "Lachy Groom",
+                    "permalink": "lachy-groom",
+                    "type": "person",
+                    "uuid": "48799440-ee04-35a0-1f7c-9ece8b4aa6ef"
+                  },
+                  {
+                    "categories": [
+                      "angel"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/natalie-carnegie",
+                    "name": "Natalie Carnegie",
+                    "permalink": "natalie-carnegie",
+                    "type": "person",
+                    "uuid": "41987e35-faf2-4993-88cd-d883de303a01"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/naval-ravikant",
+                    "name": "Naval Ravikant",
+                    "permalink": "naval-ravikant",
+                    "type": "person",
+                    "uuid": "bb0955c3-af0d-2d01-cd4f-985a93252432"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/quentin-nickmans",
+                    "name": "Quentin Nickmans",
+                    "permalink": "quentin-nickmans",
+                    "type": "person",
+                    "uuid": "6d8a81d1-cc40-4109-5105-7f43d89327b9"
+                  },
+                  {
+                    "categories": [
+                      "angel"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/roger-lee-2",
+                    "name": "Roger Lee",
+                    "permalink": "roger-lee-2",
+                    "type": "person",
+                    "uuid": "ad7f8728-257e-87aa-b900-fe13f60cd46f"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sequoia-capital",
+                    "name": "Sequoia Capital",
+                    "permalink": "sequoia-capital",
+                    "type": "organization",
+                    "uuid": "0c867fde-2b9a-df10-fdb9-66b74f355f91"
+                  },
+                  {
+                    "categories": [
+                      "angel_group"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sherpalo-ventures",
+                    "name": "Sherpalo Ventures",
+                    "permalink": "sherpalo-ventures",
+                    "type": "organization",
+                    "uuid": "3770826e-7225-3584-f78a-a1cb11a38b1a"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sv-angel",
+                    "name": "SV Angel",
+                    "permalink": "sv-angel",
+                    "type": "organization",
+                    "uuid": "902deab4-ec41-68ce-d9df-c0c959578176"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/terrence-rohan",
+                    "name": "Terrence Rohan",
+                    "permalink": "terrence-rohan",
+                    "type": "person",
+                    "uuid": "17f4a4b9-6ad9-4cba-a45f-a18d996d9f37"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/thibaud-elziere",
+                    "name": "Thibaud Elziere",
+                    "permalink": "thibaud-elziere",
+                    "type": "person",
+                    "uuid": "8d9b5e65-ddb3-4ac0-9be5-ca4e254948f1"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/high-line-venture-partners",
+                    "name": "Third Kind Venture Capital",
+                    "permalink": "high-line-venture-partners",
+                    "type": "organization",
+                    "uuid": "639cbfc4-efa7-6e93-b6a3-68289b2ef7fd"
+                  }
+                ],
+                "permalink": "notion-so-angel--716a2815",
+                "date": "2017-01-01",
+                "funding_date": "2017-01-01",
+                "amount_usd": null,
+                "investors": "A.Capital Ventures, Avichal Garg, Charles Macinnis, Draft Ventures, Felicis, First Round Capital, Lachy Groom, Natalie Carnegie, Naval Ravikant, Quentin Nickmans, Roger Lee, Sequoia Capital, Sherpalo Ventures, SV Angel, Terrence Rohan, Thibaud Elziere, Third Kind Venture Capital",
+                "lead_investors": null
+              },
+              {
+                "round_type": "seed",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/christian-reber",
+                    "name": "Christian Reber",
+                    "permalink": "christian-reber",
+                    "type": "person",
+                    "uuid": "aab38224-f646-d320-bc93-ecccb244d500"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/csc-upshot",
+                    "name": "CSC Upshot",
+                    "permalink": "csc-upshot",
+                    "type": "organization",
+                    "uuid": "b18dbd75-deab-9c4a-5ff6-c22e5ae36ff0"
+                  },
+                  {
+                    "categories": [
+                      "angel_group",
+                      "micro_vc"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/designer-fund",
+                    "name": "Designer Fund",
+                    "permalink": "designer-fund",
+                    "type": "organization",
+                    "uuid": "368e8dcb-0d85-1b7c-7ed5-afe47873f4b5"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/first-round-capital",
+                    "name": "First Round Capital",
+                    "permalink": "first-round-capital",
+                    "type": "organization",
+                    "uuid": "043d9e52-dcc0-0dd8-6074-206e42e20e13"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/lombardstreet-io",
+                    "name": "Lombardstreet Ventures",
+                    "permalink": "lombardstreet-io",
+                    "type": "organization",
+                    "uuid": "ed746eec-54ff-19e1-690c-75216d0654c8"
+                  }
+                ],
+                "permalink": "notion-so-seed--4e3afdf1",
+                "date": "2016-10-03",
+                "funding_date": "2016-10-03",
+                "amount_usd": null,
+                "investors": "Christian Reber, CSC Upshot, Designer Fund, First Round Capital, Lombardstreet Ventures",
+                "lead_investors": null
+              },
+              {
+                "round_type": "seed",
+                "is_fund": false,
+                "investors_detailed": [
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/first-round-capital",
+                    "name": "First Round Capital",
+                    "permalink": "first-round-capital",
+                    "type": "organization",
+                    "uuid": "043d9e52-dcc0-0dd8-6074-206e42e20e13"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/pascal-levy",
+                    "name": "Pascal Levy-Garboua",
+                    "permalink": "pascal-levy",
+                    "type": "person",
+                    "uuid": "a6d70aa3-9053-5839-a93f-638b19d9fdbc"
+                  },
+                  {
+                    "categories": [
+                      "venture_capital"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/organization/sv-angel",
+                    "name": "SV Angel",
+                    "permalink": "sv-angel",
+                    "type": "organization",
+                    "uuid": "902deab4-ec41-68ce-d9df-c0c959578176"
+                  },
+                  {
+                    "categories": [
+                      "angel",
+                      "investment_partner"
+                    ],
+                    "crunchbase_profile_url": "https://www.crunchbase.com/person/terrence-rohan",
+                    "name": "Terrence Rohan",
+                    "permalink": "terrence-rohan",
+                    "type": "person",
+                    "uuid": "17f4a4b9-6ad9-4cba-a45f-a18d996d9f37"
+                  }
+                ],
+                "permalink": "notion-so-seed--0ec46596",
+                "date": "2013-04-01",
+                "funding_date": "2013-04-01",
+                "amount_usd": null,
+                "investors": "First Round Capital, Pascal Levy-Garboua, SV Angel, Terrence Rohan",
+                "lead_investors": "First Round Capital"
+              }
+            ],
+            "contact_email": "team@makenotion.com",
+            "is_investor": false,
+            "phone_number": null,
+            "funds_total_usd": null,
+            "last_fund_date": null,
+            "num_funding_rounds": 8,
+            "num_funds": 0,
+            "total_investment_usd": 343199697.0,
+            "last_round_amount_usd": 275000000.0,
+            "last_round_type": "secondary_market",
+            "investors": [
+              "A.Capital Ventures",
+              "Avichal Garg",
+              "Aydin Senkut",
+              "Base10 Partners",
+              "Bossa Invest",
+              "Bouaziz & Partners",
+              "CSC Upshot",
+              "Caffeinated Capital",
+              "Charles Macinnis",
+              "Christian Reber",
+              "Coatue",
+              "Daniel Gross",
+              "Designer Fund",
+              "Draft Ventures",
+              "Elad Gil",
+              "Felicis",
+              "First Round Capital",
+              "GIC",
+              "ICONIQ Growth",
+              "Index Ventures",
+              "Inertia Ventures",
+              "Josh Kopelman",
+              "Lachy Groom",
+              "Ling Wong",
+              "Lombardstreet Ventures",
+              "Luigi Bajetti",
+              "Natalie Carnegie",
+              "Naval Ravikant",
+              "Next Play Ventures",
+              "Octave",
+              "Offline Ventures",
+              "Pascal Levy-Garboua",
+              "Quentin Nickmans",
+              "Ram Shriram",
+              "Roger Lee",
+              "SV Angel",
+              "Salesforce Ventures",
+              "Scott Belsky",
+              "Section Partners",
+              "Sequoia Capital",
+              "Sherpalo Ventures",
+              "Shine Capital",
+              "TGM ventures",
+              "Terrence Rohan",
+              "Thibaud Elziere",
+              "Third Kind Venture Capital",
+              "Verdure Capital Management"
+            ],
+            "last_fundraise_date": "2025-12-15"
+          },
+          "headcount": {
+            "by_function_timeseries": {
+              "CURRENT_FUNCTION": {
+                "Engineering": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 482
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 490
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 515
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 522
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 542
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 551
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 581
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 611
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 639
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 654
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 682
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 702
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 728
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 741
+                  }
+                ],
+                "Education": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 175
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 177
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 178
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 184
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 187
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 193
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 197
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 206
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 228
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 289
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 329
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 360
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 382
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 394
+                  }
+                ],
+                "Healthcare Services": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 44
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 46
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 49
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 51
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 53
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 55
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 57
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 59
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 66
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 73
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 84
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 93
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 100
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 103
+                  }
+                ],
+                "Human Resources": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 72
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 73
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 77
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 77
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 82
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 82
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 85
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 85
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 88
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 88
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 92
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 97
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 96
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 97
+                  }
+                ],
+                "Quality Assurance": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 7
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 8
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 8
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 8
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 8
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 9
+                  }
+                ],
+                "Sales": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 201
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 219
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 229
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 239
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 250
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 260
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 274
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 287
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 316
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 333
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 354
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 383
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 407
+                  }
+                ],
+                "Business Development": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 63
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 64
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 68
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 74
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 80
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 79
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 79
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 86
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 91
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 98
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 108
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 115
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 120
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 121
+                  }
+                ],
+                "Community and Social Services": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 135
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 140
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 145
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 150
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 156
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 157
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 162
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 160
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 172
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 179
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 187
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 190
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 193
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 195
+                  }
+                ],
+                "Research": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 25
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 27
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 30
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 30
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 32
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 32
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 34
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 37
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 40
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 45
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 50
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 54
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 58
+                  }
+                ],
+                "Real Estate": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 7
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 7
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 6
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 6
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 6
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 7
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 7
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 9
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 11
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 11
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 11
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 11
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 14
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 14
+                  }
+                ],
+                "Entrepreneurship": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 37
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 38
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 38
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 40
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 44
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 50
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 63
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 67
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 70
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 76
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 81
+                  }
+                ],
+                "Information Technology": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 171
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 173
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 175
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 180
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 182
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 186
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 200
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 212
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 218
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 226
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 234
+                  }
+                ],
+                "Legal": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 28
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 26
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 28
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 29
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 30
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 34
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 38
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 38
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 43
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 46
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 53
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 59
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 66
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 71
+                  }
+                ],
+                "Finance": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 40
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 43
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 45
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 45
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 46
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 51
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 56
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 57
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 62
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 65
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 70
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 73
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 77
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 81
+                  }
+                ],
+                "Program and Project Management": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 58
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 58
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 58
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 56
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 53
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 54
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 56
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 55
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 58
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 59
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 61
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 66
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 68
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 70
+                  }
+                ],
+                "Product Management": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 23
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 26
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 27
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 31
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 34
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 33
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 33
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 32
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 35
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 35
+                  }
+                ],
+                "Consulting": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 38
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 39
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 43
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 44
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 48
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 48
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 50
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 52
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 52
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 53
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 57
+                  }
+                ],
+                "Marketing": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 102
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 102
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 103
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 105
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 107
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 116
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 119
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 127
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 130
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 139
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 145
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 152
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 157
+                  }
+                ],
+                "Administrative": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 86
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 90
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 87
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 88
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 90
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 99
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 103
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 107
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 140
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 159
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 168
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 177
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 186
+                  }
+                ],
+                "Operations": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 193
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 206
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 210
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 214
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 225
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 232
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 242
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 266
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 281
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 312
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 331
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 348
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 361
+                  }
+                ],
+                "Customer Success and Support": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 81
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 82
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 90
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 96
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 95
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 96
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 100
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 103
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 107
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 113
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 127
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 133
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 141
+                  }
+                ],
+                "Purchasing": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 3
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 3
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 3
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 4
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 3
+                  }
+                ],
+                "Arts and Design": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 135
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 142
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 153
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 154
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 162
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 171
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 180
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 192
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 211
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 225
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 239
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 246
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 250
+                  }
+                ],
+                "Military and Protective Services": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 25
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 25
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 28
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 32
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 30
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 31
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 34
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 44
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 48
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 52
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 59
+                  }
+                ],
+                "Accounting": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 23
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 24
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 25
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 25
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 26
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 26
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 29
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 32
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 34
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 37
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 41
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 42
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 49
+                  }
+                ],
+                "Media and Communication": [
+                  {
+                    "date": "2024-11-01 00:00:00",
+                    "employee_count": 101
+                  },
+                  {
+                    "date": "2024-12-01 00:00:00",
+                    "employee_count": 105
+                  },
+                  {
+                    "date": "2025-01-01 00:00:00",
+                    "employee_count": 109
+                  },
+                  {
+                    "date": "2025-02-01 00:00:00",
+                    "employee_count": 112
+                  },
+                  {
+                    "date": "2025-03-01 00:00:00",
+                    "employee_count": 122
+                  },
+                  {
+                    "date": "2025-04-01 00:00:00",
+                    "employee_count": 129
+                  },
+                  {
+                    "date": "2025-05-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 143
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 156
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 180
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 200
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 211
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 220
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 233
+                  }
+                ]
+              },
+              "GEO_REGION": {
+                "Ireland": [
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 100
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 104
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 115
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 118
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 152
+                  }
+                ],
+                "San Francisco Bay Area": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 599
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 596
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 597
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 623
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 631
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 709
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 715
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 727
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 724
+                  }
+                ],
+                "Pakistan": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 419
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 100
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 159
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 164
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 281
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 288
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 289
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 296
+                  }
+                ],
+                "Uttar Pradesh, India": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 276
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 113
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 131
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 139
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 141
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 216
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 235
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 244
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 249
+                  }
+                ],
+                "Delhi, India": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 200
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 157
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 159
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 167
+                  }
+                ],
+                "United States": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 1458
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 1173
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 1259
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 1354
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 1368
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 2062
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 2959
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 2793
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 2191
+                  }
+                ],
+                "Texas, United States": [
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 213
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 182
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 197
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 173
+                  }
+                ],
+                "New York, NY": [
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 146
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 148
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 159
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 163
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 204
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 231
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 239
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 230
+                  }
+                ],
+                "Bangladesh": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 176
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 150
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 150
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 158
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 164
+                  }
+                ],
+                "Greater Delhi Area": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 246
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 95
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 135
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 137
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 196
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 207
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 211
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 221
+                  }
+                ],
+                "New York City Metropolitan Area": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 275
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 267
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 272
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 288
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 293
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 386
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 475
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 487
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 433
+                  }
+                ],
+                "Greater Dublin": [
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 97
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 101
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 108
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 111
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 139
+                  }
+                ],
+                "India": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 2465
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 1011
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 1139
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 1255
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 1264
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 1815
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 1879
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 1935
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 1958
+                  }
+                ],
+                "Nigeria": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 201
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 183
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 181
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 190
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 204
+                  }
+                ],
+                "New Delhi": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 188
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 192
+                  }
+                ],
+                "San Francisco, CA": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 360
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 374
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 370
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 381
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 388
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 430
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 423
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 417
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 425
+                  }
+                ],
+                "Los Angeles Metropolitan Area": [
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 164
+                  }
+                ],
+                "Punjab, Pakistan": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 220
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 225
+                  }
+                ],
+                "California, United States": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 685
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 643
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 651
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 685
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 693
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 834
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 908
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 930
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 845
+                  }
+                ],
+                "Maharashtra, India": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 303
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 121
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 132
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 147
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 203
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 211
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 214
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 220
+                  }
+                ],
+                "Greater Hyderabad Area": [
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 92
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 100
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 105
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 105
+                  }
+                ],
+                "New York, United States": [
+                  {
+                    "date": "2025-06-01 00:00:00",
+                    "employee_count": 260
+                  },
+                  {
+                    "date": "2025-07-01 00:00:00",
+                    "employee_count": 255
+                  },
+                  {
+                    "date": "2025-08-01 00:00:00",
+                    "employee_count": 263
+                  },
+                  {
+                    "date": "2025-09-01 00:00:00",
+                    "employee_count": 279
+                  },
+                  {
+                    "date": "2025-10-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2025-11-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2025-12-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2026-01-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2026-02-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2026-03-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2026-04-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2026-05-01 00:00:00",
+                    "employee_count": 283
+                  },
+                  {
+                    "date": "2026-06-01 00:00:00",
+                    "employee_count": 357
+                  },
+                  {
+                    "date": "2026-07-01 00:00:00",
+                    "employee_count": 428
+                  },
+                  {
+                    "date": "2026-08-01 00:00:00",
+                    "employee_count": 439
+                  },
+                  {
+                    "date": "2026-09-01 00:00:00",
+                    "employee_count": 405
+                  }
+                ]
+              }
+            },
+            "largest_headcount_country": "USA",
+            "total": 7591,
+            "growth_percent": {
+              "mom": -0.6153443309766955,
+              "qoq": 17.653440793552384,
+              "six_months": 33.19880680821197,
+              "yoy": 68.46426986240569,
+              "two_years": 177.75338455909258
+            },
+            "growth_absolute": {
+              "mom": -47,
+              "qoq": 1139,
+              "six_months": 1892,
+              "yoy": 3085,
+              "two_years": 4858
+            },
+            "by_role_absolute": {
+              "Education": 546,
+              "Marketing": 230,
+              "Human Resources": 148,
+              "Information Technology": 331,
+              "Finance": 121,
+              "Operations": 481,
+              "Engineering": 1580,
+              "Community and Social Services": 231,
+              "Arts and Design": 368,
+              "Healthcare Services": 131,
+              "Support": 181,
+              "Sales": 548,
+              "Media and Communication": 288,
+              "Business Development": 182,
+              "Consulting": 138,
+              "Administrative": 248
+            },
+            "by_role_percent": {
+              "Education": 7.192728230799632,
+              "Marketing": 3.029903833487024,
+              "Human Resources": 1.9496772493742591,
+              "Information Technology": 4.360426821235674,
+              "Finance": 1.5939928863127388,
+              "Operations": 6.3364510604663415,
+              "Engineering": 20.814121986563038,
+              "Community and Social Services": 3.0430773284152286,
+              "Arts and Design": 4.847846133579239,
+              "Healthcare Services": 1.7257278355947834,
+              "Support": 2.384402582005006,
+              "Sales": 7.21907522065604,
+              "Media and Communication": 3.793966539322882,
+              "Business Development": 2.3975760769332104,
+              "Consulting": 1.8179423000922144,
+              "Administrative": 3.2670267421947043
+            },
+            "by_role_growth_6m_pct": {
+              "Support": 30.215827338129497
+            },
+            "by_role_growth_yoy_pct": {
+              "Program and Project Management": -100.0,
+              "Support": 72.38095238095238,
+              "Marketing": 86.99186991869918,
+              "Military and Protective Services": -100.0,
+              "Quality Assurance": -100.0,
+              "Product Management": -100.0,
+              "Purchasing": -100.0,
+              "Entrepreneurship": -100.0,
+              "Finance": 92.06349206349206,
+              "Information Technology": 68.87755102040816,
+              "Legal": -100.0,
+              "Healthcare Services": 95.52238805970148,
+              "Operations": 82.1969696969697,
+              "Human Resources": 68.18181818181817,
+              "Engineering": 148.42767295597483,
+              "Sales": 84.51178451178451,
+              "Consulting": 176.0,
+              "Accounting": -100.0,
+              "Customer Success and Support": -100.0,
+              "Real Estate": -100.0,
+              "Administrative": 103.27868852459017,
+              "Research": -100.0,
+              "Education": 120.16129032258065,
+              "Community and Social Services": 31.25,
+              "Business Development": 82.0,
+              "Media and Communication": 82.27848101265823,
+              "Arts and Design": 90.67357512953367
+            },
+            "by_region_absolute": {
+              "Maharashtra, India": 220,
+              "India": 1958,
+              "Pakistan": 296,
+              "Greater Delhi Area": 221,
+              "Bangladesh": 164,
+              "San Francisco Bay Area": 724,
+              "New York, NY": 230,
+              "San Francisco, CA": 425,
+              "New York, United States": 405,
+              "Nigeria": 204,
+              "California, United States": 845,
+              "New York City Metropolitan Area": 433,
+              "Delhi, India": 167,
+              "Uttar Pradesh, India": 249,
+              "United States": 2191
+            },
+            "by_region_percent": {
+              "Maharashtra, India": 2.8981688842049795,
+              "India": 25.793703069424318,
+              "Pakistan": 3.8993544987485182,
+              "Greater Delhi Area": 2.911342379133184,
+              "Bangladesh": 2.16045316822553,
+              "San Francisco Bay Area": 9.537610328020024,
+              "New York, NY": 3.029903833487024,
+              "San Francisco, CA": 5.598735344486892,
+              "New York, United States": 5.335265445922803,
+              "Nigeria": 2.6873929653537085,
+              "California, United States": 11.131603214332761,
+              "New York City Metropolitan Area": 5.704123303912528,
+              "Delhi, India": 2.1999736530101437,
+              "Uttar Pradesh, India": 3.2802002371229086,
+              "United States": 28.863127387695958
+            },
+            "by_skill_absolute": {
+              "Teamwork": 545,
+              "Microsoft Excel": 600,
+              "Marketing": 429,
+              "Java": 320,
+              "Project Management": 759,
+              "Microsoft PowerPoint": 334,
+              "Social Media": 493,
+              "SQL": 284,
+              "Communication": 724,
+              "Customer Service": 510,
+              "Data Analysis": 444,
+              "Public Speaking": 487,
+              "JavaScript": 432,
+              "Management": 448,
+              "Leadership": 773,
+              "Microsoft Office": 616,
+              "Research Skills": 408,
+              "Python (Programming Language)": 625,
+              "Sales": 414
+            },
+            "by_skill_percent": {
+              "Teamwork": 7.1795547358714265,
+              "Microsoft Excel": 7.904096956922671,
+              "Marketing": 5.65142932419971,
+              "Java": 4.2155183770254245,
+              "Project Management": 9.99868265050718,
+              "Microsoft PowerPoint": 4.399947306020287,
+              "Social Media": 6.494532999604795,
+              "SQL": 3.741272559610065,
+              "Communication": 9.537610328020024,
+              "Customer Service": 6.718482413384271,
+              "Data Analysis": 5.849031748122777,
+              "Public Speaking": 6.415492030035569,
+              "JavaScript": 5.690949808984323,
+              "Management": 5.901725727835594,
+              "Leadership": 10.183111579502043,
+              "Microsoft Office": 8.114872875773942,
+              "Research Skills": 5.374785930707417,
+              "Python (Programming Language)": 8.233434330127782,
+              "Sales": 5.453826900276644
+            },
+            "timeseries": [
+              {
+                "date": "2022-12-26",
+                "employee_count": 1287
+              },
+              {
+                "date": "2023-01-02",
+                "employee_count": 1287
+              },
+              {
+                "date": "2023-01-09",
+                "employee_count": 1287
+              },
+              {
+                "date": "2023-01-16",
+                "employee_count": 1287
+              },
+              {
+                "date": "2023-01-23",
+                "employee_count": 1287
+              },
+              {
+                "date": "2023-01-30",
+                "employee_count": 1415
+              },
+              {
+                "date": "2023-02-06",
+                "employee_count": 1415
+              },
+              {
+                "date": "2023-02-13",
+                "employee_count": 1415
+              },
+              {
+                "date": "2023-02-20",
+                "employee_count": 1415
+              },
+              {
+                "date": "2023-02-27",
+                "employee_count": 1539
+              },
+              {
+                "date": "2023-03-06",
+                "employee_count": 1539
+              },
+              {
+                "date": "2023-03-13",
+                "employee_count": 1539
+              },
+              {
+                "date": "2023-03-20",
+                "employee_count": 1539
+              },
+              {
+                "date": "2023-03-27",
+                "employee_count": 1658
+              },
+              {
+                "date": "2023-04-03",
+                "employee_count": 1658
+              },
+              {
+                "date": "2023-04-10",
+                "employee_count": 1658
+              },
+              {
+                "date": "2023-04-17",
+                "employee_count": 1658
+              },
+              {
+                "date": "2023-04-24",
+                "employee_count": 1658
+              },
+              {
+                "date": "2023-05-01",
+                "employee_count": 1744
+              },
+              {
+                "date": "2023-05-08",
+                "employee_count": 1744
+              },
+              {
+                "date": "2023-05-15",
+                "employee_count": 1744
+              },
+              {
+                "date": "2023-05-22",
+                "employee_count": 1744
+              },
+              {
+                "date": "2023-05-29",
+                "employee_count": 1869
+              },
+              {
+                "date": "2023-06-05",
+                "employee_count": 1869
+              },
+              {
+                "date": "2023-06-12",
+                "employee_count": 1869
+              },
+              {
+                "date": "2023-06-19",
+                "employee_count": 1869
+              },
+              {
+                "date": "2023-06-26",
+                "employee_count": 2018
+              },
+              {
+                "date": "2023-07-03",
+                "employee_count": 2018
+              },
+              {
+                "date": "2023-07-10",
+                "employee_count": 2018
+              },
+              {
+                "date": "2023-07-17",
+                "employee_count": 2018
+              },
+              {
+                "date": "2023-07-24",
+                "employee_count": 2018
+              },
+              {
+                "date": "2023-07-31",
+                "employee_count": 1393
+              },
+              {
+                "date": "2023-08-07",
+                "employee_count": 1393
+              },
+              {
+                "date": "2023-08-14",
+                "employee_count": 1393
+              },
+              {
+                "date": "2023-08-21",
+                "employee_count": 1393
+              },
+              {
+                "date": "2023-08-28",
+                "employee_count": 1497
+              },
+              {
+                "date": "2023-09-04",
+                "employee_count": 1497
+              },
+              {
+                "date": "2023-09-11",
+                "employee_count": 1497
+              },
+              {
+                "date": "2023-09-18",
+                "employee_count": 1497
+              },
+              {
+                "date": "2023-09-25",
+                "employee_count": 1580
+              },
+              {
+                "date": "2023-10-02",
+                "employee_count": 1603
+              },
+              {
+                "date": "2023-10-09",
+                "employee_count": 1603
+              },
+              {
+                "date": "2023-10-16",
+                "employee_count": 1603
+              },
+              {
+                "date": "2023-10-23",
+                "employee_count": 1603
+              },
+              {
+                "date": "2023-10-30",
+                "employee_count": 1603
+              },
+              {
+                "date": "2023-11-06",
+                "employee_count": 1655
+              },
+              {
+                "date": "2023-11-13",
+                "employee_count": 1655
+              },
+              {
+                "date": "2023-11-20",
+                "employee_count": 1655
+              },
+              {
+                "date": "2023-11-27",
+                "employee_count": 1655
+              },
+              {
+                "date": "2023-12-04",
+                "employee_count": 1680
+              },
+              {
+                "date": "2023-12-11",
+                "employee_count": 1680
+              },
+              {
+                "date": "2023-12-18",
+                "employee_count": 1680
+              },
+              {
+                "date": "2023-12-25",
+                "employee_count": 1680
+              },
+              {
+                "date": "2024-01-01",
+                "employee_count": 1782
+              },
+              {
+                "date": "2024-01-08",
+                "employee_count": 1782
+              },
+              {
+                "date": "2024-01-15",
+                "employee_count": 1782
+              },
+              {
+                "date": "2024-01-22",
+                "employee_count": 1782
+              },
+              {
+                "date": "2024-01-29",
+                "employee_count": 1782
+              },
+              {
+                "date": "2024-02-05",
+                "employee_count": 1876
+              },
+              {
+                "date": "2024-02-12",
+                "employee_count": 1876
+              },
+              {
+                "date": "2024-02-19",
+                "employee_count": 1876
+              },
+              {
+                "date": "2024-02-26",
+                "employee_count": 1876
+              },
+              {
+                "date": "2024-03-04",
+                "employee_count": 1952
+              },
+              {
+                "date": "2024-03-11",
+                "employee_count": 1952
+              },
+              {
+                "date": "2024-03-18",
+                "employee_count": 1952
+              },
+              {
+                "date": "2024-03-25",
+                "employee_count": 1952
+              },
+              {
+                "date": "2024-04-01",
+                "employee_count": 2029
+              },
+              {
+                "date": "2024-04-08",
+                "employee_count": 2029
+              },
+              {
+                "date": "2024-04-15",
+                "employee_count": 2029
+              },
+              {
+                "date": "2024-04-22",
+                "employee_count": 2029
+              },
+              {
+                "date": "2024-04-29",
+                "employee_count": 2029
+              },
+              {
+                "date": "2024-05-06",
+                "employee_count": 2182
+              },
+              {
+                "date": "2024-05-13",
+                "employee_count": 2182
+              },
+              {
+                "date": "2024-05-20",
+                "employee_count": 2182
+              },
+              {
+                "date": "2024-05-27",
+                "employee_count": 2182
+              },
+              {
+                "date": "2024-06-03",
+                "employee_count": 2302
+              },
+              {
+                "date": "2024-06-10",
+                "employee_count": 2302
+              },
+              {
+                "date": "2024-06-17",
+                "employee_count": 2302
+              },
+              {
+                "date": "2024-06-24",
+                "employee_count": 2302
+              },
+              {
+                "date": "2024-07-01",
+                "employee_count": 2407
+              },
+              {
+                "date": "2024-07-08",
+                "employee_count": 2407
+              },
+              {
+                "date": "2024-07-15",
+                "employee_count": 2407
+              },
+              {
+                "date": "2024-07-22",
+                "employee_count": 2407
+              },
+              {
+                "date": "2024-07-29",
+                "employee_count": 2407
+              },
+              {
+                "date": "2024-08-05",
+                "employee_count": 2587
+              },
+              {
+                "date": "2024-08-12",
+                "employee_count": 2587
+              },
+              {
+                "date": "2024-08-19",
+                "employee_count": 2587
+              },
+              {
+                "date": "2024-08-26",
+                "employee_count": 2587
+              },
+              {
+                "date": "2024-09-02",
+                "employee_count": 2733
+              },
+              {
+                "date": "2024-09-09",
+                "employee_count": 2733
+              },
+              {
+                "date": "2024-09-16",
+                "employee_count": 2733
+              },
+              {
+                "date": "2024-09-23",
+                "employee_count": 2733
+              },
+              {
+                "date": "2024-09-30",
+                "employee_count": 2733
+              },
+              {
+                "date": "2024-10-07",
+                "employee_count": 2828
+              },
+              {
+                "date": "2024-10-14",
+                "employee_count": 2828
+              },
+              {
+                "date": "2024-10-21",
+                "employee_count": 2828
+              },
+              {
+                "date": "2024-10-28",
+                "employee_count": 2828
+              },
+              {
+                "date": "2024-11-04",
+                "employee_count": 2918
+              },
+              {
+                "date": "2024-11-11",
+                "employee_count": 2918
+              },
+              {
+                "date": "2024-11-18",
+                "employee_count": 2918
+              },
+              {
+                "date": "2024-11-25",
+                "employee_count": 2918
+              },
+              {
+                "date": "2024-12-02",
+                "employee_count": 2987
+              },
+              {
+                "date": "2024-12-09",
+                "employee_count": 2987
+              },
+              {
+                "date": "2024-12-16",
+                "employee_count": 2987
+              },
+              {
+                "date": "2024-12-23",
+                "employee_count": 2987
+              },
+              {
+                "date": "2024-12-30",
+                "employee_count": 2987
+              },
+              {
+                "date": "2025-01-06",
+                "employee_count": 3099
+              },
+              {
+                "date": "2025-01-13",
+                "employee_count": 3099
+              },
+              {
+                "date": "2025-01-20",
+                "employee_count": 3099
+              },
+              {
+                "date": "2025-01-27",
+                "employee_count": 3099
+              },
+              {
+                "date": "2025-02-03",
+                "employee_count": 3153
+              },
+              {
+                "date": "2025-02-10",
+                "employee_count": 3153
+              },
+              {
+                "date": "2025-02-17",
+                "employee_count": 3153
+              },
+              {
+                "date": "2025-02-24",
+                "employee_count": 3153
+              },
+              {
+                "date": "2025-03-03",
+                "employee_count": 3246
+              },
+              {
+                "date": "2025-03-10",
+                "employee_count": 3246
+              },
+              {
+                "date": "2025-03-17",
+                "employee_count": 3246
+              },
+              {
+                "date": "2025-03-24",
+                "employee_count": 3246
+              },
+              {
+                "date": "2025-03-31",
+                "employee_count": 3246
+              },
+              {
+                "date": "2025-04-07",
+                "employee_count": 3337
+              },
+              {
+                "date": "2025-04-14",
+                "employee_count": 3337
+              },
+              {
+                "date": "2025-04-21",
+                "employee_count": 3337
+              },
+              {
+                "date": "2025-04-28",
+                "employee_count": 3337
+              },
+              {
+                "date": "2025-05-05",
+                "employee_count": 3427
+              },
+              {
+                "date": "2025-05-12",
+                "employee_count": 3427
+              },
+              {
+                "date": "2025-05-19",
+                "employee_count": 3427
+              },
+              {
+                "date": "2025-05-26",
+                "employee_count": 3427
+              },
+              {
+                "date": "2025-06-02",
+                "employee_count": 3530
+              },
+              {
+                "date": "2025-06-09",
+                "employee_count": 3530
+              },
+              {
+                "date": "2025-06-16",
+                "employee_count": 3530
+              },
+              {
+                "date": "2025-06-23",
+                "employee_count": 3530
+              },
+              {
+                "date": "2025-06-30",
+                "employee_count": 3530
+              },
+              {
+                "date": "2025-07-07",
+                "employee_count": 3732
+              },
+              {
+                "date": "2025-07-14",
+                "employee_count": 3732
+              },
+              {
+                "date": "2025-07-21",
+                "employee_count": 3732
+              },
+              {
+                "date": "2025-07-28",
+                "employee_count": 3732
+              },
+              {
+                "date": "2025-08-04",
+                "employee_count": 4043
+              },
+              {
+                "date": "2025-08-11",
+                "employee_count": 4043
+              },
+              {
+                "date": "2025-08-18",
+                "employee_count": 4043
+              },
+              {
+                "date": "2025-08-25",
+                "employee_count": 4043
+              },
+              {
+                "date": "2025-09-01",
+                "employee_count": 4506
+              },
+              {
+                "date": "2025-09-08",
+                "employee_count": 4506
+              },
+              {
+                "date": "2025-09-15",
+                "employee_count": 4506
+              },
+              {
+                "date": "2025-09-22",
+                "employee_count": 4506
+              },
+              {
+                "date": "2025-09-29",
+                "employee_count": 4506
+              },
+              {
+                "date": "2025-10-06",
+                "employee_count": 4741
+              },
+              {
+                "date": "2025-10-13",
+                "employee_count": 4741
+              },
+              {
+                "date": "2025-10-20",
+                "employee_count": 4741
+              },
+              {
+                "date": "2025-10-27",
+                "employee_count": 4741
+              },
+              {
+                "date": "2025-11-03",
+                "employee_count": 4953
+              },
+              {
+                "date": "2025-11-10",
+                "employee_count": 4953
+              },
+              {
+                "date": "2025-11-17",
+                "employee_count": 4953
+              },
+              {
+                "date": "2025-11-24",
+                "employee_count": 4953
+              },
+              {
+                "date": "2025-12-01",
+                "employee_count": 5125
+              },
+              {
+                "date": "2025-12-08",
+                "employee_count": 5125
+              },
+              {
+                "date": "2025-12-15",
+                "employee_count": 5125
+              },
+              {
+                "date": "2025-12-22",
+                "employee_count": 5125
+              },
+              {
+                "date": "2025-12-29",
+                "employee_count": 5125
+              },
+              {
+                "date": "2026-01-05",
+                "employee_count": 5426
+              },
+              {
+                "date": "2026-01-12",
+                "employee_count": 5426
+              },
+              {
+                "date": "2026-01-19",
+                "employee_count": 5426
+              },
+              {
+                "date": "2026-01-26",
+                "employee_count": 5426
+              },
+              {
+                "date": "2026-02-02",
+                "employee_count": 5602
+              },
+              {
+                "date": "2026-02-09",
+                "employee_count": 5602
+              },
+              {
+                "date": "2026-02-16",
+                "employee_count": 5602
+              },
+              {
+                "date": "2026-02-23",
+                "employee_count": 5602
+              },
+              {
+                "date": "2026-03-02",
+                "employee_count": 5699
+              },
+              {
+                "date": "2026-03-09",
+                "employee_count": 5699
+              },
+              {
+                "date": "2026-03-16",
+                "employee_count": 5699
+              },
+              {
+                "date": "2026-03-23",
+                "employee_count": 5699
+              },
+              {
+                "date": "2026-03-30",
+                "employee_count": 5699
+              },
+              {
+                "date": "2026-04-06",
+                "employee_count": 5777
+              },
+              {
+                "date": "2026-04-13",
+                "employee_count": 5777
+              },
+              {
+                "date": "2026-04-20",
+                "employee_count": 5777
+              },
+              {
+                "date": "2026-04-27",
+                "employee_count": 5777
+              },
+              {
+                "date": "2026-05-04",
+                "employee_count": 5965
+              },
+              {
+                "date": "2026-05-11",
+                "employee_count": 5965
+              },
+              {
+                "date": "2026-05-18",
+                "employee_count": 5965
+              },
+              {
+                "date": "2026-05-25",
+                "employee_count": 5965
+              },
+              {
+                "date": "2026-06-01",
+                "employee_count": 6452
+              },
+              {
+                "date": "2026-06-08",
+                "employee_count": 6452
+              },
+              {
+                "date": "2026-06-15",
+                "employee_count": 6452
+              },
+              {
+                "date": "2026-06-22",
+                "employee_count": 6452
+              },
+              {
+                "date": "2026-06-29",
+                "employee_count": 6452
+              },
+              {
+                "date": "2026-07-06",
+                "employee_count": 7284
+              },
+              {
+                "date": "2026-07-13",
+                "employee_count": 7284
+              },
+              {
+                "date": "2026-07-20",
+                "employee_count": 7284
+              },
+              {
+                "date": "2026-07-27",
+                "employee_count": 7284
+              },
+              {
+                "date": "2026-08-03",
+                "employee_count": 7638
+              },
+              {
+                "date": "2026-08-10",
+                "employee_count": 7638
+              },
+              {
+                "date": "2026-08-17",
+                "employee_count": 7638
+              },
+              {
+                "date": "2026-08-24",
+                "employee_count": 7638
+              },
+              {
+                "date": "2026-08-31",
+                "employee_count": 7638
+              },
+              {
+                "date": "2026-09-06",
+                "employee_count": 7591
+              }
+            ]
+          },
+          "locations": {
+            "city": "San Francisco",
+            "country": "USA",
+            "state": "California",
+            "street_address": "San Francisco, California, United States",
+            "headquarters": "San Francisco, California, United States",
+            "all_office_addresses": [
+              ", Dublin, IE",
+              ", Tokyo, JP",
+              ", New York, NY, US",
+              ", Hyderabad, IN",
+              ", Seoul, KR"
+            ]
+          },
+          "basic_info": {
+            "status": "active",
+            "name": "Notion",
+            "primary_domain": "notion.com",
+            "all_domains": [
+              "notion.com"
+            ],
+            "website": "https://notion.com",
+            "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/423b8b5cde01166137932f07ef5e644409676b504fb79f64def861949871f0bc.jpg",
+            "description": "Notion blends your everyday work tools into one. Product roadmap? Company wiki? Meeting notes? With Notion, they're all in one place, and totally customizable to meet the needs of any workflow. It's the all-in-one workspace for you, your team, and your whole company. We humans are toolmakers by nature, but most of us can't build or modify the software we use every day \u2014 arguably our most powerful tool. Our team at Notion is on a mission to make it possible for everyone to shape the tools that shape their lives.",
+            "company_type": "Privately Held",
+            "year_founded": 2016,
+            "employee_count_range": "501-1000",
+            "markets": [
+              "PRIVATE"
+            ],
+            "crustdata_company_id": 3552555,
+            "professional_network_id": "30898036",
+            "professional_network_url": "https://www.linkedin.com/company/notionhq",
+            "profile_name": "Notion"
+          }
+        }
+      }
+    ]
+  }
+]

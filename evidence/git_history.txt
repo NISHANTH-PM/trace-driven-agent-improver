@@ -1,0 +1,70 @@
+6ba20f4 2026-10-12 06:18:59 +0530 chore: ignore stray local files
+9c901e1 2026-10-12 06:18:35 +0530 evidence: remove duplicate synthetic ablation from root
+5353f35 2026-10-12 06:16:02 +0530 docs: cfo.ai business plan exports
+cd94060 2026-10-12 06:06:26 +0530 evidence: final runs on corrected snapshot; previous runs superseded
+8651033 2026-10-12 05:58:16 +0530 fix: HQ city from locations.city; snapshot rebuilt from raw responses
+32c3b1d 2026-10-12 05:43:50 +0530 evidence: final real-data runs on corrected snapshot; superseded runs relabeled; README results
+d2a8238 2026-10-12 04:40:41 +0530 evidence: real-data results tables
+e420059 2026-10-12 04:39:14 +0530 evidence: add P8 ablation and repeat run artifacts
+bc7e8db 2026-10-12 04:35:37 +0530 docs: real-data pack flow and limitations
+728c0ab 2026-10-12 04:25:24 +0530 evidence: label synthetic-fixture runs
+db39c70 2026-10-12 04:19:46 +0530 fix: normalize formatting in fact checks (false mismatches on real data)
+0762a0c 2026-10-12 04:13:01 +0530 data: replace mismatched companies, add pacing and domain acceptance rule
+f09bcc9 2026-10-12 03:57:11 +0530 evidence: pack run on real Crustdata snapshots
+965abed 2026-10-12 03:53:32 +0530 feat: add source and companies fields to pack run output
+7692614 2026-10-12 03:52:11 +0530 feat: real Crustdata snapshots
+c0cdfae 2026-10-12 03:49:12 +0530 revert: remove mocked snapshot data (not real Crustdata responses)
+c2604a9 2026-10-12 03:38:47 +0530 evidence: pack run on real Crustdata snapshots
+e3d4171 2026-10-12 03:37:38 +0530 feat: Crustdata source, real-company snapshots
+7bb1d12 2026-10-12 03:14:48 +0530 fix: LLM spans expose model, tokens, cost to neatlogs
+38abdf6 2026-10-12 02:51:14 +0530 evidence: live ablation run
+4cdfb30 2026-10-12 02:48:08 +0530 evidence: updated live pack run with cost totals
+c3edff1 2026-10-12 02:46:56 +0530 feat: cost totals, CI py3.12, ablation, README
+74c7748 2026-10-12 02:34:54 +0530 evidence: first live pack run
+4b8ddc2 2026-10-12 02:33:29 +0530 chore: untrack agent config dirs; restore neatlogs init for SDK 1.4.26
+1df734c 2026-10-12 02:06:32 +0530 fix: handle neatlogs 1.1.8 API (no flush/shutdown, no endpoint param)
+e27405d 2026-10-12 02:04:34 +0530 feat: pack evaluator, improver and improvement cycle
+0ef3fdc 2026-10-12 01:54:45 +0530 feat: pack student with retry, fact verification and docx render
+7ca9731 2026-10-12 01:40:56 +0530 feat: pack domain models, fixtures, flaky data tool
+af6ed83 2026-10-12 01:07:41 +0530 feat: add LLM client with fake and live implementations
+379603b 2026-10-12 01:06:01 +0530 chore: commit .env.example as-is
+12147d9 2026-10-12 00:31:38 +0530 Phase end
+08f7be7 2026-10-11 14:18:00 +0530 Merge pull request #2 from NISHANTH-PM/fix/promotion-gate-and-tests
+f1dff88 2026-10-11 14:14:02 +0530 Merge pull request #6 from NISHANTH-PM/test/evaluator-boundary-cases
+4771d30 2026-10-11 14:13:53 +0530 Merge branch 'fix/promotion-gate-and-tests' into test/evaluator-boundary-cases
+ea85414 2026-10-11 14:06:51 +0530 fix: validate outputs and classify tool failures
+fb38a92 2026-10-11 14:04:53 +0530 test: cover evaluator output boundary cases
+048300c 2026-10-11 14:02:59 +0530 Merge pull request #4 from NISHANTH-PM/test/end-to-end-promotion-safety
+d4ebe60 2026-10-11 13:49:49 +0530 test: tidy promotion safety assertions
+5214b26 2026-10-11 13:49:38 +0530 docs: clarify critical failure promotion gate
+95baf7c 2026-10-11 13:49:31 +0530 test: verify end-to-end promotion safety
+3127e28 2026-10-11 13:41:53 +0530 Merge pull request #3 from NISHANTH-PM/fix/evaluator-critical-failures
+21757d1 2026-10-11 12:37:15 +0530 test: cover invalid output and tool error evaluation
+eca5b5c 2026-10-11 12:37:10 +0530 fix: classify invalid outputs and tool failures
+14a87b5 2026-10-10 20:56:50 +0530 feat: guard promotion against critical failure regressions
+8050eec 2026-10-10 17:13:54 +0530 Merge branch 'fix/promotion-gate-and-tests' of https://github.com/NISHANTH-PM/trace-driven-agent-improver into fix/promotion-gate-and-tests
+e99fd28 2026-10-10 17:13:49 +0530 Merge branch 'master' into fix/promotion-gate-and-tests
+4ddc4f2 2026-10-10 17:09:53 +0530 Merge branch 'master' into fix/promotion-gate-and-tests
+976e2ba 2026-10-10 17:08:24 +0530 docs: add project history and continuity log
+b23fc6b 2026-10-10 17:05:38 +0530 chore: pin Neatlogs SDK and clean Python artifacts
+660f614 2026-10-10 16:16:45 +0530 Declare Neatlogs runtime dependency and requests requirement
+606adbe 2026-10-10 16:16:38 +0530 Align Neatlogs spans and lifecycle with Python SDK API
+6e995bb 2026-10-10 16:07:48 +0530 Merge pull request #1 from NISHANTH-PM/fix/promotion-gate-and-tests
+d7df45a 2026-10-10 14:49:12 +0530 Assert exact benchmark counts for reproducible demo claims
+3cf0156 2026-10-10 14:48:09 +0530 Document neatlogs setup and observed benchmark metrics
+5f0784b 2026-10-10 14:48:07 +0530 Document neatlogs API key configuration
+677e285 2026-10-10 14:48:05 +0530 Add neatlogs tracing and dotenv configuration
+8e3cb9c 2026-10-10 14:48:02 +0530 Manage neatlogs lifecycle for FastAPI runs
+7014ad1 2026-10-10 14:48:00 +0530 Initialize and flush neatlogs for CLI benchmark runs
+7ee2ed9 2026-10-10 14:47:58 +0530 Trace benchmark outcomes and failure classes in neatlogs
+cb8f745 2026-10-10 14:47:56 +0530 Instrument agent decision and guardrail steps with neatlogs
+33092cd 2026-10-10 14:47:31 +0530 Add optional neatlogs tracing lifecycle
+4e75797 2026-10-10 14:46:30 +0530 Add CI to run the test suite on pull requests
+7e33c8e 2026-10-10 14:45:41 +0530 Test real agent improvements and promotion policy edge cases
+89357ce 2026-10-10 14:45:39 +0530 Align improvement proposals with actual agent changes
+5d214fc 2026-10-10 14:45:36 +0530 Make candidate improvements change real agent behavior
+68f5467 2026-10-10 14:45:33 +0530 Use realistic benchmark cases for action and verification gaps
+f31bf66 2026-10-10 14:45:31 +0530 Remove agent-visible seeded fault metadata
+415545b 2026-10-10 14:44:39 +0530 Test promotion policy edge cases
+4ec1a77 2026-10-10 14:44:33 +0530 Fix promotion gate to prevent held-out regressions
+1731434 2026-10-10 13:22:46 +0530 Initial Commit

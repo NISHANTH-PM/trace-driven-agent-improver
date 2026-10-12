@@ -1,0 +1,121 @@
+{
+  "timestamp": "20261011_225757",
+  "results": {
+    "baseline": {
+      "dev": {
+        "k": 0,
+        "n": 6,
+        "success_rate": 0.0
+      },
+      "held_out": {
+        "k": 0,
+        "n": 4,
+        "success_rate": 0.0
+      },
+      "failure_counts": {
+        "tool_error": 3,
+        "wrong_fact": 7
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 2409,
+      "completion_tokens": 1700,
+      "cost_usd": 0.0005525399999999999
+    },
+    "retry_only": {
+      "dev": {
+        "k": 0,
+        "n": 6,
+        "success_rate": 0.0
+      },
+      "held_out": {
+        "k": 0,
+        "n": 4,
+        "success_rate": 0.0
+      },
+      "failure_counts": {
+        "wrong_fact": 10
+      },
+      "llm_calls": 10,
+      "prompt_tokens": 3182,
+      "completion_tokens": 2397,
+      "cost_usd": 0.0007662
+    },
+    "strict_only": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 2402,
+      "completion_tokens": 1890,
+      "cost_usd": 0.00059772
+    },
+    "verify_only": {
+      "dev": {
+        "k": 3,
+        "n": 6,
+        "success_rate": 0.5
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3,
+        "wrong_fact": 1
+      },
+      "llm_calls": 14,
+      "prompt_tokens": 5054,
+      "completion_tokens": 3414,
+      "cost_usd": 0.0011225999999999999
+    },
+    "strict_verify": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 2402,
+      "completion_tokens": 1912,
+      "cost_usd": 0.000603
+    },
+    "candidate": {
+      "dev": {
+        "k": 5,
+        "n": 6,
+        "success_rate": 0.8333
+      },
+      "held_out": {
+        "k": 4,
+        "n": 4,
+        "success_rate": 1.0
+      },
+      "failure_counts": {
+        "wrong_fact": 1
+      },
+      "llm_calls": 11,
+      "prompt_tokens": 3500,
+      "completion_tokens": 2887,
+      "cost_usd": 0.00090288
+    }
+  }
+}

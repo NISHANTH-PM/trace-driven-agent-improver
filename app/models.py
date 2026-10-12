@@ -2,7 +2,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-FailureClass = Literal["wrong_tool", "missing_verification", "invalid_output", "tool_error", "none"]
+FailureClass = Literal["wrong_tool", "missing_verification", "invalid_output", "tool_error", "wrong_fact", "missing_section", "none"]
 
 
 class TicketCase(BaseModel):

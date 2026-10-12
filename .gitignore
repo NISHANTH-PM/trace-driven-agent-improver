@@ -29,3 +29,18 @@ data/snapshots/raw/
 
 # Project-generated data
 data/runs/
+
+# Logs and outputs
+*.log
+spans_*.log
+outputs/
+.codex/
+.opencode/
+
+# Debug scripts
+debug_trace.py
+
+# Stray local files
+=1.1,
+nul
+.entire/

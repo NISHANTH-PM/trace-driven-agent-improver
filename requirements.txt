@@ -4,3 +4,7 @@ pydantic>=2.8,<3.0
 pytest>=8.0,<9.0
 neatlogs==1.4.26
 python-dotenv>=1.0,<2.0
+requests>=2.31,<3
+python-docx>=1.1,<2
+python-pptx>=0.6.23,<2
+openpyxl>=3.1,<4

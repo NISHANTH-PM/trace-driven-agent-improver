@@ -1,6 +1,7 @@
 """Neatlogs observability integration, with a local-only fallback."""
 
 from contextlib import contextmanager
+from typing import Any
 import os
 
 try:
@@ -25,8 +26,17 @@ _CUSTOM_ATTRIBUTE_MAPPINGS = (
     ("evaluation.failure_class", "neatlogs.evaluation.failure_class"),
     ("evaluation.expected_action", "neatlogs.evaluation.expected_action"),
     ("evaluation.selected_action", "neatlogs.evaluation.selected_action"),
+    ("evaluation.issues", "neatlogs.evaluation.issues"),
+    ("evaluation.truth", "neatlogs.evaluation.truth"),
     ("guardrail.enabled", "neatlogs.guardrail.enabled"),
     # guardrail.passed already maps to neatlogs.guardrail.passed in SDK
+    ("pack.company", "neatlogs.pack.company"),
+    ("tool.attempt", "neatlogs.tool.attempt"),
+    ("llm.prompt_tokens", "neatlogs.llm.prompt_tokens"),
+    ("llm.completion_tokens", "neatlogs.llm.completion_tokens"),
+    ("llm.cost_usd", "neatlogs.llm.cost_usd"),
+    ("pack.verify_passed", "neatlogs.pack.verify_passed"),
+    ("demo.label", "neatlogs.demo.label"),
 )
 
 # Also add to keep_as_is as a fallback for any attributes that don't map
@@ -151,9 +161,28 @@ def shutdown_neatlogs() -> None:
 
     try:
         neatlogs.flush()
-    finally:
         neatlogs.shutdown()
+    except Exception as e:
+        print(f"Warning: neatlogs shutdown failed: {e}")
+    finally:
         _initialized = False
+
+
+def mark_span_failed(span: Any, description: str) -> None:
+    """Mark a span as failed with an error status and description.
+
+    Uses OpenTelemetry Status/StatusCode if available; otherwise falls back
+    to setting an error attribute.
+    """
+    if not _initialized or neatlogs is None:
+        return
+    try:
+        from opentelemetry.trace import Status, StatusCode
+        span.set_status(Status(StatusCode.ERROR, description))
+    except Exception:
+        # Fallback: set error attribute if OpenTelemetry not available
+        span.set_attribute("error", True)
+        span.set_attribute("error.description", description)
 
 
 @contextmanager

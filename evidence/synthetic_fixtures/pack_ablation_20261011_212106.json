@@ -1,0 +1,118 @@
+{
+  "timestamp": "20261011_212106",
+  "results": {
+    "baseline": {
+      "dev": {
+        "k": 2,
+        "n": 6,
+        "success_rate": 0.3333
+      },
+      "held_out": {
+        "k": 1,
+        "n": 4,
+        "success_rate": 0.25
+      },
+      "failure_counts": {
+        "tool_error": 3,
+        "wrong_fact": 4
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 1080,
+      "completion_tokens": 1442,
+      "cost_usd": 0.0
+    },
+    "retry_only": {
+      "dev": {
+        "k": 2,
+        "n": 6,
+        "success_rate": 0.3333
+      },
+      "held_out": {
+        "k": 2,
+        "n": 4,
+        "success_rate": 0.5
+      },
+      "failure_counts": {
+        "wrong_fact": 6
+      },
+      "llm_calls": 10,
+      "prompt_tokens": 1546,
+      "completion_tokens": 1944,
+      "cost_usd": 0.0
+    },
+    "strict_only": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 1073,
+      "completion_tokens": 1294,
+      "cost_usd": 0.0
+    },
+    "verify_only": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 12,
+      "prompt_tokens": 1932,
+      "completion_tokens": 2337,
+      "cost_usd": 0.0
+    },
+    "strict_verify": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 1073,
+      "completion_tokens": 1345,
+      "cost_usd": 0.0
+    },
+    "candidate": {
+      "dev": {
+        "k": 6,
+        "n": 6,
+        "success_rate": 1.0
+      },
+      "held_out": {
+        "k": 4,
+        "n": 4,
+        "success_rate": 1.0
+      },
+      "failure_counts": {},
+      "llm_calls": 10,
+      "prompt_tokens": 1536,
+      "completion_tokens": 1882,
+      "cost_usd": 0.0
+    }
+  }
+}

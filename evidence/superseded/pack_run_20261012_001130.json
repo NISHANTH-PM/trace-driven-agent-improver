@@ -1,0 +1,154 @@
+{
+  "source": "snapshot",
+  "companies": {
+    "development": [
+      "Razorpay",
+      "Postman",
+      "BrowserStack",
+      "Freshworks",
+      "Swiggy",
+      "Chargebee"
+    ],
+    "held_out": [
+      "Figma",
+      "Linear",
+      "Canva",
+      "Notion"
+    ]
+  },
+  "baseline": {
+    "development": {
+      "version": "baseline",
+      "split": "development",
+      "total": 6,
+      "successes": 0,
+      "success_rate": 0.0,
+      "failure_counts": {
+        "wrong_fact": 4,
+        "tool_error": 2
+      },
+      "llm_calls": 4,
+      "prompt_tokens": 1455,
+      "completion_tokens": 978,
+      "retries": 0,
+      "results": [
+        "PackCaseResult(case_id='D01', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=4042 not stated exactly', 'total_funding_usd=816600000 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\D01_baseline.docx', trace=[TraceEvent(event_id='c4e59dd9-816e-4f16-93a9-cfa8e7087d4f', run_id='201b376b-a762-4949-902b-6cf5700f47ef', case_id='D01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='37d4e7e8-2a06-4f45-8ced-6bf7d28e5316', run_id='201b376b-a762-4949-902b-6cf5700f47ef', case_id='D01', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='d0cd1536-d2cb-4dd8-8658-c39a9565aff0', run_id='201b376b-a762-4949-902b-6cf5700f47ef', case_id='D01', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\D01_baseline.docx', outcome='warning', metadata={})])",
+        "PackCaseResult(case_id='D02', split='development', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='611411b5-2494-41c8-b26a-a61ad5571d19', run_id='b5ffe261-266b-4e57-9804-e14e7c154e50', case_id='D02', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])",
+        "PackCaseResult(case_id='D03', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=1728 not stated exactly'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\D03_baseline.docx', trace=[TraceEvent(event_id='15f1317a-8d89-45f7-89ff-b1935af9c6bb', run_id='eb30b011-7b0b-42ae-9f99-371a3b8435a0', case_id='D03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='6a18143e-d42f-441d-8367-c8e414d009ea', run_id='eb30b011-7b0b-42ae-9f99-371a3b8435a0', case_id='D03', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='b7ab1d90-f200-4112-a1d9-0c5fcf71e09c', run_id='eb30b011-7b0b-42ae-9f99-371a3b8435a0', case_id='D03', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\D03_baseline.docx', outcome='warning', metadata={})])",
+        "PackCaseResult(case_id='D04', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=7814 not stated exactly'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\D04_baseline.docx', trace=[TraceEvent(event_id='c99be9f0-d22f-4dc5-ad3f-7bcff216b6b1', run_id='551b78ce-0bdb-41fc-a908-39fb43e33fce', case_id='D04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='b604160f-2a7e-40e2-b025-2d9ce3bcbb8a', run_id='551b78ce-0bdb-41fc-a908-39fb43e33fce', case_id='D04', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='e4b35e60-543e-4ac2-b358-17550b333ddb', run_id='551b78ce-0bdb-41fc-a908-39fb43e33fce', case_id='D04', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\D04_baseline.docx', outcome='warning', metadata={})])",
+        "PackCaseResult(case_id='D05', split='development', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='2e91e008-f251-464e-bea6-6ca7cfef5763', run_id='1b2b46fe-9e59-41fb-b22d-f76267eecbd2', case_id='D05', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])",
+        "PackCaseResult(case_id='D06', split='development', success=False, failure_class='wrong_fact', issues=['employee_count=1303 not stated exactly', 'total_funding_usd=468170000 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\D06_baseline.docx', trace=[TraceEvent(event_id='b2a9991d-b6d4-4cda-8487-ed1d6bfab58e', run_id='c21c1e55-b103-4289-80db-918460ee03d7', case_id='D06', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='6110eadb-2032-4088-99a7-877d4424e577', run_id='c21c1e55-b103-4289-80db-918460ee03d7', case_id='D06', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='5182cb7d-2bfb-4bc7-9d5c-dd0adf51f1a6', run_id='c21c1e55-b103-4289-80db-918460ee03d7', case_id='D06', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\D06_baseline.docx', outcome='warning', metadata={})])"
+      ]
+    },
+    "held_out": {
+      "version": "baseline",
+      "split": "held_out",
+      "total": 4,
+      "successes": 0,
+      "success_rate": 0.0,
+      "failure_counts": {
+        "tool_error": 1,
+        "wrong_fact": 3
+      },
+      "llm_calls": 3,
+      "prompt_tokens": 956,
+      "completion_tokens": 645,
+      "retries": 0,
+      "results": [
+        "PackCaseResult(case_id='H01', split='held_out', success=False, failure_class='tool_error', issues=['tool failed'], tool_attempts=1, docx_path=None, trace=[TraceEvent(event_id='df2934fe-9625-4995-a707-9755b328b21d', run_id='35ee1de7-0d48-41c2-b1ff-520b029d25d1', case_id='H01', step='tool_execution', detail='Tool failed after 1 attempts: upstream 503', outcome='error', metadata={'attempt': 1})])",
+        "PackCaseResult(case_id='H02', split='held_out', success=False, failure_class='wrong_fact', issues=['total_funding_usd=233200000 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\H02_baseline.docx', trace=[TraceEvent(event_id='a9159195-8b00-498d-8974-b1dbb8f16bae', run_id='f2ec6c59-ae7c-4d69-946e-58a164e9d176', case_id='H02', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='30b072a5-4086-49a2-b74f-c420f399db1f', run_id='f2ec6c59-ae7c-4d69-946e-58a164e9d176', case_id='H02', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='c0ffd7b0-336b-4b11-85f0-5ba80ee6830a', run_id='f2ec6c59-ae7c-4d69-946e-58a164e9d176', case_id='H02', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\H02_baseline.docx', outcome='warning', metadata={})])",
+        "PackCaseResult(case_id='H03', split='held_out', success=False, failure_class='wrong_fact', issues=['employee_count=19252 not stated exactly', 'total_funding_usd=2533450682 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\H03_baseline.docx', trace=[TraceEvent(event_id='1f313092-a739-40ff-8298-051dd0c2a805', run_id='83dad249-f558-4773-be83-8805c7e6e41d', case_id='H03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='1921e140-c22c-4500-832a-e0e001113b61', run_id='83dad249-f558-4773-be83-8805c7e6e41d', case_id='H03', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='241e7318-a7c4-4b67-9fa1-851bf0c23c38', run_id='83dad249-f558-4773-be83-8805c7e6e41d', case_id='H03', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\H03_baseline.docx', outcome='warning', metadata={})])",
+        "PackCaseResult(case_id='H04', split='held_out', success=False, failure_class='wrong_fact', issues=['total_funding_usd=343199697 not stated in accepted format'], tool_attempts=1, docx_path='outputs\\\\baseline\\\\H04_baseline.docx', trace=[TraceEvent(event_id='8382d339-8ae9-4137-a07f-e210fbfd47ba', run_id='6119ebbc-fa54-4d57-8d60-0655b638c4fa', case_id='H04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='6bcce10e-3e89-4d6a-9b11-e7f318bb619b', run_id='6119ebbc-fa54-4d57-8d60-0655b638c4fa', case_id='H04', step='verification', detail='Verification not enabled', outcome='warning', metadata={}), TraceEvent(event_id='af413d5a-2242-4453-8ccf-19a057e78b55', run_id='6119ebbc-fa54-4d57-8d60-0655b638c4fa', case_id='H04', step='finalize', detail='Pack output generated at outputs\\\\baseline\\\\H04_baseline.docx', outcome='warning', metadata={})])"
+      ]
+    }
+  },
+  "proposals": [
+    {
+      "target_failure": "tool_error",
+      "change_type": "workflow_gate",
+      "description": "Enable retry for tool errors to handle transient upstream failures.",
+      "config_key": "retry_tool_errors",
+      "config_value": true
+    },
+    {
+      "target_failure": "wrong_fact",
+      "change_type": "prompt_rule",
+      "description": "Use strict prompt that requires exact figures from data.",
+      "config_key": "strict_prompt",
+      "config_value": true
+    },
+    {
+      "target_failure": "wrong_fact",
+      "change_type": "workflow_gate",
+      "description": "Enable fact verification to catch and fix hallucinated figures.",
+      "config_key": "verify_facts",
+      "config_value": true
+    }
+  ],
+  "candidate": {
+    "development": {
+      "version": "candidate",
+      "split": "development",
+      "total": 6,
+      "successes": 6,
+      "success_rate": 1.0,
+      "failure_counts": {},
+      "llm_calls": 6,
+      "prompt_tokens": 2067,
+      "completion_tokens": 1580,
+      "retries": 2,
+      "results": [
+        "PackCaseResult(case_id='D01', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\D01_candidate.docx', trace=[TraceEvent(event_id='d8ab5933-227b-4a03-9e0a-2a6cb74380a7', run_id='313373fd-098d-4600-8c1a-f82f64191b3c', case_id='D01', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='6ff5b5a1-45c4-45a2-937b-28ef1ed05256', run_id='313373fd-098d-4600-8c1a-f82f64191b3c', case_id='D01', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='0a64b4d6-2f2d-4f9f-86f5-abc3dc701fa3', run_id='313373fd-098d-4600-8c1a-f82f64191b3c', case_id='D01', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\D01_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='D02', split='development', success=True, failure_class='none', issues=[], tool_attempts=2, docx_path='outputs\\\\candidate\\\\D02_candidate.docx', trace=[TraceEvent(event_id='7a4d1c9f-be06-423a-ab04-9319e9b2049b', run_id='894a7a2c-3e9d-49be-bddb-7dff0269a7e8', case_id='D02', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='322cad5d-56f6-4828-83d6-e627985e33f7', run_id='894a7a2c-3e9d-49be-bddb-7dff0269a7e8', case_id='D02', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='6998e699-942e-4206-817d-f9fe975dab6a', run_id='894a7a2c-3e9d-49be-bddb-7dff0269a7e8', case_id='D02', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='004eca64-3e8c-4cd0-9616-87739cea4144', run_id='894a7a2c-3e9d-49be-bddb-7dff0269a7e8', case_id='D02', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\D02_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='D03', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\D03_candidate.docx', trace=[TraceEvent(event_id='3a3cc42b-fbcd-4959-9aa5-9eaaa13a9e1d', run_id='28ccae1b-00eb-4592-bea8-4ba01bd21903', case_id='D03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='3bf921ea-1070-4419-980b-7cc0b6d82331', run_id='28ccae1b-00eb-4592-bea8-4ba01bd21903', case_id='D03', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='7117a785-9192-4281-ba6a-685e495d19a0', run_id='28ccae1b-00eb-4592-bea8-4ba01bd21903', case_id='D03', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\D03_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='D04', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\D04_candidate.docx', trace=[TraceEvent(event_id='8cd84c85-14e9-46eb-b4ef-ab7a60d65953', run_id='23b17c45-85b4-4fc2-91d3-8ed61e8f64ca', case_id='D04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='b67674fe-629b-431f-a3ec-0b0cda5019fe', run_id='23b17c45-85b4-4fc2-91d3-8ed61e8f64ca', case_id='D04', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='51c4831a-4a77-4d42-bc45-648b8f94edad', run_id='23b17c45-85b4-4fc2-91d3-8ed61e8f64ca', case_id='D04', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\D04_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='D05', split='development', success=True, failure_class='none', issues=[], tool_attempts=2, docx_path='outputs\\\\candidate\\\\D05_candidate.docx', trace=[TraceEvent(event_id='f65106e0-3204-4324-a28b-45168674b98f', run_id='f18db64c-bd65-4e8b-a58d-49124650889b', case_id='D05', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='af53b41c-8040-4479-a4a9-074ea7190630', run_id='f18db64c-bd65-4e8b-a58d-49124650889b', case_id='D05', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='204d69ac-3b2c-4733-bef6-afe17288549e', run_id='f18db64c-bd65-4e8b-a58d-49124650889b', case_id='D05', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='be8b79cd-2b6f-4577-b80b-09237bb7567a', run_id='f18db64c-bd65-4e8b-a58d-49124650889b', case_id='D05', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\D05_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='D06', split='development', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\D06_candidate.docx', trace=[TraceEvent(event_id='96068bdf-ca50-4b52-9021-c7292c4e7676', run_id='63f07593-90c7-4511-9496-fbcdb5b2de49', case_id='D06', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='3e78bcfb-3a33-4475-9ee2-808273ef7282', run_id='63f07593-90c7-4511-9496-fbcdb5b2de49', case_id='D06', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='f344ef19-b814-49ba-9329-9edf2cd792fe', run_id='63f07593-90c7-4511-9496-fbcdb5b2de49', case_id='D06', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\D06_candidate.docx', outcome='ok', metadata={})])"
+      ]
+    },
+    "held_out": {
+      "version": "candidate",
+      "split": "held_out",
+      "total": 4,
+      "successes": 4,
+      "success_rate": 1.0,
+      "failure_counts": {},
+      "llm_calls": 4,
+      "prompt_tokens": 1107,
+      "completion_tokens": 923,
+      "retries": 1,
+      "results": [
+        "PackCaseResult(case_id='H01', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=2, docx_path='outputs\\\\candidate\\\\H01_candidate.docx', trace=[TraceEvent(event_id='61d4636d-02f6-44d8-8b4c-ed7df31446bf', run_id='894414e6-ae1f-4a74-9a95-fe64b402d5a9', case_id='H01', step='tool_retry', detail='Tool error on attempt 1: upstream 503', outcome='warning', metadata={'attempt': 1}), TraceEvent(event_id='5ba39446-a8f5-4905-9baf-02bf2a9fa7fe', run_id='894414e6-ae1f-4a74-9a95-fe64b402d5a9', case_id='H01', step='tool_execution', detail='Fetched company data on attempt 2', outcome='ok', metadata={}), TraceEvent(event_id='9d195a61-faea-4eea-b3b4-b5e03e957f20', run_id='894414e6-ae1f-4a74-9a95-fe64b402d5a9', case_id='H01', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='20817065-a9ef-481f-890f-fbe93f865819', run_id='894414e6-ae1f-4a74-9a95-fe64b402d5a9', case_id='H01', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\H01_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='H02', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\H02_candidate.docx', trace=[TraceEvent(event_id='e2c7cada-99f9-4ec3-8f8e-135e9037a294', run_id='76603f62-275d-4e2a-a984-ea5d4269422e', case_id='H02', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='257e6797-6443-478f-bb71-f5c9a86055e0', run_id='76603f62-275d-4e2a-a984-ea5d4269422e', case_id='H02', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='206b62cb-3fd8-4939-8e53-d2b465dbfe15', run_id='76603f62-275d-4e2a-a984-ea5d4269422e', case_id='H02', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\H02_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='H03', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\H03_candidate.docx', trace=[TraceEvent(event_id='b1a7d18f-e0ec-40ff-a4a7-e669f0fa1ce0', run_id='a324e08a-859d-4191-8428-52608b715c54', case_id='H03', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='d248045c-661b-4a98-ac07-c8c7437bdaf4', run_id='a324e08a-859d-4191-8428-52608b715c54', case_id='H03', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='1a5358bc-cd7a-4de7-b8dd-257e4ecddb38', run_id='a324e08a-859d-4191-8428-52608b715c54', case_id='H03', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\H03_candidate.docx', outcome='ok', metadata={})])",
+        "PackCaseResult(case_id='H04', split='held_out', success=True, failure_class='none', issues=[], tool_attempts=1, docx_path='outputs\\\\candidate\\\\H04_candidate.docx', trace=[TraceEvent(event_id='ff6cfbf0-08b7-4644-816e-fe83e27c785f', run_id='a78cc4d0-fb75-41c7-a3b5-d8db97d16030', case_id='H04', step='tool_execution', detail='Fetched company data on attempt 1', outcome='ok', metadata={}), TraceEvent(event_id='9b7df187-5d98-4f13-a58d-d470234b0891', run_id='a78cc4d0-fb75-41c7-a3b5-d8db97d16030', case_id='H04', step='verification', detail='Fact verification passed', outcome='ok', metadata={}), TraceEvent(event_id='2aed3756-abcd-4031-9c06-b2db084a42bf', run_id='a78cc4d0-fb75-41c7-a3b5-d8db97d16030', case_id='H04', step='finalize', detail='Pack output generated at outputs\\\\candidate\\\\H04_candidate.docx', outcome='ok', metadata={})])"
+      ]
+    }
+  },
+  "promotion": {
+    "promoted": true,
+    "reasons": [
+      "Development success rate improved.",
+      "Held-out success rate did not regress.",
+      "No critical failure regression on held-out."
+    ]
+  },
+  "active_version": "candidate",
+  "cost": {
+    "baseline": {
+      "llm_calls": 7,
+      "prompt_tokens": 2411,
+      "completion_tokens": 1623,
+      "cost_usd": 0.00053418,
+      "cost_per_case_usd": 5.3417999999999996e-05
+    },
+    "candidate": {
+      "llm_calls": 10,
+      "prompt_tokens": 3174,
+      "completion_tokens": 2503,
+      "cost_usd": 0.0007911600000000001,
+      "cost_per_case_usd": 7.9116e-05
+    }
+  },
+  "note": "LLM-backed pack agent; results are measured on a small synthetic fixture set."
+}

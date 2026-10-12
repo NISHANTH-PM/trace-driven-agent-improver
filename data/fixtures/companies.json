@@ -1,0 +1,115 @@
+{
+  "_note": "Illustrative fixtures; real Crustdata snapshots replace these in P5",
+  "companies": [
+    {
+      "name": "Apex Dynamics",
+      "domain": "apex-dynamics.com",
+      "industry": "Robotics",
+      "description": "Industrial automation and collaborative robot manufacturer.",
+      "employee_count": 342,
+      "founded_year": 2015,
+      "hq_city": "Pittsburgh",
+      "total_funding_usd": 85000000,
+      "last_round": "Series B"
+    },
+    {
+      "name": "Meridian Bio",
+      "domain": "meridian-bio.com",
+      "industry": "Biotechnology",
+      "description": "CRISPR-based gene therapy platform for rare diseases.",
+      "employee_count": 128,
+      "founded_year": 2018,
+      "hq_city": "Boston",
+      "total_funding_usd": 210000000,
+      "last_round": "Series C"
+    },
+    {
+      "name": "Solaris Grid",
+      "domain": "solaris-grid.com",
+      "industry": "Clean Energy",
+      "description": "Distributed solar microgrid management software.",
+      "employee_count": 87,
+      "founded_year": 2019,
+      "hq_city": "Austin",
+      "total_funding_usd": 42000000,
+      "last_round": "Series A"
+    },
+    {
+      "name": "Nexus Logistics",
+      "domain": "nexus-logistics.com",
+      "industry": "Supply Chain",
+      "description": "AI-driven freight orchestration and warehouse automation.",
+      "employee_count": 2150,
+      "founded_year": 2012,
+      "hq_city": "Chicago",
+      "total_funding_usd": 380000000,
+      "last_round": "Series D"
+    },
+    {
+      "name": "QuantumLeap Analytics",
+      "domain": "quantumleap-analytics.com",
+      "industry": "Data Analytics",
+      "description": "Real-time streaming analytics for IoT sensor networks.",
+      "employee_count": 56,
+      "founded_year": 2021,
+      "hq_city": "Seattle",
+      "total_funding_usd": 12000000,
+      "last_round": "Seed"
+    },
+    {
+      "name": "Verdant Foods",
+      "domain": "verdant-foods.com",
+      "industry": "Food Technology",
+      "description": "Plant-based protein manufacturing and distribution.",
+      "employee_count": 620,
+      "founded_year": 2016,
+      "hq_city": "Denver",
+      "total_funding_usd": 155000000,
+      "last_round": "Series B"
+    },
+    {
+      "name": "Ironclad Security",
+      "domain": "ironclad-security.com",
+      "industry": "Cybersecurity",
+      "description": "Zero-trust network access and threat detection platform.",
+      "employee_count": 310,
+      "founded_year": 2017,
+      "hq_city": "San Francisco",
+      "total_funding_usd": 95000000,
+      "last_round": "Series B"
+    },
+    {
+      "name": "Orbit Communications",
+      "domain": "orbit-comm.com",
+      "industry": "Telecommunications",
+      "description": "Low-earth orbit satellite broadband provider.",
+      "employee_count": 4000,
+      "founded_year": 2008,
+      "hq_city": "Redmond",
+      "total_funding_usd": 400000000,
+      "last_round": "Series E"
+    },
+    {
+      "name": "Astraea Materials",
+      "domain": "astraea-materials.com",
+      "industry": "Advanced Materials",
+      "description": "Nanocomposite materials for aerospace and defense.",
+      "employee_count": 198,
+      "founded_year": 2020,
+      "hq_city": "Huntsville",
+      "total_funding_usd": 28000000,
+      "last_round": "Series A"
+    },
+    {
+      "name": "Cedar Health",
+      "domain": "cedar-health.com",
+      "industry": "Healthcare IT",
+      "description": "Interoperable electronic health record integration platform.",
+      "employee_count": 415,
+      "founded_year": 2014,
+      "hq_city": "Nashville",
+      "total_funding_usd": 67000000,
+      "last_round": "Bootstrapped"
+    }
+  ]
+}
