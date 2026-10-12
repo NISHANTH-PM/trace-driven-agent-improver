@@ -1,6 +1,6 @@
 # Demo Run Manifest
 
-Generated: 2026-10-12T00:54:37.169048+00:00
+Generated: 2026-10-12T07:00:36.654900+00:00
 
 ## baseline_wrong_fact
 
@@ -19,11 +19,11 @@ Generated: 2026-10-12T00:54:37.169048+00:00
 | tool_attempts | 1 |
 | llm_calls | 1 |
 | prompt_tokens | 555 |
-| completion_tokens | 250 |
-| cost_usd | 0.000093 |
+| completion_tokens | 233 |
+| cost_usd | 0.000089 |
 | docx_path | outputs\demo\baseline_wrong_fact\D01_baseline.docx |
-| start_time_utc | 2026-10-12T00:54:18.765986+00:00 |
-| end_time_utc | 2026-10-12T00:54:21.505042+00:00 |
+| start_time_utc | 2026-10-12T07:00:18.759216+00:00 |
+| end_time_utc | 2026-10-12T07:00:21.137505+00:00 |
 | issues | ['employee_count=4042 not stated exactly', 'total_funding_usd=816600000 not stated in accepted format'] |
 
 **True Values:**
@@ -56,8 +56,8 @@ In neatlogs: search for `demo.label = baseline_wrong_fact` (or the span name `de
 | completion_tokens | 0 |
 | cost_usd | 0.000000 |
 | docx_path | None |
-| start_time_utc | 2026-10-12T00:54:21.505042+00:00 |
-| end_time_utc | 2026-10-12T00:54:21.506884+00:00 |
+| start_time_utc | 2026-10-12T07:00:21.137505+00:00 |
+| end_time_utc | 2026-10-12T07:00:21.140105+00:00 |
 | issues | ['tool failed'] |
 
 **True Values:**
@@ -87,11 +87,11 @@ In neatlogs: search for `demo.label = baseline_tool_error` (or the span name `de
 | tool_attempts | 2 |
 | llm_calls | 1 |
 | prompt_tokens | 261 |
-| completion_tokens | 283 |
-| cost_usd | 0.000084 |
+| completion_tokens | 210 |
+| cost_usd | 0.000066 |
 | docx_path | outputs\demo\candidate_retry_recovery\D02_candidate.docx |
-| start_time_utc | 2026-10-12T00:54:21.506884+00:00 |
-| end_time_utc | 2026-10-12T00:54:24.111467+00:00 |
+| start_time_utc | 2026-10-12T07:00:21.140105+00:00 |
+| end_time_utc | 2026-10-12T07:00:23.241229+00:00 |
 | issues | [] |
 
 **True Values:**
@@ -121,11 +121,11 @@ In neatlogs: search for `demo.label = candidate_retry_recovery` (or the span nam
 | tool_attempts | 1 |
 | llm_calls | 1 |
 | prompt_tokens | 554 |
-| completion_tokens | 305 |
-| cost_usd | 0.000106 |
+| completion_tokens | 242 |
+| cost_usd | 0.000091 |
 | docx_path | outputs\demo\candidate_success\D01_candidate.docx |
-| start_time_utc | 2026-10-12T00:54:24.112467+00:00 |
-| end_time_utc | 2026-10-12T00:54:26.785219+00:00 |
+| start_time_utc | 2026-10-12T07:00:23.242243+00:00 |
+| end_time_utc | 2026-10-12T07:00:25.849871+00:00 |
 | issues | [] |
 
 **True Values:**
@@ -155,11 +155,11 @@ In neatlogs: search for `demo.label = candidate_success` (or the span name `demo
 | tool_attempts | 1 |
 | llm_calls | 2 |
 | prompt_tokens | 1150 |
-| completion_tokens | 506 |
-| cost_usd | 0.000190 |
+| completion_tokens | 566 |
+| cost_usd | 0.000205 |
 | docx_path | outputs\demo\verify_regeneration\D01_verify_only.docx |
-| start_time_utc | 2026-10-12T00:54:31.899033+00:00 |
-| end_time_utc | 2026-10-12T00:54:37.169048+00:00 |
+| start_time_utc | 2026-10-12T07:00:30.968155+00:00 |
+| end_time_utc | 2026-10-12T07:00:36.654900+00:00 |
 | issues | [] |
 
 **True Values:**
