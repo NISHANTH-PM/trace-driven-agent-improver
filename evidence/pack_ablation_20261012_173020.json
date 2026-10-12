@@ -1,0 +1,135 @@
+{
+  "source": "fixtures",
+  "companies": {
+    "development": [
+      "Apex Dynamics",
+      "Meridian Bio",
+      "Solaris Grid",
+      "Nexus Logistics",
+      "QuantumLeap Analytics",
+      "Verdant Foods"
+    ],
+    "held_out": [
+      "Ironclad Security",
+      "Orbit Communications",
+      "Astraea Materials",
+      "Cedar Health"
+    ]
+  },
+  "timestamp": "20261012_173020",
+  "results": {
+    "baseline": {
+      "dev": {
+        "k": 1,
+        "n": 6,
+        "success_rate": 0.1667
+      },
+      "held_out": {
+        "k": 1,
+        "n": 4,
+        "success_rate": 0.25
+      },
+      "failure_counts": {
+        "wrong_fact": 5,
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 1080,
+      "completion_tokens": 1401,
+      "cost_usd": 0.00040104
+    },
+    "retry_only": {
+      "dev": {
+        "k": 1,
+        "n": 6,
+        "success_rate": 0.1667
+      },
+      "held_out": {
+        "k": 2,
+        "n": 4,
+        "success_rate": 0.5
+      },
+      "failure_counts": {
+        "wrong_fact": 7
+      },
+      "llm_calls": 10,
+      "prompt_tokens": 1546,
+      "completion_tokens": 2130,
+      "cost_usd": 0.0006039600000000001
+    },
+    "strict_only": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 1073,
+      "completion_tokens": 1317,
+      "cost_usd": 0.00038046
+    },
+    "verify_only": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 12,
+      "prompt_tokens": 1932,
+      "completion_tokens": 2291,
+      "cost_usd": 0.0006657599999999999
+    },
+    "strict_verify": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 1073,
+      "completion_tokens": 1282,
+      "cost_usd": 0.00037206
+    },
+    "candidate": {
+      "dev": {
+        "k": 6,
+        "n": 6,
+        "success_rate": 1.0
+      },
+      "held_out": {
+        "k": 4,
+        "n": 4,
+        "success_rate": 1.0
+      },
+      "failure_counts": {},
+      "llm_calls": 10,
+      "prompt_tokens": 1536,
+      "completion_tokens": 1916,
+      "cost_usd": 0.000552
+    }
+  }
+}
