@@ -3,7 +3,7 @@
   "checkpoint_id": "7cdf93bb4e06",
   "strategy": "manual-commit",
   "branch": "master",
-  "checkpoints_count": 5,
+  "checkpoints_count": 6,
   "files_touched": [
     ".gitignore",
     "app/observability.py",
@@ -16,13 +16,20 @@
       "compact_transcript": "/7c/df93bb4e06/0/transcript.jsonl",
       "content_hash": "/7c/df93bb4e06/0/content_hash.txt",
       "prompt": "/7c/df93bb4e06/0/prompt.txt"
+    },
+    {
+      "metadata": "/7c/df93bb4e06/1/metadata.json",
+      "transcript": "/7c/df93bb4e06/1/full.jsonl",
+      "compact_transcript": "/7c/df93bb4e06/1/transcript.jsonl",
+      "content_hash": "/7c/df93bb4e06/1/content_hash.txt",
+      "prompt": "/7c/df93bb4e06/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 380848,
+    "input_tokens": 1030346,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 371520,
-    "output_tokens": 5351,
-    "api_call_count": 40
+    "cache_read_tokens": 1702080,
+    "output_tokens": 12514,
+    "api_call_count": 80
   }
 }

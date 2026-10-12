@@ -1,0 +1,155 @@
+We are at the FINAL SUBMISSION STAGE of Trace-Driven Agent Improver.
+
+Repository: trace-driven-agent-improver
+Branch: master
+
+Your task is to audit the actual LOCAL working tree, clean the repository
+for submission, and prepare it for a recorded demo.
+
+CRITICAL RULES:
+- Inspect before modifying.
+- Preserve all existing functionality.
+- Do not reset, revert, stash, or overwrite user changes.
+- Do not commit or push anything.
+- Do not delete useful project history, Entire checkpoints, or evidence.
+- Do not modify application behavior merely to make the repository look clean.
+- Do not expose secrets in your report.
+- Make minimal, justified changes only.
+- If uncertain whether a file is important, retain it and report it.
+
+PHASE 1 — ESTABLISH CURRENT STATE
+
+Run and inspect:
+- git status --short --branch
+- git branch --show-current
+- git log -5 --oneline
+- git diff --stat
+- git diff
+- git diff --cached --stat
+- git diff --cached
+- git ls-files
+- git status --short --ignored
+
+Identify:
+1. Tracked modifications.
+2. Staged changes.
+3. Untracked files and directories.
+4. Ignored local artifacts.
+5. Any files accidentally tracked despite belonging in .gitignore.
+6. Any files that contain secrets or sensitive raw data.
+
+Never print actual API keys or tokens. Report only filenames and whether
+sensitive values appear to be present.
+
+PHASE 2 — CLASSIFY THE FILES
+
+Explicitly inspect these items if they exist:
+- .env
+- .env.example
+- .venv/
+- .venv312/
+- .codex/
+- .entire/
+- .opencode/
+- debug_trace.py
+- spans_optimized.log
+- spans_raw_optimized.log
+- files named "=1.1," or "nul"
+- data/snapshots/raw/
+- outputs/
+- any cache, temporary, generated, or IDE-specific files
+
+For each item, classify it as:
+A. Commit
+B. Ignore
+C. Keep locally but do not commit
+D. Remove because demonstrably accidental
+
+Explain why. Inspect references before removing any file.
+
+IMPORTANT:
+Do not blanket-ignore all of data/, outputs/, scripts/, or docs/.
+Fixtures, sanitized benchmark data, reproducible scripts, and intentional
+demo evidence may belong in the submission.
+
+PHASE 3 — AUDIT THE SUBMISSION
+
+Read:
+- README.md
+- docs/PRD.md
+- docs/DESIGN.md
+- docs/TECH_STACK.md
+- docs/PROJECT_HISTORY.md
+- .env.example
+- requirements.txt
+- app/
+- tests/
+- scripts/
+
+Determine:
+1. What the actual submission is intended to demonstrate.
+2. Whether README claims match implemented behavior.
+3. Whether documentation describes features that are absent or incomplete.
+4. Whether results are reproducible from a clean checkout.
+5. Whether development and held-out benchmark separation is preserved.
+6. Whether the held-out set is used only for final validation.
+7. Whether failure classification, bounded proposals, candidate evaluation,
+   regression checks, and promotion decisions work as documented.
+8. Whether Neatlogs is optional and whether the local workflow still works
+   without credentials.
+9. Whether demo scripts make network calls or require external API keys.
+10. Whether any stale notes or unrelated workflows distract from the project.
+
+The README currently contains a company-briefing/Crustdata "pack agent"
+section as well as the trace-driven agent improver workflow.
+Determine whether both are intentional project scope.
+Do not delete the pack workflow without establishing that it is outside
+the intended submission.
+
+Do not claim that a deterministic benchmark proves general LLM self-improvement.
+Keep limitations explicit.
+
+PHASE 4 — APPLY MINIMAL CLEANUP
+
+After the audit:
+- Fix .gitignore for clearly identified temporary files if needed.
+- Remove only demonstrably accidental local artifacts.
+- Preserve .env.example and all legitimate source/test/docs/data files.
+- Ensure secrets, virtual environments, logs, and temporary outputs are not
+  included in the submission.
+- Update README only where it contains objectively stale, incorrect,
+  confusing, or unreproducible instructions.
+- Do not rewrite the project or change its scope.
+- Do not add dependencies unless required.
+- Do not stage or commit changes.
+
+PHASE 5 — VALIDATE
+
+Use the repository's intended Python environment.
+Run the full test suite.
+Run the main demo/benchmark command documented in README.
+If safe and practical, verify the local-only path with Neatlogs credentials
+unset, without modifying the user's real .env file.
+Check the generated output and confirm the command's exit status.
+Do not run expensive or destructive external operations.
+
+Then run:
+- git status --short
+- git diff --check
+- git diff --stat
+- git diff
+
+FINAL REPORT:
+
+1. Files committed already that should remain.
+2. Files to ignore.
+3. Files to delete, with justification.
+4. Files retained locally but not committed.
+5. Changes made to .gitignore/README or other files.
+6. Tests and benchmark results.
+7. Remaining blockers before submission.
+8. Exact recommended commit contents.
+9. Suggested 60–90 second demo flow and which outputs/screens to capture.
+
+Do not commit or push.
+Do not start video generation yet.
