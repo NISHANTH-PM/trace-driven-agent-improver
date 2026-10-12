@@ -3,6 +3,7 @@
 import json
 import os
 import tempfile
+from contextlib import contextmanager
 from pathlib import Path
 
 import pytest
@@ -10,8 +11,32 @@ import pytest
 from app.pack.checks import fact_mismatches, missing_sections
 from app.pack.models import CompanyData, CompanyCase, REQUIRED_SECTIONS
 from app.pack.student import PackConfig, run_pack_student, STRICT_SYSTEM_PROMPT, BASE_SYSTEM_PROMPT
+from app.pack.evaluator import run_pack_benchmark
+import app.observability as observability_module
 from app.pack.tools import FixtureSource, ToolError, default_source
 from app.llm import FakeLLMClient
+
+
+@pytest.fixture
+def case_d01():
+    return CompanyCase(case_id="D01", company_name="Apex Dynamics", domain="apex-dynamics.com", split="development")
+
+
+@pytest.fixture
+def case_d02():
+    return CompanyCase(case_id="D02", company_name="Meridian Bio", domain="meridian-bio.com", split="development")
+
+
+@pytest.fixture
+def good_json_response():
+    return json.dumps({
+        "sections": {
+            "Overview": "Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.",
+            "Key Facts": "342 employees, founded 2015, HQ Pittsburgh",
+            "Funding": "Total funding $85,000,000, last round Series B",
+            "Risks": "Competition in robotics market"
+        }
+    })
 
 
 class TestChecks:
@@ -209,25 +234,6 @@ class TestChecks:
 class TestPackStudent:
     """Tests for the pack student agent."""
 
-    @pytest.fixture
-    def case_d01(self):
-        return CompanyCase(case_id="D01", company_name="Apex Dynamics", domain="apex-dynamics.com", split="development")
-
-    @pytest.fixture
-    def case_d02(self):
-        return CompanyCase(case_id="D02", company_name="Meridian Bio", domain="meridian-bio.com", split="development")
-
-    @pytest.fixture
-    def good_json_response(self):
-        return json.dumps({
-            "sections": {
-                "Overview": "Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.",
-                "Key Facts": "342 employees, founded 2015, HQ Pittsburgh",
-                "Funding": "Total funding $85,000,000, last round Series B",
-                "Risks": "Competition in robotics market"
-            }
-        })
-
     def test_happy_path_creates_docx(self, case_d01, good_json_response, tmp_path):
         fake_llm = FakeLLMClient(good_json_response)
         config = PackConfig(output_dir=str(tmp_path), version="test")
@@ -367,3 +373,212 @@ class TestPackStudentWithFixtureSource:
         source = FixtureSource()
         with pytest.raises(ToolError, match="not found"):
             source.get_company("unknown.com")
+
+
+class TestPackEvaluatorSpans:
+    """Tests for evaluation span attributes in run_pack_benchmark."""
+
+    def test_failed_case_span_status_error_and_output_value(self, case_d01):
+        """Failed case should have span status ERROR with description starting with failure class, and output.value with TRUTH."""
+        # Response with wrong employee count to trigger wrong_fact failure
+        bad_response = json.dumps({
+            "sections": {
+                "Overview": "Apex Dynamics is a robotics company.",
+                "Key Facts": "About 340 employees, founded around 2015, HQ in Pittsburgh area",
+                "Funding": "Raised roughly $85M, last round Series B",
+                "Risks": "Market competition"
+            }
+        })
+        fake_llm = FakeLLMClient(bad_response)
+        config = PackConfig(output_dir="outputs", version="test", verify_facts=True)
+
+        # Capture the span by mocking trace_span
+        captured_spans = []
+        original_trace_span = None
+        try:
+            from app.observability import trace_span as orig_trace_span
+            original_trace_span = orig_trace_span
+
+            # Enable neatlogs initialization flag for mark_span_failed to work
+            observability_module._initialized = True
+
+            @contextmanager
+            def mock_trace_span(name, kind="CHAIN", attributes=None):
+                class MockSpan:
+                    def __init__(self):
+                        self.attributes = {}
+                        self.status = None
+                        self.status_code = None
+                        self.description = None
+                    def set_attribute(self, key, value):
+                        self.attributes[key] = value
+                    def set_status(self, status):
+                        self.status = status
+                        # Try to extract status code and description
+                        if hasattr(status, 'status_code'):
+                            self.status_code = status.status_code
+                        if hasattr(status, 'description'):
+                            self.description = status.description
+                span = MockSpan()
+                captured_spans.append((name, kind, attributes, span))
+                yield span
+
+            import app.pack.evaluator as evaluator_module
+            evaluator_module.trace_span = mock_trace_span
+
+            summary = run_pack_benchmark([case_d01], config, llm=fake_llm)
+
+            # Check that we captured a span
+            assert len(captured_spans) == 1
+            _, _, _, span = captured_spans[0]
+
+            # Check span status is ERROR
+            assert span.status_code is not None
+            # Check description starts with failure class
+            assert span.description is not None
+            assert span.description.startswith("wrong_fact")
+
+            # Check output.value contains TRUTH
+            assert "output.value" in span.attributes
+            output_value = span.attributes["output.value"]
+            assert "FAILED" in output_value
+            assert "wrong_fact" in output_value
+            assert "TRUTH:" in output_value
+            assert "employee_count=342" in output_value
+            assert "founded_year=2015" in output_value
+
+            # Check evaluation attributes
+            assert "evaluation.failure_class" in span.attributes
+            assert span.attributes["evaluation.failure_class"] == "wrong_fact"
+            assert "evaluation.issues" in span.attributes
+            assert "evaluation.truth" in span.attributes
+
+        finally:
+            if original_trace_span:
+                evaluator_module.trace_span = original_trace_span
+
+    def test_passing_case_span_no_error_status_and_output_value_passes(self, case_d01, good_json_response):
+        """Passing case should have no error status, output.value = PASSED, no TRUTH."""
+        fake_llm = FakeLLMClient(good_json_response)
+        config = PackConfig(output_dir="outputs", version="test")
+
+        captured_spans = []
+        original_trace_span = None
+        try:
+            from app.observability import trace_span as orig_trace_span
+            original_trace_span = orig_trace_span
+
+            # Enable neatlogs initialization flag for mark_span_failed to work
+            observability_module._initialized = True
+
+            @contextmanager
+            def mock_trace_span(name, kind="CHAIN", attributes=None):
+                class MockSpan:
+                    def __init__(self):
+                        self.attributes = {}
+                        self.status = None
+                        self.status_code = None
+                        self.description = None
+                    def set_attribute(self, key, value):
+                        self.attributes[key] = value
+                    def set_status(self, status):
+                        self.status = status
+                        if hasattr(status, 'status_code'):
+                            self.status_code = status.status_code
+                        if hasattr(status, 'description'):
+                            self.description = status.description
+                span = MockSpan()
+                captured_spans.append((name, kind, attributes, span))
+                yield span
+
+            import app.pack.evaluator as evaluator_module
+            evaluator_module.trace_span = mock_trace_span
+
+            summary = run_pack_benchmark([case_d01], config, llm=fake_llm)
+
+            assert len(captured_spans) == 1
+            _, _, _, span = captured_spans[0]
+
+            # Should not have error status
+            assert span.status_code is None
+            assert span.description is None
+
+            # output.value should be PASSED, no TRUTH
+            assert "output.value" in span.attributes
+            assert span.attributes["output.value"] == "PASSED"
+            assert "TRUTH:" not in span.attributes["output.value"]
+
+            # Check evaluation attributes still present
+            assert "evaluation.success" in span.attributes
+            assert span.attributes["evaluation.success"] is True
+            assert "evaluation.failure_class" in span.attributes
+            assert span.attributes["evaluation.failure_class"] == "none"
+            assert "evaluation.issues" in span.attributes
+            assert span.attributes["evaluation.issues"] == ""
+            assert "evaluation.truth" in span.attributes
+
+        finally:
+            if original_trace_span:
+                evaluator_module.trace_span = original_trace_span
+
+    def test_tool_error_case_span_status_error(self, case_d02):
+        """Tool error case should have span status ERROR with tool_error failure class."""
+        fake_llm = FakeLLMClient(json.dumps({
+            "sections": {s: "content" for s in REQUIRED_SECTIONS}
+        }))
+        config = PackConfig(output_dir="outputs", version="test", retry_tool_errors=False)
+
+        captured_spans = []
+        original_trace_span = None
+        try:
+            from app.observability import trace_span as orig_trace_span
+            original_trace_span = orig_trace_span
+
+            # Enable neatlogs initialization flag for mark_span_failed to work
+            observability_module._initialized = True
+
+            @contextmanager
+            def mock_trace_span(name, kind="CHAIN", attributes=None):
+                class MockSpan:
+                    def __init__(self):
+                        self.attributes = {}
+                        self.status = None
+                        self.status_code = None
+                        self.description = None
+                    def set_attribute(self, key, value):
+                        self.attributes[key] = value
+                    def set_status(self, status):
+                        self.status = status
+                        if hasattr(status, 'status_code'):
+                            self.status_code = status.status_code
+                        if hasattr(status, 'description'):
+                            self.description = status.description
+                span = MockSpan()
+                captured_spans.append((name, kind, attributes, span))
+                yield span
+
+            import app.pack.evaluator as evaluator_module
+            evaluator_module.trace_span = mock_trace_span
+
+            summary = run_pack_benchmark([case_d02], config, llm=fake_llm)
+
+            assert len(captured_spans) == 1
+            _, _, _, span = captured_spans[0]
+
+            # Check span status is ERROR
+            assert span.status_code is not None
+            # Check description starts with failure class
+            assert span.description is not None
+            assert span.description.startswith("tool_error")
+
+            # Check output.value contains TRUTH
+            assert "output.value" in span.attributes
+            output_value = span.attributes["output.value"]
+            assert "FAILED" in output_value
+            assert "tool_error" in output_value
+            assert "TRUTH:" in output_value
+
+        finally:
+            if original_trace_span:
+                import app.pack.evaluator as evaluator_module
+                evaluator_module.trace_span = original_trace_span

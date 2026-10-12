@@ -2,7 +2,7 @@ from collections import Counter
 from dataclasses import dataclass
 
 from app.models import FailureClass, ImprovementProposal, TraceEvent
-from app.observability import trace_span
+from app.observability import trace_span, mark_span_failed
 from app.pack.models import CompanyCase, PackOutput, REQUIRED_SECTIONS
 from app.pack.tools import FixtureSource, default_source, truth_source
 from app.pack.tools import SnapshotSource
@@ -126,8 +126,37 @@ def run_pack_benchmark(
         ) as span:
             output, trace = run_pack_student(case, config, source=source, llm=llm)
             result = evaluate_pack_case(case, output, trace, truth)
+
+            # Get ground truth company data for truth values
+            truth_company = truth.get_company(case.domain)
+            truth_values = {
+                "employee_count": truth_company.employee_count,
+                "founded_year": truth_company.founded_year,
+                "hq_city": truth_company.hq_city,
+                "total_funding_usd": truth_company.total_funding_usd,
+                "last_round": truth_company.last_round,
+            }
+            truth_str = "; ".join(f"{k}={v}" for k, v in truth_values.items())
+
             span.set_attribute("evaluation.success", result.success)
             span.set_attribute("evaluation.failure_class", result.failure_class)
+            span.set_attribute("evaluation.issues", "; ".join(result.issues) if result.issues else "")
+            span.set_attribute("evaluation.truth", truth_str)
+
+            if not result.success:
+                # Build failure description for span status
+                issues_str = "; ".join(result.issues) if result.issues else "unknown"
+                desc = f"{result.failure_class}: {issues_str}"
+                if len(desc) > 300:
+                    desc = desc[:297] + "..."
+                mark_span_failed(span, desc)
+                # Set output.value for failures
+                verdict = f"FAILED {result.failure_class}: {issues_str}. TRUTH: {truth_str}"
+                span.set_attribute("output.value", verdict)
+            else:
+                # Set output.value for successes
+                span.set_attribute("output.value", "PASSED")
+
             results.append(result)
 
     # Compute token deltas
