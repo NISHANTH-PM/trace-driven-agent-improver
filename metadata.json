@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QNF1YF69FMPR5K77JST1X3",
+  "strategy": "manual-commit",
+  "branch": "feat/office-outputs",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "evidence/demo_manifest.md",
+    "evidence/office_outputs_20261012_074335.json",
+    "evidence/office_outputs_20261012_074335.md",
+    "evidence/screenshots/README.md",
+    "evidence/screenshots/neat_baseline_fail.png",
+    "evidence/screenshots/neat_candidate_success.png",
+    "evidence/screenshots/neat_tool_error.png",
+    "evidence/screenshots/neat_verify_regeneration.png"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 9112680,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 122558400,
+    "output_tokens": 137616,
+    "api_call_count": 480
+  }
+}
