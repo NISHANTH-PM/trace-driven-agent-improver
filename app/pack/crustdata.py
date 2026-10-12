@@ -17,7 +17,10 @@ def _extract_hq_city(locations: dict[str, Any]) -> str:
     """Extract HQ city from locations data. Prefer locations.city if present."""
     city = locations.get("city")
     if isinstance(city, str) and city.strip():
-        return city.strip()
+        city = city.strip()
+        if city.isupper():
+            return city.title()
+        return city
     
     hq = locations.get("headquarters")
     if not hq:
@@ -25,16 +28,25 @@ def _extract_hq_city(locations: dict[str, Any]) -> str:
     
     if isinstance(hq, str):
         # Format like "Bengaluru, Karnataka, India" -> take part before first comma
-        return hq.split(",")[0].strip()
+        city = hq.split(",")[0].strip()
+        if city.isupper():
+            return city.title()
+        return city
     elif isinstance(hq, dict):
         # Try common city-like keys
         for key in ["city", "headquarters_city", "hq_city", "location"]:
             if key in hq and hq[key]:
-                return str(hq[key]).strip()
+                city = str(hq[key]).strip()
+                if city.isupper():
+                    return city.title()
+                return city
         # Fallback to first non-empty value
         for v in hq.values():
             if v:
-                return str(v).split(",")[0].strip()
+                city = str(v).split(",")[0].strip()
+                if city.isupper():
+                    return city.title()
+                return city
     return ""
 
 
