@@ -1,0 +1,57 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4PSADS7R7W0F8J28QHJJJ21",
+  "session_id": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T00:48:38.5217052Z",
+  "branch": "feat/pack-agent",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/pack_ablation_20261011_212106.json"
+  ],
+  "agent": "OpenCode",
+  "model": "nemotron-3-ultra-free",
+  "turn_id": "3f982c7acf8b",
+  "checkpoint_transcript_start": 209,
+  "transcript_lines_at_start": 209,
+  "compact_transcript_start": 209,
+  "token_usage": {
+    "input_tokens": 280135,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1404000,
+    "output_tokens": 1947,
+    "api_call_count": 8
+  },
+  "session_metrics": {
+    "turn_count": 7
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T00:48:38.4418221Z",
+    "agent_lines": 0,
+    "agent_removed": 118,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 0,
+    "total_lines_changed": 118,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 118
+    }
+  ]
+}
