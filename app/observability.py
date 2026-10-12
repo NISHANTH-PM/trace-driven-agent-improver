@@ -33,6 +33,7 @@ _CUSTOM_ATTRIBUTE_MAPPINGS = (
     ("llm.completion_tokens", "neatlogs.llm.completion_tokens"),
     ("llm.cost_usd", "neatlogs.llm.cost_usd"),
     ("pack.verify_passed", "neatlogs.pack.verify_passed"),
+    ("demo.label", "neatlogs.demo.label"),
 )
 
 # Also add to keep_as_is as a fallback for any attributes that don't map
