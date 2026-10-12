@@ -25,3 +25,8 @@ outputs/
 
 # Debug scripts
 debug_trace.py
+
+# Stray local files
+=1.1,
+nul
+.entire/
