@@ -92,6 +92,25 @@ PACK_SOURCE=snapshot python -m app.cli --task pack-ablation
 
 Each ablation run uses a fresh `default_source()` and writes outputs to `outputs/ablation/<name>/`. Results are printed as a markdown table and saved to `evidence/pack_ablation_<timestamp>.json` with `source` and `companies` fields for verifiability.
 
+### Results (real Crustdata snapshots)
+
+**Ablation table (source: snapshot, 6 dev / 4 held-out companies)**
+
+| Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Cost (USD) |
+|--------|---------|--------------|-------------------------------|-----------|------------|
+| baseline | 0/6 | 0/4 | {"wrong_fact": 7, "tool_error": 3} | 7 | 0.000532 |
+| retry_only | 0/6 | 0/4 | {"wrong_fact": 10} | 10 | 0.000754 |
+| strict_only | 4/6 | 3/4 | {"tool_error": 3} | 7 | 0.000591 |
+| verify_only | 3/6 | 3/4 | {"tool_error": 3, "wrong_fact": 1} | 14 | 0.001133 |
+| strict_verify | 4/6 | 3/4 | {"tool_error": 3} | 7 | 0.000570 |
+| candidate | 6/6 | 4/4 | {} | 10 | 0.000832 |
+
+*Source: evidence/pack_ablation_20261012_000908.json*
+
+- Retry fixes tool errors but not wrong figures.
+- The strict prompt is the main fix for wrong figures.
+- Verification rescues a weak prompt (verify_only) but is never triggered in the final candidate because the strict prompt passes first time.
+
 ### Limitations
 
 - The baseline prompt deliberately encourages rounding (a controlled weakness), so baseline failures are expected.
@@ -102,3 +121,5 @@ Each ablation run uses a fresh `default_source()` and writes outputs to `outputs
 - Company data is Crustdata's, which can be stale or wrong.
 - The promotion gate promotes on any dev improvement with no held-out regression; it is a guardrail, not a significance test.
 - Earlier synthetic-fixture runs live in `evidence/synthetic_fixtures/` and are not comparable to real-data runs.
+- Tool failures are injected (simulated upstream outages on 3 companies) to test recovery; they say nothing about Crustdata's real reliability.
+- The baseline fails by design; its prompt asks for rounded figures.

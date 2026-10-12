@@ -22,3 +22,6 @@ spans_*.log
 outputs/
 .codex/
 .opencode/
+
+# Debug scripts
+debug_trace.py

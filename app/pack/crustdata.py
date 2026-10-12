@@ -14,7 +14,11 @@ CRUSTDATA_FIELDS = ["basic_info", "headcount", "funding", "locations"]
 
 
 def _extract_hq_city(locations: dict[str, Any]) -> str:
-    """Extract HQ city from locations data."""
+    """Extract HQ city from locations data. Prefer locations.city if present."""
+    city = locations.get("city")
+    if isinstance(city, str) and city.strip():
+        return city.strip()
+    
     hq = locations.get("headquarters")
     if not hq:
         return ""

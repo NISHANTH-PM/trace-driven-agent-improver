@@ -117,6 +117,47 @@ class TestMapCompany:
         result = map_company(company_data, "test.com")
         assert result.hq_city == "Bengaluru"
 
+    def test_hq_city_prefers_locations_city(self):
+        """Test hq_city uses locations.city when present (string)."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "city": "Bengaluru",
+                "headquarters": "Adugodi, Karnataka, India"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "Bengaluru"
+
+    def test_hq_city_falls_back_to_headquarters_when_city_empty(self):
+        """Test hq_city falls back to headquarters first comma segment when city is empty."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "city": "",
+                "headquarters": "San Francisco, CA, USA"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "San Francisco"
+
+    def test_hq_city_falls_back_to_headquarters_when_city_missing(self):
+        """Test hq_city falls back to headquarters when city key is missing."""
+        company_data = {
+            "basic_info": {"name": "Test", "company_type": "Tech", "description": "", "year_founded": 2020},
+            "headcount": {"total": 100},
+            "funding": {"total_investment_usd": 5000000, "last_round_type": "Series A"},
+            "locations": {
+                "headquarters": "London, England, UK"
+            },
+        }
+        result = map_company(company_data, "test.com")
+        assert result.hq_city == "London"
+
 
 class TestCrustdataSource:
     """Tests for CrustdataSource class."""
