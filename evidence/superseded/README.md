@@ -27,3 +27,9 @@ This directory contains evidence files from earlier runs that have been supersed
 ---
 
 These files are **not deleted** but kept for transparency and audit trail. They should not be used for decision-making as they reflect earlier, incorrect data or code states.
+
+### pack_run_20261011_224831.json, pack_run_20261011_230234.json, pack_run_20261011_230320.json, pack_run_20261011_230408.json, pack_run_20261012_001001.json, pack_run_20261012_001046.json, pack_run_20261012_001130.json
+- **Runs on the snapshot with neighbourhood-level HQ values (Razorpay 'Adugodi', Canva 'Darlinghurst')**: These runs used the snapshot before the HQ city fix (commit 8651033) that changed Razorpay from 'Adugodi' to 'Bengaluru' and Canva from 'Darlinghurst' to 'DARLINGHURST' (then title-cased to 'Darlinghurst'). Results are identical in shape to the final runs, superseded because the data was corrected.
+
+### pack_ablation_20261011_230135.json, pack_ablation_20261012_000908.json
+- **Runs on the snapshot with neighbourhood-level HQ values (Razorpay 'Adugodi', Canva 'Darlinghurst')**: Same as above. Results are identical in shape to the final runs, superseded because the data was corrected.

@@ -98,14 +98,14 @@ Each ablation run uses a fresh `default_source()` and writes outputs to `outputs
 
 | Config | Dev k/n | Held-out k/n | Failure Counts (dev+held-out) | LLM Calls | Cost (USD) |
 |--------|---------|--------------|-------------------------------|-----------|------------|
-| baseline | 0/6 | 0/4 | {"wrong_fact": 7, "tool_error": 3} | 7 | 0.000532 |
-| retry_only | 0/6 | 0/4 | {"wrong_fact": 10} | 10 | 0.000754 |
-| strict_only | 4/6 | 3/4 | {"tool_error": 3} | 7 | 0.000591 |
-| verify_only | 3/6 | 3/4 | {"tool_error": 3, "wrong_fact": 1} | 14 | 0.001133 |
-| strict_verify | 4/6 | 3/4 | {"tool_error": 3} | 7 | 0.000570 |
-| candidate | 6/6 | 4/4 | {} | 10 | 0.000832 |
+| baseline | 0/6 | 0/4 | {"wrong_fact": 7, "tool_error": 3} | 7 | 0.000533 |
+| retry_only | 0/6 | 0/4 | {"wrong_fact": 10} | 10 | 0.000750 |
+| strict_only | 4/6 | 3/4 | {"tool_error": 3} | 7 | 0.000566 |
+| verify_only | 3/6 | 3/4 | {"tool_error": 3, "wrong_fact": 1} | 14 | 0.001176 |
+| strict_verify | 4/6 | 3/4 | {"tool_error": 3} | 7 | 0.000567 |
+| candidate | 6/6 | 4/4 | {} | 10 | 0.000822 |
 
-*Source: evidence/pack_ablation_20261012_000908.json*
+*Source: evidence/pack_ablation_20261012_003253.json*
 
 - Retry fixes tool errors but not wrong figures.
 - The strict prompt is the main fix for wrong figures.

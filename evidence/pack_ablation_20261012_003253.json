@@ -1,0 +1,136 @@
+{
+  "source": "snapshot",
+  "companies": {
+    "development": [
+      "Razorpay",
+      "Postman",
+      "BrowserStack",
+      "Freshworks",
+      "Swiggy",
+      "Chargebee"
+    ],
+    "held_out": [
+      "Figma",
+      "Linear",
+      "Canva",
+      "Notion"
+    ]
+  },
+  "timestamp": "20261012_003253",
+  "results": {
+    "baseline": {
+      "dev": {
+        "k": 0,
+        "n": 6,
+        "success_rate": 0.0
+      },
+      "held_out": {
+        "k": 0,
+        "n": 4,
+        "success_rate": 0.0
+      },
+      "failure_counts": {
+        "wrong_fact": 7,
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 2409,
+      "completion_tokens": 1619,
+      "cost_usd": 0.0005331
+    },
+    "retry_only": {
+      "dev": {
+        "k": 0,
+        "n": 6,
+        "success_rate": 0.0
+      },
+      "held_out": {
+        "k": 0,
+        "n": 4,
+        "success_rate": 0.0
+      },
+      "failure_counts": {
+        "wrong_fact": 10
+      },
+      "llm_calls": 10,
+      "prompt_tokens": 3182,
+      "completion_tokens": 2328,
+      "cost_usd": 0.00074964
+    },
+    "strict_only": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 2402,
+      "completion_tokens": 1759,
+      "cost_usd": 0.00056628
+    },
+    "verify_only": {
+      "dev": {
+        "k": 3,
+        "n": 6,
+        "success_rate": 0.5
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3,
+        "wrong_fact": 1
+      },
+      "llm_calls": 14,
+      "prompt_tokens": 5043,
+      "completion_tokens": 3641,
+      "cost_usd": 0.0011764199999999999
+    },
+    "strict_verify": {
+      "dev": {
+        "k": 4,
+        "n": 6,
+        "success_rate": 0.6667
+      },
+      "held_out": {
+        "k": 3,
+        "n": 4,
+        "success_rate": 0.75
+      },
+      "failure_counts": {
+        "tool_error": 3
+      },
+      "llm_calls": 7,
+      "prompt_tokens": 2402,
+      "completion_tokens": 1761,
+      "cost_usd": 0.00056676
+    },
+    "candidate": {
+      "dev": {
+        "k": 6,
+        "n": 6,
+        "success_rate": 1.0
+      },
+      "held_out": {
+        "k": 4,
+        "n": 4,
+        "success_rate": 1.0
+      },
+      "failure_counts": {},
+      "llm_calls": 10,
+      "prompt_tokens": 3172,
+      "completion_tokens": 2630,
+      "cost_usd": 0.00082152
+    }
+  }
+}
