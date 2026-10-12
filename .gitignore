@@ -13,5 +13,19 @@ venv/
 .env.*
 !.env.example
 
+# IDE / tool directories
+.codex/
+.entire/
+.opencode/
+
+# Local artifacts and generated files
+=1.1,
+nul
+debug_trace.py
+spans_optimized.log
+spans_raw_optimized.log
+outputs/
+data/snapshots/raw/
+
 # Project-generated data
 data/runs/
