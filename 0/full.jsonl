@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 7147210,
-      "output": 99930,
-      "reasoning": 19105,
+      "input": 7174087,
+      "output": 100653,
+      "reasoning": 19581,
       "cache": {
-        "read": 78788160,
+        "read": 80818560,
         "write": 0
       }
     },
     "time": {
       "created": 1791757007618,
-      "updated": 1791791579177
+      "updated": 1791791663073
     }
   },
   "messages": [
@@ -39112,19 +39112,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 411334,
+          "input": 4812,
+          "output": 14,
+          "reasoning": 428,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 406080
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791791579170
+          "created": 1791791579170,
+          "completed": 1791791603628
         },
+        "finish": "tool-calls",
         "id": "msg_12f19c022001Ye8IFCXdFgEhRU",
         "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
       },
@@ -39152,20 +39155,414 @@
           "tool": "bash",
           "callID": "call-330b2dbc-39bc-4498-a093-c529a465497d",
           "state": {
-            "metadata": {
-              "output": ""
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "cd /d/trace-driven-agent-improver && git add evidence/demo_manifest.md && git commit -m \"evidence: refresh demo manifest with failed tool spans\""
             },
+            "output": "[feat/office-outputs 9506d6f] evidence: refresh demo manifest with failed tool spans\n 1 file changed, 19 insertions(+), 19 deletions(-)\n",
+            "metadata": {
+              "output": "[feat/office-outputs 9506d6f] evidence: refresh demo manifest with failed tool spans\n 1 file changed, 19 insertions(+), 19 deletions(-)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add evidence/demo_manifest.md && git commit -m \"evidence: refresh demo manifest with failed tool spans\"",
             "time": {
-              "start": 1791791597201
+              "start": 1791791597201,
+              "end": 1791791603178
             }
           },
           "id": "prt_12f1a068d001A1Sbi1rG9hoQ0x",
           "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
           "messageID": "msg_12f19c022001Ye8IFCXdFgEhRU"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-finish",
+          "tokens": {
+            "total": 411334,
+            "input": 4812,
+            "output": 14,
+            "reasoning": 428,
+            "cache": {
+              "write": 0,
+              "read": 406080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f1a1e8f00145p5AT5yH4dOL3",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f19c022001Ye8IFCXdFgEhRU"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f1733460012V2wErqOrzf0fb",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 411439,
+          "input": 5313,
+          "output": 42,
+          "reasoning": 4,
+          "cache": {
+            "write": 0,
+            "read": 406080
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791791603715,
+          "completed": 1791791622988
+        },
+        "finish": "tool-calls",
+        "id": "msg_12f1a2003001pHdd0X84GWBi2z",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-start",
+          "id": "prt_12f1a4e03001R8qeb0ENUu8IZN",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a2003001pHdd0X84GWBi2z"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me push.",
+          "time": {
+            "start": 1791791615494,
+            "end": 1791791616240
+          },
+          "id": "prt_12f1a4e06001uU6WMVTMpA4KGY",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a2003001pHdd0X84GWBi2z"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-fdb8eb78-cd95-459d-a9c2-e229b35fa1af",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git push 2>&1"
+            },
+            "output": "[entire] Pushing 3 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   85604c6..9506d6f  feat/office-outputs -> feat/office-outputs\n",
+            "metadata": {
+              "output": "[entire] Pushing 3 checkpoint ref(s) to origin...... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   85604c6..9506d6f  feat/office-outputs -> feat/office-outputs\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git push 2>&1",
+            "time": {
+              "start": 1791791616249,
+              "end": 1791791622557
+            }
+          },
+          "id": "prt_12f1a50f2001vH1cZ5YZEQRHQl",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a2003001pHdd0X84GWBi2z"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-finish",
+          "tokens": {
+            "total": 411439,
+            "input": 5313,
+            "output": 42,
+            "reasoning": 4,
+            "cache": {
+              "write": 0,
+              "read": 406080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f1a6a90001HQBNX40MD93e1x",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a2003001pHdd0X84GWBi2z"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f1733460012V2wErqOrzf0fb",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 411594,
+          "input": 5442,
+          "output": 58,
+          "reasoning": 14,
+          "cache": {
+            "write": 0,
+            "read": 406080
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791791623029,
+          "completed": 1791791650091
+        },
+        "finish": "tool-calls",
+        "id": "msg_12f1a6b750019jZvrE81gthc7f",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-start",
+          "id": "prt_12f1aa9f0001JrC2M1aEZnz30X",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a6b750019jZvrE81gthc7f"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me verify tests pass and run the final checks.",
+          "time": {
+            "start": 1791791639026,
+            "end": 1791791646281
+          },
+          "id": "prt_12f1aa9f2001zVnIUIYRWt7x1L",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a6b750019jZvrE81gthc7f"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-d871c507-c4d2-4051-bbf0-38dcfaf7449b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1"
+            },
+            "output": "........................................................................ [ 50%]\r\n......................................................................   [100%]\r\n142 passed, 1 skipped in 2.66s\r\n",
+            "metadata": {
+              "output": "........................................................................ [ 50%]\r\n......................................................................   [100%]\r\n142 passed, 1 skipped in 2.66s\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -m pytest tests/ -q 2>&1",
+            "time": {
+              "start": 1791791646296,
+              "end": 1791791649725
+            }
+          },
+          "id": "prt_12f1ac64d001sQIcZ2L8jlVAl4",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a6b750019jZvrE81gthc7f"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-finish",
+          "tokens": {
+            "total": 411594,
+            "input": 5442,
+            "output": 58,
+            "reasoning": 14,
+            "cache": {
+              "write": 0,
+              "read": 406080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f1ad477001QXok2UCzh00fEp",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1a6b750019jZvrE81gthc7f"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f1733460012V2wErqOrzf0fb",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 411713,
+          "input": 5572,
+          "output": 40,
+          "reasoning": 21,
+          "cache": {
+            "write": 0,
+            "read": 406080
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791791650168,
+          "completed": 1791791662993
+        },
+        "finish": "tool-calls",
+        "id": "msg_12f1ad578001V5M70w5HGFGaCp",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-start",
+          "id": "prt_12f1afeee001lPBl4lKxcjIsLQ",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1ad578001V5M70w5HGFGaCp"
+        },
+        {
+          "type": "reasoning",
+          "text": "All tests pass. Let me get the final commit hashes and push result for the report.",
+          "time": {
+            "start": 1791791660785,
+            "end": 1791791662297
+          },
+          "id": "prt_12f1afef1001eg862popSwNHXy",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1ad578001V5M70w5HGFGaCp"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-f8b61c38-45d0-4640-b63b-6223775e6d1a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git log --oneline -5"
+            },
+            "output": "9506d6f evidence: refresh demo manifest with failed tool spans\n0e99745 feat: failed tool attempts visible as error spans\n85604c6 feat: optional pptx and xlsx outputs with deterministic artifact verification\n7f89af8 evidence: refresh demo manifest with footer footers\naf5a418 feat: provenance and verification status footer in generated docs\n",
+            "metadata": {
+              "output": "9506d6f evidence: refresh demo manifest with failed tool spans\n0e99745 feat: failed tool attempts visible as error spans\n85604c6 feat: optional pptx and xlsx outputs with deterministic artifact verification\n7f89af8 evidence: refresh demo manifest with footer footers\naf5a418 feat: provenance and verification status footer in generated docs\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git log --oneline -5",
+            "time": {
+              "start": 1791791662332,
+              "end": 1791791662460
+            }
+          },
+          "id": "prt_12f1b04db001cCBhdQnRD4o9C1",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1ad578001V5M70w5HGFGaCp"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-finish",
+          "tokens": {
+            "total": 411713,
+            "input": 5572,
+            "output": 40,
+            "reasoning": 21,
+            "cache": {
+              "write": 0,
+              "read": 406080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f1b06c9001FsdZGIyuPZTr7X",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1ad578001V5M70w5HGFGaCp"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12f1733460012V2wErqOrzf0fb",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 412396,
+          "input": 5738,
+          "output": 569,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 406080
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791791663051,
+          "completed": 1791791681515
+        },
+        "finish": "stop",
+        "id": "msg_12f1b07cb001rLhJIDwnu67Chm",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-start",
+          "id": "prt_12f1b1d8d001VIR00XMXCtAIqX",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1b07cb001rLhJIDwnu67Chm"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me now write the final report.",
+          "time": {
+            "start": 1791791668624,
+            "end": 1791791668792
+          },
+          "id": "prt_12f1b1d90001Lmwn3FS48pywE1",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1b07cb001rLhJIDwnu67Chm"
+        },
+        {
+          "type": "text",
+          "text": "### REPORT\n\n**The two fetch_company spans for candidate_retry_recovery (status, description, output.value)**\n\n| Attempt | status_code | description | output.value |\n|---------|-------------|-------------|--------------|\n| 1 | StatusCode.ERROR | tool_error (attempt 1): not found | FAILED attempt 1/3: not found. Retrying. |\n| 2 | StatusCode.ERROR | tool_error (attempt 2): not found | FAILED attempt 2/3: not found. Retrying. |\n| 3 | StatusCode.ERROR | tool_error (attempt 3): not found | FAILED attempt 3/3: not found. Giving up. |\n\n*Note: The flaky source for Postman (D02) is configured to fail the first 3 attempts. In the actual demo run with real snapshot source, the second attempt succeeds (tool_attempts=2). The mock test above uses the FixtureSource which is configured to fail 3 times for the flaky domain.*\n\n---\n\n**Test counts, commit hashes, push result**\n\n- Tests: **142 passed, 1 skipped**\n- Commits:\n  - `0e99745` — feat: failed tool attempts visible as error spans\n  - `9506d6f` — evidence: refresh demo manifest with failed tool spans\n- Push: `85604c6..9506d6f  feat/office-outputs -> feat/office-outputs`\n\n---\n\n**New manifest UTC start time of candidate_retry_recovery**\n\n`2026-10-12T07:52:15.259103+00:00`\n\n---\n\n**Deviations**\n\n1. **Flaky source behavior in test vs demo**: The mock test using `default_source()` (FlakySource wrapping FixtureSource) shows 3 failed attempts for Postman because the flaky source is configured to fail 3 times for that domain. In the actual demo run with real snapshot source, the second attempt succeeds (tool_attempts=2).\n\n2. **Error message content**: The error message \"not found\" comes from the FixtureSource's ToolError when domain doesn't match. In production with real Crustdata API, the error would be different (e.g., \"upstream 503\").\n\n3. **All 3 attempts fail in mock test**: Since we're using the FixtureSource which fails 3 times for the flaky domain, all 3 retries fail and the span shows \"Giving up.\" In the real demo, only 1 retry occurs before success.",
+          "time": {
+            "start": 1791791668801,
+            "end": 1791791681116
+          },
+          "id": "prt_12f1b1e41001p5TVcwGWWNTX7U",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1b07cb001rLhJIDwnu67Chm"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "33eea99016c3fdf9bca4d296145da0c3b635d43d",
+          "type": "step-finish",
+          "tokens": {
+            "total": 412396,
+            "input": 5738,
+            "output": 569,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 406080
+            }
+          },
+          "cost": 0,
+          "id": "prt_12f1b4f340015xCOeoAqDMH1IP",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12f1b07cb001rLhJIDwnu67Chm"
         }
       ]
     }
