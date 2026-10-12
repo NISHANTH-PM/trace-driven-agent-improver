@@ -19,17 +19,17 @@
     },
     "cost": 0,
     "tokens": {
-      "input": 6180023,
-      "output": 74360,
-      "reasoning": 14941,
+      "input": 6275944,
+      "output": 78865,
+      "reasoning": 15430,
       "cache": {
-        "read": 51546240,
+        "read": 55555200,
         "write": 0
       }
     },
     "time": {
       "created": 1791757007618,
-      "updated": 1791788381808
+      "updated": 1791788623092
     }
   },
   "messages": [
@@ -29964,6 +29964,13 @@
               "status": "modified"
             },
             {
+              "file": "evidence/demo_manifest.md",
+              "patch": "Index: evidence/demo_manifest.md\n===================================================================\n--- evidence/demo_manifest.md\t\n+++ evidence/demo_manifest.md\t\n@@ -1,206 +1,206 @@\n # Demo Run Manifest\r\n \r\n-Generated: 2026-10-12T06:53:01.954700+00:00\r\n+Generated: 2026-10-12T07:00:36.654900+00:00\r\n \r\n ## baseline_wrong_fact\r\n \r\n | Field | Value |\r\n |-------|-------|\r\n | label | baseline_wrong_fact |\r\n | case_id | D01 |\r\n | company | Razorpay |\r\n | domain | razorpay.com |\r\n | config.retry_tool_errors | False |\r\n | config.strict_prompt | False |\r\n | config.verify_facts | False |\r\n | config.version | baseline |\r\n | failure_class | wrong_fact |\r\n | success | False |\r\n | tool_attempts | 1 |\r\n | llm_calls | 1 |\r\n | prompt_tokens | 555 |\r\n-| completion_tokens | 326 |\r\n-| cost_usd | 0.000112 |\r\n+| completion_tokens | 233 |\r\n+| cost_usd | 0.000089 |\r\n | docx_path | outputs\\demo\\baseline_wrong_fact\\D01_baseline.docx |\r\n-| start_time_utc | 2026-10-12T06:52:44.134640+00:00 |\r\n-| end_time_utc | 2026-10-12T06:52:47.145607+00:00 |\r\n+| start_time_utc | 2026-10-12T07:00:18.759216+00:00 |\r\n+| end_time_utc | 2026-10-12T07:00:21.137505+00:00 |\r\n | issues | ['employee_count=4042 not stated exactly', 'total_funding_usd=816600000 not stated in accepted format'] |\r\n \r\n **True Values:**\r\n \r\n - employee_count: 4042\r\n - founded_year: 2014\r\n - hq_city: Bengaluru\r\n - total_funding_usd: 816600000\r\n - last_round: secondary_market\r\n \r\n In neatlogs: search for `demo.label = baseline_wrong_fact` (or the span name `demo_baseline_wrong_fact`)\r\n \r\n ## baseline_tool_error\r\n \r\n | Field | Value |\r\n |-------|-------|\r\n | label | baseline_tool_error |\r\n | case_id | D02 |\r\n | company | Postman |\r\n | domain | postman.com |\r\n | config.retry_tool_errors | False |\r\n | config.strict_prompt | False |\r\n | config.verify_facts | False |\r\n | config.version | baseline |\r\n | failure_class | tool_error |\r\n | success | False |\r\n | tool_attempts | 1 |\r\n | llm_calls | 0 |\r\n | prompt_tokens | 0 |\r\n | completion_tokens | 0 |\r\n | cost_usd | 0.000000 |\r\n | docx_path | None |\r\n-| start_time_utc | 2026-10-12T06:52:47.146611+00:00 |\r\n-| end_time_utc | 2026-10-12T06:52:47.148652+00:00 |\r\n+| start_time_utc | 2026-10-12T07:00:21.137505+00:00 |\r\n+| end_time_utc | 2026-10-12T07:00:21.140105+00:00 |\r\n | issues | ['tool failed'] |\r\n \r\n **True Values:**\r\n \r\n - employee_count: 3547\r\n - founded_year: 2014\r\n - hq_city: San Francisco\r\n - total_funding_usd: 433000000\r\n - last_round: series_d\r\n \r\n In neatlogs: search for `demo.label = baseline_tool_error` (or the span name `demo_baseline_tool_error`)\r\n \r\n ## candidate_retry_recovery\r\n \r\n | Field | Value |\r\n |-------|-------|\r\n | label | candidate_retry_recovery |\r\n | case_id | D02 |\r\n | company | Postman |\r\n | domain | postman.com |\r\n | config.retry_tool_errors | True |\r\n | config.strict_prompt | True |\r\n | config.verify_facts | True |\r\n | config.version | candidate |\r\n | failure_class | none |\r\n | success | True |\r\n | tool_attempts | 2 |\r\n | llm_calls | 1 |\r\n | prompt_tokens | 261 |\r\n | completion_tokens | 210 |\r\n | cost_usd | 0.000066 |\r\n | docx_path | outputs\\demo\\candidate_retry_recovery\\D02_candidate.docx |\r\n-| start_time_utc | 2026-10-12T06:52:47.148652+00:00 |\r\n-| end_time_utc | 2026-10-12T06:52:49.247321+00:00 |\r\n+| start_time_utc | 2026-10-12T07:00:21.140105+00:00 |\r\n+| end_time_utc | 2026-10-12T07:00:23.241229+00:00 |\r\n | issues | [] |\r\n \r\n **True Values:**\r\n \r\n - employee_count: 3547\r\n - founded_year: 2014\r\n - hq_city: San Francisco\r\n - total_funding_usd: 433000000\r\n - last_round: series_d\r\n \r\n In neatlogs: search for `demo.label = candidate_retry_recovery` (or the span name `demo_candidate_retry_recovery`)\r\n \r\n ## candidate_success\r\n \r\n | Field | Value |\r\n |-------|-------|\r\n | label | candidate_success |\r\n | case_id | D01 |\r\n | company | Razorpay |\r\n | domain | razorpay.com |\r\n | config.retry_tool_errors | True |\r\n | config.strict_prompt | True |\r\n | config.verify_facts | True |\r\n | config.version | candidate |\r\n | failure_class | none |\r\n | success | True |\r\n | tool_attempts | 1 |\r\n | llm_calls | 1 |\r\n | prompt_tokens | 554 |\r\n-| completion_tokens | 312 |\r\n-| cost_usd | 0.000108 |\r\n+| completion_tokens | 242 |\r\n+| cost_usd | 0.000091 |\r\n | docx_path | outputs\\demo\\candidate_success\\D01_candidate.docx |\r\n-| start_time_utc | 2026-10-12T06:52:49.247321+00:00 |\r\n-| end_time_utc | 2026-10-12T06:52:51.783411+00:00 |\r\n+| start_time_utc | 2026-10-12T07:00:23.242243+00:00 |\r\n+| end_time_utc | 2026-10-12T07:00:25.849871+00:00 |\r\n | issues | [] |\r\n \r\n **True Values:**\r\n \r\n - employee_count: 4042\r\n - founded_year: 2014\r\n - hq_city: Bengaluru\r\n - total_funding_usd: 816600000\r\n - last_round: secondary_market\r\n \r\n In neatlogs: search for `demo.label = candidate_success` (or the span name `demo_candidate_success`)\r\n \r\n ## verify_regeneration\r\n \r\n | Field | Value |\r\n |-------|-------|\r\n | label | verify_regeneration |\r\n | case_id | D01 |\r\n | company | Razorpay |\r\n | domain | razorpay.com |\r\n | config.retry_tool_errors | False |\r\n | config.strict_prompt | False |\r\n | config.verify_facts | True |\r\n | config.version | verify_only |\r\n | failure_class | none |\r\n | success | True |\r\n | tool_attempts | 1 |\r\n | llm_calls | 2 |\r\n | prompt_tokens | 1150 |\r\n-| completion_tokens | 500 |\r\n-| cost_usd | 0.000189 |\r\n+| completion_tokens | 566 |\r\n+| cost_usd | 0.000205 |\r\n | docx_path | outputs\\demo\\verify_regeneration\\D01_verify_only.docx |\r\n-| start_time_utc | 2026-10-12T06:52:57.214523+00:00 |\r\n-| end_time_utc | 2026-10-12T06:53:01.954700+00:00 |\r\n+| start_time_utc | 2026-10-12T07:00:30.968155+00:00 |\r\n+| end_time_utc | 2026-10-12T07:00:36.654900+00:00 |\r\n | issues | [] |\r\n \r\n **True Values:**\r\n \r\n - employee_count: 4042\r\n - founded_year: 2014\r\n - hq_city: Bengaluru\r\n - total_funding_usd: 816600000\r\n - last_round: secondary_market\r\n \r\n In neatlogs: search for `demo.label = verify_regeneration` (or the span name `demo_verify_regeneration`)\r\n \r\n ---\r\n \r\n ## Screenshot Checklist\r\n \r\n | Scenario | Screenshot File | Description |\r\n |----------|-----------------|-------------|\r\n | a) baseline_wrong_fact | neat_baseline_fail.png | open the llm_draft I/O tab and the benchmark_case attributes |\r\n | c) candidate_retry_recovery | neat_retry_recovery.png | span tree with two fetch_company spans |\r\n | d) candidate_success | neat_candidate_success.png | |\r\n | d) candidate_success | neat_llm_attributes.png | |\r\n | d) candidate_success | neat_llm_io.png | |\r\n | e) verify_regeneration | neat_verify_regeneration.png | llm_regenerate nested in verify_facts |\r\n | a vs d | neat_compare.png | if the dashboard offers a compare view |\r\n \r\n **Additional screenshots for CFO/Entire/GitHub:**\r\n \r\n | Screenshot File | Description |\r\n |-----------------|-------------|\r\n | entire_checkpoints.png | `entire status` output |\r\n | entire_graph_or_status.png | `entire-graph` output or `entire status` |\r\n | cfo_scenario_comparison.png | CFO scenario comparison view |\r\n | cfo_api_price_margin.png | CFO API price/margin view |\r\n | cfo_pricing_assumptions.png | CFO pricing assumptions view |\r\n | cfo_economics_cash.png | CFO economics/cash view |\r\n | agent_output_docx.png | Open both D01 baseline and D01 candidate .docx in Word |\r\n | ablation_table.png | Ablation table from evidence/ |\r\n | github_commits.png | GitHub commits page |\r\n | ci_green.png | CI green check |\r\n \r\n D01 baseline .docx: outputs\\demo\\baseline_wrong_fact\\D01_baseline.docx\r\n D01 candidate .docx: outputs\\demo\\candidate_success\\D01_candidate.docx\r\n Open both in Word: agent_output_docx.png\r\n",
+              "additions": 17,
+              "deletions": 17,
+              "status": "modified"
+            },
+            {
               "file": "tests/test_pack_student.py",
               "patch": "Index: tests/test_pack_student.py\n===================================================================\n--- tests/test_pack_student.py\t\n+++ tests/test_pack_student.py\t\n@@ -1,584 +1,665 @@\n \"\"\"Tests for pack student agent and checks.\"\"\"\n \n import json\n import os\n import tempfile\n from contextlib import contextmanager\n from pathlib import Path\n \n import pytest\n \n from app.pack.checks import fact_mismatches, missing_sections\n from app.pack.models import CompanyData, CompanyCase, REQUIRED_SECTIONS\n from app.pack.student import PackConfig, run_pack_student, STRICT_SYSTEM_PROMPT, BASE_SYSTEM_PROMPT\n from app.pack.evaluator import run_pack_benchmark\n import app.observability as observability_module\n from app.pack.tools import FixtureSource, ToolError, default_source\n from app.llm import FakeLLMClient\n \n \n @pytest.fixture\n def case_d01():\n     return CompanyCase(case_id=\"D01\", company_name=\"Apex Dynamics\", domain=\"apex-dynamics.com\", split=\"development\")\n \n \n @pytest.fixture\n def case_d02():\n     return CompanyCase(case_id=\"D02\", company_name=\"Meridian Bio\", domain=\"meridian-bio.com\", split=\"development\")\n \n \n @pytest.fixture\n def good_json_response():\n     return json.dumps({\n         \"sections\": {\n             \"Overview\": \"Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.\",\n             \"Key Facts\": \"342 employees, founded 2015, HQ Pittsburgh\",\n             \"Funding\": \"Total funding $85,000,000, last round Series B\",\n             \"Risks\": \"Competition in robotics market\"\n         }\n     })\n \n \n class TestChecks:\n     \"\"\"Tests for fact-checking utilities.\"\"\"\n \n     def test_missing_sections_all_present(self):\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         assert missing_sections(sections) == []\n \n     def test_missing_sections_some_missing(self):\n         sections = {\"Overview\": \"text\", \"Key Facts\": \"text\"}\n         missing = missing_sections(sections)\n         assert \"Funding\" in missing\n         assert \"Risks\" in missing\n \n     def test_missing_sections_blank(self):\n         sections = {\"Overview\": \"text\", \"Key Facts\": \"\", \"Funding\": \"text\", \"Risks\": \"text\"}\n         missing = missing_sections(sections)\n         assert \"Key Facts\" in missing\n \n     def test_fact_mismatches_employee_count_exact(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=4000, founded_year=2020, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"Series A\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Key Facts\"] = \"We have 4000 employees\"\n         assert \"employee_count=4000 not stated exactly\" not in fact_mismatches(company, sections)\n \n     def test_fact_mismatches_employee_count_comma(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=4000, founded_year=2020, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"Series A\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Key Facts\"] = \"We have 4,000 employees\"\n         assert \"employee_count=4000 not stated exactly\" not in fact_mismatches(company, sections)\n \n     def test_fact_mismatches_employee_count_rounded_fails(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=2347, founded_year=2020, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"Series A\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Key Facts\"] = \"We have about 2,000 employees\"\n         issues = fact_mismatches(company, sections)\n         assert \"employee_count=2347 not stated exactly\" in issues\n \n     def test_fact_mismatches_founded_year(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"Series A\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Overview\"] = \"Founded in 2015\"\n         assert \"founded_year=2015 not stated exactly\" not in fact_mismatches(company, sections)\n \n         sections[\"Overview\"] = \"Founded recently\"\n         assert \"founded_year=2015 not stated exactly\" in fact_mismatches(company, sections)\n \n     def test_fact_mismatches_hq_city(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"San Francisco\",\n             total_funding_usd=1000000, last_round=\"Series A\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Overview\"] = \"Based in San Francisco\"\n         assert \"hq_city=San Francisco not stated\" not in fact_mismatches(company, sections)\n \n     def test_fact_mismatches_last_round(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"Series B\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Raised Series B funding\"\n         assert \"last_round=Series B not stated\" not in fact_mismatches(company, sections)\n \n     def test_fact_mismatches_total_funding_exact(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=42000000, last_round=\"Series B\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Total funding $42,000,000\"\n         assert \"total_funding_usd=42000000 not stated in accepted format\" not in fact_mismatches(company, sections)\n \n     def test_fact_mismatches_total_funding_various_formats(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=42000000, last_round=\"Series B\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         # Test various accepted formats\n         for fmt in [\"42000000\", \"42,000,000\", \"$42M\", \"42M\", \"$42 million\", \"42 million\"]:\n             sections[\"Funding\"] = f\"Raised {fmt}\"\n             issues = fact_mismatches(company, sections)\n             assert \"total_funding_usd=42000000 not stated in accepted format\" not in issues, f\"Failed for format: {fmt}\"\n \n     def test_fact_mismatches_total_funding_bootstrapped(self):\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=0, last_round=\"Bootstrapped\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Company is bootstrapped\"\n         issues = fact_mismatches(company, sections)\n         assert \"total_funding_usd=0 not stated\" not in issues\n \n         sections[\"Funding\"] = \"No external funding\"\n         issues = fact_mismatches(company, sections)\n         assert \"total_funding_usd=0 not stated\" not in issues\n \n         sections[\"Funding\"] = \"$0\"\n         issues = fact_mismatches(company, sections)\n         assert \"total_funding_usd=0 not stated\" not in issues\n \n         sections[\"Funding\"] = \"Self-funded\"\n         issues = fact_mismatches(company, sections)\n         # Should have a funding issue (other fields may also be missing)\n         funding_issues = [i for i in issues if \"total_funding_usd=0\" in i]\n         assert len(funding_issues) == 1\n         assert \"total_funding_usd=0 not stated\" in funding_issues[0]\n \n     def test_fact_mismatches_last_round_underscore_vs_space(self):\n         \"\"\"last_round with underscores should match space-separated in text.\"\"\"\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"secondary_market\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Last round was secondary market\"\n         issues = fact_mismatches(company, sections)\n         assert \"last_round=secondary_market not stated\" not in issues\n \n     def test_fact_mismatches_last_round_underscore_vs_hyphen(self):\n         \"\"\"last_round with underscores should match hyphenated in text.\"\"\"\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"post_ipo_equity\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Post-IPO equity round\"\n         issues = fact_mismatches(company, sections)\n         assert \"last_round=post_ipo_equity not stated\" not in issues\n \n     def test_fact_mismatches_last_round_case_insensitive_series(self):\n         \"\"\"last_round series_x should match Series X in text.\"\"\"\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=1000000, last_round=\"series_d\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Series D round\"\n         issues = fact_mismatches(company, sections)\n         assert \"last_round=series_d not stated\" not in issues\n \n     def test_fact_mismatches_hq_city_underscore_vs_space(self):\n         \"\"\"hq_city with underscores should match space-separated in text.\"\"\"\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"san_francisco\",\n             total_funding_usd=1000000, last_round=\"Series A\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Overview\"] = \"Based in San Francisco\"\n         issues = fact_mismatches(company, sections)\n         assert \"hq_city=san_francisco not stated\" not in issues\n \n     def test_fact_mismatches_total_funding_float_to_int(self):\n         \"\"\"total_funding_usd as float should be converted to int before comparison.\"\"\"\n         company = CompanyData(\n             name=\"Test\", domain=\"test.com\", industry=\"Tech\", description=\"Test\",\n             employee_count=100, founded_year=2015, hq_city=\"SF\",\n             total_funding_usd=42000000.0, last_round=\"Series B\"\n         )\n         sections = {s: \"content\" for s in REQUIRED_SECTIONS}\n         sections[\"Funding\"] = \"Total funding $42,000,000\"\n         issues = fact_mismatches(company, sections)\n         assert \"total_funding_usd=42000000 not stated in accepted format\" not in issues\n \n \n class TestPackStudent:\n     \"\"\"Tests for the pack student agent.\"\"\"\n \n     def test_happy_path_creates_docx(self, case_d01, good_json_response, tmp_path):\n         fake_llm = FakeLLMClient(good_json_response)\n         config = PackConfig(output_dir=str(tmp_path), version=\"test\")\n \n         output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n \n         assert output.docx_path is not None\n         assert Path(output.docx_path).exists()\n         assert output.sections == json.loads(good_json_response)[\"sections\"]\n         assert output.verified is False  # verify_facts=False by default\n         assert output.tool_attempts == 1\n         assert \"version=test\" in output.rationale\n \n         # Verify docx content\n         from docx import Document\n         doc = Document(output.docx_path)\n         assert doc.paragraphs[0].text == \"Apex Dynamics\"  # Heading 0\n         heading_texts = [p.text for p in doc.paragraphs if p.style.name.startswith(\"Heading 1\")]\n         assert set(heading_texts) == set(REQUIRED_SECTIONS)\n \n     def test_baseline_on_d02_flaky_fails(self, case_d02):\n         fake_llm = FakeLLMClient(json.dumps({\n             \"sections\": {s: \"content\" for s in REQUIRED_SECTIONS}\n         }))\n         config = PackConfig(output_dir=\"outputs\", version=\"test\", retry_tool_errors=False)\n \n         output, trace = run_pack_student(case_d02, config, llm=fake_llm)\n \n         assert output.docx_path is None\n         assert output.tool_attempts == 1\n         assert output.verified is False\n         assert output.rationale == \"tool failed\"\n         # Check trace has tool_execution error\n         tool_events = [e for e in trace if e.step == \"tool_execution\" and e.outcome == \"error\"]\n         assert len(tool_events) == 1\n \n     def test_retry_tool_errors_succeeds_on_d02(self, case_d02, good_json_response):\n         fake_llm = FakeLLMClient(good_json_response)\n         config = PackConfig(output_dir=\"outputs\", version=\"test\", retry_tool_errors=True, max_attempts=3)\n \n         output, trace = run_pack_student(case_d02, config, llm=fake_llm)\n \n         assert output.docx_path is not None\n         assert output.tool_attempts == 2\n         assert output.verified is False\n         # Check trace has tool_retry\n         retry_events = [e for e in trace if e.step == \"tool_retry\"]\n         assert len(retry_events) == 1\n \n     def test_verify_facts_true_first_bad_then_good(self, case_d01, tmp_path):\n         # First response: rounded numbers (should fail verification)\n         bad_response = json.dumps({\n             \"sections\": {\n                 \"Overview\": \"Apex Dynamics is a robotics company.\",\n                 \"Key Facts\": \"About 340 employees, founded around 2015, HQ in Pittsburgh area\",\n                 \"Funding\": \"Raised roughly $85M, last round Series B\",\n                 \"Risks\": \"Market competition\"\n             }\n         })\n         # Second response: exact numbers (should pass)\n         good_response = json.dumps({\n             \"sections\": {\n                 \"Overview\": \"Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.\",\n                 \"Key Facts\": \"342 employees, founded 2015, HQ Pittsburgh\",\n                 \"Funding\": \"Total funding $85,000,000, last round Series B\",\n                 \"Risks\": \"Competition in robotics market\"\n             }\n         })\n \n         call_count = [0]\n         def responder(sys, user):\n             call_count[0] += 1\n             return bad_response if call_count[0] == 1 else good_response\n \n         fake_llm = FakeLLMClient(responder)\n         config = PackConfig(output_dir=str(tmp_path), version=\"test\", verify_facts=True)\n \n         output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n \n         assert fake_llm.calls == 2\n         assert output.verified is True\n \n     def test_verify_facts_true_both_bad(self, case_d01, tmp_path):\n         bad_response = json.dumps({\n             \"sections\": {\n                 \"Overview\": \"Apex Dynamics is a robotics company.\",\n                 \"Key Facts\": \"About 340 employees, founded around 2015\",\n                 \"Funding\": \"Raised roughly $85M, last round Series B\",\n                 \"Risks\": \"Market competition\"\n             }\n         })\n \n         fake_llm = FakeLLMClient(bad_response)\n         config = PackConfig(output_dir=str(tmp_path), version=\"test\", verify_facts=True)\n \n         output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n \n         assert fake_llm.calls == 2\n         assert output.verified is False\n \n     def test_invalid_json_returns_error(self, case_d01):\n         fake_llm = FakeLLMClient(\"This is not valid JSON at all\")\n         config = PackConfig(output_dir=\"outputs\", version=\"test\")\n \n         output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n \n         assert output.docx_path is None\n         assert output.sections == {}\n         assert output.verified is False\n         assert output.rationale == \"invalid llm output\"\n         # Check trace has llm_parse error\n         parse_events = [e for e in trace if e.step == \"llm_parse\" and e.outcome == \"error\"]\n         assert len(parse_events) == 1\n \n     def test_strict_prompt_used_when_configured(self, case_d01, good_json_response):\n         fake_llm = FakeLLMClient(good_json_response)\n         config = PackConfig(output_dir=\"outputs\", version=\"test\", strict_prompt=True)\n \n         output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n \n         # Verify the LLM was called with strict prompt\n         # The FakeLLMClient doesn't capture the prompt, but we can check the behavior\n         assert output.docx_path is not None\n \n \n+class TestDocxFooter:\n+    \"\"\"Tests for the verification status footer in generated DOCX files.\"\"\"\n+\n+    def test_footer_not_checked_when_verify_facts_false(self, case_d01, good_json_response, tmp_path):\n+        \"\"\"Footer says 'Not checked' when verify_facts=False.\"\"\"\n+        fake_llm = FakeLLMClient(good_json_response)\n+        config = PackConfig(output_dir=str(tmp_path), version=\"test\", verify_facts=False)\n+\n+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n+\n+        assert output.docx_path is not None\n+        from docx import Document\n+        doc = Document(output.docx_path)\n+        # Find footer paragraph (last paragraph)\n+        footer_text = doc.paragraphs[-1].text\n+        assert \"Source: Crustdata company data.\" in footer_text\n+        assert \"Not checked\" in footer_text\n+\n+    def test_footer_not_checked_when_verify_facts_true_but_fails(self, case_d01, tmp_path):\n+        \"\"\"Footer says 'No - at least one figure could not be confirmed' when verify_facts=True but issues remain.\"\"\"\n+        bad_response = json.dumps({\n+            \"sections\": {\n+                \"Overview\": \"Apex Dynamics is a robotics company.\",\n+                \"Key Facts\": \"About 340 employees, founded around 2015, HQ in Pittsburgh area\",\n+                \"Funding\": \"Raised roughly $85M, last round Series B\",\n+                \"Risks\": \"Market competition\"\n+            }\n+        })\n+        fake_llm = FakeLLMClient(bad_response)\n+        config = PackConfig(output_dir=str(tmp_path), version=\"test\", verify_facts=True)\n+\n+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n+\n+        assert output.docx_path is not None\n+        assert output.verified is False\n+        from docx import Document\n+        doc = Document(output.docx_path)\n+        footer_text = doc.paragraphs[-1].text\n+        assert \"Source: Crustdata company data.\" in footer_text\n+        assert \"No - at least one figure could not be confirmed\" in footer_text\n+\n+    def test_footer_yes_when_verify_facts_true_and_passes(self, case_d01, good_json_response, tmp_path):\n+        \"\"\"Footer says 'Yes' when verify_facts=True and verification passes.\"\"\"\n+        fake_llm = FakeLLMClient(good_json_response)\n+        config = PackConfig(output_dir=str(tmp_path), version=\"test\", verify_facts=True)\n+\n+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n+\n+        assert output.docx_path is not None\n+        assert output.verified is True\n+        from docx import Document\n+        doc = Document(output.docx_path)\n+        footer_text = doc.paragraphs[-1].text\n+        assert \"Source: Crustdata company data.\" in footer_text\n+        assert \"Yes\" in footer_text\n+        assert \"Not checked\" not in footer_text\n+        assert \"No - at least one figure could not be confirmed\" not in footer_text\n+\n+    def test_footer_not_part_of_sections_or_fact_checks(self, case_d01, good_json_response, tmp_path):\n+        \"\"\"Footer text does not affect fact_mismatches or missing_sections on sections dict.\"\"\"\n+        fake_llm = FakeLLMClient(good_json_response)\n+        config = PackConfig(output_dir=str(tmp_path), version=\"test\", verify_facts=True)\n+\n+        output, trace = run_pack_student(case_d01, config, llm=fake_llm)\n+\n+        # The footer is added at render time, not in the sections dict\n+        # So fact_mismatches on the sections dict should be unaffected\n+        from app.pack.checks import fact_mismatches, missing_sections\n+        missing = missing_sections(output.sections)\n+        issues = fact_mismatches(\n+            CompanyData(\n+                name=\"Apex Dynamics\", domain=\"apex-dynamics.com\", industry=\"Technology\",\n+                description=\"Test\", employee_count=342, founded_year=2015,\n+                hq_city=\"Pittsburgh\", total_funding_usd=85000000, last_round=\"Series B\"\n+            ),\n+            output.sections\n+        )\n+        assert missing == []\n+        assert issues == []\n+\n+\n class TestPackStudentWithFixtureSource:\n     \"\"\"Tests using real fixture source.\"\"\"\n \n     def test_fetch_from_fixture_source(self):\n         source = FixtureSource()\n         case = CompanyCase(case_id=\"D01\", company_name=\"Apex Dynamics\", domain=\"apex-dynamics.com\", split=\"development\")\n         company = source.get_company(case.domain)\n         assert company.name == \"Apex Dynamics\"\n         assert company.employee_count == 342\n \n     def test_unknown_domain_raises(self):\n         source = FixtureSource()\n         with pytest.raises(ToolError, match=\"not found\"):\n             source.get_company(\"unknown.com\")\n \n \n class TestPackEvaluatorSpans:\n     \"\"\"Tests for evaluation span attributes in run_pack_benchmark.\"\"\"\n \n     def test_failed_case_span_status_error_and_output_value(self, case_d01):\n         \"\"\"Failed case should have span status ERROR with description starting with failure class, and output.value with TRUTH.\"\"\"\n         # Response with wrong employee count to trigger wrong_fact failure\n         bad_response = json.dumps({\n             \"sections\": {\n                 \"Overview\": \"Apex Dynamics is a robotics company.\",\n                 \"Key Facts\": \"About 340 employees, founded around 2015, HQ in Pittsburgh area\",\n                 \"Funding\": \"Raised roughly $85M, last round Series B\",\n                 \"Risks\": \"Market competition\"\n             }\n         })\n         fake_llm = FakeLLMClient(bad_response)\n         config = PackConfig(output_dir=\"outputs\", version=\"test\", verify_facts=True)\n \n         # Capture the span by mocking trace_span\n         captured_spans = []\n         original_trace_span = None\n         try:\n             from app.observability import trace_span as orig_trace_span\n             original_trace_span = orig_trace_span\n \n             # Enable neatlogs initialization flag for mark_span_failed to work\n             observability_module._initialized = True\n \n             @contextmanager\n             def mock_trace_span(name, kind=\"CHAIN\", attributes=None):\n                 class MockSpan:\n                     def __init__(self):\n                         self.attributes = {}\n                         self.status = None\n                         self.status_code = None\n                         self.description = None\n                     def set_attribute(self, key, value):\n                         self.attributes[key] = value\n                     def set_status(self, status):\n                         self.status = status\n                         # Try to extract status code and description\n                         if hasattr(status, 'status_code'):\n                             self.status_code = status.status_code\n                         if hasattr(status, 'description'):\n                             self.description = status.description\n                 span = MockSpan()\n                 captured_spans.append((name, kind, attributes, span))\n                 yield span\n \n             import app.pack.evaluator as evaluator_module\n             evaluator_module.trace_span = mock_trace_span\n \n             summary = run_pack_benchmark([case_d01], config, llm=fake_llm)\n \n             # Check that we captured a span\n             assert len(captured_spans) == 1\n             _, _, _, span = captured_spans[0]\n \n             # Check span status is ERROR\n             assert span.status_code is not None\n             # Check description starts with failure class\n             assert span.description is not None\n             assert span.description.startswith(\"wrong_fact\")\n \n             # Check output.value contains TRUTH\n             assert \"output.value\" in span.attributes\n             output_value = span.attributes[\"output.value\"]\n             assert \"FAILED\" in output_value\n             assert \"wrong_fact\" in output_value\n             assert \"TRUTH:\" in output_value\n             assert \"employee_count=342\" in output_value\n             assert \"founded_year=2015\" in output_value\n \n             # Check evaluation attributes\n             assert \"evaluation.failure_class\" in span.attributes\n             assert span.attributes[\"evaluation.failure_class\"] == \"wrong_fact\"\n             assert \"evaluation.issues\" in span.attributes\n             assert \"evaluation.truth\" in span.attributes\n \n         finally:\n             if original_trace_span:\n                 evaluator_module.trace_span = original_trace_span\n \n     def test_passing_case_span_no_error_status_and_output_value_passes(self, case_d01, good_json_response):\n         \"\"\"Passing case should have no error status, output.value = PASSED, no TRUTH.\"\"\"\n         fake_llm = FakeLLMClient(good_json_response)\n         config = PackConfig(output_dir=\"outputs\", version=\"test\")\n \n         captured_spans = []\n         original_trace_span = None\n         try:\n             from app.observability import trace_span as orig_trace_span\n             original_trace_span = orig_trace_span\n \n             # Enable neatlogs initialization flag for mark_span_failed to work\n             observability_module._initialized = True\n \n             @contextmanager\n             def mock_trace_span(name, kind=\"CHAIN\", attributes=None):\n                 class MockSpan:\n                     def __init__(self):\n                         self.attributes = {}\n                         self.status = None\n                         self.status_code = None\n                         self.description = None\n                     def set_attribute(self, key, value):\n                         self.attributes[key] = value\n                     def set_status(self, status):\n                         self.status = status\n                         if hasattr(status, 'status_code'):\n                             self.status_code = status.status_code\n                         if hasattr(status, 'description'):\n                             self.description = status.description\n                 span = MockSpan()\n                 captured_spans.append((name, kind, attributes, span))\n                 yield span\n \n             import app.pack.evaluator as evaluator_module\n             evaluator_module.trace_span = mock_trace_span\n \n             summary = run_pack_benchmark([case_d01], config, llm=fake_llm)\n \n             assert len(captured_spans) == 1\n             _, _, _, span = captured_spans[0]\n \n             # Should not have error status\n             assert span.status_code is None\n             assert span.description is None\n \n             # output.value should be PASSED, no TRUTH\n             assert \"output.value\" in span.attributes\n             assert span.attributes[\"output.value\"] == \"PASSED\"\n             assert \"TRUTH:\" not in span.attributes[\"output.value\"]\n \n             # Check evaluation attributes still present\n             assert \"evaluation.success\" in span.attributes\n             assert span.attributes[\"evaluation.success\"] is True\n             assert \"evaluation.failure_class\" in span.attributes\n             assert span.attributes[\"evaluation.failure_class\"] == \"none\"\n             assert \"evaluation.issues\" in span.attributes\n             assert span.attributes[\"evaluation.issues\"] == \"\"\n             assert \"evaluation.truth\" in span.attributes\n \n         finally:\n             if original_trace_span:\n                 evaluator_module.trace_span = original_trace_span\n \n     def test_tool_error_case_span_status_error(self, case_d02):\n         \"\"\"Tool error case should have span status ERROR with tool_error failure class.\"\"\"\n         fake_llm = FakeLLMClient(json.dumps({\n             \"sections\": {s: \"content\" for s in REQUIRED_SECTIONS}\n         }))\n         config = PackConfig(output_dir=\"outputs\", version=\"test\", retry_tool_errors=False)\n \n         captured_spans = []\n         original_trace_span = None\n         try:\n             from app.observability import trace_span as orig_trace_span\n             original_trace_span = orig_trace_span\n \n             # Enable neatlogs initialization flag for mark_span_failed to work\n             observability_module._initialized = True\n \n             @contextmanager\n             def mock_trace_span(name, kind=\"CHAIN\", attributes=None):\n                 class MockSpan:\n                     def __init__(self):\n                         self.attributes = {}\n                         self.status = None\n                         self.status_code = None\n                         self.description = None\n                     def set_attribute(self, key, value):\n                         self.attributes[key] = value\n                     def set_status(self, status):\n                         self.status = status\n                         if hasattr(status, 'status_code'):\n                             self.status_code = status.status_code\n                         if hasattr(status, 'description'):\n                             self.description = status.description\n                 span = MockSpan()\n                 captured_spans.append((name, kind, attributes, span))\n                 yield span\n \n             import app.pack.evaluator as evaluator_module\n             evaluator_module.trace_span = mock_trace_span\n \n             summary = run_pack_benchmark([case_d02], config, llm=fake_llm)\n \n             assert len(captured_spans) == 1\n             _, _, _, span = captured_spans[0]\n \n             # Check span status is ERROR\n             assert span.status_code is not None\n             # Check description starts with failure class\n             assert span.description is not None\n             assert span.description.startswith(\"tool_error\")\n \n             # Check output.value contains TRUTH\n             assert \"output.value\" in span.attributes\n             output_value = span.attributes[\"output.value\"]\n             assert \"FAILED\" in output_value\n             assert \"tool_error\" in output_value\n             assert \"TRUTH:\" in output_value\n \n         finally:\n             if original_trace_span:\n                 import app.pack.evaluator as evaluator_module\n                 evaluator_module.trace_span = original_trace_span\n\\ No newline at end of file\n",
               "additions": 81,
@@ -31063,19 +31070,22 @@
         },
         "cost": 0,
         "tokens": {
-          "input": 0,
-          "output": 0,
-          "reasoning": 0,
+          "total": 337734,
+          "input": 5018,
+          "output": 65,
+          "reasoning": 11,
           "cache": {
-            "read": 0,
-            "write": 0
+            "write": 0,
+            "read": 332640
           }
         },
         "modelID": "nemotron-3-ultra-free",
         "providerID": "opencode",
         "time": {
-          "created": 1791788381806
+          "created": 1791788381806,
+          "completed": 1791788395330
         },
+        "finish": "tool-calls",
         "id": "msg_12ee8f66e001d4wTPEhq1PjL6a",
         "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
       },
@@ -31103,20 +31113,1105 @@
           "tool": "bash",
           "callID": "call-bf1311d2-40e6-48f1-8d7f-383fd50d1ac3",
           "state": {
-            "metadata": {
-              "output": "warning: in the working copy of 'app/pack/student.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_pack_student.py', LF will be replaced by CRLF the next time Git touches it\n"
-            },
-            "status": "running",
+            "status": "completed",
             "input": {
               "command": "cd /d/trace-driven-agent-improver && git add app/pack/student.py tests/test_pack_student.py && git commit -m \"feat: provenance and verification status footer in generated docs\""
             },
+            "output": "warning: in the working copy of 'app/pack/student.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_pack_student.py', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent af5a418] feat: provenance and verification status footer in generated docs\n 2 files changed, 98 insertions(+)\n",
+            "metadata": {
+              "output": "warning: in the working copy of 'app/pack/student.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_pack_student.py', LF will be replaced by CRLF the next time Git touches it\n[feat/pack-agent af5a418] feat: provenance and verification status footer in generated docs\n 2 files changed, 98 insertions(+)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add app/pack/student.py tests/test_pack_student.py && git commit -m \"feat: provenance and verification status footer in generated docs\"",
             "time": {
-              "start": 1791788388400
+              "start": 1791788388400,
+              "end": 1791788394760
             }
           },
           "id": "prt_12ee91026001vNftpjATHh96eO",
           "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
           "messageID": "msg_12ee8f66e001d4wTPEhq1PjL6a"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "becf5bdf4f31a356c95f4ad3a1d56e014b776c2e",
+          "type": "step-finish",
+          "tokens": {
+            "total": 337734,
+            "input": 5018,
+            "output": 65,
+            "reasoning": 11,
+            "cache": {
+              "write": 0,
+              "read": 332640
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ee929d20011oxZyKji7yrrBY",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee8f66e001d4wTPEhq1PjL6a"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 337889,
+          "input": 5205,
+          "output": 41,
+          "reasoning": 3,
+          "cache": {
+            "write": 0,
+            "read": 332640
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788395402,
+          "completed": 1791788409973
+        },
+        "finish": "tool-calls",
+        "id": "msg_12ee92b8a001BkZoDu0MuBYPey",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "becf5bdf4f31a356c95f4ad3a1d56e014b776c2e",
+          "type": "step-start",
+          "id": "prt_12ee93be80017Q8OBkRS13MODN",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee92b8a001BkZoDu0MuBYPey"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now push.",
+          "time": {
+            "start": 1791788399595,
+            "end": 1791788400376
+          },
+          "id": "prt_12ee93beb001NUFSXfSm1QHBLC",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee92b8a001BkZoDu0MuBYPey"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-60043718-0ed7-45ee-9713-56b83f5a6b05",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git push 2>&1"
+            },
+            "output": "[entire] Pushing 2 checkpoint ref(s) to origin....... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   1ba05f1..af5a418  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[entire] Pushing 2 checkpoint ref(s) to origin....... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   1ba05f1..af5a418  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git push 2>&1",
+            "time": {
+              "start": 1791788400383,
+              "end": 1791788409552
+            }
+          },
+          "id": "prt_12ee93efa001T8Txrgu99Vyi7V",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee92b8a001BkZoDu0MuBYPey"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "becf5bdf4f31a356c95f4ad3a1d56e014b776c2e",
+          "type": "step-finish",
+          "tokens": {
+            "total": 337889,
+            "input": 5205,
+            "output": 41,
+            "reasoning": 3,
+            "cache": {
+              "write": 0,
+              "read": 332640
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ee96391001ES7Hf1OJ1Z7y21",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee92b8a001BkZoDu0MuBYPey"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 338050,
+          "input": 13969,
+          "output": 66,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 324000
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788410028,
+          "completed": 1791788437980
+        },
+        "finish": "tool-calls",
+        "id": "msg_12ee964ac0019XWI16YHg6Gk4E",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "becf5bdf4f31a356c95f4ad3a1d56e014b776c2e",
+          "type": "step-start",
+          "id": "prt_12ee97187001usSoRST2XedrMO",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee964ac0019XWI16YHg6Gk4E"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I need to rerun the demo script to refresh the manifest.",
+          "time": {
+            "start": 1791788413322,
+            "end": 1791788418214
+          },
+          "id": "prt_12ee9718a0016CR9shgzIuyi1y",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee964ac0019XWI16YHg6Gk4E"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-d38ce7c9-0cd1-4844-9b03-2ff8a9533eca",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot LLM_MODE=live PYTHONPATH=. .venv312/Scripts/python.exe scripts/demo_run.py 2>&1"
+            },
+            "output": "Available cases: ['D01', 'D02', 'D03', 'D04', 'D05', 'D06']\r\n\r\n=== Running baseline_wrong_fact (D01) ===\r\n  failure_class=wrong_fact, success=False, tool_attempts=1, llm_calls=1, cost=0.000089\r\n\r\n=== Running baseline_tool_error (D02) ===\r\n  failure_class=tool_error, success=False, tool_attempts=1, llm_calls=0, cost=0.000000\r\n\r\n=== Running candidate_retry_recovery (D02) ===\r\n  failure_class=none, success=True, tool_attempts=2, llm_calls=1, cost=0.000066\r\n\r\n=== Running candidate_success (D01) ===\r\n  failure_class=none, success=True, tool_attempts=1, llm_calls=1, cost=0.000091\r\n\r\n=== Finding verify_regeneration case ===\r\n  Found regeneration case: D01\r\n  failure_class=none, success=True, tool_attempts=1, llm_calls=2, cost=0.000205\r\n\r\nManifest written to evidence\\demo_manifest.md\r\n\r\n=== SUMMARY ===\r\nbaseline_wrong_fact: case=D01, company=Razorpay, failure_class=wrong_fact, success=False, tool_attempts=1, llm_calls=1, cost_usd=0.000089\r\nbaseline_tool_error: case=D02, company=Postman, failure_class=tool_error, success=False, tool_attempts=1, llm_calls=0, cost_usd=0.000000\r\ncandidate_retry_recovery: case=D02, company=Postman, failure_class=none, success=True, tool_attempts=2, llm_calls=1, cost_usd=0.000066\r\ncandidate_success: case=D01, company=Razorpay, failure_class=none, success=True, tool_attempts=1, llm_calls=1, cost_usd=0.000091\r\nverify_regeneration: case=D01, company=Razorpay, failure_class=none, success=True, tool_attempts=1, llm_calls=2, cost_usd=0.000205\r\n2026-10-12 12:30:37 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\n",
+            "metadata": {
+              "output": "Available cases: ['D01', 'D02', 'D03', 'D04', 'D05', 'D06']\r\n\r\n=== Running baseline_wrong_fact (D01) ===\r\n  failure_class=wrong_fact, success=False, tool_attempts=1, llm_calls=1, cost=0.000089\r\n\r\n=== Running baseline_tool_error (D02) ===\r\n  failure_class=tool_error, success=False, tool_attempts=1, llm_calls=0, cost=0.000000\r\n\r\n=== Running candidate_retry_recovery (D02) ===\r\n  failure_class=none, success=True, tool_attempts=2, llm_calls=1, cost=0.000066\r\n\r\n=== Running candidate_success (D01) ===\r\n  failure_class=none, success=True, tool_attempts=1, llm_calls=1, cost=0.000091\r\n\r\n=== Finding verify_regeneration case ===\r\n  Found regeneration case: D01\r\n  failure_class=none, success=True, tool_attempts=1, llm_calls=2, cost=0.000205\r\n\r\nManifest written to evidence\\demo_manifest.md\r\n\r\n=== SUMMARY ===\r\nbaseline_wrong_fact: case=D01, company=Razorpay, failure_class=wrong_fact, success=False, tool_attempts=1, llm_calls=1, cost_usd=0.000089\r\nbaseline_tool_error: case=D02, company=Postman, failure_class=tool_error, success=False, tool_attempts=1, llm_calls=0, cost_usd=0.000000\r\ncandidate_retry_recovery: case=D02, company=Postman, failure_class=none, success=True, tool_attempts=2, llm_calls=1, cost_usd=0.000066\r\ncandidate_success: case=D01, company=Razorpay, failure_class=none, success=True, tool_attempts=1, llm_calls=1, cost_usd=0.000091\r\nverify_regeneration: case=D01, company=Razorpay, failure_class=none, success=True, tool_attempts=1, llm_calls=2, cost_usd=0.000205\r\n2026-10-12 12:30:37 - neatlogs - INFO - Neatlogs SDK shutdown complete\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot LLM_MODE=live PYTHONPATH=. .venv312/Scripts/python.exe scripts/demo_run.py 2>&1",
+            "time": {
+              "start": 1791788418223,
+              "end": 1791788437437
+            }
+          },
+          "id": "prt_12ee984a90015haeSzWYVdtbCq",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee964ac0019XWI16YHg6Gk4E"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 338050,
+            "input": 13969,
+            "output": 66,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 324000
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ee9d103001aDZ8PsgDo161MN",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee964ac0019XWI16YHg6Gk4E"
+        },
+        {
+          "type": "patch",
+          "hash": "becf5bdf4f31a356c95f4ad3a1d56e014b776c2e",
+          "files": [
+            "D:/trace-driven-agent-improver/evidence/demo_manifest.md"
+          ],
+          "id": "prt_12ee9d1da0018pEtEEa83HbMbt",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee964ac0019XWI16YHg6Gk4E"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 338751,
+          "input": 6050,
+          "output": 37,
+          "reasoning": 24,
+          "cache": {
+            "write": 0,
+            "read": 332640
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788438016,
+          "completed": 1791788443189
+        },
+        "finish": "tool-calls",
+        "id": "msg_12ee9d200001OQkvmDzWRpqVjk",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12ee9e21c001dy1FoBUT7izAoT",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9d200001OQkvmDzWRpqVjk"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me check the updated manifest and also check the DOCX footers in the generated files.",
+          "time": {
+            "start": 1791788442142,
+            "end": 1791788442694
+          },
+          "id": "prt_12ee9e21e001EB0mxc7r72ViCQ",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9d200001OQkvmDzWRpqVjk"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call-d0f58cbd-384c-4615-b8e1-369afa7909d1",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "D:\\trace-driven-agent-improver\\evidence\\demo_manifest.md"
+            },
+            "output": "<path>D:\\trace-driven-agent-improver\\evidence\\demo_manifest.md</path>\n<type>file</type>\n<content>\n1: # Demo Run Manifest\n2: \n3: Generated: 2026-10-12T07:00:36.654900+00:00\n4: \n5: ## baseline_wrong_fact\n6: \n7: | Field | Value |\n8: |-------|-------|\n9: | label | baseline_wrong_fact |\n10: | case_id | D01 |\n11: | company | Razorpay |\n12: | domain | razorpay.com |\n13: | config.retry_tool_errors | False |\n14: | config.strict_prompt | False |\n15: | config.verify_facts | False |\n16: | config.version | baseline |\n17: | failure_class | wrong_fact |\n18: | success | False |\n19: | tool_attempts | 1 |\n20: | llm_calls | 1 |\n21: | prompt_tokens | 555 |\n22: | completion_tokens | 233 |\n23: | cost_usd | 0.000089 |\n24: | docx_path | outputs\\demo\\baseline_wrong_fact\\D01_baseline.docx |\n25: | start_time_utc | 2026-10-12T07:00:18.759216+00:00 |\n26: | end_time_utc | 2026-10-12T07:00:21.137505+00:00 |\n27: | issues | ['employee_count=4042 not stated exactly', 'total_funding_usd=816600000 not stated in accepted format'] |\n28: \n29: **True Values:**\n30: \n31: - employee_count: 4042\n32: - founded_year: 2014\n33: - hq_city: Bengaluru\n34: - total_funding_usd: 816600000\n35: - last_round: secondary_market\n36: \n37: In neatlogs: search for `demo.label = baseline_wrong_fact` (or the span name `demo_baseline_wrong_fact`)\n38: \n39: ## baseline_tool_error\n40: \n41: | Field | Value |\n42: |-------|-------|\n43: | label | baseline_tool_error |\n44: | case_id | D02 |\n45: | company | Postman |\n46: | domain | postman.com |\n47: | config.retry_tool_errors | False |\n48: | config.strict_prompt | False |\n49: | config.verify_facts | False |\n50: | config.version | baseline |\n51: | failure_class | tool_error |\n52: | success | False |\n53: | tool_attempts | 1 |\n54: | llm_calls | 0 |\n55: | prompt_tokens | 0 |\n56: | completion_tokens | 0 |\n57: | cost_usd | 0.000000 |\n58: | docx_path | None |\n59: | start_time_utc | 2026-10-12T07:00:21.137505+00:00 |\n60: | end_time_utc | 2026-10-12T07:00:21.140105+00:00 |\n61: | issues | ['tool failed'] |\n62: \n63: **True Values:**\n64: \n65: - employee_count: 3547\n66: - founded_year: 2014\n67: - hq_city: San Francisco\n68: - total_funding_usd: 433000000\n69: - last_round: series_d\n70: \n71: In neatlogs: search for `demo.label = baseline_tool_error` (or the span name `demo_baseline_tool_error`)\n72: \n73: ## candidate_retry_recovery\n74: \n75: | Field | Value |\n76: |-------|-------|\n77: | label | candidate_retry_recovery |\n78: | case_id | D02 |\n79: | company | Postman |\n80: | domain | postman.com |\n81: | config.retry_tool_errors | True |\n82: | config.strict_prompt | True |\n83: | config.verify_facts | True |\n84: | config.version | candidate |\n85: | failure_class | none |\n86: | success | True |\n87: | tool_attempts | 2 |\n88: | llm_calls | 1 |\n89: | prompt_tokens | 261 |\n90: | completion_tokens | 210 |\n91: | cost_usd | 0.000066 |\n92: | docx_path | outputs\\demo\\candidate_retry_recovery\\D02_candidate.docx |\n93: | start_time_utc | 2026-10-12T07:00:21.140105+00:00 |\n94: | end_time_utc | 2026-10-12T07:00:23.241229+00:00 |\n95: | issues | [] |\n96: \n97: **True Values:**\n98: \n99: - employee_count: 3547\n100: - founded_year: 2014\n101: - hq_city: San Francisco\n102: - total_funding_usd: 433000000\n103: - last_round: series_d\n104: \n105: In neatlogs: search for `demo.label = candidate_retry_recovery` (or the span name `demo_candidate_retry_recovery`)\n106: \n107: ## candidate_success\n108: \n109: | Field | Value |\n110: |-------|-------|\n111: | label | candidate_success |\n112: | case_id | D01 |\n113: | company | Razorpay |\n114: | domain | razorpay.com |\n115: | config.retry_tool_errors | True |\n116: | config.strict_prompt | True |\n117: | config.verify_facts | True |\n118: | config.version | candidate |\n119: | failure_class | none |\n120: | success | True |\n121: | tool_attempts | 1 |\n122: | llm_calls | 1 |\n123: | prompt_tokens | 554 |\n124: | completion_tokens | 242 |\n125: | cost_usd | 0.000091 |\n126: | docx_path | outputs\\demo\\candidate_success\\D01_candidate.docx |\n127: | start_time_utc | 2026-10-12T07:00:23.242243+00:00 |\n128: | end_time_utc | 2026-10-12T07:00:25.849871+00:00 |\n129: | issues | [] |\n130: \n131: **True Values:**\n132: \n133: - employee_count: 4042\n134: - founded_year: 2014\n135: - hq_city: Bengaluru\n136: - total_funding_usd: 816600000\n137: - last_round: secondary_market\n138: \n139: In neatlogs: search for `demo.label = candidate_success` (or the span name `demo_candidate_success`)\n140: \n141: ## verify_regeneration\n142: \n143: | Field | Value |\n144: |-------|-------|\n145: | label | verify_regeneration |\n146: | case_id | D01 |\n147: | company | Razorpay |\n148: | domain | razorpay.com |\n149: | config.retry_tool_errors | False |\n150: | config.strict_prompt | False |\n151: | config.verify_facts | True |\n152: | config.version | verify_only |\n153: | failure_class | none |\n154: | success | True |\n155: | tool_attempts | 1 |\n156: | llm_calls | 2 |\n157: | prompt_tokens | 1150 |\n158: | completion_tokens | 566 |\n159: | cost_usd | 0.000205 |\n160: | docx_path | outputs\\demo\\verify_regeneration\\D01_verify_only.docx |\n161: | start_time_utc | 2026-10-12T07:00:30.968155+00:00 |\n162: | end_time_utc | 2026-10-12T07:00:36.654900+00:00 |\n163: | issues | [] |\n164: \n165: **True Values:**\n166: \n167: - employee_count: 4042\n168: - founded_year: 2014\n169: - hq_city: Bengaluru\n170: - total_funding_usd: 816600000\n171: - last_round: secondary_market\n172: \n173: In neatlogs: search for `demo.label = verify_regeneration` (or the span name `demo_verify_regeneration`)\n174: \n175: ---\n176: \n177: ## Screenshot Checklist\n178: \n179: | Scenario | Screenshot File | Description |\n180: |----------|-----------------|-------------|\n181: | a) baseline_wrong_fact | neat_baseline_fail.png | open the llm_draft I/O tab and the benchmark_case attributes |\n182: | c) candidate_retry_recovery | neat_retry_recovery.png | span tree with two fetch_company spans |\n183: | d) candidate_success | neat_candidate_success.png | |\n184: | d) candidate_success | neat_llm_attributes.png | |\n185: | d) candidate_success | neat_llm_io.png | |\n186: | e) verify_regeneration | neat_verify_regeneration.png | llm_regenerate nested in verify_facts |\n187: | a vs d | neat_compare.png | if the dashboard offers a compare view |\n188: \n189: **Additional screenshots for CFO/Entire/GitHub:**\n190: \n191: | Screenshot File | Description |\n192: |-----------------|-------------|\n193: | entire_checkpoints.png | `entire status` output |\n194: | entire_graph_or_status.png | `entire-graph` output or `entire status` |\n195: | cfo_scenario_comparison.png | CFO scenario comparison view |\n196: | cfo_api_price_margin.png | CFO API price/margin view |\n197: | cfo_pricing_assumptions.png | CFO pricing assumptions view |\n198: | cfo_economics_cash.png | CFO economics/cash view |\n199: | agent_output_docx.png | Open both D01 baseline and D01 candidate .docx in Word |\n200: | ablation_table.png | Ablation table from evidence/ |\n201: | github_commits.png | GitHub commits page |\n202: | ci_green.png | CI green check |\n203: \n204: D01 baseline .docx: outputs\\demo\\baseline_wrong_fact\\D01_baseline.docx\n205: D01 candidate .docx: outputs\\demo\\candidate_success\\D01_candidate.docx\n206: Open both in Word: agent_output_docx.png\n\n(End of file - total 206 lines)\n</content>",
+            "metadata": {
+              "preview": "# Demo Run Manifest\n\nGenerated: 2026-10-12T07:00:36.654900+00:00\n\n## baseline_wrong_fact\n\n| Field | Value |\n|-------|-------|\n| label | baseline_wrong_fact |\n| case_id | D01 |\n| company | Razorpay |\n| domain | razorpay.com |\n| config.retry_tool_errors | False |\n| config.strict_prompt | False |\n| config.verify_facts | False |\n| config.version | baseline |\n| failure_class | wrong_fact |\n| success | False |\n| tool_attempts | 1 |\n| llm_calls | 1 |",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "D:\\trace-driven-agent-improver\\evidence\\demo_manifest.md",
+                "text": "# Demo Run Manifest\n\nGenerated: 2026-10-12T07:00:36.654900+00:00\n\n## baseline_wrong_fact\n\n| Field | Value |\n|-------|-------|\n| label | baseline_wrong_fact |\n| case_id | D01 |\n| company | Razorpay |\n| domain | razorpay.com |\n| config.retry_tool_errors | False |\n| config.strict_prompt | False |\n| config.verify_facts | False |\n| config.version | baseline |\n| failure_class | wrong_fact |\n| success | False |\n| tool_attempts | 1 |\n| llm_calls | 1 |\n| prompt_tokens | 555 |\n| completion_tokens | 233 |\n| cost_usd | 0.000089 |\n| docx_path | outputs\\demo\\baseline_wrong_fact\\D01_baseline.docx |\n| start_time_utc | 2026-10-12T07:00:18.759216+00:00 |\n| end_time_utc | 2026-10-12T07:00:21.137505+00:00 |\n| issues | ['employee_count=4042 not stated exactly', 'total_funding_usd=816600000 not stated in accepted format'] |\n\n**True Values:**\n\n- employee_count: 4042\n- founded_year: 2014\n- hq_city: Bengaluru\n- total_funding_usd: 816600000\n- last_round: secondary_market\n\nIn neatlogs: search for `demo.label = baseline_wrong_fact` (or the span name `demo_baseline_wrong_fact`)\n\n## baseline_tool_error\n\n| Field | Value |\n|-------|-------|\n| label | baseline_tool_error |\n| case_id | D02 |\n| company | Postman |\n| domain | postman.com |\n| config.retry_tool_errors | False |\n| config.strict_prompt | False |\n| config.verify_facts | False |\n| config.version | baseline |\n| failure_class | tool_error |\n| success | False |\n| tool_attempts | 1 |\n| llm_calls | 0 |\n| prompt_tokens | 0 |\n| completion_tokens | 0 |\n| cost_usd | 0.000000 |\n| docx_path | None |\n| start_time_utc | 2026-10-12T07:00:21.137505+00:00 |\n| end_time_utc | 2026-10-12T07:00:21.140105+00:00 |\n| issues | ['tool failed'] |\n\n**True Values:**\n\n- employee_count: 3547\n- founded_year: 2014\n- hq_city: San Francisco\n- total_funding_usd: 433000000\n- last_round: series_d\n\nIn neatlogs: search for `demo.label = baseline_tool_error` (or the span name `demo_baseline_tool_error`)\n\n## candidate_retry_recovery\n\n| Field | Value |\n|-------|-------|\n| label | candidate_retry_recovery |\n| case_id | D02 |\n| company | Postman |\n| domain | postman.com |\n| config.retry_tool_errors | True |\n| config.strict_prompt | True |\n| config.verify_facts | True |\n| config.version | candidate |\n| failure_class | none |\n| success | True |\n| tool_attempts | 2 |\n| llm_calls | 1 |\n| prompt_tokens | 261 |\n| completion_tokens | 210 |\n| cost_usd | 0.000066 |\n| docx_path | outputs\\demo\\candidate_retry_recovery\\D02_candidate.docx |\n| start_time_utc | 2026-10-12T07:00:21.140105+00:00 |\n| end_time_utc | 2026-10-12T07:00:23.241229+00:00 |\n| issues | [] |\n\n**True Values:**\n\n- employee_count: 3547\n- founded_year: 2014\n- hq_city: San Francisco\n- total_funding_usd: 433000000\n- last_round: series_d\n\nIn neatlogs: search for `demo.label = candidate_retry_recovery` (or the span name `demo_candidate_retry_recovery`)\n\n## candidate_success\n\n| Field | Value |\n|-------|-------|\n| label | candidate_success |\n| case_id | D01 |\n| company | Razorpay |\n| domain | razorpay.com |\n| config.retry_tool_errors | True |\n| config.strict_prompt | True |\n| config.verify_facts | True |\n| config.version | candidate |\n| failure_class | none |\n| success | True |\n| tool_attempts | 1 |\n| llm_calls | 1 |\n| prompt_tokens | 554 |\n| completion_tokens | 242 |\n| cost_usd | 0.000091 |\n| docx_path | outputs\\demo\\candidate_success\\D01_candidate.docx |\n| start_time_utc | 2026-10-12T07:00:23.242243+00:00 |\n| end_time_utc | 2026-10-12T07:00:25.849871+00:00 |\n| issues | [] |\n\n**True Values:**\n\n- employee_count: 4042\n- founded_year: 2014\n- hq_city: Bengaluru\n- total_funding_usd: 816600000\n- last_round: secondary_market\n\nIn neatlogs: search for `demo.label = candidate_success` (or the span name `demo_candidate_success`)\n\n## verify_regeneration\n\n| Field | Value |\n|-------|-------|\n| label | verify_regeneration |\n| case_id | D01 |\n| company | Razorpay |\n| domain | razorpay.com |\n| config.retry_tool_errors | False |\n| config.strict_prompt | False |\n| config.verify_facts | True |\n| config.version | verify_only |\n| failure_class | none |\n| success | True |\n| tool_attempts | 1 |\n| llm_calls | 2 |\n| prompt_tokens | 1150 |\n| completion_tokens | 566 |\n| cost_usd | 0.000205 |\n| docx_path | outputs\\demo\\verify_regeneration\\D01_verify_only.docx |\n| start_time_utc | 2026-10-12T07:00:30.968155+00:00 |\n| end_time_utc | 2026-10-12T07:00:36.654900+00:00 |\n| issues | [] |\n\n**True Values:**\n\n- employee_count: 4042\n- founded_year: 2014\n- hq_city: Bengaluru\n- total_funding_usd: 816600000\n- last_round: secondary_market\n\nIn neatlogs: search for `demo.label = verify_regeneration` (or the span name `demo_verify_regeneration`)\n\n---\n\n## Screenshot Checklist\n\n| Scenario | Screenshot File | Description |\n|----------|-----------------|-------------|\n| a) baseline_wrong_fact | neat_baseline_fail.png | open the llm_draft I/O tab and the benchmark_case attributes |\n| c) candidate_retry_recovery | neat_retry_recovery.png | span tree with two fetch_company spans |\n| d) candidate_success | neat_candidate_success.png | |\n| d) candidate_success | neat_llm_attributes.png | |\n| d) candidate_success | neat_llm_io.png | |\n| e) verify_regeneration | neat_verify_regeneration.png | llm_regenerate nested in verify_facts |\n| a vs d | neat_compare.png | if the dashboard offers a compare view |\n\n**Additional screenshots for CFO/Entire/GitHub:**\n\n| Screenshot File | Description |\n|-----------------|-------------|\n| entire_checkpoints.png | `entire status` output |\n| entire_graph_or_status.png | `entire-graph` output or `entire status` |\n| cfo_scenario_comparison.png | CFO scenario comparison view |\n| cfo_api_price_margin.png | CFO API price/margin view |\n| cfo_pricing_assumptions.png | CFO pricing assumptions view |\n| cfo_economics_cash.png | CFO economics/cash view |\n| agent_output_docx.png | Open both D01 baseline and D01 candidate .docx in Word |\n| ablation_table.png | Ablation table from evidence/ |\n| github_commits.png | GitHub commits page |\n| ci_green.png | CI green check |\n\nD01 baseline .docx: outputs\\demo\\baseline_wrong_fact\\D01_baseline.docx\nD01 candidate .docx: outputs\\demo\\candidate_success\\D01_candidate.docx\nOpen both in Word: agent_output_docx.png",
+                "lineStart": 1,
+                "lineEnd": 206,
+                "totalLines": 206,
+                "truncated": false
+              }
+            },
+            "title": "evidence\\demo_manifest.md",
+            "time": {
+              "start": 1791788442833,
+              "end": 1791788442848
+            }
+          },
+          "id": "prt_12ee9e447001XmYLmQ513uuchp",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9d200001OQkvmDzWRpqVjk"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 338751,
+            "input": 6050,
+            "output": 37,
+            "reasoning": 24,
+            "cache": {
+              "write": 0,
+              "read": 332640
+            }
+          },
+          "cost": 0,
+          "id": "prt_12ee9e593001ULbxcrGF7pZNuM",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9d200001OQkvmDzWRpqVjk"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 342073,
+          "input": 9122,
+          "output": 262,
+          "reasoning": 49,
+          "cache": {
+            "write": 0,
+            "read": 332640
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788443224,
+          "completed": 1791788463081
+        },
+        "finish": "tool-calls",
+        "id": "msg_12ee9e658001cV06QYfN5kXAcQ",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12ee9fab2001iiqoEm1B1i62qe",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9e658001cV06QYfN5kXAcQ"
+        },
+        {
+          "type": "reasoning",
+          "text": "The manifest is updated with new timestamps. Now let me check the DOCX footers for the two key scenarios (baseline_wrong_fact and candidate_success) to confirm they have the correct footer text.",
+          "time": {
+            "start": 1791788448436,
+            "end": 1791788462588
+          },
+          "id": "prt_12ee9fab4001ZeU0JRB1xEi49S",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9e658001cV06QYfN5kXAcQ"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-9431bd4f-bdc2-498d-835e-0c8f473e1c9f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport docx2txt\n\nfor label in ['baseline_wrong_fact', 'candidate_success', 'verify_regeneration', 'candidate_retry_recovery']:\n    if label == 'verify_regeneration':\n        path = 'outputs/demo/verify_regeneration/D01_verify_only.docx'\n    elif label == 'candidate_retry_recovery':\n        path = 'outputs/demo/candidate_retry_recovery/D02_candidate.docx'\n    else:\n        version = 'baseline' if label == 'baseline_wrong_fact' else 'candidate'\n        path = f'outputs/demo/{label}/D01_{version}.docx'\n    try:\n        text = docx2txt.process(path)\n        lines = text.strip().split('\\n')\n        # Get last few lines\n        print(f'=== {label} ===')\n        for line in lines[-5:]:\n            print(line)\n        print()\n    except Exception as e:\n        print(f'{label}: ERROR - {e}')\n\""
+            },
+            "output": "=== baseline_wrong_fact ===\r\n- Market competition from both established players and emerging startups\r\n- Regulatory changes in the financial and payments sectors\r\n- Technological disruptions that could affect payment processing and security\r\n\r\nSource: Crustdata company data. Figures checked against source: Not checked.\r\n\r\n=== candidate_success ===\r\n- Rapidly evolving financial technology landscape may require continuous innovation and adaptation.\r\n- Regulatory changes in the payments and financial services sector could impact operations.\r\n- Dependence on digital infrastructure and internet penetration in India.\r\n\r\nSource: Crustdata company data. Figures checked against source: Yes.\r\n\r\n=== verify_regeneration ===\r\n- Regulatory changes in the financial sector\r\n- Dependence on technology and cybersecurity threats\r\n- Potential economic downturns affecting consumer spending and business operations\r\n\r\nSource: Crustdata company data. Figures checked against source: Yes.\r\n\r\n=== candidate_retry_recovery ===\r\nRisks\r\n\r\nWhile Postman is experiencing rapid growth, the competitive nature of the API platform market and potential technological disruptions could pose risks to its market position and revenue growth.\r\n\r\nSource: Crustdata company data. Figures checked against source: Yes.\r\n\r\n",
+            "metadata": {
+              "output": "=== baseline_wrong_fact ===\r\n- Market competition from both established players and emerging startups\r\n- Regulatory changes in the financial and payments sectors\r\n- Technological disruptions that could affect payment processing and security\r\n\r\nSource: Crustdata company data. Figures checked against source: Not checked.\r\n\r\n=== candidate_success ===\r\n- Rapidly evolving financial technology landscape may require continuous innovation and adaptation.\r\n- Regulatory changes in the payments and financial services sector could impact operations.\r\n- Dependence on digital infrastructure and internet penetration in India.\r\n\r\nSource: Crustdata company data. Figures checked against source: Yes.\r\n\r\n=== verify_regeneration ===\r\n- Regulatory changes in the financial sector\r\n- Dependence on technology and cybersecurity threats\r\n- Potential economic downturns affecting consumer spending and business operations\r\n\r\nSource: Crustdata company data. Figures checked against source: Yes.\r\n\r\n=== candidate_retry_recovery ===\r\nRisks\r\n\r\nWhile Postman is experiencing rapid growth, the competitive nature of the API platform market and potential technological disruptions could pose risks to its market position and revenue growth.\r\n\r\nSource: Crustdata company data. Figures checked against source: Yes.\r\n\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport docx2txt\n\nfor label in ['baseline_wrong_fact', 'candidate_success', 'verify_regeneration', 'candidate_retry_recovery']:\n    if label == 'verify_regeneration':\n        path = 'outputs/demo/verify_regeneration/D01_verify_only.docx'\n    elif label == 'candidate_retry_recovery':\n        path = 'outputs/demo/candidate_retry_recovery/D02_candidate.docx'\n    else:\n        version = 'baseline' if label == 'baseline_wrong_fact' else 'candidate'\n        path = f'outputs/demo/{label}/D01_{version}.docx'\n    try:\n        text = docx2txt.process(path)\n        lines = text.strip().split('\\n')\n        # Get last few lines\n        print(f'=== {label} ===')\n        for line in lines[-5:]:\n            print(line)\n        print()\n    except Exception as e:\n        print(f'{label}: ERROR - {e}')\n\"",
+            "time": {
+              "start": 1791788462595,
+              "end": 1791788462752
+            }
+          },
+          "id": "prt_12eea31fe001zWxUUv0XA3Xvs4",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9e658001cV06QYfN5kXAcQ"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 342073,
+            "input": 9122,
+            "output": 262,
+            "reasoning": 49,
+            "cache": {
+              "write": 0,
+              "read": 332640
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eea3342001K8VdzxJG2YWkoh",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12ee9e658001cV06QYfN5kXAcQ"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 342551,
+          "input": 5407,
+          "output": 55,
+          "reasoning": 129,
+          "cache": {
+            "write": 0,
+            "read": 336960
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788463113,
+          "completed": 1791788478210
+        },
+        "finish": "tool-calls",
+        "id": "msg_12eea3409001GGKm5kGj8Fuhvj",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eea487e001WsoC0GvsD1bile",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea3409001GGKm5kGj8Fuhvj"
+        },
+        {
+          "type": "reasoning",
+          "text": "The footers are working correctly:\n- baseline_wrong_fact (verify_facts=False): \"Not checked\"\n- candidate_success (verify_facts=True, verified=True): \"Yes\"\n- verify_regeneration (verify_facts=True, verified=True): \"Yes\"\n- candidate_retry_recovery (verify_facts=True, verified=True): \"Yes\"\n\nNow I need to:\n1. Commit the refreshed evidence/demo_manifest.md\n2. Push\n3. Do the local check of span data for baseline_wrong_fact and candidate_success\n4. Report\n\nLet me first commit and push the updated manifest.",
+          "time": {
+            "start": 1791788468352,
+            "end": 1791788472633
+          },
+          "id": "prt_12eea4880001cBjowhZrCO1tZX",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea3409001GGKm5kGj8Fuhvj"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-604620ff-f30b-4e16-8545-b84a64a73603",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git add evidence/demo_manifest.md && git commit -m \"evidence: refresh demo manifest with footer footers\""
+            },
+            "output": "[feat/pack-agent 7f89af8] evidence: refresh demo manifest with footer footers\n 1 file changed, 19 insertions(+), 19 deletions(-)\n",
+            "metadata": {
+              "output": "[feat/pack-agent 7f89af8] evidence: refresh demo manifest with footer footers\n 1 file changed, 19 insertions(+), 19 deletions(-)\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git add evidence/demo_manifest.md && git commit -m \"evidence: refresh demo manifest with footer footers\"",
+            "time": {
+              "start": 1791788472642,
+              "end": 1791788477664
+            }
+          },
+          "id": "prt_12eea593c001fxdx7E1LWoXi9X",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea3409001GGKm5kGj8Fuhvj"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 342551,
+            "input": 5407,
+            "output": 55,
+            "reasoning": 129,
+            "cache": {
+              "write": 0,
+              "read": 336960
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eea6da9001axlwlgy7hCHk6W",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea3409001GGKm5kGj8Fuhvj"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 342652,
+          "input": 5648,
+          "output": 41,
+          "reasoning": 3,
+          "cache": {
+            "write": 0,
+            "read": 336960
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788478271,
+          "completed": 1791788491011
+        },
+        "finish": "tool-calls",
+        "id": "msg_12eea6f3f001MUTstSfF9h25du",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eea80b5001W5hXQe5g3krzlg",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea6f3f001MUTstSfF9h25du"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now push.",
+          "time": {
+            "start": 1791788482743,
+            "end": 1791788483760
+          },
+          "id": "prt_12eea80b7001VdFV5LxEBWzAuw",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea6f3f001MUTstSfF9h25du"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-4bfafc84-1a7c-446c-8723-12450ac3140b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git push 2>&1"
+            },
+            "output": "[entire] Pushing 1 checkpoint ref(s) to origin....... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   af5a418..7f89af8  feat/pack-agent -> feat/pack-agent\n",
+            "metadata": {
+              "output": "[entire] Pushing 1 checkpoint ref(s) to origin....... done\nTo https://github.com/NISHANTH-PM/trace-driven-agent-improver.git\n   af5a418..7f89af8  feat/pack-agent -> feat/pack-agent\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git push 2>&1",
+            "time": {
+              "start": 1791788483768,
+              "end": 1791788490709
+            }
+          },
+          "id": "prt_12eea84b2001vPl9OrcJEHfRcq",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea6f3f001MUTstSfF9h25du"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 342652,
+            "input": 5648,
+            "output": 41,
+            "reasoning": 3,
+            "cache": {
+              "write": 0,
+              "read": 336960
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eeaa06d001ALhUACMo6S9o2m",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eea6f3f001MUTstSfF9h25du"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 343692,
+          "input": 5771,
+          "output": 917,
+          "reasoning": 44,
+          "cache": {
+            "write": 0,
+            "read": 336960
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788491046,
+          "completed": 1791788541765
+        },
+        "finish": "tool-calls",
+        "id": "msg_12eeaa126001u4ZcNRZZ6ZfgBt",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eeab1a7001EvjrL9c47ctECH",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeaa126001u4ZcNRZZ6ZfgBt"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I need to do the local check of span data for baseline_wrong_fact and candidate_success. I'll use the same mock technique as in the tests to capture the span attributes.",
+          "time": {
+            "start": 1791788495273,
+            "end": 1791788539623
+          },
+          "id": "prt_12eeab1a9001wX9s1zTnbwTJfO",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeaa126001u4ZcNRZZ6ZfgBt"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-71fff74c-5c7b-4787-9f8b-5bb731f18022",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nfrom contextlib import contextmanager\nimport app.observability as observability_module\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig\nfrom app.llm import FakeLLMClient\nfrom app.pack.models import CompanyCase\n\n# Enable neatlogs flag for mark_span_failed\nobservability_module._initialized = True\n\n# Capture spans\ncaptured_spans = []\n\n@contextmanager\ndef mock_trace_span(name, kind='CHAIN', attributes=None):\n    class MockSpan:\n        def __init__(self):\n            self.attributes = {}\n            self.status_code = None\n            self.description = None\n        def set_attribute(self, key, value):\n            self.attributes[key] = value\n        def set_status(self, status):\n            self.status = status\n            if hasattr(status, 'status_code'):\n                self.status_code = status.status_code\n            if hasattr(status, 'description'):\n                self.description = status.description\n    span = MockSpan()\n    captured_spans.append((name, kind, attributes, span))\n    yield span\n\n# Test baseline_wrong_fact (D01)\nprint('=== baseline_wrong_fact (D01) ===')\ncaptured_spans.clear()\nimport app.pack.evaluator as evaluator_module\nevaluator_module.trace_span = mock_trace_span\n\ncase_d01 = CompanyCase(case_id='D01', company_name='Razorpay', domain='razorpay.com', split='development')\nbad_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company.',\n        'Key Facts': 'About 340 employees, founded around 2015, HQ in Pittsburgh area',\n        'Funding': 'Raised roughly \\$85M, last round Series B',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm = FakeLLMClient(bad_response)\nconfig = PackConfig(output_dir='outputs', version='baseline', verify_facts=False)\n\nrun_pack_benchmark([case_d01], config, llm=fake_llm)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\nevaluator_module.trace_span = mock_trace_span\ncaptured_spans.clear()\n\n# Test candidate_success (D01)\nprint('=== candidate_success (D01) ===')\ngood_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.',\n        'Key Facts': '342 employees, founded 2015, HQ Pittsburgh',\n        'Funding': 'Total funding \\$85,000,000, last round Series B',\n        'Risks': 'Competition in robotics market'\n    }\n})\nfake_llm2 = FakeLLMClient(good_response)\nconfig2 = PackConfig(output_dir='outputs', version='candidate', verify_facts=True)\n\nrun_pack_benchmark([case_d01], config2, llm=fake_llm2)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\" 2>&1"
+            },
+            "output": "Traceback (most recent call last):\r\n  File \"<string>\", line 53, in <module>\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\evaluator.py\", line 131, in run_pack_benchmark\r\n    truth_company = truth.get_company(case.domain)\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\tools.py\", line 36, in get_company\r\n    raise ToolError(\"not found\")\r\napp.pack.tools.ToolError: not found\r\n=== baseline_wrong_fact (D01) ===\r\n",
+            "metadata": {
+              "output": "Traceback (most recent call last):\r\n  File \"<string>\", line 53, in <module>\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\evaluator.py\", line 131, in run_pack_benchmark\r\n    truth_company = truth.get_company(case.domain)\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\trace-driven-agent-improver\\app\\pack\\tools.py\", line 36, in get_company\r\n    raise ToolError(\"not found\")\r\napp.pack.tools.ToolError: not found\r\n=== baseline_wrong_fact (D01) ===\r\n",
+              "exit": 1,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nfrom contextlib import contextmanager\nimport app.observability as observability_module\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig\nfrom app.llm import FakeLLMClient\nfrom app.pack.models import CompanyCase\n\n# Enable neatlogs flag for mark_span_failed\nobservability_module._initialized = True\n\n# Capture spans\ncaptured_spans = []\n\n@contextmanager\ndef mock_trace_span(name, kind='CHAIN', attributes=None):\n    class MockSpan:\n        def __init__(self):\n            self.attributes = {}\n            self.status_code = None\n            self.description = None\n        def set_attribute(self, key, value):\n            self.attributes[key] = value\n        def set_status(self, status):\n            self.status = status\n            if hasattr(status, 'status_code'):\n                self.status_code = status.status_code\n            if hasattr(status, 'description'):\n                self.description = status.description\n    span = MockSpan()\n    captured_spans.append((name, kind, attributes, span))\n    yield span\n\n# Test baseline_wrong_fact (D01)\nprint('=== baseline_wrong_fact (D01) ===')\ncaptured_spans.clear()\nimport app.pack.evaluator as evaluator_module\nevaluator_module.trace_span = mock_trace_span\n\ncase_d01 = CompanyCase(case_id='D01', company_name='Razorpay', domain='razorpay.com', split='development')\nbad_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company.',\n        'Key Facts': 'About 340 employees, founded around 2015, HQ in Pittsburgh area',\n        'Funding': 'Raised roughly \\$85M, last round Series B',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm = FakeLLMClient(bad_response)\nconfig = PackConfig(output_dir='outputs', version='baseline', verify_facts=False)\n\nrun_pack_benchmark([case_d01], config, llm=fake_llm)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\nevaluator_module.trace_span = mock_trace_span\ncaptured_spans.clear()\n\n# Test candidate_success (D01)\nprint('=== candidate_success (D01) ===')\ngood_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.',\n        'Key Facts': '342 employees, founded 2015, HQ Pittsburgh',\n        'Funding': 'Total funding \\$85,000,000, last round Series B',\n        'Risks': 'Competition in robotics market'\n    }\n})\nfake_llm2 = FakeLLMClient(good_response)\nconfig2 = PackConfig(output_dir='outputs', version='candidate', verify_facts=True)\n\nrun_pack_benchmark([case_d01], config2, llm=fake_llm2)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\" 2>&1",
+            "time": {
+              "start": 1791788539637,
+              "end": 1791788541453
+            }
+          },
+          "id": "prt_12eeb5eee001TlXU6LhD34Zg2e",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeaa126001u4ZcNRZZ6ZfgBt"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 343692,
+            "input": 5771,
+            "output": 917,
+            "reasoning": 44,
+            "cache": {
+              "write": 0,
+              "read": 336960
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eeb66a5001R9yrR3ThiXwoRv",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeaa126001u4ZcNRZZ6ZfgBt"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 344837,
+          "input": 11223,
+          "output": 935,
+          "reasoning": 39,
+          "cache": {
+            "write": 0,
+            "read": 332640
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788541802,
+          "completed": 1791788576695
+        },
+        "finish": "tool-calls",
+        "id": "msg_12eeb676a001kIbRRLDYNBnUdi",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eeb8042001U8AlubK3TPpR48",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeb676a001kIbRRLDYNBnUdi"
+        },
+        {
+          "type": "reasoning",
+          "text": "The test is failing because it's using the fixture source which doesn't have the snapshot companies. I need to set PACK_SOURCE=snapshot in the environment.",
+          "time": {
+            "start": 1791788548164,
+            "end": 1791788574464
+          },
+          "id": "prt_12eeb8044001dOJ5qjbhhDRE6j",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeb676a001kIbRRLDYNBnUdi"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-98cf9532-f9d3-4ebb-be3b-5a4402938e1b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nfrom contextlib import contextmanager\nimport os\nos.environ['PACK_SOURCE'] = 'snapshot'\nimport app.observability as observability_module\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig\nfrom app.llm import FakeLLMClient\nfrom app.pack.models import CompanyCase\n\n# Enable neatlogs flag for mark_span_failed\nobservability_module._initialized = True\n\n# Capture spans\ncaptured_spans = []\n\n@contextmanager\ndef mock_trace_span(name, kind='CHAIN', attributes=None):\n    class MockSpan:\n        def __init__(self):\n            self.attributes = {}\n            self.status_code = None\n            self.description = None\n        def set_attribute(self, key, value):\n            self.attributes[key] = value\n        def set_status(self, status):\n            self.status = status\n            if hasattr(status, 'status_code'):\n                self.status_code = status.status_code\n            if hasattr(status, 'description'):\n                self.description = status.description\n    span = MockSpan()\n    captured_spans.append((name, kind, attributes, span))\n    yield span\n\n# Test baseline_wrong_fact (D01)\nprint('=== baseline_wrong_fact (D01) ===')\ncaptured_spans.clear()\nimport app.pack.evaluator as evaluator_module\nevaluator_module.trace_span = mock_trace_span\n\ncase_d01 = CompanyCase(case_id='D01', company_name='Razorpay', domain='razorpay.com', split='development')\nbad_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company.',\n        'Key Facts': 'About 340 employees, founded around 2015, HQ in Pittsburgh area',\n        'Funding': 'Raised roughly \\$85M, last round Series B',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm = FakeLLMClient(bad_response)\nconfig = PackConfig(output_dir='outputs', version='baseline', verify_facts=False)\n\nrun_pack_benchmark([case_d01], config, llm=fake_llm)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\nevaluator_module.trace_span = mock_trace_span\ncaptured_spans.clear()\n\n# Test candidate_success (D01)\nprint('=== candidate_success (D01) ===')\ngood_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.',\n        'Key Facts': '342 employees, founded 2015, HQ Pittsburgh',\n        'Funding': 'Total funding \\$85,000,000, last round Series B',\n        'Risks': 'Competition in robotics market'\n    }\n})\nfake_llm2 = FakeLLMClient(good_response)\nconfig2 = PackConfig(output_dir='outputs', version='candidate', verify_facts=True)\n\nrun_pack_benchmark([case_d01], config2, llm=fake_llm2)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\" 2>&1"
+            },
+            "output": "=== baseline_wrong_fact (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: StatusCode.ERROR\r\n  description: wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not stated; last_round=secondary_market not stated; total_funding_usd=816600000 not stated in accepted format\r\n  attributes:\r\n    evaluation.success: False\r\n    evaluation.failure_class: wrong_fact\r\n    evaluation.issues: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not \r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: FAILED wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_\r\n\r\n=== candidate_success (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: StatusCode.ERROR\r\n  description: wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not stated; last_round=secondary_market not stated; total_funding_usd=816600000 not stated in accepted format\r\n  attributes:\r\n    evaluation.success: False\r\n    evaluation.failure_class: wrong_fact\r\n    evaluation.issues: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not \r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: FAILED wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_\r\n\r\n",
+            "metadata": {
+              "output": "=== baseline_wrong_fact (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: StatusCode.ERROR\r\n  description: wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not stated; last_round=secondary_market not stated; total_funding_usd=816600000 not stated in accepted format\r\n  attributes:\r\n    evaluation.success: False\r\n    evaluation.failure_class: wrong_fact\r\n    evaluation.issues: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not \r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: FAILED wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_\r\n\r\n=== candidate_success (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: StatusCode.ERROR\r\n  description: wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not stated; last_round=secondary_market not stated; total_funding_usd=816600000 not stated in accepted format\r\n  attributes:\r\n    evaluation.success: False\r\n    evaluation.failure_class: wrong_fact\r\n    evaluation.issues: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_city=Bengaluru not \r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: FAILED wrong_fact: employee_count=4042 not stated exactly; founded_year=2014 not stated exactly; hq_\r\n\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nfrom contextlib import contextmanager\nimport os\nos.environ['PACK_SOURCE'] = 'snapshot'\nimport app.observability as observability_module\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig\nfrom app.llm import FakeLLMClient\nfrom app.pack.models import CompanyCase\n\n# Enable neatlogs flag for mark_span_failed\nobservability_module._initialized = True\n\n# Capture spans\ncaptured_spans = []\n\n@contextmanager\ndef mock_trace_span(name, kind='CHAIN', attributes=None):\n    class MockSpan:\n        def __init__(self):\n            self.attributes = {}\n            self.status_code = None\n            self.description = None\n        def set_attribute(self, key, value):\n            self.attributes[key] = value\n        def set_status(self, status):\n            self.status = status\n            if hasattr(status, 'status_code'):\n                self.status_code = status.status_code\n            if hasattr(status, 'description'):\n                self.description = status.description\n    span = MockSpan()\n    captured_spans.append((name, kind, attributes, span))\n    yield span\n\n# Test baseline_wrong_fact (D01)\nprint('=== baseline_wrong_fact (D01) ===')\ncaptured_spans.clear()\nimport app.pack.evaluator as evaluator_module\nevaluator_module.trace_span = mock_trace_span\n\ncase_d01 = CompanyCase(case_id='D01', company_name='Razorpay', domain='razorpay.com', split='development')\nbad_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company.',\n        'Key Facts': 'About 340 employees, founded around 2015, HQ in Pittsburgh area',\n        'Funding': 'Raised roughly \\$85M, last round Series B',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm = FakeLLMClient(bad_response)\nconfig = PackConfig(output_dir='outputs', version='baseline', verify_facts=False)\n\nrun_pack_benchmark([case_d01], config, llm=fake_llm)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\nevaluator_module.trace_span = mock_trace_span\ncaptured_spans.clear()\n\n# Test candidate_success (D01)\nprint('=== candidate_success (D01) ===')\ngood_response = json.dumps({\n    'sections': {\n        'Overview': 'Apex Dynamics is a robotics company founded in 2015 in Pittsburgh.',\n        'Key Facts': '342 employees, founded 2015, HQ Pittsburgh',\n        'Funding': 'Total funding \\$85,000,000, last round Series B',\n        'Risks': 'Competition in robotics market'\n    }\n})\nfake_llm2 = FakeLLMClient(good_response)\nconfig2 = PackConfig(output_dir='outputs', version='candidate', verify_facts=True)\n\nrun_pack_benchmark([case_d01], config2, llm=fake_llm2)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\" 2>&1",
+            "time": {
+              "start": 1791788574476,
+              "end": 1791788576341
+            }
+          },
+          "id": "prt_12eebe703001rnDx4s3rCzo52m",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeb676a001kIbRRLDYNBnUdi"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 344837,
+            "input": 11223,
+            "output": 935,
+            "reasoning": 39,
+            "cache": {
+              "write": 0,
+              "read": 332640
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eebef0b001FT0YwgGy5xMeMp",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeb676a001kIbRRLDYNBnUdi"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 346544,
+          "input": 8414,
+          "output": 1031,
+          "reasoning": 139,
+          "cache": {
+            "write": 0,
+            "read": 336960
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788576732,
+          "completed": 1791788612641
+        },
+        "finish": "tool-calls",
+        "id": "msg_12eebefdc001kd50KAwuh5d97w",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eec12c6001La1yq3sfATLnVl",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eebefdc001kd50KAwuh5d97w"
+        },
+        {
+          "type": "reasoning",
+          "text": "Interesting! The candidate_success case is failing in this test. That's because the good_response I'm using in the test is for the fixture company (Apex Dynamics), not for Razorpay. The true values for D01 in the snapshot are Razorpay's values, not Apex Dynamics. Let me fix this by using the correct true values for Razorpay in the good response.\n\nActually, wait - the test is using the snapshot source, so the truth is Razorpay data, but the LLM response is for Apex Dynamics. That's why it's failing. Let me create a proper good response for Razorpay.",
+          "time": {
+            "start": 1791788585672,
+            "end": 1791788610279
+          },
+          "id": "prt_12eec12c8001ycupKfNtsl7GY9",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eebefdc001kd50KAwuh5d97w"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-ae5fbc75-1dec-43c3-a1d5-0979cda3df2f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nfrom contextlib import contextmanager\nimport os\nos.environ['PACK_SOURCE'] = 'snapshot'\nimport app.observability as observability_module\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig\nfrom app.llm import FakeLLMClient\nfrom app.pack.models import CompanyCase\n\n# Enable neatlogs flag for mark_span_failed\nobservability_module._initialized = True\n\n# Capture spans\ncaptured_spans = []\n\n@contextmanager\ndef mock_trace_span(name, kind='CHAIN', attributes=None):\n    class MockSpan:\n        def __init__(self):\n            self.attributes = {}\n            self.status_code = None\n            self.description = None\n        def set_attribute(self, key, value):\n            self.attributes[key] = value\n        def set_status(self, status):\n            self.status = status\n            if hasattr(status, 'status_code'):\n                self.status_code = status.status_code\n            if hasattr(status, 'description'):\n                self.description = status.description\n    span = MockSpan()\n    captured_spans.append((name, kind, attributes, span))\n    yield span\n\n# Test baseline_wrong_fact (D01) - uses verify_facts=False\nprint('=== baseline_wrong_fact (D01) ===')\ncaptured_spans.clear()\nimport app.pack.evaluator as evaluator_module\nevaluator_module.trace_span = mock_trace_span\n\ncase_d01 = CompanyCase(case_id='D01', company_name='Razorpay', domain='razorpay.com', split='development')\nbad_response = json.dumps({\n    'sections': {\n        'Overview': 'Razorpay is India\\\\'s first full-stack financial solutions company.',\n        'Key Facts': 'About 4,000 employees, founded around 2014, HQ in Bengaluru area',\n        'Funding': 'Raised roughly \\$817M, last round secondary market',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm = FakeLLMClient(bad_response)\nconfig = PackConfig(output_dir='outputs', version='baseline', verify_facts=False)\n\nrun_pack_benchmark([case_d01], config, llm=fake_llm)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\nevaluator_module.trace_span = mock_trace_span\ncaptured_spans.clear()\n\n# Test candidate_success (D01) - uses verify_facts=True with EXACT facts for Razorpay\nprint('=== candidate_success (D01) ===')\n# Razorpay true values: employee_count=4042, founded_year=2014, hq_city=Bengaluru, total_funding_usd=816600000, last_round=secondary_market\ngood_response = json.dumps({\n    'sections': {\n        'Overview': 'Razorpay is India\\\\'s first full-stack financial solutions company, founded in 2014.',\n        'Key Facts': '4042 employees, founded 2014, HQ Bengaluru',\n        'Funding': 'Total funding \\$816,600,000, last round secondary_market',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm2 = FakeLLMClient(good_response)\nconfig2 = PackConfig(output_dir='outputs', version='candidate', verify_facts=True)\n\nrun_pack_benchmark([case_d01], config2, llm=fake_llm2)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\" 2>&1"
+            },
+            "output": "=== baseline_wrong_fact (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: StatusCode.ERROR\r\n  description: wrong_fact: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in accepted format\r\n  attributes:\r\n    evaluation.success: False\r\n    evaluation.failure_class: wrong_fact\r\n    evaluation.issues: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in accepted format\r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: FAILED wrong_fact: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in\r\n\r\n=== candidate_success (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: None\r\n  description: None\r\n  attributes:\r\n    evaluation.success: True\r\n    evaluation.failure_class: none\r\n    evaluation.issues: \r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: PASSED\r\n\r\n",
+            "metadata": {
+              "output": "=== baseline_wrong_fact (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: StatusCode.ERROR\r\n  description: wrong_fact: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in accepted format\r\n  attributes:\r\n    evaluation.success: False\r\n    evaluation.failure_class: wrong_fact\r\n    evaluation.issues: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in accepted format\r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: FAILED wrong_fact: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in\r\n\r\n=== candidate_success (D01) ===\r\nSpan: benchmark_case, kind: WORKFLOW\r\n  status_code: None\r\n  description: None\r\n  attributes:\r\n    evaluation.success: True\r\n    evaluation.failure_class: none\r\n    evaluation.issues: \r\n    evaluation.truth: employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=s\r\n    output.value: PASSED\r\n\r\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && PACK_SOURCE=snapshot PYTHONPATH=. .venv312/Scripts/python.exe -c \"\nimport json\nfrom contextlib import contextmanager\nimport os\nos.environ['PACK_SOURCE'] = 'snapshot'\nimport app.observability as observability_module\nfrom app.pack.evaluator import run_pack_benchmark\nfrom app.pack.student import PackConfig\nfrom app.llm import FakeLLMClient\nfrom app.pack.models import CompanyCase\n\n# Enable neatlogs flag for mark_span_failed\nobservability_module._initialized = True\n\n# Capture spans\ncaptured_spans = []\n\n@contextmanager\ndef mock_trace_span(name, kind='CHAIN', attributes=None):\n    class MockSpan:\n        def __init__(self):\n            self.attributes = {}\n            self.status_code = None\n            self.description = None\n        def set_attribute(self, key, value):\n            self.attributes[key] = value\n        def set_status(self, status):\n            self.status = status\n            if hasattr(status, 'status_code'):\n                self.status_code = status.status_code\n            if hasattr(status, 'description'):\n                self.description = status.description\n    span = MockSpan()\n    captured_spans.append((name, kind, attributes, span))\n    yield span\n\n# Test baseline_wrong_fact (D01) - uses verify_facts=False\nprint('=== baseline_wrong_fact (D01) ===')\ncaptured_spans.clear()\nimport app.pack.evaluator as evaluator_module\nevaluator_module.trace_span = mock_trace_span\n\ncase_d01 = CompanyCase(case_id='D01', company_name='Razorpay', domain='razorpay.com', split='development')\nbad_response = json.dumps({\n    'sections': {\n        'Overview': 'Razorpay is India\\\\'s first full-stack financial solutions company.',\n        'Key Facts': 'About 4,000 employees, founded around 2014, HQ in Bengaluru area',\n        'Funding': 'Raised roughly \\$817M, last round secondary market',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm = FakeLLMClient(bad_response)\nconfig = PackConfig(output_dir='outputs', version='baseline', verify_facts=False)\n\nrun_pack_benchmark([case_d01], config, llm=fake_llm)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\nevaluator_module.trace_span = mock_trace_span\ncaptured_spans.clear()\n\n# Test candidate_success (D01) - uses verify_facts=True with EXACT facts for Razorpay\nprint('=== candidate_success (D01) ===')\n# Razorpay true values: employee_count=4042, founded_year=2014, hq_city=Bengaluru, total_funding_usd=816600000, last_round=secondary_market\ngood_response = json.dumps({\n    'sections': {\n        'Overview': 'Razorpay is India\\\\'s first full-stack financial solutions company, founded in 2014.',\n        'Key Facts': '4042 employees, founded 2014, HQ Bengaluru',\n        'Funding': 'Total funding \\$816,600,000, last round secondary_market',\n        'Risks': 'Market competition'\n    }\n})\nfake_llm2 = FakeLLMClient(good_response)\nconfig2 = PackConfig(output_dir='outputs', version='candidate', verify_facts=True)\n\nrun_pack_benchmark([case_d01], config2, llm=fake_llm2)\n\nfor n, k, a, s in captured_spans:\n    print(f'Span: {n}, kind: {k}')\n    print(f'  status_code: {s.status_code}')\n    print(f'  description: {s.description}')\n    print(f'  attributes:')\n    for k, v in s.attributes.items():\n        print(f'    {k}: {v[:100] if isinstance(v, str) and len(v) > 100 else v}')\n    print()\n\" 2>&1",
+            "time": {
+              "start": 1791788610289,
+              "end": 1791788612299
+            }
+          },
+          "id": "prt_12eec72e9001PcjF8s6cWU7Z2N",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eebefdc001kd50KAwuh5d97w"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 346544,
+            "input": 8414,
+            "output": 1031,
+            "reasoning": 139,
+            "cache": {
+              "write": 0,
+              "read": 336960
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eec7b70001BL7i9xKGq4F56s",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eebefdc001kd50KAwuh5d97w"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 346982,
+          "input": 9964,
+          "output": 40,
+          "reasoning": 18,
+          "cache": {
+            "write": 0,
+            "read": 336960
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788612675,
+          "completed": 1791788623056
+        },
+        "finish": "tool-calls",
+        "id": "msg_12eec7c43001QmsLhqfqfidDwk",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eeca0a2001QonIwb5XF9bA5D",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eec7c43001QmsLhqfqfidDwk"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have the span data for both scenarios. Let me compile the report.",
+          "time": {
+            "start": 1791788621990,
+            "end": 1791788622625
+          },
+          "id": "prt_12eeca0a6001hcFJjB1F3vN9Iz",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eec7c43001QmsLhqfqfidDwk"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call-ad9a8af8-c751-4074-9a87-8b8ccd9efdae",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "cd /d/trace-driven-agent-improver && git log --oneline -5"
+            },
+            "output": "7f89af8 evidence: refresh demo manifest with footer footers\naf5a418 feat: provenance and verification status footer in generated docs\n1ba05f1 feat: make evaluation results visible in neatlogs (span status, output.value, evaluation attributes)\nbfb38ad evidence: labeled demo run for screenshots (neatlogs traces, manifest)\n6ba20f4 chore: ignore stray local files\n",
+            "metadata": {
+              "output": "7f89af8 evidence: refresh demo manifest with footer footers\naf5a418 feat: provenance and verification status footer in generated docs\n1ba05f1 feat: make evaluation results visible in neatlogs (span status, output.value, evaluation attributes)\nbfb38ad evidence: labeled demo run for screenshots (neatlogs traces, manifest)\n6ba20f4 chore: ignore stray local files\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "cd /d/trace-driven-agent-improver && git log --oneline -5",
+            "time": {
+              "start": 1791788622632,
+              "end": 1791788622714
+            }
+          },
+          "id": "prt_12eeca323001ugOR30Z7d6z3L9",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eec7c43001QmsLhqfqfidDwk"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 346982,
+            "input": 9964,
+            "output": 40,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 336960
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eeca422001km1wpfHPgvLQnm",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eec7c43001QmsLhqfqfidDwk"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_12ee5e85d001Ptmg1lQcnKQraU",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "D:\\trace-driven-agent-improver",
+          "root": "D:\\trace-driven-agent-improver"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 348120,
+          "input": 10130,
+          "output": 1015,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 336960
+          }
+        },
+        "modelID": "nemotron-3-ultra-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1791788623089,
+          "completed": 1791788647603
+        },
+        "finish": "stop",
+        "id": "msg_12eeca4f1001SqCntrXRgXQ0CM",
+        "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2"
+      },
+      "parts": [
+        {
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-start",
+          "id": "prt_12eecba63001iyKhFvG7XJ4TF8",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeca4f1001SqCntrXRgXQ0CM"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have all the information needed to create the report.",
+          "time": {
+            "start": 1791788628580,
+            "end": 1791788633653
+          },
+          "id": "prt_12eecba64001O56qJmWGVC406Y",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeca4f1001SqCntrXRgXQ0CM"
+        },
+        {
+          "type": "text",
+          "text": "### REPORT\n\n**Footer text for each demo scenario (label: footer line)**\n\n| Scenario | verify_facts | Verified | Footer Line |\n|----------|--------------|----------|-------------|\n| baseline_wrong_fact | False | N/A | Source: Crustdata company data. Figures checked against source: Not checked. |\n| baseline_tool_error | False | N/A | Source: Crustdata company data. Figures checked against source: Not checked. |\n| candidate_retry_recovery | True | True | Source: Crustdata company data. Figures checked against source: Yes. |\n| candidate_success | True | True | Source: Crustdata company data. Figures checked against source: Yes. |\n| verify_regeneration | True | True | Source: Crustdata company data. Figures checked against source: Yes. |\n\n---\n\n**Test counts**\n\n- All tests pass: **138 passed, 1 skipped**\n- New `TestDocxFooter` class: 4 tests passed (Not checked, No/failed, Yes/passed, footer not in sections/fact checks)\n\n---\n\n**Span check: for baseline_wrong_fact and candidate_success, status + which keys present with values**\n\n**baseline_wrong_fact (D01, verify_facts=False):**\n- `status_code`: `StatusCode.ERROR`\n- `description`: `wrong_fact: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in accepted format`\n- Keys present:\n  - `evaluation.success`: `False`\n  - `evaluation.failure_class`: `wrong_fact`\n  - `evaluation.issues`: `employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in accepted format`\n  - `evaluation.truth`: `employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=secondary_market`\n  - `output.value`: `FAILED wrong_fact: employee_count=4042 not stated exactly; total_funding_usd=816600000 not stated in...`\n\n**candidate_success (D01, verify_facts=True, verified=True):**\n- `status_code`: `None` (no error)\n- `description`: `None`\n- Keys present:\n  - `evaluation.success`: `True`\n  - `evaluation.failure_class`: `none`\n  - `evaluation.issues`: `` (empty string)\n  - `evaluation.truth`: `employee_count=4042; founded_year=2014; hq_city=Bengaluru; total_funding_usd=816600000; last_round=secondary_market`\n  - `output.value`: `PASSED`\n\n---\n\n**Manifest timestamps (UTC start of each scenario)**\n\n| Scenario | start_time_utc |\n|----------|----------------|\n| baseline_wrong_fact | 2026-10-12T07:00:18.759216+00:00 |\n| baseline_tool_error | 2026-10-12T07:00:21.137505+00:00 |\n| candidate_retry_recovery | 2026-10-12T07:00:21.140105+00:00 |\n| candidate_success | 2026-10-12T07:00:23.242243+00:00 |\n| verify_regeneration | 2026-10-12T07:00:30.968155+00:00 |\n\n---\n\n**Commit hashes and push result**\n\n- `af5a418` — feat: provenance and verification status footer in generated docs\n- `7f89af8` — evidence: refresh demo manifest with footer footers\n- Push: `af5a418..7f89af8  feat/pack-agent -> feat/pack-agent`\n\n---\n\n**Deviations**\n\n- None. The footer is added at DOCX render time only, not included in the `sections` dict, so `fact_mismatches` and `missing_sections` are unaffected (verified by test `test_footer_not_part_of_sections_or_fact_checks`). All 138 tests pass.",
+          "time": {
+            "start": 1791788633655,
+            "end": 1791788647253
+          },
+          "id": "prt_12eecce370015w7dRcmmomdWNX",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeca4f1001SqCntrXRgXQ0CM"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "e32f5277f574ea47015f93c6fd646777c473cac4",
+          "type": "step-finish",
+          "tokens": {
+            "total": 348120,
+            "input": 10130,
+            "output": 1015,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 336960
+            }
+          },
+          "cost": 0,
+          "id": "prt_12eed040e00173iY8YM4F2iESy",
+          "sessionID": "ses_ed2f5c4fdffeYGSJ3iafiO5JJ2",
+          "messageID": "msg_12eeca4f1001SqCntrXRgXQ0CM"
         }
       ]
     }
